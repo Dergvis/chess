@@ -1,0 +1,220 @@
+{
+  "reactions": [
+    {
+      "id": "scared_jump",
+      "name": "Испуганный прыжок",
+      "type": "check",
+      "duration": 0.8,
+      "sequence": [
+        { "action": "jump", "height": 20, "delay": 0 },
+        { "action": "face", "emotion": "scared", "delay": 0 },
+        { "action": "shake", "time": 0.3, "delay": 0.2 },
+        { "action": "land", "delay": 0.3 }
+      ],
+      "sound": "scared_squeak"
+    },
+    {
+      "id": "angry_look",
+      "name": "Злой взгляд",
+      "type": "check",
+      "duration": 0.7,
+      "sequence": [
+        { "action": "face", "emotion": "angry", "delay": 0 },
+        { "action": "gesture", "type": "fist", "delay": 0.1 },
+        { "action": "stomp", "delay": 0.2 }
+      ],
+      "sound": "angry_grunt"
+    },
+    {
+      "id": "cry_tear",
+      "name": "Слеза",
+      "type": "check",
+      "duration": 0.9,
+      "sequence": [
+        { "action": "face", "emotion": "sad", "delay": 0 },
+        { "action": "spawn_object", "object": "tear", "delay": 0.2 },
+        { "action": "tear_fall", "distance": 50, "delay": 0.3 }
+      ],
+      "sound": "sad_whimper"
+    },
+    {
+      "id": "explode_head",
+      "name": "Взрыв мозга",
+      "type": "check",
+      "duration": 0.6,
+      "sequence": [
+        { "action": "face", "emotion": "shocked", "delay": 0 },
+        { "action": "play_effect", "effect": "explosion_rings", "delay": 0.1 },
+        { "action": "shake", "intensity": "high", "time": 0.2 }
+      ],
+      "sound": "mind_blown"
+    },
+    {
+      "id": "helmet_drop",
+      "name": "Шлем/кастрюля",
+      "type": "check",
+      "duration": 0.8,
+      "sequence": [
+        { "action": "face", "emotion": "worried", "delay": 0 },
+        { "action": "spawn_object", "object": "helmet", "delay": 0.1 },
+        { "action": "helmet_fall", "onto": "head", "delay": 0.2 },
+        { "action": "dizzy", "time": 0.3 }
+      ],
+      "sound": "helmet_clank"
+    },
+    {
+      "id": "white_flag",
+      "name": "Белый флаг",
+      "type": "checkmate_lose",
+      "duration": 1.2,
+      "sequence": [
+        { "action": "face", "emotion": "resigned", "delay": 0 },
+        { "action": "spawn_object", "object": "white_flag", "delay": 0.1 },
+        { "action": "wave", "object": "flag", "speed": "slow", "delay": 0.2 },
+        { "action": "sigh", "delay": 0.5 }
+      ],
+      "sound": "flag_wave"
+    },
+    {
+      "id": "suitcase_sit",
+      "name": "Чемодан",
+      "type": "checkmate_lose",
+      "duration": 1.4,
+      "sequence": [
+        { "action": "face", "emotion": "sad", "delay": 0 },
+        { "action": "spawn_object", "object": "suitcase", "delay": 0.2 },
+        { "action": "sit_on", "object": "suitcase", "delay": 0.3 },
+        { "action": "look_around", "direction": "left-right", "delay": 0.5 }
+      ],
+      "sound": "suitcase_thud"
+    },
+    {
+      "id": "crown_slide",
+      "name": "Съехавшая корона",
+      "type": "checkmate_lose",
+      "duration": 1.0,
+      "sequence": [
+        { "action": "face", "emotion": "dazed", "delay": 0 },
+        { "action": "crown_tilt", "angle": 30, "delay": 0.2 },
+        { "action": "crown_fall", "delay": 0.4 },
+        { "action": "look_down", "at": "crown", "delay": 0.5 }
+      ],
+      "sound": "crown_clatter"
+    },
+    {
+      "id": "theatrical_fall",
+      "name": "Театральное падение",
+      "type": "checkmate_lose",
+      "duration": 1.5,
+      "sequence": [
+        { "action": "face", "emotion": "dramatic", "delay": 0 },
+        { "action": "hand_on_chest", "delay": 0.2 },
+        { "action": "fall_backward", "time": 0.5, "delay": 0.3 },
+        { "action": "spawn_object", "object": "stars", "count": 5, "delay": 0.5 },
+        { "action": "stars_circle", "around": "head", "delay": 0.6 }
+      ],
+      "sound": "theatrical_crash"
+    },
+    {
+      "id": "victory_dance",
+      "name": "Танец победы",
+      "type": "checkmate_win",
+      "duration": 1.5,
+      "sequence": [
+        { "action": "face", "emotion": "ecstatic", "delay": 0 },
+        { "action": "jump", "count": 3, "height": 30, "delay": 0 },
+        { "action": "spin", "direction": "cw", "delay": 0.5 },
+        { "action": "cheer", "arms": "up", "delay": 0.8 },
+        { "action": "strike_pose", "delay": 1.0 }
+      ],
+      "sound": "victory_cheer"
+    },
+    {
+      "id": "royal_victory",
+      "name": "Королевская победа",
+      "type": "checkmate_win",
+      "duration": 1.8,
+      "sequence": [
+        { "action": "face", "emotion": "proud", "delay": 0 },
+        { "action": "raise_arms", "delay": 0.2 },
+        { "action": "crown_glow", "intensity": "bright", "delay": 0.4 },
+        { "action": "bow_received", "delay": 0.8 },
+        { "action": "wave_to_crowd", "delay": 1.0 }
+      ],
+      "sound": "royal_fanfare"
+    },
+    {
+      "id": "wave",
+      "name": "Приветствие",
+      "type": "game_start",
+      "duration": 0.6,
+      "sequence": [
+        { "action": "face", "emotion": "happy", "delay": 0 },
+        { "action": "wave", "hand": "right", "speed": "medium", "delay": 0.1 }
+      ],
+      "sound": "friendly_hello"
+    },
+    {
+      "id": "royal_nod",
+      "name": "Королевский кивок",
+      "type": "game_start",
+      "duration": 0.5,
+      "sequence": [
+        { "action": "face", "emotion": "calm", "delay": 0 },
+        { "action": "nod", "direction": "down", "delay": 0.1 },
+        { "action": "crown_shine", "delay": 0.2 }
+      ],
+      "sound": "royal_acknowledge"
+    },
+    {
+      "id": "happy_jump",
+      "name": "Радостный прыжок",
+      "type": "capture",
+      "duration": 0.5,
+      "sequence": [
+        { "action": "jump", "height": 15, "delay": 0 },
+        { "action": "face", "emotion": "happy", "delay": 0 },
+        { "action": "cheer", "delay": 0.2 }
+      ],
+      "sound": "happy_yay"
+    },
+    {
+      "id": "sad_shake",
+      "name": "Грустное потряхивание",
+      "type": "lose_piece",
+      "duration": 0.7,
+      "sequence": [
+        { "action": "face", "emotion": "sad", "delay": 0 },
+        { "action": "shake_head", "delay": 0.1 },
+        { "action": "shoulder_slump", "delay": 0.3 }
+      ],
+      "sound": "sad_sigh"
+    },
+    {
+      "id": "magic_spell",
+      "name": "Магическое приветствие",
+      "type": "game_start",
+      "duration": 1.0,
+      "sequence": [
+        { "action": "face", "emotion": "mysterious", "delay": 0 },
+        { "action": "raise_wand", "delay": 0.2 },
+        { "action": "cast_spell", "color": "purple", "delay": 0.4 },
+        { "action": "sparkles_around", "delay": 0.6 }
+      ],
+      "sound": "magic_whoosh"
+    },
+    {
+      "id": "disappear",
+      "name": "Исчезновение",
+      "type": "checkmate_lose",
+      "duration": 1.2,
+      "sequence": [
+        { "action": "face", "emotion": "defeated", "delay": 0 },
+        { "action": "poof_smoke", "delay": 0.2 },
+        { "action": "fade_out", "time": 0.5, "delay": 0.3 },
+        { "action": "despawn", "delay": 0.5 }
+      ],
+      "sound": "magic_poof"
+    }
+  ]
+}

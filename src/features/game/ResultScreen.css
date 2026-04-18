@@ -1,0 +1,121 @@
+.result-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.result-container {
+  max-width: 500px;
+  width: 100%;
+  background: white;
+  border-radius: 24px;
+  padding: 40px 32px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.result-header {
+  margin-bottom: 32px;
+}
+
+.result-emoji {
+  font-size: 80px;
+  margin-bottom: 16px;
+  animation: bounce 0.5s ease-in-out;
+}
+
+.result-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #212121;
+  margin-bottom: 12px;
+}
+
+.result-message {
+  font-size: 18px;
+  color: #757575;
+  margin: 0;
+}
+
+.result-info {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 24px;
+  background: #F5F5F5;
+  border-radius: 16px;
+  margin-bottom: 32px;
+}
+
+.result-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #757575;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #212121;
+}
+
+.result-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.result-actions .btn {
+  width: 100%;
+}
+
+/* Анимации */
+@keyframes resultPop {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+  .result-container {
+    padding: 32px 20px;
+  }
+
+  .result-emoji {
+    font-size: 60px;
+  }
+
+  .result-title {
+    font-size: 28px;
+  }
+
+  .result-message {
+    font-size: 16px;
+  }
+
+  .result-info {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .stat-value {
+    font-size: 20px;
+  }
+
+  .result-actions .btn {
+    padding: 16px 24px;
+    font-size: 16px;
+  }
+}

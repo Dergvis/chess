@@ -1,0 +1,353 @@
+.checkmate-animation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.checkmate-animation-scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+/* Победитель */
+.winner-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: winnerEnter 0.8s ease-out;
+}
+
+@keyframes winnerEnter {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.winner-king {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: winnerJump 0.6s ease-out infinite;
+}
+
+@keyframes winnerJump {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.winner-crown {
+  font-size: 56px;
+  animation: crownGlow 0.5s ease-in-out infinite;
+}
+
+@keyframes crownGlow {
+  0%, 100% { 
+    filter: brightness(1) drop-shadow(0 0 10px #f1c40f);
+  }
+  50% { 
+    filter: brightness(1.3) drop-shadow(0 0 20px #f39c12);
+  }
+}
+
+.winner-face {
+  font-size: 72px;
+  margin-top: -10px;
+}
+
+.winner-celebration {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+/* Конфетти */
+.confetti {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.confetti::before,
+.confetti::after {
+  content: '🎉';
+  position: absolute;
+  font-size: 32px;
+  animation: confettiFly 1s ease-out infinite;
+}
+
+.confetti::before {
+  left: 0;
+  animation-delay: 0s;
+}
+
+.confetti::after {
+  right: 0;
+  animation-delay: 0.5s;
+}
+
+@keyframes confettiFly {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-150px) rotate(360deg) scale(0.5);
+  }
+}
+
+.winner-text {
+  margin-top: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #f1c40f;
+  text-shadow: 2px 2px 0 #000;
+  animation: textPulse 0.8s ease-in-out infinite;
+}
+
+@keyframes textPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Проигравший */
+.loser-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: loserAppear 0.5s ease-out;
+}
+
+@keyframes loserAppear {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.loser-king {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loser-crown {
+  font-size: 56px;
+  position: relative;
+}
+
+.loser-face {
+  font-size: 72px;
+  margin-top: -10px;
+}
+
+/* Флаг */
+.loser-side.flag .loser-face {
+  animation: sadFace 0.5s ease-out;
+}
+
+@keyframes sadFace {
+  0% { 
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.white-flag {
+  position: absolute;
+  top: -20px;
+  right: -40px;
+  font-size: 48px;
+  animation: flagWave 1s ease-in-out infinite;
+}
+
+@keyframes flagWave {
+  0%, 100% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+}
+
+/* Чемодан */
+.loser-side.suitcase .loser-face {
+  animation: thinkingFace 0.5s ease-out;
+}
+
+@keyframes thinkingFace {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.suitcase {
+  position: absolute;
+  bottom: -30px;
+  font-size: 48px;
+  animation: suitcaseAppear 0.5s ease-out 0.3s forwards, suitcaseShake 0.3s ease-in-out infinite 0.8s;
+  opacity: 0;
+}
+
+@keyframes suitcaseAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes suitcaseShake {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-5px); }
+}
+
+/* Корона съезжает */
+.loser-side.crown .crown-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 56px;
+  opacity: 0;
+  animation: crownSlide 0.8s ease-out 0.2s forwards;
+}
+
+@keyframes crownSlide {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(50px, 100px) rotate(180deg);
+  }
+}
+
+.loser-side.crown .loser-crown {
+  animation: crownLoosen 0.5s ease-out;
+}
+
+@keyframes crownLoosen {
+  0%, 100% { transform: rotate(0deg); }
+  30% { transform: rotate(-15deg); }
+  70% { transform: rotate(15deg); }
+}
+
+/* Театральное падение */
+.loser-side.fall .loser-king {
+  animation: theatricalFall 1s ease-out forwards;
+}
+
+@keyframes theatricalFall {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg) translateY(0);
+  }
+  30% {
+    transform: rotate(-10deg) translateY(-20px);
+  }
+  100% {
+    opacity: 0.5;
+    transform: rotate(-90deg) translateY(100px);
+  }
+}
+
+.loser-side.fall .theatrical-fall {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+}
+
+.theatrical-fall::before {
+  content: '💫';
+  position: absolute;
+  font-size: 40px;
+  animation: starsCircle 1s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+@keyframes starsCircle {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg) translateX(50px);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(360deg) translateX(50px);
+  }
+}
+
+/* Текст "МАТ!" */
+.checkmate-text {
+  position: absolute;
+  top: 15%;
+  font-size: 72px;
+  font-weight: bold;
+  color: #f1c40f;
+  text-shadow: 4px 4px 0 #c0392b, -2px -2px 0 #fff;
+  animation: checkmateTextBoom 0.8s ease-out;
+}
+
+@keyframes checkmateTextBoom {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .winner-crown,
+  .loser-crown {
+    font-size: 40px;
+  }
+  
+  .winner-face,
+  .loser-face {
+    font-size: 56px;
+  }
+  
+  .checkmate-text {
+    font-size: 48px;
+    top: 10%;
+  }
+  
+  .winner-text {
+    font-size: 20px;
+  }
+}

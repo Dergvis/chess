@@ -1,0 +1,369 @@
+.game-screen {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-container {
+  max-width: 600px;
+  width: 100%;
+  background: white;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Панель соперника */
+.opponent-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #F5F5F5;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+.opponent-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.opponent-avatar {
+  font-size: 40px;
+}
+
+.opponent-name-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #212121;
+  margin: 0;
+}
+
+.difficulty-text {
+  font-size: 14px;
+  color: #757575;
+  margin: 0;
+}
+
+.captured-pieces {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  max-width: 150px;
+}
+
+.captured-piece {
+  font-size: 20px;
+}
+
+.captured-piece.captured-white {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.captured-piece.captured-black {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+/* Доска */
+.board-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.board-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.board-row {
+  display: flex;
+}
+
+.rank-label {
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #757575;
+}
+
+.file-labels {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 8px;
+}
+
+.file-label {
+  width: calc(var(--board-size-mobile) / 8);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #757575;
+}
+
+.square-container {
+  width: calc(var(--board-size-mobile) / 8);
+  height: calc(var(--board-size-mobile) / 8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.square-light {
+  background: var(--board-light);
+}
+
+.square-dark {
+  background: var(--board-dark);
+}
+
+.square {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.square.last-move {
+  background: rgba(255, 255, 0, 0.4) !important;
+}
+
+.square.check {
+  background: rgba(239, 83, 80, 0.6) !important;
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Подсветка ходов - улучшенная */
+.possible-move::after {
+  content: '';
+  position: absolute;
+  width: 28%;
+  height: 28%;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  transition: all 0.15s;
+}
+
+.square.possible-move:hover::after {
+  background: rgba(0, 0, 0, 0.3);
+  transform: scale(1.2);
+}
+
+.capture-move::after {
+  content: '';
+  position: absolute;
+  width: 85%;
+  height: 85%;
+  border: 5px solid rgba(229, 115, 115, 0.8);
+  border-radius: 50%;
+  background: transparent;
+  animation: capturePulse 1.5s ease-in-out infinite;
+}
+
+@keyframes capturePulse {
+  0%, 100% {
+    border-color: rgba(229, 115, 115, 0.8);
+    transform: scale(1);
+  }
+  50% {
+    border-color: rgba(229, 115, 115, 0.4);
+    transform: scale(1.05);
+  }
+}
+
+/* Подсветка шаха */
+.square.check::before {
+  content: '⚠️';
+  position: absolute;
+  font-size: 20px;
+  top: -5px;
+  right: -5px;
+  animation: warningBlink 1s ease-in-out infinite;
+}
+
+@keyframes warningBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.move-hint {
+  position: absolute;
+  width: 28%;
+  height: 28%;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+}
+
+.capture-hint {
+  position: absolute;
+  width: 85%;
+  height: 85%;
+  border: 5px solid rgba(229, 115, 115, 0.8);
+  border-radius: 50%;
+}
+
+/* Фигуры */
+.piece {
+  font-size: calc(var(--board-size-mobile) / 10);
+  cursor: pointer;
+  transition: transform 0.1s;
+  user-select: none;
+  z-index: 1;
+}
+
+.piece-white {
+  color: #FFFFFF;
+  text-shadow: 
+    0 0 2px #000,
+    0 0 2px #000,
+    1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.piece-black {
+  color: #000000;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.piece.selected {
+  transform: scale(1.15);
+  animation: pop 0.2s ease-out;
+}
+
+.piece:hover {
+  transform: scale(1.1);
+}
+
+/* Панель игрока */
+.player-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #F5F5F5;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+.player-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.turn-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.turn-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #BDBDBD;
+  transition: background 0.3s;
+}
+
+.turn-dot.active {
+  background: var(--color-success);
+  animation: pulse 1s infinite;
+}
+
+.turn-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #212121;
+}
+
+/* Контролы */
+.game-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.game-controls .btn {
+  flex: 1;
+  max-width: 150px;
+}
+
+/* Анимации */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Адаптивность */
+@media (min-width: 481px) {
+  .square-container {
+    width: calc(var(--board-size-tablet) / 8);
+    height: calc(var(--board-size-tablet) / 8);
+  }
+
+  .piece {
+    font-size: calc(var(--board-size-tablet) / 10);
+  }
+
+  .file-label {
+    width: calc(var(--board-size-tablet) / 8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .square-container {
+    width: calc(var(--board-size-desktop) / 8);
+    height: calc(var(--board-size-desktop) / 8);
+  }
+
+  .piece {
+    font-size: calc(var(--board-size-desktop) / 10);
+  }
+
+  .file-label {
+    width: calc(var(--board-size-desktop) / 8);
+  }
+}
+
+@media (max-width: 480px) {
+  .game-container {
+    padding: 16px;
+  }
+
+  .opponent-panel,
+  .player-panel {
+    padding: 10px 12px;
+  }
+
+  .opponent-avatar {
+    font-size: 32px;
+  }
+
+  .opponent-name-text {
+    font-size: 16px;
+  }
+
+  .turn-text {
+    font-size: 14px;
+  }
+
+  .game-controls .btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}

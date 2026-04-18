@@ -1,0 +1,29 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.boot-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Адаптивность для главного контейнера */
+@media (max-width: 768px) {
+  .app {
+    padding: 8px;
+  }
+}
+
+@media (min-width: 769px) {
+  .app {
+    padding: 16px;
+  }
+}

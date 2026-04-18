@@ -1,0 +1,108 @@
+{
+  "opponents": [
+    {
+      "id": "builder_bob",
+      "name": "Боб-строитель",
+      "theme": "block",
+      "avatar": "/assets/characters/builder_bob.png",
+      "description": "Весёлый строитель, любит простые ходы",
+      "difficultyPreset": "level_3",
+      "personality": {
+        "aggression": 0.3,
+        "emotionsIntensity": 0.8,
+        "animationStyle": "funny"
+      },
+      "reactions": {
+        "onGameStart": "wave",
+        "onCapture": "happy_jump",
+        "onLosePiece": "sad_shake",
+        "onCheck": "scared_jump",
+        "onCheckmateWin": "victory_dance",
+        "onCheckmateLose": "white_flag"
+      },
+      "soundPack": "funny_kids",
+      "voiceStyle": "cartoon",
+      "preferredAnimationFlavor": "cartoon",
+      "elo": 350,
+      "unlockLevel": 1
+    },
+    {
+      "id": "queen_luna",
+      "name": "Королева Луна",
+      "theme": "royal",
+      "avatar": "/assets/characters/queen_luna.png",
+      "description": "Умная и сильная, играет аккуратно",
+      "difficultyPreset": "level_5",
+      "personality": {
+        "aggression": 0.5,
+        "emotionsIntensity": 0.6,
+        "animationStyle": "elegant"
+      },
+      "reactions": {
+        "onGameStart": "royal_nod",
+        "onCapture": "smile_proud",
+        "onLosePiece": "disappointed",
+        "onCheck": "angry_look",
+        "onCheckmateWin": "royal_victory",
+        "onCheckmateLose": "sad_bow"
+      },
+      "soundPack": "soft_magic",
+      "voiceStyle": "calm",
+      "preferredAnimationFlavor": "magical",
+      "elo": 700,
+      "unlockLevel": 3
+    },
+    {
+      "id": "wizard_max",
+      "name": "Волшебник Макс",
+      "theme": "magic",
+      "avatar": "/assets/characters/wizard_max.png",
+      "description": "Могущественный маг, любит сложные комбинации",
+      "difficultyPreset": "level_8",
+      "personality": {
+        "aggression": 0.7,
+        "emotionsIntensity": 0.9,
+        "animationStyle": "dramatic"
+      },
+      "reactions": {
+        "onGameStart": "magic_spell",
+        "onCapture": "laugh_evil",
+        "onLosePiece": "angry_spell",
+        "onCheck": "surprised",
+        "onCheckmateWin": "magic_explosion",
+        "onCheckmateLose": "disappear"
+      },
+      "soundPack": "magic_spells",
+      "voiceStyle": "deep",
+      "preferredAnimationFlavor": "magical",
+      "elo": 1500,
+      "unlockLevel": 5
+    },
+    {
+      "id": "grandmaster_k",
+      "name": "Гроссмейстер К",
+      "theme": "legend",
+      "avatar": "/assets/characters/grandmaster_k.png",
+      "description": "Легендарный гроссмейстер. Непобедим.",
+      "difficultyPreset": "level_10",
+      "personality": {
+        "aggression": 0.9,
+        "emotionsIntensity": 1.0,
+        "animationStyle": "epic"
+      },
+      "reactions": {
+        "onGameStart": "epic_stare",
+        "onCapture": "calm_move",
+        "onLosePiece": "strategic_think",
+        "onCheck": "slight_surprise",
+        "onCheckmateWin": "silent_bow",
+        "onCheckmateLose": "respectful nod"
+      },
+      "soundPack": "epic_orchestra",
+      "voiceStyle": "wise",
+      "preferredAnimationFlavor": "tech",
+      "elo": 2500,
+      "unlockLevel": 8
+    }
+  ]
+}

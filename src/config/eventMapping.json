@@ -1,0 +1,64 @@
+{
+  "eventMapping": {
+    "MOVE_BASIC": {
+      "animation": null,
+      "sound": "move_basic"
+    },
+    "MOVE_CAPTURE": {
+      "type": "pool",
+      "pool": ["catapult", "cannon", "banana_slip", "spring_launch", "ambulance", "rocket", "trapdoor", "fan_blow", "balloons_lift", "teleport", "spider_web", "broom_sweep"],
+      "random": true,
+      "sound": "capture_generic"
+    },
+    "MOVE_CASTLING": {
+      "animation": "castling_special",
+      "sound": "castling_roll"
+    },
+    "MOVE_PROMOTION": {
+      "animation": "promotion_sparkle",
+      "sound": "promotion_magic"
+    },
+    "STATE_CHECK": {
+      "type": "reaction",
+      "pool": ["scared_jump", "angry_look", "surprised_gasps"],
+      "random": true,
+      "text": "⚠️ ШАХ!",
+      "sound": "check_alert"
+    },
+    "STATE_CHECKMATE": {
+      "type": "scene",
+      "winner": {
+        "animation": "victory_pose",
+        "effects": ["confetti", "sparkles"]
+      },
+      "loser": {
+        "pool": ["white_flag", "suitcase_sit", "crown_slide", "theatrical_fall"],
+        "random": true
+      },
+      "text": "🏆 МАТ! 🏆",
+      "sound": "checkmate_final"
+    },
+    "STATE_STALEMATE": {
+      "type": "scene",
+      "both": {
+        "animation": "shrug_confused"
+      },
+      "text": "🤷 ПАТ!",
+      "sound": "stalemate_ohwell"
+    },
+    "STATE_WIN": {
+      "animation": "victory_dance",
+      "effects": ["fireworks", "confetti"],
+      "sound": "victory_fanfare"
+    },
+    "STATE_LOSE": {
+      "animation": "lose_pose",
+      "effects": ["sad_cloud"],
+      "sound": "lose_sad"
+    },
+    "STATE_HINT": {
+      "animation": "hint_glow",
+      "sound": "hint_tinkle"
+    }
+  }
+}

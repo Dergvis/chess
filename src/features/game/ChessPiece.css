@@ -1,0 +1,212 @@
+.chess-piece {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+  pointer-events: none; /* Фигурка пропускает клики */
+}
+
+.piece-svg {
+  width: 90%;
+  height: 90%;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
+  transition: all 0.2s ease;
+  pointer-events: none; /* Важно: позволяет кликам проходить сквозь SVG */
+  transform-origin: center bottom;
+}
+
+.piece-svg * {
+  pointer-events: none; /* Важно: все элементы SVG тоже пропускают клики */
+}
+
+/* Белые фигуры */
+.piece-white .piece-svg {
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
+}
+
+/* Чёрные фигуры */
+.piece-black .piece-svg {
+  filter: drop-shadow(0 2px 3px rgba(255, 255, 255, 0.2));
+}
+
+/* Выбранная фигура */
+.chess-piece.selected .piece-svg {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px rgba(74, 144, 217, 0.8));
+  animation: pieceSelect 0.2s ease-out;
+}
+
+@keyframes pieceSelect {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1.15); }
+}
+
+/* Фигура под шахом */
+.chess-piece.check .piece-svg {
+  animation: pieceCheck 0.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(239, 83, 80, 0.8));
+}
+
+@keyframes pieceCheck {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px) rotate(-2deg); }
+  75% { transform: translateX(3px) rotate(2deg); }
+}
+
+/* Последний ход */
+.chess-piece.last-move .piece-svg {
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+}
+
+/* Hover эффект */
+.chess-piece:hover .piece-svg {
+  transform: scale(1.08);
+}
+
+/* Анимация движения */
+.piece-move {
+  animation: pieceMove 0.3s ease-out;
+}
+
+@keyframes pieceMove {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Анимация взятия - для атакующей фигуры */
+.piece-capture-attack {
+  animation: captureAttack 0.6s ease-out;
+}
+
+@keyframes captureAttack {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  30% {
+    transform: translate(0, -10px) scale(1.1);
+  }
+  50% {
+    transform: translate(20px, 0) scale(1.15);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+/* Анимация взятия - для защищающейся фигуры (исчезает) */
+.piece-capture-defend {
+  animation: captureDefend 0.6s ease-out forwards;
+}
+
+@keyframes captureDefend {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  30% {
+    opacity: 0.8;
+    transform: translate(-10px, -30px) scale(1.2) rotate(-10deg);
+  }
+  60% {
+    opacity: 0.6;
+    transform: translate(50px, -80px) scale(0.8) rotate(-45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(150px, -150px) scale(0.3) rotate(-180deg);
+  }
+}
+
+/* Idle анимации - более выразительные */
+
+/* Основное покачивание */
+@keyframes pieceIdleSway {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  25% { transform: rotate(1deg) translateY(-1px); }
+  75% { transform: rotate(-1deg) translateY(1px); }
+}
+
+/* Лёгкое подпрыгивание */
+@keyframes pieceIdleBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* Дыхание */
+@keyframes pieceIdleBreathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+/* Морганье глаз (для фигур с глазами) */
+@keyframes pieceIdleBlink {
+  0%, 48%, 52%, 100% { 
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
+  }
+  50% { 
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3)) brightness(0.95);
+  }
+}
+
+/* Комбинированная idle-анимация для всех фигур */
+.chess-piece:not(.selected):not(.check):not(.last-move) .piece-svg {
+  animation: 
+    pieceIdleSway 3s ease-in-out infinite,
+    pieceIdleBounce 2s ease-in-out infinite,
+    pieceIdleBreathe 4s ease-in-out infinite;
+}
+
+/* Пешка - более активная */
+.chess-piece.piece-p:not(.selected):not(.check) .piece-svg {
+  animation: 
+    pieceIdleSway 2.5s ease-in-out infinite,
+    pieceIdleBounce 1.8s ease-in-out infinite,
+    pieceIdleBreathe 3.5s ease-in-out infinite;
+}
+
+/* Король - более важный, медленный */
+.chess-piece.piece-k:not(.selected):not(.check) .piece-svg {
+  animation: 
+    pieceIdleSway 4s ease-in-out infinite,
+    pieceIdleBreathe 5s ease-in-out infinite;
+}
+
+/* Ферзь - изящный */
+.chess-piece.piece-q:not(.selected):not(.check) .piece-svg {
+  animation: 
+    pieceIdleSway 3.5s ease-in-out infinite,
+    pieceIdleBounce 2.5s ease-in-out infinite,
+    pieceIdleBreathe 4.5s ease-in-out infinite;
+}
+
+/* Конь - энергичный */
+.chess-piece.piece-n:not(.selected):not(.check) .piece-svg {
+  animation: 
+    pieceIdleSway 2s ease-in-out infinite,
+    pieceIdleBounce 1.5s ease-in-out infinite;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .piece-svg {
+    width: 90%;
+    height: 90%;
+  }
+  
+  /* Уменьшаем интенсивность анимаций на мобильных */
+  .chess-piece:not(.selected):not(.check):not(.last-move) .piece-svg {
+    animation: 
+      pieceIdleSway 4s ease-in-out infinite,
+      pieceIdleBreathe 5s ease-in-out infinite;
+  }
+}
