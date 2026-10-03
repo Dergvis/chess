@@ -7,7 +7,7 @@ export default async function handler(req,res){
  const path=req.query?.route ? '/api/'+String(req.query.route).replace(/\/$/,'') : new URL(req.url,'https://chezzies.app').pathname.replace(/\/$/,'');
  if(!methods.get(path)?.includes(req.method))return res.status(404).json({error:'This endpoint is not available.'});
  const host=process.env.VERCEL_URL;
- const origins=new Set(['https://chezzies.app',host?'https://'+host:'',process.env.VERCEL_BRANCH_URL?'https://'+process.env.VERCEL_BRANCH_URL:'']);
+ const origins=new Set(['https://chezzies.app','https://www.chezzies.app',host?'https://'+host:'',process.env.VERCEL_BRANCH_URL?'https://'+process.env.VERCEL_BRANCH_URL:'']);
  if(req.headers.origin&&!origins.has(req.headers.origin))return res.status(403).json({error:'This origin is not allowed.'});
  if(!process.env.CHEZZIES_API_ORIGIN||!process.env.API_BRIDGE_TOKEN)return res.status(503).json({error:'Account service is not connected yet. You can continue playing as a guest.'});
  let upstream;try{upstream=new URL(process.env.CHEZZIES_API_ORIGIN);if(upstream.protocol!=='https:'||upstream.username||upstream.password||/(^|\.)chezzies\.ru$/.test(upstream.hostname))throw Error();}catch{return res.status(503).json({error:'The international account service is not configured correctly.'});}
@@ -22,3 +22,4 @@ export default async function handler(req,res){
   res.setHeader('Content-Type','application/json');return res.status(response.status).send(await response.text());
  }catch{return res.status(502).json({error:'The account service is temporarily unavailable. Please try again.'});}
 }
+

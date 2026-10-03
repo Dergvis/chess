@@ -1,3 +1,4 @@
+import {inject} from '@vercel/analytics';
 export type SiteEvent = 'homepage_view'|'landing_view'|'play_click'|'game_start'|'puzzle_start'|'puzzle_complete'|'return_visit'|'signup_start'|'signup_complete';
 const paths=['/','/play/','/chess-games-for-kids/','/online-chess-for-kids/','/learn-chess-for-kids/','/how-to-play-chess-for-kids/','/chess-puzzles-for-kids/','/parents/'];
 const safePath=(value:string)=>value.startsWith('/play')?'/play/':paths.includes(value)?value:'/';
@@ -15,3 +16,8 @@ export function track(event:SiteEvent){
  void fetch('/api/site-events',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),keepalive:true,credentials:'omit'}).catch(()=>{});
 }
 export function recordVisit(){try{if(localStorage.getItem('chezzies-visited')&&!sessionStorage.getItem('chezzies-session'))track('return_visit');localStorage.setItem('chezzies-visited','1');sessionStorage.setItem('chezzies-session','1');}catch{/* Play does not depend on analytics. */}}
+
+if (typeof window !== 'undefined' && ['chezzies.app','www.chezzies.app'].includes(location.hostname)) {
+ inject({mode:'production',beforeSend(event){const url=new URL(event.url);url.search='';url.hash='';url.pathname=safePath(url.pathname);return {...event,url:url.toString()};}});
+}
+
