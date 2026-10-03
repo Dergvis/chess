@@ -10,7 +10,7 @@ export const pages=[
 {slug:'online-chess-for-kids',title:'Online Chess for Kids — Play in Your Browser | CHEZZIES',h1:'An online chess adventure for kids',intro:'Kids can play CHEZZIES online in a web browser. Start a free adventure, practise chess challenges and meet computer opponents in the Arena.',sections:[
 ['How do children start playing?','Select Start Adventure, choose a hero and tell the game how familiar you are with chess. Explore the map or open the piece guide. You do not need an account or a payment to begin.'],
 ['Who do children play against?','The Arena uses computer-controlled opponents with different difficulty levels. This version does not provide live multiplayer matchmaking or a player chat.'],
-['Where is progress saved?','Guest progress is saved in the current browser. A free CHEZZIES international account can save adventure progress on the server. International accounts are separate from chezzies.ru. Clearing browser data can remove unsaved guest progress.'],
+['Where is progress saved?','Guest progress is saved in the current browser. Account registration and cloud saves are being connected and are not available yet. Clearing browser data can remove unsaved guest progress.'],
 ['Does it work on a phone?','CHEZZIES runs in a browser on phones, tablets and desktop computers. The game adapts its navigation and board to the screen. A larger screen can help when first learning to recognise pieces.']
 ],links:['chess-games-for-kids','parents']},
 {slug:'learn-chess-for-kids',title:'Learn Chess for Kids Through Play | CHEZZIES',h1:'Learn chess through small discoveries',intro:'CHEZZIES helps young chess beginners practise checkmate, forks, pins, double attacks and defense through interactive positions in a fantasy adventure.',sections:[
@@ -37,12 +37,13 @@ export const pages=[
 ['Are chess puzzles useful for beginners?','A focused position lets a beginner examine one idea without managing a whole game. Use hints when needed, then explain why the move works. CHEZZIES combines these positions with opportunities to play full games.']
 ],links:['learn-chess-for-kids','how-to-play-chess-for-kids']},
 {slug:'parents',title:'CHEZZIES for Parents — Free Chess Through Play',h1:'They come to play. They discover chess.',intro:'CHEZZIES is a free browser-based chess adventure for young beginners. Children choose a hero, solve chess challenges, explore a fantasy map and play against computer opponents.',sections:[
-['Who is CHEZZIES for?','CHEZZIES is designed for young chess beginners. There is no verified numerical age range for this release. A child who is still learning to read may enjoy playing with an adult alongside them.'],
+['Who is CHEZZIES for?','CHEZZIES is designed for young chess beginners. A child who is still learning to read may enjoy playing with an adult alongside them.'],
 ['What will my child do?','Children practise checkmate, forks, pins, double attacks and defense. They progress through fortress stages, develop their chosen hero and can play longer games in the Arena. The training ground offers a short arcade activity with the same heroes.'],
 ['Is everything free?','Yes. The international version has no payment requirement, subscriptions or paid limits. Locked locations reflect adventure progress or content not yet available, not a purchase requirement.'],
-['Can I see progress?','The in-game progress summary shows recorded activity and skill practice. Guest progress stays in this browser; an international account saves adventure progress separately on the server. International and chezzies.ru accounts are separate.'],
+['Can I see progress?','The in-game progress summary shows recorded activity and skill practice. Guest progress stays in this browser. Account registration and cloud saves are not available yet. Please keep your browser data to preserve your adventure.'],
 ['Are there other players or chat?','The Arena opponents are computer-controlled. This international release has no player chat or multiplayer matchmaking. It does not offer parental time controls or a separate parent account.'],
-['What data does this version use?','The browser stores game progress and a limited local activity log. The activity interface accepts event names and broad traffic categories, without names, emails or full referring URLs. No external analytics collector is enabled in this release.'],
+['What data does this version use?','The browser stores game progress and a limited local activity log. The activity interface accepts event names and broad traffic categories, without names, emails or full referring URLs. Vercel Web Analytics measures visits, page views and traffic sources without analytics cookies. We remove query strings and fragments from page URLs before sending page-view events.'],
 ['How can I help my child?','Try a challenge together and ask what each piece attacks. Let the child make a move, inspect the feedback and try again. Stop when the child wants a break; there is no required daily schedule.']
 ],links:['learn-chess-for-kids','online-chess-for-kids']}
 ];
+
