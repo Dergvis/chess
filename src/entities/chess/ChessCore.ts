@@ -48,18 +48,22 @@ export class ChessCore {
         return null;
       }
 
-      const capturedPiece = result.captured 
+      // Фигура-атакующий: берём из result chess.js (НЕ из доски, т.к. ход уже сделан)
+      const piece: Piece = {
+        type: result.piece as PieceType,
+        color: result.color as Color,
+      };
+
+      const capturedPiece = result.captured
         ? { type: result.captured as PieceType, color: (result.color === 'w' ? 'b' : 'w') as Color }
         : undefined;
-
-      const piece = this.getPieceAt(move.from);
 
       const typedMove: Move = {
         from: move.from,
         to: move.to,
         promotion: result.promotion as PieceType | undefined,
         flags: result.flags,
-        piece: piece ?? undefined,
+        piece,
         capturedPiece: capturedPiece as Piece | undefined,
         isCheck: this.chess.inCheck(),
         isCheckmate: this.chess.isCheckmate(),
@@ -90,17 +94,23 @@ export class ChessCore {
   getLegalMoves(square: string): Move[] {
     try {
       const moves = this.chess.moves({ square: square as Square, verbose: true });
-      return moves.map((m: ChessMove) => ({
-        from: m.from,
-        to: m.to,
-        promotion: m.promotion as PieceType | undefined,
-        flags: m.flags,
-        piece: { type: m.piece as PieceType, color: m.color as Color },
-        capturedPiece: m.captured ? { type: m.captured as PieceType, color: (m.color === 'w' ? 'b' : 'w') as Color } : undefined,
-        isCheck: false,
-        isCheckmate: false,
-        animationHint: m.captured ? 'MOVE_CAPTURE' : 'MOVE_BASIC',
-      }));
+      return moves.map((m: ChessMove) => {
+        // Определяем,isPromotion - если пешка идет на последнюю линию
+        const isPromotion = m.piece === 'p' && (m.to[1] === '8' || m.to[1] === '1');
+        
+        return {
+          from: m.from,
+          to: m.to,
+          promotion: m.promotion as PieceType | undefined,
+          flags: m.flags,
+          piece: { type: m.piece as PieceType, color: m.color as Color },
+          capturedPiece: m.captured ? { type: m.captured as PieceType, color: (m.color === 'w' ? 'b' : 'w') as Color } : undefined,
+          isCheck: false,
+          isCheckmate: false,
+          isPromotion,
+          animationHint: m.captured ? 'MOVE_CAPTURE' : 'MOVE_BASIC',
+        };
+      });
     } catch {
       return [];
     }
@@ -206,6 +216,18 @@ export class ChessCore {
    */
   loadFen(fen: string): void {
     this.chess.load(fen);
+  }
+
+  /**
+   * Restore a saved game snapshot without replaying moves or stats.
+   */
+  loadSnapshot(fen: string, moves: Move[], capturedPieces: { w: PieceType[]; b: PieceType[] }): void {
+    this.chess.load(fen);
+    this.moveHistory = [...moves];
+    this.capturedPieces = {
+      w: [...capturedPieces.w],
+      b: [...capturedPieces.b],
+    };
   }
 
   /**

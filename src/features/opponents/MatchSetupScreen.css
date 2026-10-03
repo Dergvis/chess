@@ -1,31 +1,59 @@
 .match-setup-screen {
+  position: relative;
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 20px;
+  min-height: 100dvh;
+  padding: 16px;
+  /* На десктопе — flex center, на мобильных — block для скролла */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.match-setup-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.match-setup-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .match-setup-container {
-  max-width: 900px;
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
   margin: 0 auto;
   background: white;
-  border-radius: 24px;
-  padding: 32px;
+  border-radius: 20px;
+  padding: 24px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
+/* Шапка */
 .match-setup-header {
   display: flex;
   align-items: center;
-  gap: 20px;
-  margin-bottom: 32px;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
 .back-btn {
-  padding: 12px 20px;
+  padding: 8px 16px;
   background: #F5F5F5;
   border: none;
-  border-radius: 12px;
-  font-size: 16px;
+  border-radius: 10px;
+  font-size: 14px;
   font-weight: 600;
   color: #212121;
   cursor: pointer;
@@ -38,198 +66,347 @@
 }
 
 .match-setup-title {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 800;
   color: #212121;
   flex: 1;
+  text-align: center;
 }
 
-.match-setup-content {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  margin-bottom: 32px;
-}
-
-.setup-section {
-  padding-bottom: 24px;
-  border-bottom: 1px solid #E0E0E0;
-}
-
-.setup-section:last-of-type {
-  border-bottom: none;
-}
-
-.setup-section-title {
-  font-size: 22px;
-  font-weight: 700;
-  color: #212121;
+/* Тело — две колонки */
+.match-setup-body {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 16px;
   margin-bottom: 16px;
 }
 
-/* Соперники */
-.opponents-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 12px;
+.setup-section {
+  background: #F8F9FA;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.setup-section-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #212121;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.hero-section-title {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.opponent-section-title {
+  color: #868686;
+}
+
+/* ===== Hero Carousel ===== */
+.hero-carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-carousel-visual {
+  position: relative;
+  width: 160px;
+  height: 195px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Включаем touch-action для свайпа на мобильных */
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.hero-carousel-media {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 14px;
+}
+
+.hero-carousel-media.locked {
+  filter: brightness(0.7);
+}
+
+.hero-carousel-lock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: transform 0.2s;
+}
+
+.hero-carousel-lock:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.lock-icon {
+  font-size: 28px;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 700;
+  color: #212121;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  z-index: 2;
+  line-height: 1;
+}
+
+.carousel-arrow:hover {
+  background: #667eea;
+  color: white;
+}
+
+.carousel-arrow-left {
+  left: -6px;
+}
+
+.carousel-arrow-right {
+  right: -6px;
+}
+
+.hero-carousel-info {
+  text-align: center;
+}
+
+.hero-carousel-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #212121;
+  margin: 0 0 2px;
+}
+
+.hero-carousel-desc {
+  font-size: 11px;
+  color: #666;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.hero-carousel-dots {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.hero-carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #DDD;
+  transition: all 0.3s;
+}
+
+.hero-carousel-dot.active {
+  background: #667eea;
+  transform: scale(1.2);
+}
+
+/* ===== Opponent Carousel ===== */
+.opponent-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.opponent-carousel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  /* Включаем touch-action для свайпа на мобильных */
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.opponent-nav {
+  width: 32px;
+  height: 32px;
+  background: white;
+  border: 2px solid #E0E0E0;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 700;
+  color: #212121;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.opponent-nav:hover:not(:disabled) {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.opponent-nav:disabled {
+  opacity: 0.3;
+  cursor: default;
 }
 
 .opponent-card {
-  padding: 16px;
-  border: 2px solid #E0E0E0;
-  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 200px;
+  width: 100%;
+}
+
+/* Картинка противника */
+.opponent-visual {
+  width: 160px;
+  height: 195px;
   background: white;
-  cursor: pointer;
-  transition: all 0.2s;
-  text-align: center;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
 }
 
-.opponent-card:hover {
-  border-color: #4A90D9;
-  background: #E3F2FD;
+.opponent-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
-.opponent-card.selected {
-  border-color: #4A90D9;
-  background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
-  box-shadow: 0 4px 12px rgba(74, 144, 217, 0.3);
-}
-
-.opponent-avatar {
-  font-size: 48px;
-  display: block;
-  margin-bottom: 8px;
+.opponent-info-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
 }
 
 .opponent-name {
-  font-size: 16px;
-  font-weight: 700;
-  color: #212121;
-  margin-bottom: 4px;
-}
-
-.opponent-difficulty {
-  font-size: 13px;
-  color: #757575;
-}
-
-/* Сложность */
-.difficulty-options {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.difficulty-option {
-  flex: 1;
-  min-width: 150px;
-  padding: 20px;
-  border: 2px solid #E0E0E0;
-  border-radius: 16px;
-  background: white;
-  cursor: pointer;
-  transition: all 0.2s;
-  text-align: left;
-}
-
-.difficulty-option:hover {
-  border-color: #4A90D9;
-  background: #E3F2FD;
-}
-
-.difficulty-option.selected {
-  border-color: #4A90D9;
-  background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
-  box-shadow: 0 4px 12px rgba(74, 144, 217, 0.3);
-}
-
-.difficulty-name {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 800;
   color: #212121;
-  margin-bottom: 4px;
-}
-
-.difficulty-desc {
-  font-size: 14px;
-  color: #757575;
-}
-
-/* Стили фигур */
-.piece-skins-options {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-}
-
-.piece-skin-option {
-  padding: 20px;
-  border: 2px solid #E0E0E0;
-  border-radius: 16px;
-  background: white;
-  cursor: pointer;
-  transition: all 0.2s;
+  margin: 0;
   text-align: center;
 }
 
-.piece-skin-option:hover {
-  border-color: #4A90D9;
-  background: #E3F2FD;
+.opponent-desc {
+  font-size: 11px;
+  color: #666;
+  margin: 0;
+  line-height: 1.3;
+  max-width: 200px;
+  text-align: center;
 }
 
-.piece-skin-option.selected {
-  border-color: #4A90D9;
-  background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
-  box-shadow: 0 4px 12px rgba(74, 144, 217, 0.3);
-}
-
-.skin-preview-large {
+.opponent-stars {
   display: flex;
-  justify-content: center;
-  gap: 4px;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
+  gap: 2px;
+  flex-shrink: 0;
 }
 
-.preview-piece {
-  font-size: 24px;
+.star {
+  font-size: 16px;
+  color: #DDD;
 }
 
-.skin-option-title {
-  font-size: 18px;
-  font-weight: 700;
+.star.filled {
+  color: #FFD700;
+}
+
+.opponent-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.opponent-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #DDD;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.opponent-dot.active {
+  background: #212121;
+  transform: scale(1.3);
+}
+
+/* ===== Цвет ===== */
+.color-section {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.color-section-title {
+  font-size: 13px;
+  font-weight: 800;
   color: #212121;
-  margin-bottom: 4px;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.skin-option-desc {
-  font-size: 14px;
-  color: #757575;
-}
-
-/* Цвет */
 .color-options {
   display: flex;
-  gap: 16px;
+  gap: 10px;
+  max-width: 320px;
+  margin: 0 auto;
 }
 
 .color-option {
   flex: 1;
-  padding: 24px;
+  padding: 10px;
   border: 2px solid #E0E0E0;
-  border-radius: 16px;
+  border-radius: 12px;
   background: white;
   cursor: pointer;
   transition: all 0.2s;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 4px;
 }
 
 .color-option:hover {
   border-color: #4A90D9;
-  background: #E3F2FD;
 }
 
 .color-option.selected {
@@ -238,90 +415,294 @@
   box-shadow: 0 4px 12px rgba(74, 144, 217, 0.3);
 }
 
-.color-preview {
-  font-size: 56px;
-}
-
-.color-preview.color-white {
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-}
-
-.color-preview.color-black {
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+.color-piece-image {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
 }
 
 .color-name {
-  font-size: 18px;
+  font-size: 13px;
   font-weight: 700;
   color: #212121;
 }
 
 /* Footer */
 .match-setup-footer {
-  margin-top: 24px;
+  margin-top: 4px;
 }
 
 .start-game-btn {
   width: 100%;
-  padding: 20px 32px;
-  font-size: 22px;
+  padding: 14px 24px;
+  font-size: 17px;
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
+/* ===== Адаптивность ===== */
+
+/* Планшеты и маленькие десктопы */
+@media (max-width: 1024px) and (min-width: 769px) {
   .match-setup-container {
-    padding: 24px 16px;
+    max-width: 900px;
+    padding: 20px 16px;
+  }
+
+  .match-setup-body {
+    gap: 14px;
+  }
+
+  .hero-carousel-visual {
+    width: 140px;
+    height: 170px;
+  }
+
+  .opponent-visual {
+    width: 140px;
+    height: 170px;
+  }
+
+  .opponent-card {
+    min-width: 180px;
+  }
+}
+
+/* Мобильные — key fix: display:block вместо flex-center */
+@media (max-width: 768px) {
+  .match-setup-screen {
+    display: block;
+    padding: 12px;
+    padding-left: max(12px, env(safe-area-inset-left, 0));
+    padding-right: max(12px, env(safe-area-inset-right, 0));
+    padding-bottom: max(12px, env(safe-area-inset-bottom, 0));
+    min-height: 100dvh;
+    height: auto;
+  }
+
+  .match-setup-container {
+    padding: 16px 12px;
+    border-radius: 16px;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .match-setup-body {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 
   .match-setup-title {
-    font-size: 24px;
+    font-size: 20px;
+    text-align: center;
   }
 
-  .opponents-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  }
-
-  .opponent-avatar {
-    font-size: 36px;
-  }
-
-  .difficulty-options {
-    flex-direction: column;
-  }
-
-  .difficulty-option {
-    min-width: 100%;
-  }
-
-  .piece-skins-options {
-    grid-template-columns: 1fr;
-  }
-
-  .color-options {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 480px) {
   .match-setup-header {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
     gap: 12px;
+    margin-bottom: 14px;
   }
 
-  .setup-section-title {
-    font-size: 18px;
+  .hero-carousel-visual {
+    width: 130px;
+    height: 160px;
   }
 
-  .opponents-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .opponent-visual {
+    width: 130px;
+    height: 160px;
+  }
+
+  .opponent-card {
+    min-width: 160px;
   }
 
   .opponent-name {
-    font-size: 12px;
+    font-size: 16px;
   }
 
-  .opponent-difficulty {
+  .opponent-desc {
     font-size: 11px;
+  }
+
+  .setup-section {
+    padding: 12px;
+  }
+
+  .setup-section-title {
+    font-size: 13px;
+  }
+
+  .color-options {
+    max-width: 280px;
+  }
+
+  .start-game-btn {
+    font-size: 16px;
+    padding: 14px 20px;
+  }
+}
+
+/* Маленькие мобильные */
+@media (max-width: 480px) {
+  .match-setup-screen {
+    padding: 8px;
+  }
+
+  .match-setup-container {
+    padding: 12px 10px;
+    margin-bottom: 16px;
+  }
+
+  .match-setup-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .back-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .match-setup-title {
+    text-align: left;
+    font-size: 18px;
+  }
+
+  .setup-section {
+    padding: 10px;
+  }
+
+  .setup-section-title {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .hero-carousel-visual {
+    width: 110px;
+    height: 140px;
+  }
+
+  .hero-carousel-lock {
+    width: 44px;
+    height: 44px;
+  }
+
+  .lock-icon {
+    font-size: 20px;
+  }
+
+  .carousel-arrow {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+  }
+
+  .hero-carousel-name {
+    font-size: 13px;
+  }
+
+  .hero-carousel-desc {
+    font-size: 10px;
+  }
+
+  .opponent-visual {
+    width: 110px;
+    height: 140px;
+  }
+
+  .opponent-nav {
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+  }
+
+  .opponent-card {
+    min-width: 140px;
+  }
+
+  .opponent-name {
+    font-size: 14px;
+  }
+
+  .opponent-desc {
+    font-size: 10px;
+    max-width: 140px;
+  }
+
+  .star {
+    font-size: 13px;
+  }
+
+  .color-section-title {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .color-options {
+    gap: 8px;
+    max-width: 100%;
+  }
+
+  .color-option {
+    padding: 8px;
+  }
+
+  .color-piece-image {
+    width: 30px;
+    height: 30px;
+  }
+
+  .color-name {
+    font-size: 11px;
+  }
+
+  .start-game-btn {
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 375px) {
+  .match-setup-screen {
+    padding: 6px;
+  }
+
+  .match-setup-container {
+    padding: 10px 8px;
+  }
+
+  .match-setup-title {
+    font-size: 16px;
+  }
+
+  .hero-carousel-visual {
+    width: 90px;
+    height: 115px;
+  }
+
+  .opponent-visual {
+    width: 90px;
+    height: 115px;
+  }
+
+  .opponent-card {
+    min-width: 120px;
+  }
+
+  .opponent-name {
+    font-size: 13px;
+  }
+
+  .color-piece-image {
+    width: 26px;
+    height: 26px;
+  }
+
+  .start-game-btn {
+    font-size: 13px;
+    padding: 10px;
   }
 }

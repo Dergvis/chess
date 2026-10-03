@@ -39,7 +39,7 @@ export default function OnboardingScreen({ onComplete }: OnboardingScreenProps) 
   const pieceSkins = getAllPieceSkins();
 
   return (
-    <div className="onboarding-screen">
+    <div className="onboarding-screen" data-page="4">
       <div className="onboarding-container animate-fadeIn">
         <div className="onboarding-progress">
           <div className="onboarding-progress-bar" style={{ width: `${(step / 4) * 100}%` }} />
@@ -48,17 +48,17 @@ export default function OnboardingScreen({ onComplete }: OnboardingScreenProps) 
         <div className="onboarding-content">
           {step === 1 && (
             <div className="onboarding-step">
-              <h1 className="onboarding-title">Привет! 👋</h1>
-              <p className="onboarding-subtitle">Давай познакомимся!</p>
+              <h1 className="onboarding-title">Hello! 👋</h1>
+              <p className="onboarding-subtitle">Let’s get to know each other!</p>
               
               <div className="onboarding-input-group">
-                <label htmlFor="player-name">Как тебя называть?</label>
+                <label htmlFor="player-name">What should we call you?</label>
                 <input
                   id="player-name"
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Твоё имя"
+                  placeholder="Your name"
                   maxLength={20}
                   autoFocus
                   onKeyPress={(e) => e.key === 'Enter' && canProceed() && handleNext()}
@@ -69,8 +69,8 @@ export default function OnboardingScreen({ onComplete }: OnboardingScreenProps) 
 
           {step === 2 && (
             <div className="onboarding-step">
-              <h1 className="onboarding-title">Опыт игры 🎮</h1>
-              <p className="onboarding-subtitle">Ты играл раньше в шахматы?</p>
+              <h1 className="onboarding-title">Chess experience 🎮</h1>
+              <p className="onboarding-subtitle">Have you played chess before?</p>
               
               <div className="onboarding-options">
                 <button
@@ -78,8 +78,8 @@ export default function OnboardingScreen({ onComplete }: OnboardingScreenProps) 
                   onClick={() => setExperience('beginner')}
                 >
                   <span className="option-icon">🌱</span>
-                  <span className="option-title">Нет, я новичок</span>
-                  <span className="option-desc">Никогда не играл</span>
+                  <span className="option-title">No, I am new</span>
+                  <span className="option-desc">Never played</span>
                 </button>
                 
                 <button
@@ -87,8 +87,8 @@ export default function OnboardingScreen({ onComplete }: OnboardingScreenProps) 
                   onClick={() => setExperience('intermediate')}
                 >
                   <span className="option-icon">🌿</span>
-                  <span className="option-title">Немного играл</span>
-                  <span className="option-desc">Знаю правила</span>
+                  <span className="option-title">Played a little</span>
+                  <span className="option-desc">I know the rules</span>
                 </button>
                 
                 <button
@@ -96,8 +96,8 @@ export default function OnboardingScreen({ onComplete }: OnboardingScreenProps) 
                   onClick={() => setExperience('advanced')}
                 >
                   <span className="option-icon">🌳</span>
-                  <span className="option-title">Хорошо играю</span>
-                  <span className="option-desc">Опытный игрок</span>
+                  <span className="option-title">I play well</span>
+                  <span className="option-desc">Experienced player</span>
                 </button>
               </div>
             </div>
@@ -105,8 +105,8 @@ export default function OnboardingScreen({ onComplete }: OnboardingScreenProps) 
 
           {step === 3 && (
             <div className="onboarding-step">
-              <h1 className="onboarding-title">Выбор фигур ♟️</h1>
-              <p className="onboarding-subtitle">Какие фигуры тебе нравятся?</p>
+              <h1 className="onboarding-title">Choose pieces ♟️</h1>
+              <p className="onboarding-subtitle">Which pieces do you like?</p>
               
               <div className="onboarding-skins">
                 {pieceSkins.map((skin) => (
@@ -130,20 +130,20 @@ export default function OnboardingScreen({ onComplete }: OnboardingScreenProps) 
 
           {step === 4 && (
             <div className="onboarding-step">
-              <h1 className="onboarding-title">Всё готово! 🎉</h1>
+              <h1 className="onboarding-title">All ready! 🎉</h1>
               <p className="onboarding-subtitle">
-                Привет, {name || 'друг'}! <br />
-                Пора начинать игру!
+                Hello, {name || "friend"}! <br />
+                Time to start playing!
               </p>
               
               <div className="onboarding-summary">
                 <div className="summary-item">
                   <span className="summary-icon">🎮</span>
-                  <span>Опыт: {experience === 'beginner' ? 'Новичок' : experience === 'intermediate' ? 'Средний' : 'Опытный'}</span>
+                  <span>Experience: {experience === 'beginner' ? "Newcomer" : experience === 'intermediate' ? "Intermediate" : "Experienced"}</span>
                 </div>
                 <div className="summary-item">
                   <span className="summary-icon">♟️</span>
-                  <span>Фигуры: {pieceSkins.find(s => s.id === selectedSkin)?.title}</span>
+                  <span>Pieces: {pieceSkins.find(s => s.id === selectedSkin)?.title}</span>
                 </div>
               </div>
             </div>
@@ -153,7 +153,7 @@ export default function OnboardingScreen({ onComplete }: OnboardingScreenProps) 
         <div className="onboarding-actions">
           {step > 1 && (
             <button className="btn btn-secondary" onClick={handleBack}>
-              Назад
+              Back
             </button>
           )}
           
@@ -162,7 +162,7 @@ export default function OnboardingScreen({ onComplete }: OnboardingScreenProps) 
             onClick={handleNext}
             disabled={!canProceed()}
           >
-            {step === 4 ? 'Начать играть!' : 'Далее'}
+            {step === 4 ? "Start playing!" : "Next"}
           </button>
         </div>
       </div>

@@ -7,8 +7,8 @@ import type { PieceSkin, PieceType } from '../../shared/types';
 
 const defaultSkin: PieceSkin = {
   id: 'default',
-  title: 'Стандартные',
-  description: 'Классические шахматные фигуры',
+  title: "Standard",
+  description: "Classic chess pieces",
   pieces: {
     p: {
       idle: '♟',
