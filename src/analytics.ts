@@ -1,4 +1,5 @@
 import {inject} from '@vercel/analytics';
+import {trackGoogle} from './googleAnalytics';
 export type SiteEvent = 'homepage_view'|'landing_view'|'play_click'|'game_start'|'puzzle_start'|'puzzle_complete'|'return_visit'|'signup_start'|'signup_complete';
 const paths=['/','/play/','/chess-games-for-kids/','/online-chess-for-kids/','/learn-chess-for-kids/','/how-to-play-chess-for-kids/','/chess-puzzles-for-kids/','/parents/'];
 const safePath=(value:string)=>value.startsWith('/play')?'/play/':paths.includes(value)?value:'/';
@@ -9,6 +10,7 @@ export function track(event:SiteEvent){
  let attribution={source:source(),landing_page:safePath(location.pathname)};
  try{const saved=JSON.parse(sessionStorage.getItem('chezzies-attribution')||'null');if(saved&&['direct','internal','google','bing','referral'].includes(saved.source)&&paths.includes(saved.landing_page))attribution={source:saved.source,landing_page:saved.landing_page};else sessionStorage.setItem('chezzies-attribution',JSON.stringify(attribution));}catch{/* No storage dependency. */}
  const payload={event,...attribution};
+ trackGoogle(event,attribution);
  // A local, bounded diagnostic buffer. A configured first-party collector may subscribe.
  try{const key='chezzies-analytics';const rows=JSON.parse(sessionStorage.getItem(key)||'[]');sessionStorage.setItem(key,JSON.stringify([...(Array.isArray(rows)?rows:[]),payload].slice(-100)));}catch{/* Storage may be disabled. */}
  window.dispatchEvent(new CustomEvent('chezzies:analytics',{detail:payload}));
