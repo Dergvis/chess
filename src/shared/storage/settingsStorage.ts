@@ -8,7 +8,7 @@ import type { UserSettings, DifficultyLevel, AnimationIntensity } from '../types
 const STORAGE_KEY = 'chess_gosha_settings';
 
 const defaultSettings: UserSettings = {
-  pieceSkinId: 'block',
+  pieceSkinId: 'default',
   opponentId: 'bear',
   difficulty: 'level_1',
   animationIntensity: 'full',
@@ -44,6 +44,7 @@ export function saveSettings(settings: Partial<UserSettings>): void {
     const current = getSettings();
     const updated = { ...current, ...settings };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+    window.dispatchEvent(new Event("chezzies-settings-change"));
   } catch (error) {
     console.error('Error saving settings:', error);
   }
@@ -99,7 +100,7 @@ export function completeOnboarding(): void {
  */
 export function getPlayerName(): string {
   const settings = getSettings();
-  return settings.playerName || 'Игрок';
+  return settings.playerName || "Player";
 }
 
 /**

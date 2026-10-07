@@ -1,0 +1,622 @@
+[
+  [
+    "Сегодня",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "7 дней",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "30 дней",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Все время",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Открытие страницы",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Клик по кнопке",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Клик по ссылке",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Фокус в поле",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Отправка формы",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Стартовый экран",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Главное меню",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Вход и регистрация",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Анкета ребёнка",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Профиль и статистика",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Выбор соперника",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Экран игры",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Результат партии",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Экран подписки",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Успешная оплата",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Сброс пароля",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Открыли:",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Поле:",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Отправили форму:",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Перешли по ссылке:",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Клик по элементу без подписи:",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Кнопка:",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Событие",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Введите админ-токен",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Не удалось загрузить статистику",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Не удалось загрузить обращения",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Не удалось загрузить данные",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Не удалось отправить ответ",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Новые аккаунты",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    ". Всего аккаунтов:",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Оплатившие",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Уникальные пользователи с успешной оплатой за все время",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Оплаты",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    ". Всего успешных оплат:",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Авторизации",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Не люди, а успешные входы за период. Уникальных аккаунтов:",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    ". Всего входов:",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Действия интерфейса",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Клики, страницы, поля и формы за период. Шахматные ходы отдельно не считаются. Всего:",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Активные аккаунты",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Уникальные залогиненные аккаунты, у которых были действия интерфейса за период",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Устройства",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Уникальные браузеры/телефоны за выбранный период. Считается по deviceId в браузере",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Новые устройства",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "DeviceId впервые появился в выбранный период",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Вернувшиеся устройства",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "DeviceId уже был раньше и снова активен в выбранный период",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Интерес к оплате",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Открытия подписки и клики по оплате за период. Всего:",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "QR создано",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    ". Всего созданных QR:",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Пользователи, оплаты, входы, действия и обращения",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Обновить",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Открыть",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Период статистики",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Воронка за период",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Создание QR",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "устройств",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "открытий",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "аккаунтов",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Проход:",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Популярные действия",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Действий за выбранный период пока нет",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Последние действия",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Гость",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "без email",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Обращения",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Обращений пока нет",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Без сообщений",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Пользователь",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Ответ пользователю...",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Отправка...",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Ответить",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Выберите обращение",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Имя ребёнка",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Входы всего",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Последний вход",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Подписка до",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Действия всего",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Последнее действие",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "оплат",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "нет",
+    "src\\features\\admin\\AdminDashboard.tsx"
+  ],
+  [
+    "Введите промокод",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Подписка истекла",
+    "src\\features\\billing\\BillingRequiredScreen.tsx"
+  ],
+  [
+    "Срок вашей подписки истёк. Сейчас вам доступны только пешки.\n          Продлите подписку, чтобы разблокировать все фигуры и анимации!",
+    "src\\features\\billing\\BillingRequiredScreen.tsx"
+  ],
+  [
+    "Пешки",
+    "src\\features\\billing\\BillingRequiredScreen.tsx"
+  ],
+  [
+    "Доступно",
+    "src\\features\\billing\\BillingRequiredScreen.tsx"
+  ],
+  [
+    "🔒 Заблокировано",
+    "src\\features\\billing\\BillingRequiredScreen.tsx"
+  ],
+  [
+    "Продлить подписку — 299 ₽/мес",
+    "src\\features\\billing\\BillingRequiredScreen.tsx"
+  ],
+  [
+    "Оплатить сейчас через СБП",
+    "src\\features\\billing\\BillingRequiredScreen.tsx"
+  ],
+  [
+    "Играть с пешками",
+    "src\\features\\billing\\BillingRequiredScreen.tsx"
+  ],
+  [
+    "Подписка на 30 дней. Отмена в любой момент.",
+    "src\\features\\billing\\BillingRequiredScreen.tsx"
+  ],
+  [
+    "Ошибка генерации QR-кода",
+    "src\\features\\billing\\PaymentScreen.tsx"
+  ],
+  [
+    "Ошибка создания платежа",
+    "src\\features\\billing\\PaymentScreen.tsx"
+  ],
+  [
+    "Время жизни QR-кода истекло. Обновите страницу.",
+    "src\\features\\billing\\PaymentScreen.tsx"
+  ],
+  [
+    "Создаём QR-код для оплаты...",
+    "src\\features\\billing\\PaymentScreen.tsx"
+  ],
+  [
+    "Ошибка",
+    "src\\features\\billing\\PaymentScreen.tsx"
+  ],
+  [
+    "Вернуться назад",
+    "src\\features\\billing\\PaymentScreen.tsx"
+  ],
+  [
+    "Оплата через СБП",
+    "src\\features\\billing\\PaymentScreen.tsx"
+  ],
+  [
+    "Отсканируйте QR-код через приложение банка",
+    "src\\features\\billing\\PaymentScreen.tsx"
+  ],
+  [
+    "Сумма:",
+    "src\\features\\billing\\PaymentScreen.tsx"
+  ],
+  [
+    "QR-код для оплаты",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Откройте приложение банка",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Выберите «Оплата по QR» или «СБП»",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Наведите камеру на QR-код",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Подтвердите оплату",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Ожидание оплаты...",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "QR-код действителен 30 минут. После оплаты подписка активируется автоматически.",
+    "src\\features\\billing\\PaymentScreen.tsx"
+  ],
+  [
+    "Подписка активирована!",
+    "src\\features\\billing\\PaymentSuccessScreen.tsx"
+  ],
+  [
+    "Ваша подписка Chezzies активирована",
+    "src\\features\\billing\\PaymentSuccessScreen.tsx"
+  ],
+  [
+    "Действует до:",
+    "src\\features\\billing\\PaymentSuccessScreen.tsx"
+  ],
+  [
+    "Осталось дней:",
+    "src\\features\\billing\\PaymentSuccessScreen.tsx"
+  ],
+  [
+    "Теперь вам доступны:",
+    "src\\features\\billing\\PaymentSuccessScreen.tsx"
+  ],
+  [
+    "♟ Все фигуры",
+    "src\\features\\billing\\PaymentSuccessScreen.tsx"
+  ],
+  [
+    "🎬 Видео битвы",
+    "src\\features\\billing\\PaymentSuccessScreen.tsx"
+  ],
+  [
+    "🏆 Все герои",
+    "src\\features\\billing\\PaymentSuccessScreen.tsx"
+  ],
+  [
+    "⭐ Соперники разной силы",
+    "src\\features\\billing\\PaymentSuccessScreen.tsx"
+  ],
+  [
+    "Время QR-кода истекло. Создайте новый.",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Платёж отклонён. Можно создать новый QR-код.",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Ошибка активации подписки",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Чтобы оплатить подписку, сначала войдите или зарегистрируйтесь.",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Не удалось создать платёж. Попробуйте снова.",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Ошибка создания платежа. Попробуйте позже.",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Чтобы применить промокод, сначала войдите или зарегистрируйтесь.",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Промокод не сработал",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Подписка Chezzies",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Стоимость:",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Все фигуры с анимациями взятия",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Комедийные видео битвы",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Все герои и персонажи",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "10 уровней сложности ИИ",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Есть промокод?",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Укажите промокод",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Проверяем...",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Применить",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Создаём платёж...",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Оплатить через СБП — 299 ₽",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Отсканируйте QR-код через приложение банка:",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Открыть оплату в банке",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "На телефоне ссылка откроет выбор банка или приложение банка, если оно поддерживает оплату по СБП.",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Платёж обрабатывается...",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "✓ Оплата прошла! Перенаправляем...",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Продолжить бесплатно",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Подписка действует 30 дней. После окончания снова доступны только пешки.",
+    "src\\features\\billing\\SubscribeScreen.tsx"
+  ],
+  [
+    "Только в платной версии",
+    "src\\features\\opponents\\PremiumModal.tsx"
+  ],
+  [
+    "Этот персонаж доступен в полной версии игры.",
+    "src\\features\\opponents\\PremiumModal.tsx"
+  ],
+  [
+    "Разблокируй всех героев и получи доступ к эксклюзивному контенту!",
+    "src\\features\\opponents\\PremiumModal.tsx"
+  ],
+  [
+    "Хочу такого героя",
+    "src\\features\\opponents\\PremiumModal.tsx"
+  ],
+  [
+    "Не удалось создать платеж",
+    "src\\shared\\lib\\sbpBilling.ts"
+  ],
+  [
+    "Не удалось проверить статус платежа",
+    "src\\shared\\lib\\sbpBilling.ts"
+  ],
+  [
+    "Не удалось применить промокод",
+    "src\\shared\\lib\\sbpBilling.ts"
+  ]
+]

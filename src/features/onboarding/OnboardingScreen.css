@@ -1,16 +1,17 @@
 .onboarding-screen {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: clamp(12px, 3vw, 20px);
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .onboarding-container {
   background: white;
   border-radius: 24px;
-  padding: 32px;
+  padding: clamp(20px, 5vw, 32px);
   max-width: 500px;
   width: 100%;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
@@ -21,7 +22,7 @@
   height: 8px;
   background: #E0E0E0;
   border-radius: 4px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   overflow: hidden;
 }
 
@@ -33,7 +34,7 @@
 }
 
 .onboarding-content {
-  min-height: 300px;
+  min-height: 250px;
 }
 
 .onboarding-step {
@@ -41,16 +42,16 @@
 }
 
 .onboarding-title {
-  font-size: 32px;
+  font-size: clamp(24px, 6vw, 32px);
   font-weight: 800;
   color: #212121;
   margin-bottom: 8px;
 }
 
 .onboarding-subtitle {
-  font-size: 18px;
+  font-size: clamp(14px, 3vw, 18px);
   color: #757575;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .onboarding-input-group {
@@ -215,9 +216,12 @@
 }
 
 /* Адаптивность */
+
+/* Мобильные */
 @media (max-width: 480px) {
   .onboarding-container {
-    padding: 24px 16px;
+    padding: 20px 14px;
+    border-radius: 20px;
   }
 
   .onboarding-title {
@@ -230,5 +234,72 @@
 
   .onboarding-skins {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .onboarding-option {
+    padding: 16px;
+  }
+
+  .option-icon {
+    font-size: 40px;
+  }
+
+  .option-title {
+    font-size: 16px;
+  }
+
+  .option-desc {
+    font-size: 13px;
+  }
+
+  .onboarding-input-group input {
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  .onboarding-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .onboarding-actions .btn {
+    max-width: none;
+  }
+
+  .summary-item {
+    font-size: 14px;
+    gap: 8px;
+  }
+
+  .summary-icon {
+    font-size: 20px;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 375px) {
+  .onboarding-container {
+    padding: 16px 10px;
+  }
+
+  .onboarding-title {
+    font-size: 20px;
+  }
+
+  .onboarding-subtitle {
+    font-size: 14px;
+  }
+
+  .option-icon {
+    font-size: 36px;
+  }
+
+  .option-title {
+    font-size: 14px;
+  }
+
+  .skin-piece {
+    font-size: 28px;
   }
 }
