@@ -54,27 +54,27 @@
   ],
   "redirects": [
     {
-      "source": "/reset-password",
+      "source": "/reset-password/",
       "destination": "/play/reset-password/",
       "permanent": false
     },
     {
-      "source": "/play/subscribe",
+      "source": "/play/subscribe/",
       "destination": "/play/",
       "permanent": true
     },
     {
-      "source": "/play/payment",
+      "source": "/play/payment/",
       "destination": "/play/",
       "permanent": true
     },
     {
-      "source": "/play/payment-success",
+      "source": "/play/payment-success/",
       "destination": "/play/",
       "permanent": true
     },
     {
-      "source": "/play/billing-required",
+      "source": "/play/billing-required/",
       "destination": "/play/",
       "permanent": true
     }
