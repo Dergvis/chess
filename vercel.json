@@ -31,6 +31,15 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
+    },
+    {
+      "source": "/play/:path(home|login|reset-password|hero-select|account|profile|match|game|result)/",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
     }
   ],
   "rewrites": [
@@ -51,23 +60,23 @@
     },
     {
       "source": "/play/subscribe",
-      "destination": "/play/home/",
-      "permanent": false
+      "destination": "/play/",
+      "permanent": true
     },
     {
       "source": "/play/payment",
-      "destination": "/play/home/",
-      "permanent": false
+      "destination": "/play/",
+      "permanent": true
     },
     {
       "source": "/play/payment-success",
-      "destination": "/play/home/",
-      "permanent": false
+      "destination": "/play/",
+      "permanent": true
     },
     {
       "source": "/play/billing-required",
-      "destination": "/play/home/",
-      "permanent": false
+      "destination": "/play/",
+      "permanent": true
     }
   ]
 }
