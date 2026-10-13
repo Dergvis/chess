@@ -21,8 +21,8 @@ export default function ResetPasswordScreen() {
       setError("This reset link is invalid");
       return;
     }
-    if (password.length < 6) {
-      setError("Use at least 6 characters for your password");
+    if (password.length < 8) {
+      setError("Use at least 8 characters for your password");
       return;
     }
     if (password !== passwordConfirm) {

@@ -81,8 +81,8 @@ export default function LoginScreen({ onLogin }: LoginScreenProps) {
       return;
     }
 
-    if (password.length < 6) {
-      setError("Use at least 6 characters for your password");
+    if (password.length < 8) {
+      setError("Use at least 8 characters for your password");
       return;
     }
 
@@ -182,7 +182,7 @@ export default function LoginScreen({ onLogin }: LoginScreenProps) {
                   type="password"
                   className="form-input"
                 disabled={!!registered}
-                  placeholder="At least 6 characters"
+                  placeholder="At least 8 characters"
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
                   autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
