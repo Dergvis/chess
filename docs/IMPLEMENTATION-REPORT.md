@@ -41,7 +41,7 @@ Future tactic URLs and /research/ are not filled with speculative content. The p
 
 ## Deployment and limits
 
-On 13 October 2026, commit `7314fb2` was promoted to Vercel Production as deployment `CbyrKz2WAo2FbHKfa3SpW6gx4YkM` for `chezzies.app`. The owner completed a real password reset from the HTML email and signed back in on Preview. A second Preview origin with empty browser storage restored a synthetic account's selected hero from Neon. The production database is separate from Preview, so that Preview account must be registered again on the live domain; live-domain registration and save restoration need a separate check.
+On 13 October 2026, commit `7314fb2` was promoted to Vercel Production as deployment `CbyrKz2WAo2FbHKfa3SpW6gx4YkM` for `chezzies.app`. The owner completed a real password reset from the HTML email and signed back in on Preview. A second Preview origin with empty browser storage restored a synthetic account's selected hero from Neon. The production database is separate from Preview. The owner registered again on the live domain and confirmed that hero and progress restored in another session. Commit `6d988df` was then promoted as Production deployment `D9ygp28CWqX9XkfDo3eK3xnmQWeN` after the legacy Help chat was found to call a retired API.
 
 - The promised approved homepage mockup has not been supplied. The site uses verified game artwork; exact design comparison remains pending.
 - Mobile checks use Chrome viewport emulation, not physical Safari/iOS devices. No claim of measured field Core Web Vitals or guaranteed search/AI inclusion.
