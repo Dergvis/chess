@@ -1,3 +1,4 @@
+import neonAccount from './neon-account.mjs';
 const methods=new Map([
  ['/api/site-events',['POST']],
  ['/api/auth/register',['POST']],['/api/auth/login',['POST']],['/api/auth/logout',['POST']],['/api/auth/me',['GET']],['/api/auth/request-password-reset',['POST']],['/api/auth/reset-password',['POST']],['/api/player/progress',['GET','PUT']],['/api/world/account',['GET','PUT']],['/api/world/health',['GET']],['/api/support/my',['GET']],['/api/support/messages',['POST']]
@@ -9,6 +10,7 @@ export default async function handler(req,res){
  const host=process.env.VERCEL_URL;
  const origins=new Set(['https://chezzies.app','https://www.chezzies.app',host?'https://'+host:'',process.env.VERCEL_BRANCH_URL?'https://'+process.env.VERCEL_BRANCH_URL:'']);
  if(req.headers.origin&&!origins.has(req.headers.origin))return res.status(403).json({error:'This origin is not allowed.'});
+ if(process.env.DATABASE_URL && !path.startsWith('/api/support/'))return neonAccount(req,res,path);
  if(!process.env.CHEZZIES_API_ORIGIN||!process.env.API_BRIDGE_TOKEN)return res.status(503).json({error:'Account service is not connected yet. You can continue playing as a guest.'});
  let upstream;try{upstream=new URL(process.env.CHEZZIES_API_ORIGIN);if(upstream.protocol!=='https:'||upstream.username||upstream.password||/(^|\.)chezzies\.ru$/.test(upstream.hostname))throw Error();}catch{return res.status(503).json({error:'The international account service is not configured correctly.'});}
  const target=new URL(path,upstream);const query=new URL(req.url,'https://chezzies.app').searchParams;
