@@ -98,7 +98,6 @@ export default function LoginScreen({ onLogin }: LoginScreenProps) {
 
     setLoading(true);
     try {
-      if(mode==='register')sessionStorage.setItem('chezzies-save-guest','1');
       const user = registered || (mode === 'register'
         ? await registerUser(normalizedEmail, password, childName.trim())
         : await loginUser(normalizedEmail, password));

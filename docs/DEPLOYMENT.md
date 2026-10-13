@@ -8,6 +8,8 @@ The Vercel project has a Neon database connected for Preview and Production. `DA
 
 Preview verification on 13 October: deployment `1faa418` created a new test account without a false save warning; after choosing Laserhorse, a second Preview origin with independent browser storage signed in and restored Laserhorse from Neon. The first synthetic account was created before Preview branching was enabled, so that test row is also present in the main Neon database. Remove synthetic rows through the Neon data editor after the owner's two-factor verification, or leave them inert until a maintenance window; they use `example.invalid` addresses and cannot receive mail.
 
+Account-isolation QA found that registering from the sign-in screen could mark a previous browser save for guest import even when the player had not chosen to save a guest adventure. The UI now marks import only from the in-game guest save action. Retest a new account after this change: it must start with hero selection, while a returning account restores its own hero.
+
 ## Legacy separate-service option
 
 The owner chose separate accounts and progress from chezzies.ru. The production server source was obtained from `C:/Users/Max/Desktop/chezzies-api`. Only server.js, world-routes.cjs, promo-routes.js and package manifests were copied. No environment files, signing keys, cookies, databases, user saves or logs were imported.
