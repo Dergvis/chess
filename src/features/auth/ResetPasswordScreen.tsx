@@ -1,11 +1,12 @@
-import { useMemo, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { resetPassword } from '../../shared/lib/authApi';
 import './LoginScreen.css';
 
 export default function ResetPasswordScreen() {
   const navigate = useNavigate();
-  const token = useMemo(() => new URLSearchParams(window.location.search).get('token') || '', []);
+  const location = useLocation();
+  const token = new URLSearchParams(location.search).get('token') || '';
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [error, setError] = useState('');
@@ -55,6 +56,14 @@ export default function ResetPasswordScreen() {
         </header>
 
         <main className="login-main">
+          {!token ? (
+            <div className="login-form">
+              <p className="form-error">This reset link is incomplete. Open the full link from your email, or request a new one.</p>
+              <button type="button" className="btn btn-primary btn-block btn-large" onClick={() => navigate('/login')}>
+                Request a new link
+              </button>
+            </div>
+          ) : (
           <form className="login-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label className="form-label" htmlFor="password">
@@ -91,6 +100,7 @@ export default function ResetPasswordScreen() {
               {loading ? "Please wait..." : "Save password"}
             </button>
           </form>
+          )}
         </main>
       </div>
     </div>
