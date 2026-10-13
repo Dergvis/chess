@@ -21,7 +21,7 @@ function status(ok: boolean) {
 export function queueSave(s: WorldSave) {
   if (typeof window === "undefined" || resetting || !worldAccount() || localStorage.getItem(worldKey("chezzies-pending-guest"))) return;
   pending = {
-    save: JSON.parse(JSON.stringify(s)),
+    save: JSON.parse(JSON.stringify({ ...s, updatedAt: s.updatedAt || Date.now() })),
     account: worldAccount(),
     url: endpoint(),
   };

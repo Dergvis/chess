@@ -41,6 +41,8 @@ Future tactic URLs and /research/ are not filled with speculative content. The p
 
 ## Release gates and limits
 
+**13 October update:** The Vercel project now has Neon connected and the review branch includes direct database-backed registration, sessions, player progress, and world saves. A synthetic account registered on Preview, signed out and back in, and recovered its selected hero from a second origin with empty browser storage. Preview database branching was then enabled; the next deployment must be retested against its own branch. Password reset email is not configured yet, so this account change has not been promoted to Production. The older release-gate notes below describe the original separate-service plan and should not be read as the current architecture.
+
 1. The separate international backend has not been provisioned online. The Vercel bridge needs CHEZZIES_API_ORIGIN and API_BRIDGE_TOKEN. The local source folder alone cannot create a persistent online service. Until connected, Preview supports guest play and clearly reports unavailable account service.
 2. Configure an international SMTP sender and verify the actual password reset email and live cross-device save flow. No real emails, customer accounts or production payments were used in tests.
 3. The promised approved homepage mockup has not been supplied. The draft uses the verified game artwork; exact design comparison remains pending.

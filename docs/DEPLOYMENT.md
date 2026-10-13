@@ -1,8 +1,12 @@
 # International deployment
 
-Frontend: existing Vercel project connected to Dergvis/chess, branch international-site. Never merge to main without the owner’s explicit approval. Vercel builds `npm run build`, publishes `dist` and deploys `api/backend.mjs` as the narrowly scoped account bridge. Preview HTML is noindex. There is no generic SPA fallback for marketing URLs or unknown game routes.
+Frontend: existing Vercel project connected to Dergvis/chess, branch international-site. Never merge to main without the owner’s explicit approval. Vercel builds `npm run build`, publishes `dist` and deploys `api/backend.mjs` for account and save APIs. Preview HTML is noindex. There is no generic SPA fallback for marketing URLs or unknown game routes.
 
-## Separate account service
+## Vercel and Neon account storage
+
+The Vercel project has a Neon database connected for Preview and Production. `DATABASE_URL` is supplied by the integration; do not put it in Git or expose it to browser code. The API creates `international_*` tables on first use, hashes passwords with scrypt, uses opaque HttpOnly session cookies, and stores each account's world save and player progress under its user ID. It does not read the Russian production database. Preview database branching was enabled on 13 October 2026 for future deployments; older Preview deployments shared the main database. A new Preview deployment is required to exercise the isolated branch. Password reset needs `RESEND_API_KEY` and `RESET_EMAIL_FROM` in Vercel before the account release. Do not promote the account change until a test email and reset flow pass.
+
+## Legacy separate-service option
 
 The owner chose separate accounts and progress from chezzies.ru. The production server source was obtained from `C:/Users/Max/Desktop/chezzies-api`. Only server.js, world-routes.cjs, promo-routes.js and package manifests were copied. No environment files, signing keys, cookies, databases, user saves or logs were imported.
 
