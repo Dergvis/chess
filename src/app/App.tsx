@@ -34,7 +34,6 @@ import SubscribeScreen from '../features/billing/SubscribeScreen';
 import PaymentSuccessScreen from '../features/billing/PaymentSuccessScreen';
 import BillingRequiredScreen from '../features/billing/BillingRequiredScreen';
 
-import SupportChat from '../features/support/SupportChat';
 import './App.css';
 
 // РњР°РїРїРёРЅРі URL в†’ appState
@@ -895,7 +894,6 @@ export default function App() {
       </div> : renderScreen()}
       </div>
       </MobileGameShell>
-      {appState !== 'admin' && <SupportChat key={getAuth().userId || 'guest'} />}
     </div>
   );
 }

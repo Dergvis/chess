@@ -47,3 +47,4 @@ On 13 October 2026, commit `7314fb2` was promoted to Vercel Production as deploy
 - Mobile checks use Chrome viewport emulation, not physical Safari/iOS devices. No claim of measured field Core Web Vitals or guaranteed search/AI inclusion.
 - Vite reports a large game bundle and an existing mixed static/dynamic import warning. The marketing layer loads a much smaller bundle. Dependency audit contains inherited advisories for later maintenance.
 - The review branch remains unmerged into `main`; deployment uses Vercel's Production promotion. IndexNow submission has not been run.
+- The legacy in-game support chat still depends on the retired separate service. It has been hidden in the next release because it returned 503 on the live site. A replacement support channel and admin reply workflow remain to be designed and deployed.

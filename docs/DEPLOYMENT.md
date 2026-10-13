@@ -20,6 +20,8 @@ The `server/` directory remains as an archival option; the deployed account API 
 
 The old bridge would need its own HTTPS service and secrets if ever chosen as a replacement architecture. It is not required for the current Vercel deployment.
 
+The old support-chat endpoints still require that retired service. The game hides the Help chat until a separate support inbox and reply workflow are connected, avoiding repeated 503 requests and a nonfunctional Send button.
+
 Optional Google Analytics uses measurement ID `G-NCWBHEH877` after visitor consent. Its implementation excludes names, email addresses and save contents. First-party site events remain allowlisted and anonymous.
 
 ## Local verification
