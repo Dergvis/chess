@@ -4,28 +4,23 @@ Frontend: existing Vercel project connected to Dergvis/chess, branch internation
 
 ## Vercel and Neon account storage
 
-The Vercel project has a Neon database connected for Preview and Production. `DATABASE_URL` is supplied by the integration; do not put it in Git or expose it to browser code. The API creates `international_*` tables on first use, hashes passwords with scrypt, uses opaque HttpOnly session cookies, and stores each account's world save and player progress under its user ID. It does not read the Russian production database. Preview database branching was enabled on 13 October 2026 for future deployments; older Preview deployments shared the main database. The Resend domain `chezzies.app` was verified on 13 October; its DKIM, sending CNAME and DMARC records are in Vercel DNS. Vercel has `RESEND_API_KEY` (secret, Resend sending access scoped to `chezzies.app`) and `RESET_EMAIL_FROM=CHEZZIES <accounts@chezzies.app>` for Preview and Production. Preview deployment `8pPYZmdohv8g4i1NMiSyKga3GLPp` was rebuilt with those variables, and the reset request endpoint returned success for an unknown email. Do not promote the account change until an actual test email and reset flow pass.
+The Vercel project has a Neon database connected for Preview and Production. `DATABASE_URL` is supplied by the integration; do not put it in Git or expose it to browser code. The API creates `international_*` tables on first use, hashes passwords with scrypt, uses opaque HttpOnly session cookies, and stores each account's world save and player progress under its user ID. It does not read the Russian production database. Preview database branching was enabled on 13 October 2026; Preview accounts and saves do not automatically transfer to Production. The Resend domain `chezzies.app` was verified on 13 October; its DKIM, sending CNAME and DMARC records are in Vercel DNS. Vercel has `RESEND_API_KEY` (secret, Resend sending access scoped to `chezzies.app`) and `RESET_EMAIL_FROM=CHEZZIES <accounts@chezzies.app>` for Preview and Production.
+
+The owner received the new HTML reset email, changed the password and signed back in on Preview. Commit `7314fb2` was promoted as Production deployment `CbyrKz2WAo2FbHKfa3SpW6gx4YkM` on 13 October 2026. Production registration and cross-device save recovery require a separate live-domain check because the Preview database is isolated.
 
 Preview verification on 13 October: deployment `1faa418` created a new test account without a false save warning; after choosing Laserhorse, a second Preview origin with independent browser storage signed in and restored Laserhorse from Neon. The first synthetic account was created before Preview branching was enabled, so that test row is also present in the main Neon database. Remove synthetic rows through the Neon data editor after the owner's two-factor verification, or leave them inert until a maintenance window; they use `example.invalid` addresses and cannot receive mail.
 
-Account-isolation QA found that registering from the sign-in screen could mark a previous browser save for guest import even when the player had not chosen to save a guest adventure. The UI now marks import only from the in-game guest save action. Retest a new account after this change: it must start with hero selection, while a returning account restores its own hero.
-Deployment `d21466e` passed this retest on Preview: after a returning account restored Officer Cannon, signing out and registering a different account in the same browser showed hero selection rather than Officer Cannon. End-to-end password recovery email remains the release gate.
+Account-isolation QA found that registering from the sign-in screen could mark a previous browser save for guest import even when the player had not chosen to save a guest adventure. The UI now marks import only from the in-game guest save action. Deployment `d21466e` passed the retest on Preview: after a returning account restored Officer Cannon, signing out and registering a different account in the same browser showed hero selection rather than Officer Cannon.
 
-## Legacy separate-service option
+## Retired separate-service option
 
 The owner chose separate accounts and progress from chezzies.ru. The production server source was obtained from `C:/Users/Max/Desktop/chezzies-api`. Only server.js, world-routes.cjs, promo-routes.js and package manifests were copied. No environment files, signing keys, cookies, databases, user saves or logs were imported.
 
-Run `server/Dockerfile` as a NEW service with a persistent disk mounted at `/data`. The source preserves the existing auth/password hashing, sessions, guest merge and world-save format. Node 24's built-in SQLite driver replaces the old native driver while retaining the existing SQL schema and queries. It fails on database initialization errors instead of silently using memory. The database and cookie names are international-specific. Never mount the Russian database or world-data directory here.
+The `server/` directory remains as an archival option; the deployed account API uses Neon in `api/neon-account.mjs`. Do not deploy the legacy service alongside the live Neon account API. Never mount the Russian database or world-data directory here.
 
-Service variables: see `server/.env.example`. Configure HTTPS, `PUBLIC_BASE_URL=https://chezzies.app`, a long random `API_BRIDGE_TOKEN`, `REQUIRE_BRIDGE=true`, and an international sender/SMTP account for password reset emails. The bridge forwards the session cookie without a Domain attribute, scoped to the website origin. The server has no payment endpoints exposed and does not subscribe to payment webhooks.
+The old bridge would need its own HTTPS service and secrets if ever chosen as a replacement architecture. It is not required for the current Vercel deployment.
 
-Vercel variables, scoped to Preview and later Production:
-- `CHEZZIES_API_ORIGIN`: the new service’s HTTPS origin. chezzies.ru is explicitly rejected.
-- `API_BRIDGE_TOKEN`: same secret as the new service.
-
-Without these variables, account requests return a clear 503 and guest gameplay remains available. **A guest-only preview is not a complete account migration.** Provisioning the server and verifying live registration, email reset and cross-device saves remain release gates.
-
-Analytics sends only allowlisted anonymous event names, broad source categories and known landing paths to `/api/site-events`. The service appends a bounded-shape envelope to `site-events.jsonl`; configure normal log rotation on the host. Passwords, child names, email addresses, query parameters, cookies and full referrers are excluded. Auth data is used separately for account operation.
+Optional Google Analytics uses measurement ID `G-NCWBHEH877` after visitor consent. Its implementation excludes names, email addresses and save contents. First-party site events remain allowlisted and anonymous.
 
 ## Local verification
 

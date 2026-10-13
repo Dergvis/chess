@@ -10,9 +10,9 @@ The outdated Dergvis/chess April application was replaced using the actual curre
 - /play/ uses the current App/WorldApp, chess engine, board, heroes, fortress stages, guardians, Arena, training ground, progress, account flow and guest-to-account save merge. The engine was not replaced.
 - English game labels, tactical feedback, hints, catalogue explanations, guide, map, heroes, onboarding, profile and authentication. CSS-generated map labels and date formatting localized too.
 - PAYMENTS_ENABLED=false. Gates allow international content without purchase while normal journey prerequisites remain. Payment routes redirect to play, guest piece-animation restrictions are disabled, signup has no promo/checkout step, and payment events are excluded.
-- Separate international server configuration, database directory/name and session cookie. No Russian customer data imported. Node 24 built-in SQLite uses the existing SQL schema and queries. Persistence initialization fails closed instead of losing data in an in-memory fallback.
-- Restricted Vercel API bridge requires a configured international HTTPS backend and bridge token; it rejects chezzies.ru. Server payments are blocked even if called directly.
-- Anonymous first-party events: homepage_view, landing_view, play_click, game_start, puzzle_start, puzzle_complete, return_visit, signup_start, signup_complete. Allowlisted source and initial landing page only. No names/emails/query strings/full referrers in telemetry.
+- Separate international accounts and cloud saves use Neon through the Vercel API. Passwords are hashed, sessions use HttpOnly cookies, and each account's progress is stored under its user ID. No Russian customer data was imported.
+- Password recovery sends from the verified `chezzies.app` domain through Resend. Reset links expire after one hour; the UI detects links missing the token.
+- Optional consent-based Google Analytics (`G-NCWBHEH877`) and anonymous first-party events: homepage_view, landing_view, play_click, game_start, puzzle_start, puzzle_complete, return_visit, signup_start, signup_complete. No names/emails/save content in Analytics.
 
 ## Removed or retired
 
@@ -39,13 +39,11 @@ Future tactic URLs and /research/ are not filled with speculative content. The p
 - Browser game: hero selection, experience, tour/map, three real puzzles, first fortress stage, reload persistence, guest-to-account registration, logout and login. Map at 320/375/390/768/1440, puzzle at 320/390/768/1440. No browser exceptions or billing requests in that scenario.
 - Real local backend with synthetic accounts: registration/login/logout, cookie session, world save/load, stale-write rejection, two-account isolation, anonymous save rejection and blocked billing.
 
-## Release gates and limits
+## Deployment and limits
 
-**13 October update:** The Vercel project now has Neon connected and the review branch includes direct database-backed registration, sessions, player progress, and world saves. A synthetic account registered on Preview, signed out and back in, and recovered its selected hero from a second origin with empty browser storage. Preview database branching was then enabled; the next deployment must be retested against its own branch. Password reset email is not configured yet, so this account change has not been promoted to Production. The older release-gate notes below describe the original separate-service plan and should not be read as the current architecture.
+On 13 October 2026, commit `7314fb2` was promoted to Vercel Production as deployment `CbyrKz2WAo2FbHKfa3SpW6gx4YkM` for `chezzies.app`. The owner completed a real password reset from the HTML email and signed back in on Preview. A second Preview origin with empty browser storage restored a synthetic account's selected hero from Neon. The production database is separate from Preview, so that Preview account must be registered again on the live domain; live-domain registration and save restoration need a separate check.
 
-1. The separate international backend has not been provisioned online. The Vercel bridge needs CHEZZIES_API_ORIGIN and API_BRIDGE_TOKEN. The local source folder alone cannot create a persistent online service. Until connected, Preview supports guest play and clearly reports unavailable account service.
-2. Configure an international SMTP sender and verify the actual password reset email and live cross-device save flow. No real emails, customer accounts or production payments were used in tests.
-3. The promised approved homepage mockup has not been supplied. The draft uses the verified game artwork; exact design comparison remains pending.
-4. Mobile checks use Chrome viewport emulation, not physical Safari/iOS devices. No claim of measured field Core Web Vitals or guaranteed search/AI inclusion.
-5. Vite reports a large game bundle and an existing mixed static/dynamic import warning. The marketing layer loads a much smaller bundle. Dependency audit still contains inherited advisories and should be addressed before production promotion.
-6. No automatic merge to main, production domain switch or IndexNow submission.
+- The promised approved homepage mockup has not been supplied. The site uses verified game artwork; exact design comparison remains pending.
+- Mobile checks use Chrome viewport emulation, not physical Safari/iOS devices. No claim of measured field Core Web Vitals or guaranteed search/AI inclusion.
+- Vite reports a large game bundle and an existing mixed static/dynamic import warning. The marketing layer loads a much smaller bundle. Dependency audit contains inherited advisories for later maintenance.
+- The review branch remains unmerged into `main`; deployment uses Vercel's Production promotion. IndexNow submission has not been run.
