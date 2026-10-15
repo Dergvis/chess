@@ -1,15 +1,27 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getAuth } from '../../shared/storage/authStorage';
-import { sendSupportMessage } from '../../shared/lib/supportApi';
+import { getSupportRequests, sendSupportMessage, type SupportRequest } from '../../shared/lib/supportApi';
 import './SupportChat.css';
 
 export default function SupportChat() {
   const [open, setOpen] = useState(false);
   const [draft, setDraft] = useState('');
-  const [ticket, setTicket] = useState('');
+  const [requests, setRequests] = useState<SupportRequest[]>([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const signedIn = getAuth().isLoggedIn;
+
+  useEffect(() => {
+    if (!open) return;
+    let active = true;
+    const refresh = async () => {
+      try { const next = await getSupportRequests(); if (active) setRequests(next); }
+      catch (cause) { if (active) setError(cause instanceof Error ? cause.message : 'Could not load your questions.'); }
+    };
+    void refresh();
+    const timer = window.setInterval(() => void refresh(), 30000);
+    return () => { active = false; window.clearInterval(timer); };
+  }, [open]);
 
   const send = async () => {
     if (!draft.trim() || loading) return;
@@ -17,8 +29,9 @@ export default function SupportChat() {
     setError('');
     try {
       const result = await sendSupportMessage(draft.trim());
-      setTicket(result.ticket);
+      setRequests(current => [{ ticket: result.ticket, message: draft.trim(), createdAt: new Date().toISOString(), replies: [] }, ...current]);
       setDraft('');
+      void getSupportRequests().then(setRequests).catch(() => {});
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : 'Could not send your question.');
     } finally {
@@ -33,8 +46,13 @@ export default function SupportChat() {
         <button type="button" onClick={() => setOpen(false)} aria-label="Close help">×</button>
       </header>
       <div className="support-messages">
-        {ticket ? <div className="support-empty" role="status">Question #{ticket} was sent. Thank you.</div> : <div className="support-empty">Tell us what happened and which screen you were on. Do not include passwords or personal details. Your question goes to the CHEZZIES team in a private Telegram group. Replies in the game are not available yet.</div>}
-        {signedIn && <div className="support-empty">Your account is linked to the question number, but your email is not sent to Telegram.</div>}
+        {!requests.length && <div className="support-empty">Tell us what happened and which screen you were on. Do not include passwords or personal details. The CHEZZIES team can reply here.</div>}
+        {requests.map(request => <div className="support-thread" key={request.ticket}>
+          <div className="support-time">Question #{request.ticket}</div>
+          <div className="support-message user"><div className="support-bubble">{request.message}</div></div>
+          {request.replies.map((reply, index) => <div className="support-message" key={`${request.ticket}-${index}`}><div className="support-bubble">{reply.message}</div><div className="support-time">CHEZZIES team · {new Date(reply.createdAt).toLocaleString()}</div></div>)}
+        </div>)}
+        <div className="support-empty">{signedIn ? 'Your questions and replies follow your account across devices. Your email is not sent to Telegram.' : 'As a guest, replies are available in this browser. Sign in to keep them across devices.'}</div>
       </div>
       {error && <div className="support-error" role="alert">{error}</div>}
       <div className="support-compose">

@@ -1,7 +1,7 @@
 import neonAccount from './neon-account.mjs';
 const methods=new Map([
  ['/api/site-events',['POST']],
- ['/api/auth/register',['POST']],['/api/auth/login',['POST']],['/api/auth/logout',['POST']],['/api/auth/me',['GET']],['/api/auth/request-password-reset',['POST']],['/api/auth/reset-password',['POST']],['/api/player/progress',['GET','PUT']],['/api/world/account',['GET','PUT']],['/api/world/health',['GET']],['/api/support/my',['GET']],['/api/support/messages',['POST']]
+ ['/api/auth/register',['POST']],['/api/auth/login',['POST']],['/api/auth/logout',['POST']],['/api/auth/me',['GET']],['/api/auth/request-password-reset',['POST']],['/api/auth/reset-password',['POST']],['/api/player/progress',['GET','PUT']],['/api/world/account',['GET','PUT']],['/api/world/health',['GET']],['/api/support/my',['GET']],['/api/support/messages',['POST']],['/api/support/telegram-webhook',['POST']]
 ]);
 export default async function handler(req,res){
  res.setHeader('Cache-Control','no-store');

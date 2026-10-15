@@ -20,12 +20,27 @@ async function db(){
     await sql`CREATE TABLE IF NOT EXISTS international_reset_tokens (token_hash TEXT PRIMARY KEY,user_id UUID NOT NULL REFERENCES international_users(id) ON DELETE CASCADE,expires_at TIMESTAMPTZ NOT NULL,used_at TIMESTAMPTZ)`;
     await sql`CREATE TABLE IF NOT EXISTS international_auth_attempts (key_hash TEXT PRIMARY KEY,attempts INTEGER NOT NULL,window_start TIMESTAMPTZ NOT NULL)`;
     await sql`CREATE TABLE IF NOT EXISTS international_support_requests (id UUID PRIMARY KEY,user_id UUID REFERENCES international_users(id) ON DELETE SET NULL,message TEXT NOT NULL,created_at TIMESTAMPTZ NOT NULL DEFAULT now())`;
+    await sql`ALTER TABLE international_support_requests ADD COLUMN IF NOT EXISTS guest_hash TEXT`;
+    await sql`ALTER TABLE international_support_requests ADD COLUMN IF NOT EXISTS telegram_message_id BIGINT`;
+    await sql`CREATE UNIQUE INDEX IF NOT EXISTS international_support_telegram_idx ON international_support_requests(telegram_message_id)`;
+    await sql`CREATE INDEX IF NOT EXISTS international_support_guest_idx ON international_support_requests(guest_hash)`;
+    await sql`CREATE TABLE IF NOT EXISTS international_support_replies (id BIGSERIAL PRIMARY KEY,request_id UUID NOT NULL REFERENCES international_support_requests(id) ON DELETE CASCADE,telegram_message_id BIGINT NOT NULL UNIQUE,message TEXT NOT NULL,created_at TIMESTAMPTZ NOT NULL DEFAULT now())`;
   })().catch(e=>{initialized=undefined;throw e;});
   await initialized;return sql;
 }
 async function hashPassword(password){const salt=randomBytes(16).toString('hex');return `scrypt:${salt}:${(await scrypt(password,salt,64)).toString('hex')}`;}
 async function verifyPassword(password,stored){const [a,s,h]=String(stored).split(':');if(a!=='scrypt'||!/^[a-f0-9]{32}$/.test(s)||!/^[a-f0-9]{128}$/.test(h))return false;return timingSafeEqual(await scrypt(password,s,64),Buffer.from(h,'hex'));}
 function tokenOf(req){return String(req.headers.cookie||'').match(/(?:^|;\s*)chezzies_international_session=([^;]*)/)?.[1]||'';}
+function guestOf(req){return String(req.headers.cookie||'').match(/(?:^|;\s*)chezzies_support_guest=([a-f0-9]{64})(?:;|$)/)?.[1]||'';}
+function setGuestCookie(req,res,token){res.appendHeader('Set-Cookie',`chezzies_support_guest=${token}; Path=/api/support; HttpOnly; SameSite=Lax; Max-Age=31536000${process.env.VERCEL==='1'||req.headers['x-forwarded-proto']==='https'?'; Secure':''}`);}
+const webhookSecret=()=>sha(`chezzies-telegram-webhook:${process.env.TELEGRAM_BOT_TOKEN||''}`);
+let webhookReady=false;
+async function registerWebhook(){
+  if(webhookReady||process.env.VERCEL_ENV!=='production')return;
+  const response=await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/setWebhook`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:'https://chezzies.app/api/support/telegram-webhook/',secret_token:webhookSecret(),allowed_updates:['message'],drop_pending_updates:false}),signal:AbortSignal.timeout(10000)});
+  const result=await response.json();if(!response.ok||!result.ok)throw Error('telegram-webhook-registration-failed');
+  webhookReady=true;
+}
 function setCookie(req,res,token,age){res.setHeader('Set-Cookie',`${name}=${token}; Path=/; HttpOnly; SameSite=Lax; Max-Age=${age}${process.env.VERCEL==='1'||req.headers['x-forwarded-proto']==='https'?'; Secure':''}`);}
 async function currentUser(sql,req){const token=tokenOf(req);if(!/^[a-f0-9]{64}$/.test(token))return null;const r=await sql`SELECT u.id,u.email,u.child_name FROM international_sessions s JOIN international_users u ON u.id=s.user_id WHERE s.token_hash=${sha(token)} AND s.expires_at>now() LIMIT 1`;return r[0]||null;}
 async function session(sql,req,res,id){const token=randomBytes(32).toString('hex');await sql`INSERT INTO international_sessions(token_hash,user_id,expires_at) VALUES(${sha(token)},${id},now()+interval '30 days')`;setCookie(req,res,token,2592000);}
@@ -39,11 +54,32 @@ export default async function account(req,res,path){
   let sql;try{sql=await db();}catch(e){console.error('[account database]',e.message);return out(res,503,{error:'Account storage is temporarily unavailable. Guest play still works.'});}
   try{
     const b=typeof req.body==='string'?JSON.parse(req.body):req.body||{};
-    if(path==='/api/support/my')return out(res,200,{threadId:'',messages:[]});
+    if(path==='/api/support/telegram-webhook'){
+      const received=String(req.headers['x-telegram-bot-api-secret-token']||'');
+      const expected=webhookSecret();
+      if(!process.env.TELEGRAM_BOT_TOKEN||received.length!==expected.length||!timingSafeEqual(Buffer.from(received),Buffer.from(expected)))return out(res,403,{error:'Forbidden'});
+      if(Buffer.byteLength(JSON.stringify(b))>100000)return out(res,413,{error:'Update is too large'});
+      const message=b.message;
+      if(String(message?.chat?.id)!==String(process.env.TELEGRAM_CHAT_ID)||message?.from?.is_bot||!Number.isSafeInteger(message?.message_id)||!Number.isSafeInteger(message?.reply_to_message?.message_id)||typeof message?.text!=='string')return out(res,200,{ok:true});
+      const reply=message.text.trim();if(!reply||reply.length>4000)return out(res,200,{ok:true});
+      const parent=message.reply_to_message.message_id;
+      const request=await sql`SELECT id FROM international_support_requests WHERE telegram_message_id=${parent} UNION SELECT request_id AS id FROM international_support_replies WHERE telegram_message_id=${parent} LIMIT 1`;
+      if(request[0])await sql`INSERT INTO international_support_replies(request_id,telegram_message_id,message) VALUES(${request[0].id},${message.message_id},${reply}) ON CONFLICT(telegram_message_id) DO NOTHING`;
+      return out(res,200,{ok:true});
+    }
+    if(path==='/api/support/my'){
+      const u=await currentUser(sql,req),guest=guestOf(req);
+      if(!u&&!guest)return out(res,200,{requests:[]});
+      const requests=await sql`SELECT id,message,created_at FROM international_support_requests WHERE (${u?.id||null}::uuid IS NOT NULL AND user_id=${u?.id||null}) OR (${guest?sha(guest):null}::text IS NOT NULL AND guest_hash=${guest?sha(guest):null}) ORDER BY created_at DESC LIMIT 50`;
+      const ids=requests.map(r=>r.id);
+      const replies=ids.length?await sql`SELECT request_id,message,created_at FROM international_support_replies WHERE request_id=ANY(${ids}::uuid[]) ORDER BY created_at ASC`:[];
+      return out(res,200,{requests:requests.map(r=>({ticket:r.id.slice(0,8).toUpperCase(),message:r.message,createdAt:r.created_at,replies:replies.filter(a=>a.request_id===r.id).map(a=>({message:a.message,createdAt:a.created_at}))}))});
+    }
     if(path==='/api/support/messages'){
       const message=String(b.message||'').trim();
       if(!message||message.length>2000)return out(res,400,{error:'Write a question of up to 2,000 characters.'});
       if(!process.env.TELEGRAM_BOT_TOKEN||!process.env.TELEGRAM_CHAT_ID)return out(res,503,{error:'Support is temporarily unavailable. Please try again later.'});
+      await registerWebhook();
       const u=await currentUser(sql,req);
       const address=String(req.headers['x-forwarded-for']||req.socket?.remoteAddress||'unknown').split(',')[0].trim();
       if(await limited(sql,`support:${u?.id||sha(address)}`,5))return out(res,429,{error:'Too many questions. Please try again later.'});
@@ -53,8 +89,11 @@ export default async function account(req,res,path){
         body:JSON.stringify({chat_id:process.env.TELEGRAM_CHAT_ID,text:`CHEZZIES question #${ticket}\n\n${message}`,disable_web_page_preview:true}),
         signal:AbortSignal.timeout(10000)
       });
-      if(!telegram.ok)return out(res,502,{error:'Could not deliver your question. Please try again later.'});
-      await sql`INSERT INTO international_support_requests(id,user_id,message) VALUES(${id},${u?.id||null},${message})`;
+      const sent=await telegram.json();
+      if(!telegram.ok||!sent.ok||!Number.isSafeInteger(sent.result?.message_id))return out(res,502,{error:'Could not deliver your question. Please try again later.'});
+      const guest=guestOf(req)||randomBytes(32).toString('hex');
+      await sql`INSERT INTO international_support_requests(id,user_id,guest_hash,telegram_message_id,message) VALUES(${id},${u?.id||null},${sha(guest)},${sent.result.message_id},${message})`;
+      if(!guestOf(req))setGuestCookie(req,res,guest);
       return out(res,201,{ticket});
     }
     if(path==='/api/auth/register'){
