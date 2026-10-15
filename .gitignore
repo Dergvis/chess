@@ -1,3 +1,15 @@
 node_modules
 dist
 .env
+.npm-cache/
+.env*
+!.env.example
+.vercel/
+*.log
+server/*.db*
+server/world-data/
+server/client*
+server/cookies*
+server-test-data/
+test-output/
+audit/

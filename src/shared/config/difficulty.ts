@@ -15,9 +15,9 @@ import type { DifficultyPreset, DifficultyLevel } from '../types';
 export const difficultyPresets: DifficultyPreset[] = [
   {
     id: 'level_1',
-    displayName: 'Уровень 1',
-    subtitle: 'Новичок',
-    description: 'Почти случайные ходы. Идеально для самых начинающих.',
+    displayName: "Level 1",
+    subtitle: "Newcomer",
+    description: "Almost random moves. A starting point for newcomers.",
     icon: '👶',
     engineParams: {
       depth: 1,
@@ -33,9 +33,9 @@ export const difficultyPresets: DifficultyPreset[] = [
   },
   {
     id: 'level_2',
-    displayName: 'Уровень 2',
-    subtitle: 'Начинающий',
-    description: 'Делает простые ходы, часто ошибается.',
+    displayName: "Level 2",
+    subtitle: "Beginner",
+    description: "Makes simple moves and frequent mistakes.",
     icon: '🧒',
     engineParams: {
       depth: 1,
@@ -51,9 +51,9 @@ export const difficultyPresets: DifficultyPreset[] = [
   },
   {
     id: 'level_3',
-    displayName: 'Уровень 3',
-    subtitle: 'Ученик',
-    description: 'Понимает правила, но ещё слаб.',
+    displayName: "Level 3",
+    subtitle: "Learner",
+    description: "Understands the rules and is still learning.",
     icon: '📚',
     engineParams: {
       depth: 2,
@@ -69,9 +69,9 @@ export const difficultyPresets: DifficultyPreset[] = [
   },
   {
     id: 'level_4',
-    displayName: 'Уровень 4',
-    subtitle: 'Любитель',
-    description: 'Уже знает основы, видит простые тактики.',
+    displayName: "Level 4",
+    subtitle: "Casual player",
+    description: "Knows the basics and spots simple tactics.",
     icon: '♟️',
     engineParams: {
       depth: 2,
@@ -87,9 +87,9 @@ export const difficultyPresets: DifficultyPreset[] = [
   },
   {
     id: 'level_5',
-    displayName: 'Уровень 5',
-    subtitle: 'Клубный игрок',
-    description: 'Хороший игрок для своего клуба.',
+    displayName: "Level 5",
+    subtitle: "Club player",
+    description: "A stronger practice opponent.",
     icon: '🏆',
     engineParams: {
       depth: 3,
@@ -105,9 +105,9 @@ export const difficultyPresets: DifficultyPreset[] = [
   },
   {
     id: 'level_6',
-    displayName: 'Уровень 6',
-    subtitle: 'Опытный',
-    description: 'Серьёзный соперник с опытом.',
+    displayName: "Level 6",
+    subtitle: "Experienced",
+    description: "A serious, experienced opponent.",
     icon: '🎯',
     engineParams: {
       depth: 3,
@@ -123,9 +123,9 @@ export const difficultyPresets: DifficultyPreset[] = [
   },
   {
     id: 'level_7',
-    displayName: 'Уровень 7',
-    subtitle: 'Мастер',
-    description: 'Сильный игрок с глубоким пониманием.',
+    displayName: "Level 7",
+    subtitle: "Master",
+    description: "A strong player.",
     icon: '⭐',
     engineParams: {
       depth: 4,
@@ -141,9 +141,9 @@ export const difficultyPresets: DifficultyPreset[] = [
   },
   {
     id: 'level_8',
-    displayName: 'Уровень 8',
-    subtitle: 'Эксперт',
-    description: 'Очень сильный уровень для опытных.',
+    displayName: "Level 8",
+    subtitle: "Expert",
+    description: "A challenge for experienced players.",
     icon: '🔥',
     engineParams: {
       depth: 5,
@@ -159,9 +159,9 @@ export const difficultyPresets: DifficultyPreset[] = [
   },
   {
     id: 'level_9',
-    displayName: 'Уровень 9',
-    subtitle: 'Гроссмейстер',
-    description: 'Элита. Почти идеальная игра.',
+    displayName: "Level 9",
+    subtitle: "Grandmaster",
+    description: "A very strong opponent.",
     icon: '👑',
     engineParams: {
       depth: 6,
@@ -177,9 +177,9 @@ export const difficultyPresets: DifficultyPreset[] = [
   },
   {
     id: 'level_10',
-    displayName: 'Уровень 10',
-    subtitle: 'Легенда',
-    description: 'Максимальная сложность. Непобедим для смертных.',
+    displayName: "Level 10",
+    subtitle: "Legend",
+    description: "Maximum difficulty.",
     icon: '👹',
     engineParams: {
       depth: 7,

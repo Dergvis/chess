@@ -1,0 +1,4 @@
+.ga-consent{position:fixed;z-index:100000;bottom:48px;left:12px;width:min(440px,calc(100vw - 24px));box-sizing:border-box;padding:18px;border:1px solid #d9c493;border-radius:16px;background:#102d36;color:#fff;box-shadow:0 8px 30px #0007;font:14px/1.5 system-ui,sans-serif}
+.ga-consent p{margin:0 0 8px}.ga-consent a{color:#ffe0a1}.ga-consent>div{display:flex;gap:10px;margin-top:14px}.ga-consent button{flex:1;padding:10px;border:1px solid #d9c493;border-radius:8px;background:#f4dda6;color:#102d36;font:600 14px system-ui;cursor:pointer}
+.ga-settings{position:fixed;z-index:99999;bottom:8px;left:8px;padding:6px 10px;border:1px solid #b6c6ca;border-radius:8px;background:#102d36;color:white;font:12px system-ui;cursor:pointer}
+.ga-consent button:focus-visible,.ga-settings:focus-visible{outline:3px solid #fff;outline-offset:3px}

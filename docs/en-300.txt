@@ -1,0 +1,300 @@
+300 Could not start the chess engine.
+301 The game sequence is invalid
+302 The position does not match the played move
+303 CHEZZIES · Arena
+304 Player
+305 VICTORY!
+306 EVENLY MATCHED!
+307 A GOOD BATTLE!
+308 Rewards earned
+309 HERO
+310 step
+311 steps
+312 steps
+313 SKILL
+314 Looking for discoveries…
+315 New experience
+316 WORLD
+317 Continue the skill journey
+318 Another
+319 challenge
+320 challenges
+321 challenges
+322 Every fortress is yours!
+323 Reviewing your game…
+324 Retry the review
+325 Collect your power-up →
+326 Replay a moment from your game
+327 See a moment from your game
+328 A short game is the start of a journey.
+329 This game did not contain a simple learning moment.
+330 Practice challenge →
+331 Return to the world
+332 Laser gaze — two beams from the eyes.
+333 A storm in the sceptre — direct the lightning.
+334 Sunshine shot — launch a rocket.
+335 Guardian
+336 Every part collected! Test your strength in the Arena.
+337 Until the next part —
+338 point
+339 points
+340 points
+341 . Solve new challenges and use your discoveries in the Arena.
+342 Solve another
+343 puzzle
+344 puzzles
+345 puzzles
+346 — opens
+347 There was a fork in your game. Shall we find it together?
+348 There is a useful moment in your game. Shall we try again?
+349 Challenges completed. Use your discoveries in the Arena!
+350 Practise a tactic that appeared in your game.
+351 Continue the journey: learn, spot, use and beat the Guardian.
+352 Game master
+353 Confident tactician
+354 Confident learner
+355 First discoveries
+356 Adventure ahead
+357 Hero attack
+358 Basic cannon
+359 Optical sight
+360 Boosted charge
+361 Super shot
+362 Aim and hit the target.
+363 Precision shot
+364 The sight helps you aim the cannon
+365 Powerful charge
+366 Steady aim
+367 Powerful blast
+368 Laser gaze
+369 Focusing lenses
+370 Beam amplifier
+371 Double beam
+372 Hold to charge. Aim and release to fire.
+373 One eye beam
+374 Easier to catch the charge
+375 Strong pulse
+376 The beam reaches a nearby target
+377 Two eye beams
+378 Sceptre
+379 Lightning crystal
+380 Conductors
+381 Storm sceptre
+382 Chain lightning
+383 Tap the first target. Lightning jumps to nearby targets.
+384 One target
+385 Bright spark and two targets
+386 Energy reaches farther
+387 A chain of three targets
+388 Long-range chain lightning
+389 My hero
+390 Skills
+391 Adventure book
+392 ADVENTURE BOOK
+393 Close the book
+394 Your progress
+395 My skills
+396 My achievements
+397 LEVEL
+398 Hero appearances
+399 Weapon level
+400 steps to a power-up
+401 Every power-up collected!
+402 Other heroes
+403 Used in a game
+404 Game practice awaits
+405 GAMES
+406 WINS
+407 PUZZLES
+408 FORKS
+409 FORTRESSES
+410 SKILLS
+411 Chess week
+412 My fortresses
+413 Freed ✓
+414 Change hero
+415 ← Return to the world
+416 Choose an adventure hero
+417 Each grows in a different way. All earned improvements are saved.
+418 Your level:
+419 Future improvement · not earned yet
+420 Your hero now
+421 A completed stage
+422 Hero stages
+423 : see level
+424 Continue with this hero
+425 Choose a hero
+426 Fortress gates
+427 Strength:
+428 Solve puzzles to weaken the gates. At 0%, the fortress is yours!
+429 Guardian shields:
+430 Hit! Your attack charge is ready.
+431 Four chapters to free the fortress
+432 The first crack appeared in the gates!
+433 The first gate panel is broken!
+434 The stone arch has cracked!
+435 The tower’s defenses weakened!
+436 A tower battlement has fallen!
+437 A passage opened in the wall!
+438 The gates are almost open!
+439 Fork Kingdom completed!
+440 Fork Kingdom: a stone castle with blue towers
+441 Completed
+442 Challenge
+443 , completed
+444 ← World map
+445 TEST YOUR HERO’S STRENGTH
+446 JOURNEY COMPLETE
+447 A GREAT START
+448 AT THE GATES
+449 attacks!
+450 Another discovery!
+451 The gates are broken!
+452 Great hit! The fortress gates weakened
+453 Watch the gates…
+454 A new hero part:
+455 Challenges completed. Now use this skill in a full game.
+456 Chapter completed. New ways to spot and use the tactic await.
+457 Until the next fortress stage:
+458 challenges.
+459 Gate strength:
+460 Hit! Damage: −
+461 Fortress chapters
+462 World map
+463 Next stage
+464 Next challenge
+465 Start the challenge
+466 Repeat the challenges
+467 What is a fork?
+468 Return to the map
+469 Close the explanation
+470 Try it: one piece — two targets
+471 One piece. Two targets.
+472 Your knight
+473 Enemy king
+474 Enemy rook
+475 The knight attacks the king and rook together. The king must escape, leaving the rook to capture.
+476 Show it on our board →
+477 This is an explanation. Fortress progress does not change here.
+478 Map
+479 Hero
+480 Play
+481 Account
+482 Main sections
+483 Choose your hero
+484 Subscription
+485 Sign in
+486 Payment
+487 How to play
+488 ♟ Meet the pieces
+489 Meet the pieces
+490 Close the piece guide
+491 White
+492 Black
+493 Previous piece
+494 Next piece
+495 Swipe through pieces ·
+496 In progress
+497 Worth practising
+498 Going very well
+499 Getting there
+500 Find the best move.
+501 Explore the tactics first
+502 Challenges from familiar topics will appear here.
+503 The mist is clearing
+504 Practice:
+505 Training hall
+506 Nobody tells you which tactic to use here. Find the idea yourself.
+507 Revisit the tactics in new positions. Your freed fortresses stay yours.
+508 puzzles per series · continue with another series
+509 Your first answers help us choose the difficulty.
+510 Start practice →
+511 Practice completed!
+512 Solved
+513 Your record:
+514 solutions per series · difficulty reached
+515 of 5
+516 You are gaining practice at spotting chess tactics!
+517 Good practice. We will revisit these tactics later.
+518 +1 hero development point
+519 : this tactic was well hidden today. Practise it in the training ground?
+520 Practise:
+521 Next series →
+522 To the map →
+523 Misty Lands
+524 Today’s practice:
+525 Skill practice
+526 · Puzzle
+527 ♟ Meet the pieces?
+528 Swipe through the pieces
+529 Chess pieces
+530 White side:
+531 Black side:
+532 Ask a grown-up
+533 Ask a parent to help open new practice activities.
+534 Ask a grown-up
+535 Go back
+536 Open personal practice
+537 Open the whole world
+538 CHEZZIES notices which chess topics are trickier and suggests short challenges on those topics.
+539 For parents: more adventures and chess practice for your child.
+540 The game notices tricky topics
+541 For example, repeated mistakes with pins lead to more pin practice.
+542 Revisits the topic
+543 A similar idea will appear again in mixed challenges later.
+544 Shows progress to a parent
+545 See what is going well and what to practise again.
+546 Opens the whole world
+547 All fortresses, Misty Lands, the expanded training ground and new opponents.
+548 Open full access
+549 Not now
+550 Save progress
+551 Save your results?
+552 Save your hero?
+553 Your adventure has begun. Create a free profile to save your hero, fortresses and games, and continue on another device.
+554 Continue without an account
+555 Progress will stay on this device.
+556 This week
+557 Puzzles solved:
+558 Days played:
+559 Games played:
+560 First challenges completed. Use your discoveries in the Arena!
+561 A new clue appeared in your game. Look in
+562 : another
+563 challenges, and the fortress will change!
+564 Your knight is selected. Choose a square for the fork.
+565 Choose one of three moves.
+566 Choose a piece, then a destination square.
+567 Try again. Find a move that meets the goal.
+568 Nearly! The threat remains. Protect both targets or remove the attacker.
+569 Nearly! Your piece is not attacking a target yet. Try another square.
+570 Nearly! Your piece attacks only one target. Find a square for two.
+571 You found two targets. Check whether your opponent can capture your piece or whether you must escape check.
+572 Nearly! The move is legal. Look at the goal and try another way.
+573 ⚫ BLACK TO MOVE
+574 ⚪ WHITE TO MOVE
+575 Chapter
+576 YOUR GAME · MOVE
+577 ✓ Correct!
+578 Find a strong move
+579 One piece → two targets
+580 Look closely at the piece on
+581 Save your king from check.
+582 How can it attack two targets?
+583 Think about the challenge’s goal.
+584 % skill · +
+585 hero steps
+586 Return to the fortress
+587 Try again →
+588 Chain x
+589 Streak x
+590 Hit!
+591 Miss!
+592 How to play in the training ground
+593 Choose the chain’s first target
+594 Aim → hold → release!
+595 Tap a target. With an improved sceptre, lightning jumps to its neighbours!
+596 Hold, move your aim and release. More charge makes a stronger beam.
+597 Got it, let’s play!
+598 Tap a target to strike with the sceptre.
+599 Choose the first target. Catch the moment when targets are close together!

@@ -1,0 +1,20 @@
+{
+  "name": "chezzies-api",
+  "version": "1.0.0",
+  "description": "Chezzies SBP Billing API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "node-fetch": "^3.3.2",
+    "nodemailer": "^9.0.0"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
