@@ -19,6 +19,7 @@ async function db(){
     await sql`CREATE TABLE IF NOT EXISTS international_player_progress (user_id UUID PRIMARY KEY REFERENCES international_users(id) ON DELETE CASCADE,progress_json JSONB NOT NULL,updated_at TIMESTAMPTZ NOT NULL)`;
     await sql`CREATE TABLE IF NOT EXISTS international_reset_tokens (token_hash TEXT PRIMARY KEY,user_id UUID NOT NULL REFERENCES international_users(id) ON DELETE CASCADE,expires_at TIMESTAMPTZ NOT NULL,used_at TIMESTAMPTZ)`;
     await sql`CREATE TABLE IF NOT EXISTS international_auth_attempts (key_hash TEXT PRIMARY KEY,attempts INTEGER NOT NULL,window_start TIMESTAMPTZ NOT NULL)`;
+    await sql`CREATE TABLE IF NOT EXISTS international_support_requests (id UUID PRIMARY KEY,user_id UUID REFERENCES international_users(id) ON DELETE SET NULL,message TEXT NOT NULL,created_at TIMESTAMPTZ NOT NULL DEFAULT now())`;
   })().catch(e=>{initialized=undefined;throw e;});
   await initialized;return sql;
 }
@@ -38,6 +39,24 @@ export default async function account(req,res,path){
   let sql;try{sql=await db();}catch(e){console.error('[account database]',e.message);return out(res,503,{error:'Account storage is temporarily unavailable. Guest play still works.'});}
   try{
     const b=typeof req.body==='string'?JSON.parse(req.body):req.body||{};
+    if(path==='/api/support/my')return out(res,200,{threadId:'',messages:[]});
+    if(path==='/api/support/messages'){
+      const message=String(b.message||'').trim();
+      if(!message||message.length>2000)return out(res,400,{error:'Write a question of up to 2,000 characters.'});
+      if(!process.env.TELEGRAM_BOT_TOKEN||!process.env.TELEGRAM_CHAT_ID)return out(res,503,{error:'Support is temporarily unavailable. Please try again later.'});
+      const u=await currentUser(sql,req);
+      const address=String(req.headers['x-forwarded-for']||req.socket?.remoteAddress||'unknown').split(',')[0].trim();
+      if(await limited(sql,`support:${u?.id||sha(address)}`,5))return out(res,429,{error:'Too many questions. Please try again later.'});
+      const id=randomUUID(),ticket=id.slice(0,8).toUpperCase();
+      const telegram=await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`,{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({chat_id:process.env.TELEGRAM_CHAT_ID,text:`CHEZZIES question #${ticket}\n\n${message}`,disable_web_page_preview:true}),
+        signal:AbortSignal.timeout(10000)
+      });
+      if(!telegram.ok)return out(res,502,{error:'Could not deliver your question. Please try again later.'});
+      await sql`INSERT INTO international_support_requests(id,user_id,message) VALUES(${id},${u?.id||null},${message})`;
+      return out(res,201,{ticket});
+    }
     if(path==='/api/auth/register'){
       const email=emailOf(b.email),password=String(b.password||''),childName=String(b.childName||'').trim();
       if(!validEmail(email))return out(res,400,{error:'Enter a valid email address'});

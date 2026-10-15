@@ -20,7 +20,7 @@ The `server/` directory remains as an archival option; the deployed account API 
 
 The old bridge would need its own HTTPS service and secrets if ever chosen as a replacement architecture. It is not required for the current Vercel deployment.
 
-The old support-chat endpoints still require that retired service. The game hides the Help chat until a separate support inbox and reply workflow are connected, avoiding repeated 503 requests and a nonfunctional Send button.
+The one-way Help form is implemented on the Neon API and forwards each question to a private Telegram group. Configure `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` as Vercel server-only Production secrets before promoting the form. The bot must be a member of that group. The group invite URL is not the numeric chat ID. Send a group command to the bot and use the bot's `getUpdates` response to determine the group ID; do not put the token in Git, browser code, an issue, or a chat message. A submitted question receives a ticket number, is saved under the signed-in user if present, and is forwarded without email or account identifiers. Five questions per account or IP per 15 minutes are allowed. Telegram replies are not yet synchronized back into the game.
 
 Optional Google Analytics uses measurement ID `G-NCWBHEH877` after visitor consent. Its implementation excludes names, email addresses and save contents. First-party site events remain allowlisted and anonymous.
 

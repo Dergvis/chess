@@ -13,6 +13,7 @@ import { getPieceSkin } from '../entities/piece-skins/pieceSkins';
 import { getDifficultyPreset } from '../shared/config/difficulty';
 import { getSettings, updateSetting } from '../shared/storage/settingsStorage';
 import { getAuth, loginWithEmail, logout, getChildName } from '../shared/storage/authStorage';
+import SupportChat from '../features/support/SupportChat';
 import { getPlayerProgress, awardMatchXp, recordMatchResult, updateTrophies, updateProgress, selectHero } from '../shared/storage/playerProgressStorage';
 import { updateAchievementsProgress, initAchievements } from '../entities/character/achievements';
 import { updateMissionProgress } from '../entities/character/dailyMissions';
@@ -894,6 +895,7 @@ export default function App() {
       </div> : renderScreen()}
       </div>
       </MobileGameShell>
+      {appState !== 'admin' && <SupportChat key={getAuth().userId || 'guest'} />}
     </div>
   );
 }
