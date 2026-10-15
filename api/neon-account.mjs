@@ -70,7 +70,7 @@ export default async function account(req,res,path){
     if(path==='/api/support/my'){
       const u=await currentUser(sql,req),guest=guestOf(req);
       if(!u&&!guest)return out(res,200,{requests:[]});
-      const requests=await sql`SELECT id,message,created_at FROM international_support_requests WHERE (${u?.id||null}::uuid IS NOT NULL AND user_id=${u?.id||null}) OR (${guest?sha(guest):null}::text IS NOT NULL AND guest_hash=${guest?sha(guest):null}) ORDER BY created_at DESC LIMIT 50`;
+      const requests=await sql`SELECT id,message,created_at FROM (SELECT id,message,created_at FROM international_support_requests WHERE (${u?.id||null}::uuid IS NOT NULL AND user_id=${u?.id||null}) OR (${guest?sha(guest):null}::text IS NOT NULL AND guest_hash=${guest?sha(guest):null}) ORDER BY created_at DESC LIMIT 50) recent ORDER BY created_at ASC`;
       const ids=requests.map(r=>r.id);
       const replies=ids.length?await sql`SELECT request_id,message,created_at FROM international_support_replies WHERE request_id=ANY(${ids}::uuid[]) ORDER BY created_at ASC`:[];
       return out(res,200,{requests:requests.map(r=>({ticket:r.id.slice(0,8).toUpperCase(),message:r.message,createdAt:r.created_at,replies:replies.filter(a=>a.request_id===r.id).map(a=>({message:a.message,createdAt:a.created_at}))}))});

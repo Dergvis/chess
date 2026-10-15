@@ -92,6 +92,7 @@
 }
 
 .support-empty {
+  margin-bottom: 12px;
   padding: 14px;
   border-radius: 10px;
   background: #eef4ff;
