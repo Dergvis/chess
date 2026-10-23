@@ -34,6 +34,11 @@ test('Five article examples use playable positions from the production game',()=
 });
 test('Learning pages contain useful static examples and the same real game art',()=>{
  const read=slug=>readFileSync(`dist/${slug}/index.html`,'utf8');
+ for(const page of pages){
+  const html=read(page.slug);
+  assert(html.includes('class="article-hero-image"'),`Missing CHEZZIES world art on ${page.slug}`);
+  assert(html.includes('/marketing/world-wide.webp'));
+ }
  assert(read('how-to-play-chess-for-kids').includes('Meet the board and pieces'));
  assert(read('how-to-play-chess-for-kids').includes('/marketing/pieces/w-n.webp'));
  assert(read('chess-games-for-kids').includes('/marketing/gameplay-map.webp'));
