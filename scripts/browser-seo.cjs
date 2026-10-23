@@ -16,7 +16,7 @@ const base=process.env.CHEZZIES_LOCAL_URL||'http://127.0.0.1:4174';
  const fork=page.locator('[data-puzzle-id="fork-1"]');
  await fork.locator('[data-square="e4"]').click();await fork.locator('[data-square="d6"]').click();
  const feedback=await fork.locator('.example-feedback').innerText();console.log('fork result:',feedback);
- if(!feedback.includes('Correct'))throw Error('Real puzzle interaction failed');
+ if(!feedback.includes('Great move!'))throw Error('Real puzzle interaction failed');
  await page.goto(base+'/play/home/',{waitUntil:'domcontentloaded'});console.log('game route:',(await page.locator('body').innerText()).slice(0,180));
  if(errors.length)throw Error('Browser errors: '+errors.join(' | '));
  await browser.close();

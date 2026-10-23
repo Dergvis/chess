@@ -26,9 +26,11 @@ test('Five article examples use playable positions from the production game',()=
   assert(new Chess(position.fen).move({from:move.slice(0,2),to:move.slice(2,4)}),`Illegal solution ${example.id}`);
   assert(html.includes(`data-puzzle-id="${example.id}"`));
   assert(html.includes(`data-solution="${move}"`));
+  assert(html.includes(`start-square" data-square="${move.slice(0,2)}"`));
   assert(html.includes(example.answer));
  }
- assert(html.includes('<details><summary>Show the solution</summary>'));
+ assert(html.includes('<details><summary>Show the answer</summary>'));
+ assert(html.includes('<details><summary>Need a hint?</summary>'));
 });
 test('Learning pages contain useful static examples and the same real game art',()=>{
  const read=slug=>readFileSync(`dist/${slug}/index.html`,'utf8');

@@ -22,18 +22,19 @@ document.querySelectorAll<HTMLElement>('.example-card[data-fen]').forEach(card=>
  const position=new Chess(card.dataset.fen),solution=card.dataset.solution;
  const status=card.querySelector<HTMLElement>('.example-feedback');
  const squares=Array.from(card.querySelectorAll<HTMLButtonElement>('.example-square'));
+ const pieceNames:Record<string,string>={k:'king',q:'queen',r:'rook',b:'bishop',n:'knight',p:'pawn'};
  let selected:Square|null=null,solved=false,started=false;
  squares.forEach(square=>square.addEventListener('click',()=>{
   if(solved)return;
   if(!started){track('puzzle_start');started=true;}
   const target=square.dataset.square as Square,piece=position.get(target);
-  if(!selected){if(piece?.color!==position.turn()){status!.textContent='Select one of your pieces first.';return;}selected=target;square.setAttribute('aria-pressed','true');status!.textContent=`${piece.type.toUpperCase()} selected. Choose a destination.`;return;}
+  if(!selected){if(piece?.color!==position.turn()){status!.textContent='Tap a white piece to start.';return;}selected=target;square.setAttribute('aria-pressed','true');status!.textContent=`White ${pieceNames[piece.type]} selected. Now tap the square where it should go.`;return;}
   const from=selected;selected=null;
   squares.forEach(item=>item.setAttribute('aria-pressed','false'));
   let move;try{move=position.move({from,to:target,promotion:'q'});}catch{/* An illegal move remains on the initial board. */}
-  if(!move){status!.textContent='That move is not legal. Try another square.';return;}
-  if(from+target!==solution){position.undo();status!.textContent='A legal move, but look for the move that solves this challenge.';return;}
-  solved=true;status!.textContent=`Correct: ${move.san}. Open the solution below to see why it works.`;
+  if(!move){status!.textContent='That move is not allowed. Try a different square, or open the hint.';return;}
+  if(from+target!==solution){position.undo();status!.textContent='That move is allowed, but it does not solve this challenge. Try again or open the hint.';return;}
+  solved=true;status!.textContent='Great move! Open the answer below to see why it works.';
   const source=card.querySelector<HTMLButtonElement>(`[data-square="${from}"]`),image=source?.querySelector('img');
   if(image)square.replaceChildren(image);
   track('puzzle_complete');
