@@ -1,0 +1,217 @@
+900 Skip
+901 Choose your hero!
+902 This is your chess hero. You will grow and develop together!
+903 Hero pages
+904 Previous hero
+905 Show hero:
+906 Next hero
+907 Swipe through heroes ·
+908 Start the adventure!
+909 Choose a hero
+910 First victory!
+911 Win your first game
+912 Ten victories
+913 Win 10 games
+914 A hundred victories
+915 Win 100 games
+916 On fire!
+917 Win 3 games in a row
+918 Unstoppable!
+919 Win 10 games in a row
+920 First checkmate!
+921 Give your first checkmate
+922 Checkmate master
+923 Give 50 checkmates
+924 No losses!
+925 Win a game without losing a piece
+926 Captured the queen!
+927 Capture an enemy queen
+928 A week of chess!
+929 Play for 7 days in a row
+930 Mission explorer
+931 Complete 20 daily missions
+932 Common
+933 Rare
+934 Epic
+935 Legendary
+936 Hi! Let’s play!
+937 Ready for a game?
+938 Let’s begin!
+939 Great move!
+940 Clever!
+941 Good thinking!
+942 Oh, my piece!
+943 Unlucky...
+944 I can still come back!
+945 Check! Be careful!
+946 Watch out, check!
+947 Aha, check!
+948 Checkmate! Game over!
+949 That’s checkmate!
+950 The game is over!
+951 Hooray! I won!
+952 Victory!
+953 Great game!
+954 You won! Well played!
+955 Good game!
+956 Congratulations on your win!
+957 Pawnie
+958 A friendly beginner learning to play chess
+959 Hi! I’m Pawnie. Let’s play!
+960 Chess! I love it!
+961 You beat me! I’ll be back!
+962 Well played! I’m learning!
+963 Sergeant Rook
+964 A battle strategist who likes setting traps
+965 Hello there! Shall we play?
+966 I love chess!
+967 Clever! I like it!
+968 Wow, nice!
+969 You outsmarted me! Bravo!
+970 All right, you won!
+971 Captain Knight
+972 An experienced captain who plays calmly and thoughtfully
+973 Greetings! Ready for a thoughtful game?
+974 Chess rewards good thinking!
+975 A wise choice!
+976 Respect!
+977 Check! Think carefully!
+978 Look closely!
+979 You found the wiser plan this time!
+980 A well-earned victory!
+981 Queen Magister
+982 A powerful magister who plays like a champion
+983 Grr! Hello, champion!
+984 Ready for a strong game?
+985 Strong move!
+986 Powerful!
+987 Check! Defend yourself!
+988 I’m attacking!
+989 Grr! Victory is mine!
+990 I’m the champion!
+991 You were stronger today! Well played!
+992 Good game, friend!
+993 King Nexus
+994 A great king with big ambitions
+995 Hello! Let’s battle!
+996 This will be fiery!
+997 Things are heating up!
+998 Strong!
+999 Check! Grr!
+1000 Dragon attack!
+1001 Victory! A fiery champion!
+1002 Hooray!
+1003 You beat the king! Amazing!
+1004 I’ll be stronger next time!
+1005 Play 2 games
+1006 Chess player
+1007 Give checkmate
+1008 A knight’s move
+1009 Win while capturing a piece with a knight
+1010 Fortress
+1011 Castle your king
+1012 Winner
+1013 Win 1 game
+1014 Marathon player
+1015 Play 3 games
+1016 Hunter
+1017 Capture an enemy bishop
+1018 Queen hunter
+1019 Capture the enemy queen
+1020 Even the moon is in my sights!
+1021 I charge up from storm clouds!
+1022 I can blow the roof off!
+1023 Basic form
+1024 New armour
+1025 Glow and aura
+1026 A companion appeared!
+1027 Legendary form!
+1028 Hi! Let’s play!
+1029 Ready for battle?
+1030 For honour and glory!
+1031 Victory! Honour and glory!
+1032 We won!
+1033 A strong strike!
+1034 We’ll win next time!
+1035 I’ll be back!
+1036 That was a worthy opponent!
+1037 A draw... I’m not giving up!
+1038 An even game!
+1039 I’m unstoppable! 🔥
+1040 A winning streak! Powerful!
+1041 Nothing can stop me!
+1042 Checkmate! A chess strike! ⚔️
+1043 Royal checkmate!
+1044 Victory is mine!
+1045 Hello! Magic awaits!
+1046 Ready to plan?
+1047 Wisdom is my strength!
+1048 Magic won! ✨
+1049 The plan worked!
+1050 Thinking wins!
+1051 I need a better plan...
+1052 I’ll return with a new plan!
+1053 Wisdom comes with practice.
+1054 Evenly matched... An interesting game.
+1055 My magic is unstoppable! 🔮
+1056 A victory spell!
+1057 Every move calculated!
+1058 Magical checkmate! 🌟
+1059 The runes showed the way!
+1060 Chess magic!
+1061 Hello! The machines are ready!
+1062 Ready to invent?
+1063 Let’s create something!
+1064 The invention worked! 🔧
+1065 Brilliant!
+1066 The victory machine is running!
+1067 The machine needs some work...
+1068 Not every gear is in place yet.
+1069 I can fix this!
+1070 Even mechanics! More tests needed.
+1071 My machine is unstoppable! ⚡
+1072 Engineering wins!
+1073 A streak! My gadgets work!
+1074 Checkmate! An engineer’s approach! 🛠️
+1075 Mechanical checkmate!
+1076 Invention of the century!
+1077 ⚠️ CHECK!
+1078 White
+1079 Black
+1080 wins!
+1081 🏆 CHECKMATE! 🏆
+1082 Loading the game...
+1083 Stalemate!
+1084 Check!
+1085 To move:
+1086 Video unavailable
+1087 Only pawns are available in the free version. Subscribe to unlock the rest.
+1088 Subscribe
+1089 Resign
+1090 Pawn
+1091 Knight
+1092 Bishop
+1093 Rook
+1094 Queen
+1095 King
+1096 White
+1097 Black
+1098 Pawn promotion
+1099 Choose a piece:
+1100 🎉 Victory!
+1101 😢 Defeat
+1102 🤝 Stalemate!
+1103 Defeat
+1104 🤝 Draw!
+1105 You resigned. Your opponent won the game.
+1106 Your opponent resigned. You won the game.
+1107 Try again!
+1108 An interesting game!
+1109 Resignation
+1110 Moves
+1111 Reason
+1112 Stalemate
+1113 Time
+1114 Draw
+1115 🔄 Play again
+1116 🏠 Menu

@@ -6,7 +6,20 @@
     },
     "MOVE_CAPTURE": {
       "type": "pool",
-      "pool": ["catapult", "cannon", "banana_slip", "spring_launch", "ambulance", "rocket", "trapdoor", "fan_blow", "balloons_lift", "teleport", "spider_web", "broom_sweep"],
+      "pool": [
+        "catapult",
+        "cannon",
+        "banana_slip",
+        "spring_launch",
+        "ambulance",
+        "rocket",
+        "trapdoor",
+        "fan_blow",
+        "balloons_lift",
+        "teleport",
+        "spider_web",
+        "broom_sweep"
+      ],
       "random": true,
       "sound": "capture_generic"
     },
@@ -20,22 +33,34 @@
     },
     "STATE_CHECK": {
       "type": "reaction",
-      "pool": ["scared_jump", "angry_look", "surprised_gasps"],
+      "pool": [
+        "scared_jump",
+        "angry_look",
+        "surprised_gasps"
+      ],
       "random": true,
-      "text": "⚠️ ШАХ!",
+      "text": "⚠️ CHECK!",
       "sound": "check_alert"
     },
     "STATE_CHECKMATE": {
       "type": "scene",
       "winner": {
         "animation": "victory_pose",
-        "effects": ["confetti", "sparkles"]
+        "effects": [
+          "confetti",
+          "sparkles"
+        ]
       },
       "loser": {
-        "pool": ["white_flag", "suitcase_sit", "crown_slide", "theatrical_fall"],
+        "pool": [
+          "white_flag",
+          "suitcase_sit",
+          "crown_slide",
+          "theatrical_fall"
+        ],
         "random": true
       },
-      "text": "🏆 МАТ! 🏆",
+      "text": "🏆 CHECKMATE! 🏆",
       "sound": "checkmate_final"
     },
     "STATE_STALEMATE": {
@@ -43,17 +68,22 @@
       "both": {
         "animation": "shrug_confused"
       },
-      "text": "🤷 ПАТ!",
+      "text": "🤷 STALEMATE!",
       "sound": "stalemate_ohwell"
     },
     "STATE_WIN": {
       "animation": "victory_dance",
-      "effects": ["fireworks", "confetti"],
+      "effects": [
+        "fireworks",
+        "confetti"
+      ],
       "sound": "victory_fanfare"
     },
     "STATE_LOSE": {
       "animation": "lose_pose",
-      "effects": ["sad_cloud"],
+      "effects": [
+        "sad_cloud"
+      ],
       "sound": "lose_sad"
     },
     "STATE_HINT": {

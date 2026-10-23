@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /play/account/
+Disallow: /play/login/
+Sitemap: https://chezzies.app/sitemap.xml

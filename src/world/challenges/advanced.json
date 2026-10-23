@@ -1,0 +1,3564 @@
+[
+  {
+    "id": "advanced-fork-game-4-26",
+    "family": "advanced-game-4-26",
+    "skill": "fork",
+    "type": "MOVE",
+    "chapter": 2,
+    "difficulty": 5,
+    "fen": "rnb1r3/pppkbqpp/8/P2ppp2/8/1PPPPN2/1QRNP1PP/4KB1R w K - 3 14",
+    "player": "w",
+    "solutions": [
+      "f3e5"
+    ],
+    "prompt": "Find a safe fork. Do not lose your attacking piece.",
+    "explanation": "The piece on e5 attacks queen f7 and king d7.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "fork"
+    ],
+    "objective": {
+      "kind": "fork"
+    },
+    "scenario": "n:kq:-1,2",
+    "subskill": "fork",
+    "sourceRef": "validated:local-game:4:26",
+    "choices": [
+      "d2e4",
+      "f3d4",
+      "f3e5"
+    ],
+    "source": "f3"
+  },
+  {
+    "id": "advanced-fork-game-15-99",
+    "family": "advanced-game-15-99",
+    "skill": "fork",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 3,
+    "fen": "3r1n2/8/p1pk4/1pR1ppBp/1P6/PK1P1P2/5NB1/8 b - - 9 50",
+    "player": "b",
+    "solutions": [
+      "f8e6"
+    ],
+    "prompt": "Find a safe fork. Do not lose your attacking piece.",
+    "explanation": "The piece on e6 attacks bishop g5 and rook c5.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "fork"
+    ],
+    "objective": {
+      "kind": "fork"
+    },
+    "scenario": "n:br:-1,-2",
+    "subskill": "fork",
+    "sourceRef": "validated:local-game:15:99",
+    "choices": [
+      "f8d7",
+      "f8e6",
+      "f8g6"
+    ]
+  },
+  {
+    "id": "advanced-fork-game-1002-37",
+    "family": "advanced-game-1002-37",
+    "skill": "fork",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 5,
+    "fen": "r2q1bk1/p2bp3/1p1p1np1/5p1r/2P2P1p/P1Q1P3/NP1BN1PP/R3KB1R b KQ - 1 19",
+    "player": "b",
+    "solutions": [
+      "f6e4"
+    ],
+    "prompt": "Find a safe fork. Do not lose your attacking piece.",
+    "explanation": "The piece on e4 attacks bishop d2 and queen c3.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "fork"
+    ],
+    "objective": {
+      "kind": "fork"
+    },
+    "scenario": "n:bq:-1,-2",
+    "subskill": "fork",
+    "sourceRef": "validated:local-game:1002:37",
+    "choices": [
+      "a7a5",
+      "e7e5",
+      "f6e4"
+    ]
+  },
+  {
+    "id": "advanced-fork-game-1025-22",
+    "family": "advanced-game-1025-22",
+    "skill": "fork",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 5,
+    "fen": "r1kq1bnr/p2np2p/2p1b3/1p1p1p1B/1P1N1P2/3PP1P1/P1P4P/R1B1K1NR w KQ - 5 12",
+    "player": "w",
+    "solutions": [
+      "d4e6"
+    ],
+    "prompt": "Find a safe fork. Do not lose your attacking piece.",
+    "explanation": "The piece on e6 attacks bishop f8 and queen d8.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "fork"
+    ],
+    "objective": {
+      "kind": "fork"
+    },
+    "scenario": "n:bq:1,2",
+    "subskill": "fork",
+    "sourceRef": "validated:local-game:1025:22",
+    "choices": [
+      "d4b5",
+      "d4e6",
+      "d4f5"
+    ]
+  },
+  {
+    "id": "advanced-fork-game-1030-62",
+    "family": "advanced-game-1030-62",
+    "skill": "fork",
+    "type": "MOVE",
+    "chapter": 2,
+    "difficulty": 5,
+    "fen": "3rkb1r/3p3p/1p2npp1/p1pNp3/P1P3q1/1P1PP3/2KB4/1RQ2B2 w - - 2 32",
+    "player": "w",
+    "solutions": [
+      "d5f6"
+    ],
+    "prompt": "Find a safe fork. Do not lose your attacking piece.",
+    "explanation": "The piece on f6 attacks king e8 and queen g4.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "fork"
+    ],
+    "objective": {
+      "kind": "fork"
+    },
+    "scenario": "n:kq:2,1",
+    "subskill": "fork",
+    "sourceRef": "validated:local-game:1030:62",
+    "choices": [
+      "d2a5",
+      "d5b6",
+      "d5f6"
+    ],
+    "source": "d5"
+  },
+  {
+    "id": "advanced-fork-game-1065-110",
+    "family": "advanced-game-1065-110",
+    "skill": "fork",
+    "type": "MOVE",
+    "chapter": 2,
+    "difficulty": 4,
+    "fen": "4r3/8/r1kp2N1/ppp1p3/K1P1P1P1/R3Q2P/1P1N4/3R4 w - - 0 56",
+    "player": "w",
+    "solutions": [
+      "c4b5"
+    ],
+    "prompt": "Find a safe fork. Do not lose your attacking piece.",
+    "explanation": "The piece on b5 attacks king c6 and rook a6.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "fork"
+    ],
+    "objective": {
+      "kind": "fork"
+    },
+    "scenario": "p:kr:-1,1",
+    "subskill": "fork",
+    "sourceRef": "validated:local-game:1065:110",
+    "choices": [
+      "a4b3",
+      "c4b5"
+    ],
+    "source": "c4"
+  },
+  {
+    "id": "advanced-fork-game-1081-105",
+    "family": "advanced-game-1081-105",
+    "skill": "fork",
+    "type": "MOVE",
+    "chapter": 2,
+    "difficulty": 3,
+    "fen": "4R3/3n4/1p1N2p1/p1pB1p2/P1P4k/1P1K4/7P/8 b - - 5 53",
+    "player": "b",
+    "solutions": [
+      "d7f6"
+    ],
+    "prompt": "Find a safe fork. Do not lose your attacking piece.",
+    "explanation": "The piece on f6 attacks rook e8 and bishop d5.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "fork"
+    ],
+    "objective": {
+      "kind": "fork"
+    },
+    "scenario": "n:br:2,-1",
+    "subskill": "fork",
+    "sourceRef": "validated:local-game:1081:105",
+    "choices": [
+      "d7f6",
+      "f5f4",
+      "h4h3"
+    ]
+  },
+  {
+    "id": "advanced-mate-game-2-53",
+    "family": "advanced-game-2-53",
+    "skill": "mate",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 4,
+    "fen": "2q1r3/4k2p/p1ppp3/5pp1/1BPP4/3QP1P1/PP2RP1n/3BKR2 b - - 1 27",
+    "player": "b",
+    "solutions": [
+      "h2f3"
+    ],
+    "prompt": "Find checkmate in one move. Check every escape route.",
+    "explanation": "Check! The king cannot escape, block or capture the attacker.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "mate"
+    ],
+    "objective": {
+      "kind": "mate",
+      "moves": 1
+    },
+    "scenario": "n:mate:knpppppppqr",
+    "subskill": "mate",
+    "sourceRef": "validated:local-game:2:53",
+    "choices": [
+      "h2f1",
+      "h2f3",
+      "h2g4"
+    ]
+  },
+  {
+    "id": "advanced-mate-game-7-50",
+    "family": "advanced-game-7-50",
+    "skill": "mate",
+    "type": "MOVE",
+    "chapter": 2,
+    "difficulty": 5,
+    "fen": "rk2b3/ppn5/3Q2pn/2p5/2q1p2P/P1N1P3/1P1PNP2/R1B1KB1R w K - 1 26",
+    "player": "w",
+    "solutions": [
+      "d6d8"
+    ],
+    "prompt": "Find checkmate in one move. Check every escape route.",
+    "explanation": "Check! The king cannot escape, block or capture the attacker.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "mate"
+    ],
+    "objective": {
+      "kind": "mate",
+      "moves": 1
+    },
+    "scenario": "q:mate:bbknnppppppqrr",
+    "subskill": "mate",
+    "sourceRef": "validated:local-game:7:50",
+    "choices": [
+      "c3e4",
+      "d6c7",
+      "d6d8"
+    ],
+    "source": "d6"
+  },
+  {
+    "id": "advanced-mate-game-23-39",
+    "family": "advanced-game-23-39",
+    "skill": "mate",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 4,
+    "fen": "1rb1k1n1/p2p1p1r/1p2p1pp/bQ6/2Pp4/8/q2PB2P/3K4 b - - 1 20",
+    "player": "b",
+    "solutions": [
+      "a2d2"
+    ],
+    "prompt": "Find checkmate in one move. Check every escape route.",
+    "explanation": "Check! The king cannot escape, block or capture the attacker.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "mate"
+    ],
+    "objective": {
+      "kind": "mate",
+      "moves": 1
+    },
+    "scenario": "q:mate:bbknppppppppqrr",
+    "subskill": "mate",
+    "sourceRef": "validated:local-game:23:39",
+    "choices": [
+      "a2c4",
+      "a2d2",
+      "a5d2"
+    ],
+    "source": "a2"
+  },
+  {
+    "id": "advanced-mate-game-42-59",
+    "family": "advanced-game-42-59",
+    "skill": "mate",
+    "type": "MOVE",
+    "chapter": 2,
+    "difficulty": 4,
+    "fen": "r3k2r/ppBb1p1p/4pbpn/8/1K1pnP1P/7q/P1P5/6Q1 b - - 3 30",
+    "player": "b",
+    "solutions": [
+      "h3c3"
+    ],
+    "prompt": "Find checkmate in one move. Check every escape route.",
+    "explanation": "Check! The king cannot escape, block or capture the attacker.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "mate"
+    ],
+    "objective": {
+      "kind": "mate",
+      "moves": 1
+    },
+    "scenario": "q:mate:bbknnpppppppqrr",
+    "subskill": "mate",
+    "sourceRef": "validated:local-game:42:59",
+    "choices": [
+      "f6h4",
+      "h3c3",
+      "h3h4"
+    ]
+  },
+  {
+    "id": "advanced-mate-game-45-92",
+    "family": "advanced-game-45-92",
+    "skill": "mate",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 4,
+    "fen": "4rnnr/pR4pp/4kp2/3p1b2/4p1q1/1BP1P1P1/1KPQ4/1N2B3 w - - 1 47",
+    "player": "w",
+    "solutions": [
+      "d2d5"
+    ],
+    "prompt": "Find checkmate in one move. Check every escape route.",
+    "explanation": "Check! The king cannot escape, block or capture the attacker.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "mate"
+    ],
+    "objective": {
+      "kind": "mate",
+      "moves": 1
+    },
+    "scenario": "q:mate:bbknppppqr",
+    "subskill": "mate",
+    "sourceRef": "validated:local-game:45:92",
+    "choices": [
+      "b3d5",
+      "b7g7",
+      "d2d5"
+    ]
+  },
+  {
+    "id": "advanced-mate-game-51-14",
+    "family": "advanced-game-51-14",
+    "skill": "mate",
+    "type": "MOVE",
+    "chapter": 2,
+    "difficulty": 5,
+    "fen": "r1bqkbnr/pp3p1p/8/1p1pN1p1/1n4P1/1P2PQ2/P1PP1P1P/RNB1K2R w KQkq - 0 8",
+    "player": "w",
+    "solutions": [
+      "f3f7"
+    ],
+    "prompt": "Find checkmate in one move. Check every escape route.",
+    "explanation": "Check! The king cannot escape, block or capture the attacker.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "mate"
+    ],
+    "objective": {
+      "kind": "mate",
+      "moves": 1
+    },
+    "scenario": "q:mate:bknnppppppppqrr",
+    "subskill": "mate",
+    "sourceRef": "validated:local-game:51:14",
+    "choices": [
+      "e5f7",
+      "f3d5",
+      "f3f7"
+    ]
+  },
+  {
+    "id": "advanced-mate-game-57-106",
+    "family": "advanced-game-57-106",
+    "skill": "mate",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 4,
+    "fen": "2n1rn2/p6k/1p1p1b2/3prP2/PP3K2/2P1P1R1/3BQ3/8 w - - 10 54",
+    "player": "w",
+    "solutions": [
+      "e2h5"
+    ],
+    "prompt": "Find checkmate in one move. Check every escape route.",
+    "explanation": "Check! The king cannot escape, block or capture the attacker.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "mate"
+    ],
+    "objective": {
+      "kind": "mate",
+      "moves": 1
+    },
+    "scenario": "q:mate:bkpppppqr",
+    "subskill": "mate",
+    "sourceRef": "validated:local-game:57:106",
+    "choices": [
+      "a4a5",
+      "b4b5",
+      "e2h5"
+    ],
+    "source": "e2"
+  },
+  {
+    "id": "advanced-mate-game-58-26",
+    "family": "advanced-game-58-26",
+    "skill": "mate",
+    "type": "MOVE",
+    "chapter": 2,
+    "difficulty": 5,
+    "fen": "r4b1r/pp2pppp/3qkn2/2pp4/5PP1/N1P1P3/PPQP1K1P/R1B3Nb w - - 4 14",
+    "player": "w",
+    "solutions": [
+      "c2f5"
+    ],
+    "prompt": "Find checkmate in one move. Check every escape route.",
+    "explanation": "Check! The king cannot escape, block or capture the attacker.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "mate"
+    ],
+    "objective": {
+      "kind": "mate",
+      "moves": 1
+    },
+    "scenario": "q:mate:bknnppppppppqr",
+    "subskill": "mate",
+    "sourceRef": "validated:local-game:58:26",
+    "choices": [
+      "a3c4",
+      "c2f5",
+      "c2h7"
+    ]
+  },
+  {
+    "id": "advanced-mate-game-1000-77",
+    "family": "advanced-game-1000-77",
+    "skill": "mate",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 2,
+    "fen": "5bnr/4pp2/2k3pp/p3K3/3p4/3q4/8/8 b - - 1 39",
+    "player": "b",
+    "solutions": [
+      "d3e3"
+    ],
+    "prompt": "Find checkmate in one move. Check every escape route.",
+    "explanation": "Check! The king cannot escape, block or capture the attacker.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "mate"
+    ],
+    "objective": {
+      "kind": "mate",
+      "moves": 1
+    },
+    "scenario": "q:mate:bknppppppqr",
+    "subskill": "mate",
+    "sourceRef": "validated:local-game:1000:77",
+    "choices": [
+      "d3e3",
+      "f7f5",
+      "g8f6"
+    ]
+  },
+  {
+    "id": "advanced-mate-game-1002-61",
+    "family": "advanced-game-1002-61",
+    "skill": "mate",
+    "type": "MOVE",
+    "chapter": 2,
+    "difficulty": 4,
+    "fen": "1r6/p2b1k2/1p1qp1p1/5p1r/1PK2P1p/P3P2P/4N1P1/b1BN1B1R b - - 0 31",
+    "player": "b",
+    "solutions": [
+      "d6d5"
+    ],
+    "prompt": "Find checkmate in one move. Check every escape route.",
+    "explanation": "Check! The king cannot escape, block or capture the attacker.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "mate"
+    ],
+    "objective": {
+      "kind": "mate",
+      "moves": 1
+    },
+    "scenario": "q:mate:bbkppppppqrr",
+    "subskill": "mate",
+    "sourceRef": "validated:local-game:1002:61",
+    "choices": [
+      "d6d1",
+      "d6d5",
+      "d6f4"
+    ]
+  },
+  {
+    "id": "advanced-mate-game-1004-92",
+    "family": "advanced-game-1004-92",
+    "skill": "mate",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 2,
+    "fen": "2k5/8/1B6/2K1Q3/P1P3P1/4PP2/7P/7R w - - 3 47",
+    "player": "w",
+    "solutions": [
+      "e5c7"
+    ],
+    "prompt": "Find checkmate in one move. Check every escape route.",
+    "explanation": "Check! The king cannot escape, block or capture the attacker.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "mate"
+    ],
+    "objective": {
+      "kind": "mate",
+      "moves": 1
+    },
+    "scenario": "q:mate:bkppppppqr",
+    "subskill": "mate",
+    "sourceRef": "validated:local-game:1004:92",
+    "choices": [
+      "a4a5",
+      "e5c7",
+      "h2h4"
+    ],
+    "source": "e5"
+  },
+  {
+    "id": "advanced-pin-game-0-26",
+    "family": "advanced-game-0-26",
+    "skill": "pin",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 5,
+    "fen": "r1b2br1/pp2n1pp/3kp3/PBpp1p2/R4P1P/1PPPnN2/1B5P/1N1QK2R w K - 0 14",
+    "player": "w",
+    "solutions": [
+      "a4d4",
+      "a4e4",
+      "a4c4",
+      "h1g1",
+      "b5c6",
+      "b2a3",
+      "b5a6"
+    ],
+    "prompt": "Create a new pin to the king. Choose a safe move.",
+    "explanation": "The king is behind the pinned piece. It cannot leave the line and expose check.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "pin"
+    ],
+    "objective": {
+      "kind": "pin"
+    },
+    "scenario": "b:pin:a3:d6",
+    "subskill": "pin",
+    "sourceRef": "validated:local-game:0:26",
+    "choices": [
+      "a4d4",
+      "a4e4",
+      "b1d2",
+      "f3d4"
+    ]
+  },
+  {
+    "id": "advanced-pin-game-0-50",
+    "family": "advanced-game-0-50",
+    "skill": "pin",
+    "type": "MOVE",
+    "chapter": 2,
+    "difficulty": 5,
+    "fen": "r1b2br1/pp2k1p1/4p2p/PBpp1p2/R4P2/1PPP1N2/1B1N3P/3K4 w - - 3 26",
+    "player": "w",
+    "solutions": [
+      "b2a3"
+    ],
+    "prompt": "Create a new pin to the king. Choose a safe move.",
+    "explanation": "The king is behind the pinned piece. It cannot leave the line and expose check.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "pin"
+    ],
+    "objective": {
+      "kind": "pin"
+    },
+    "scenario": "b:pin:a3:e7",
+    "subskill": "pin",
+    "sourceRef": "validated:local-game:0:50",
+    "choices": [
+      "b2a3",
+      "f3e5",
+      "h2h4"
+    ],
+    "source": "b2"
+  },
+  {
+    "id": "advanced-pin-game-3-24",
+    "family": "advanced-game-3-24",
+    "skill": "pin",
+    "type": "MOVE",
+    "chapter": 2,
+    "difficulty": 5,
+    "fen": "r1bq1bnN/1k2p3/pp1p4/5p1p/QnP2B2/8/P3PPPP/RN2KB1R w KQ - 2 13",
+    "player": "w",
+    "solutions": [
+      "a4b4"
+    ],
+    "prompt": "Create a new pin to the king. Choose a safe move.",
+    "explanation": "The king is behind the pinned piece. It cannot leave the line and expose check.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "pin"
+    ],
+    "objective": {
+      "kind": "pin"
+    },
+    "scenario": "q:pin:b4:b7",
+    "subskill": "pin",
+    "sourceRef": "validated:local-game:3:24",
+    "choices": [
+      "a4a6",
+      "a4b4",
+      "f4d6"
+    ]
+  },
+  {
+    "id": "advanced-pin-game-3-37",
+    "family": "advanced-game-3-37",
+    "skill": "pin",
+    "type": "MULTI_STEP",
+    "chapter": 4,
+    "difficulty": 5,
+    "fen": "r1b1nb1N/1k2p3/pp1p4/5pBp/1QP5/1K6/P3PPPP/qN3B1R b - - 1 19",
+    "player": "b",
+    "solutions": [
+      "a1b1"
+    ],
+    "prompt": "Gain an advantage and keep it until the battle ends.",
+    "explanation": "You used the tactic and kept the material you won.",
+    "goal": {
+      "kind": "material",
+      "gain": 100,
+      "minMoves": 3,
+      "maxMoves": 5,
+      "requireObjective": {
+        "kind": "pin"
+      }
+    },
+    "tags": [
+      "pin"
+    ],
+    "objective": {
+      "kind": "pin"
+    },
+    "scenario": "b:pin:e6:b3",
+    "subskill": "pin",
+    "sourceRef": "validated:local-game:3:37",
+    "choices": [
+      "a1a2",
+      "a1b1",
+      "a1h8"
+    ],
+    "line": [
+      "a1b1",
+      "b3a3",
+      "b1b4",
+      "a3b4",
+      "a6a5",
+      "b4a3"
+    ],
+    "hidden": true
+  },
+  {
+    "id": "advanced-pin-game-5-45",
+    "family": "advanced-game-5-45",
+    "skill": "pin",
+    "type": "MOVE",
+    "chapter": 2,
+    "difficulty": 5,
+    "fen": "rn3b1r/p1p1kp2/2bp4/1p2p2p/1P2P3/P1PP1PP1/3qN1KP/R1N2B1R b - - 2 23",
+    "player": "b",
+    "solutions": [
+      "d2c1"
+    ],
+    "prompt": "Create a new pin to the king. Choose a safe move.",
+    "explanation": "The king is behind the pinned piece. It cannot leave the line and expose check.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "pin"
+    ],
+    "objective": {
+      "kind": "pin"
+    },
+    "scenario": "r:pin:g8:g2",
+    "subskill": "pin",
+    "sourceRef": "validated:local-game:5:45",
+    "choices": [
+      "c6e4",
+      "d2c1",
+      "d2e2"
+    ]
+  },
+  {
+    "id": "advanced-pin-game-5-81",
+    "family": "advanced-game-5-81",
+    "skill": "pin",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 5,
+    "fen": "3r1b1r/2p3qk/p1npBp2/4p2p/1PP1P2P/P1N1KPP1/7R/R1N5 b - - 8 41",
+    "player": "b",
+    "solutions": [
+      "g7g3"
+    ],
+    "prompt": "Create a new pin to the king. Choose a safe move.",
+    "explanation": "The king is behind the pinned piece. It cannot leave the line and expose check.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "pin"
+    ],
+    "objective": {
+      "kind": "pin"
+    },
+    "scenario": "q:pin:g3:e3",
+    "subskill": "pin",
+    "sourceRef": "validated:local-game:5:81",
+    "choices": [
+      "c6b4",
+      "f8e7",
+      "g7g3"
+    ],
+    "source": "g7"
+  },
+  {
+    "id": "advanced-pin-game-1000-23",
+    "family": "advanced-game-1000-23",
+    "skill": "pin",
+    "type": "MULTI_STEP",
+    "chapter": 4,
+    "difficulty": 4,
+    "fen": "4kbnr/4ppp1/7p/p1N1P3/2Pp1P2/8/PP1P2qP/R1B1K1NR b KQk c3 0 12",
+    "player": "b",
+    "solutions": [
+      "g2h1"
+    ],
+    "prompt": "Gain an advantage and keep it until the battle ends.",
+    "explanation": "You used the tactic and kept the material you won.",
+    "goal": {
+      "kind": "material",
+      "gain": 100,
+      "minMoves": 7,
+      "maxMoves": 7,
+      "requireObjective": {
+        "kind": "pin"
+      }
+    },
+    "tags": [
+      "pin"
+    ],
+    "objective": {
+      "kind": "pin"
+    },
+    "scenario": "q:pin:h1:e1",
+    "subskill": "pin",
+    "sourceRef": "validated:local-game:1000:23",
+    "choices": [
+      "d4c3",
+      "g2g1",
+      "g2h1"
+    ],
+    "line": [
+      "g2h1",
+      "e1f1",
+      "h1g1",
+      "f1g1",
+      "g7g5",
+      "f4f5",
+      "e7e6",
+      "c5b3",
+      "e6f5",
+      "b3d4",
+      "f8c5",
+      "g1h1",
+      "c5d4",
+      "a2a4"
+    ],
+    "hidden": true
+  },
+  {
+    "id": "advanced-pin-game-1001-37",
+    "family": "advanced-game-1001-37",
+    "skill": "pin",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 5,
+    "fen": "5bnr/4k1pp/2n1qp2/2pp4/5Pb1/N1PP4/PP1N2BP/R1B2K1R b - - 6 19",
+    "player": "b",
+    "solutions": [
+      "e6e4",
+      "e6f5",
+      "e6e3",
+      "g4f3",
+      "e6e1",
+      "g4h3"
+    ],
+    "prompt": "Create a new pin to the king. Choose a safe move.",
+    "explanation": "The king is behind the pinned piece. It cannot leave the line and expose check.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "pin"
+    ],
+    "objective": {
+      "kind": "pin"
+    },
+    "scenario": "q:pin:f5:f1",
+    "subskill": "pin",
+    "sourceRef": "validated:local-game:1001:37",
+    "choices": [
+      "e6e4",
+      "e6f5",
+      "g7g5",
+      "h7h5"
+    ],
+    "source": "e6"
+  },
+  {
+    "id": "advanced-pin-game-1003-88",
+    "family": "advanced-game-1003-88",
+    "skill": "pin",
+    "type": "MOVE",
+    "chapter": 2,
+    "difficulty": 5,
+    "fen": "4bb2/p3n1r1/k1pqpppp/1p1p4/3P1PPP/1PB1PR1N/P1P5/R2KQB2 w - - 2 45",
+    "player": "w",
+    "solutions": [
+      "f1b5"
+    ],
+    "prompt": "Create a new pin to the king. Choose a safe move.",
+    "explanation": "The king is behind the pinned piece. It cannot leave the line and expose check.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "pin"
+    ],
+    "objective": {
+      "kind": "pin"
+    },
+    "scenario": "q:pin:e2:a6",
+    "subskill": "pin",
+    "sourceRef": "validated:local-game:1003:88",
+    "choices": [
+      "f1b5",
+      "f1c4",
+      "f1d3"
+    ],
+    "source": "f1"
+  },
+  {
+    "id": "advanced-pin-game-1003-123",
+    "family": "advanced-game-1003-123",
+    "skill": "pin",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 5,
+    "fen": "8/pk3br1/2p1pppp/qp1p4/3P1PPP/bP1QPBRN/P1P5/RK6 b - - 17 62",
+    "player": "b",
+    "solutions": [
+      "a3c5",
+      "a3d6",
+      "a3b4",
+      "a3e7",
+      "a5b4",
+      "a5c7",
+      "a3f8",
+      "a3b2",
+      "a3c1"
+    ],
+    "prompt": "Create a new pin to the king. Choose a safe move.",
+    "explanation": "The king is behind the pinned piece. It cannot leave the line and expose check.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "pin"
+    ],
+    "objective": {
+      "kind": "pin"
+    },
+    "scenario": "q:pin:b4:b1",
+    "subskill": "pin",
+    "sourceRef": "validated:local-game:1003:123",
+    "choices": [
+      "a3c5",
+      "a3d6",
+      "a7a6",
+      "c6c5"
+    ]
+  },
+  {
+    "id": "advanced-pin-game-1004-62",
+    "family": "advanced-game-1004-62",
+    "skill": "pin",
+    "type": "MULTI_STEP",
+    "chapter": 4,
+    "difficulty": 3,
+    "fen": "8/8/ppp1k2p/2p3p1/P1P1K1P1/BQ2PP2/3r3P/7R w - - 0 32",
+    "player": "w",
+    "solutions": [
+      "b3b6"
+    ],
+    "prompt": "Gain an advantage and keep it until the battle ends.",
+    "explanation": "You used the tactic and kept the material you won.",
+    "goal": {
+      "kind": "material",
+      "gain": 100,
+      "minMoves": 3,
+      "maxMoves": 5,
+      "requireObjective": {
+        "kind": "pin"
+      }
+    },
+    "tags": [
+      "pin"
+    ],
+    "objective": {
+      "kind": "pin"
+    },
+    "scenario": "q:pin:b6:e6",
+    "subskill": "pin",
+    "sourceRef": "validated:local-game:1004:62",
+    "choices": [
+      "a3b4",
+      "a3c5",
+      "b3b6"
+    ],
+    "line": [
+      "b3b6",
+      "e6f7",
+      "a3c5",
+      "f7g8",
+      "b6c6",
+      "g8h7"
+    ],
+    "hidden": true
+  },
+  {
+    "id": "advanced-defense-game-0-28",
+    "family": "advanced-game-0-28",
+    "skill": "defense",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 5,
+    "fen": "r1b2br1/pp2n1pp/3kp3/PBpp1pN1/R4P1P/1PPP4/1B5P/1N1nK2R w K - 0 15",
+    "player": "w",
+    "solutions": [
+      "e1d1"
+    ],
+    "prompt": "The bishop on b2 is attacked. Save it by capturing the attacker.",
+    "explanation": "You removed the attacker on d1. The threat is gone.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "save"
+    ],
+    "objective": {
+      "kind": "save",
+      "square": "b2"
+    },
+    "scenario": "save:b:k:n:d1",
+    "subskill": "save",
+    "sourceRef": "validated:local-game:0:28",
+    "choices": [
+      "e1d1",
+      "g5e6",
+      "g5h7"
+    ]
+  },
+  {
+    "id": "advanced-defense-game-0-31",
+    "family": "advanced-game-0-31",
+    "skill": "defense",
+    "type": "MOVE",
+    "chapter": 2,
+    "difficulty": 5,
+    "fen": "1rb2br1/pp2nNpp/3kp3/PBpp1p2/R4P1P/1PPP4/1B5P/1N1K3R b - - 2 16",
+    "player": "b",
+    "solutions": [
+      "d6c7"
+    ],
+    "prompt": "The king is in check. Find the only escape.",
+    "explanation": "The king moved to its only safe square.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "escapeCheck"
+    ],
+    "objective": {
+      "kind": "escapeCheck"
+    },
+    "scenario": "check:k:block:c7",
+    "subskill": "escapeCheck",
+    "sourceRef": "validated:local-game:0:31",
+    "choices": [
+      "d6c7"
+    ],
+    "source": "d6"
+  },
+  {
+    "id": "advanced-defense-game-1-55",
+    "family": "advanced-game-1-55",
+    "skill": "defense",
+    "type": "MOVE",
+    "chapter": 2,
+    "difficulty": 4,
+    "fen": "r5n1/pppb3p/8/k4p2/7P/1PB1PPP1/P1P2R2/4KB2 b - - 2 28",
+    "player": "b",
+    "solutions": [
+      "a5b6"
+    ],
+    "prompt": "The king is in check. Find the only escape.",
+    "explanation": "The king moved to its only safe square.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "escapeCheck"
+    ],
+    "objective": {
+      "kind": "escapeCheck"
+    },
+    "scenario": "check:k:block:b6",
+    "subskill": "escapeCheck",
+    "sourceRef": "validated:local-game:1:55",
+    "choices": [
+      "a5b6"
+    ]
+  },
+  {
+    "id": "advanced-defense-game-4-29",
+    "family": "advanced-game-4-29",
+    "skill": "defense",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 5,
+    "fen": "rnbkr3/ppp1bNpp/8/P2p1p2/8/1PPPP3/1QRNP1PP/4KB1R b K - 0 15",
+    "player": "b",
+    "solutions": [
+      "d8d7"
+    ],
+    "prompt": "The king is in check. Find the only escape.",
+    "explanation": "The king moved to its only safe square.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "escapeCheck"
+    ],
+    "objective": {
+      "kind": "escapeCheck"
+    },
+    "scenario": "check:k:block:d7",
+    "subskill": "escapeCheck",
+    "sourceRef": "validated:local-game:4:29",
+    "choices": [
+      "d8d7"
+    ],
+    "source": "d8"
+  },
+  {
+    "id": "advanced-defense-game-5-33",
+    "family": "advanced-game-5-33",
+    "skill": "defense",
+    "type": "MOVE",
+    "chapter": 2,
+    "difficulty": 5,
+    "fen": "rn1k1b1r/p1p2p2/2bpqB2/1p2p2p/1P2P3/2PP1P2/P3NKPP/R1NQ1B1R b - - 0 17",
+    "player": "b",
+    "solutions": [
+      "e6f6"
+    ],
+    "prompt": "The rook on h8 is attacked. Save it by capturing the attacker.",
+    "explanation": "You removed the attacker on f6. The threat is gone.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "escapeCheck"
+    ],
+    "objective": {
+      "kind": "escapeCheck"
+    },
+    "scenario": "save:r:q:b:f6",
+    "subskill": "escapeCheck",
+    "sourceRef": "validated:local-game:5:33",
+    "choices": [
+      "d8c8",
+      "e6f6",
+      "f8e7"
+    ]
+  },
+  {
+    "id": "advanced-defense-game-5-41",
+    "family": "advanced-game-5-41",
+    "skill": "defense",
+    "type": "MULTI_STEP",
+    "chapter": 4,
+    "difficulty": 5,
+    "fen": "rn1k1b1r/p1p2p2/2bp4/1p2p1qp/1P2P3/P1PP1P2/3QNKPP/R1N2B1R b - - 2 21",
+    "player": "b",
+    "solutions": [
+      "g5d2"
+    ],
+    "prompt": "Withstand the attack and keep your pieces safe.",
+    "explanation": "You withstood the attack and kept your material.",
+    "goal": {
+      "kind": "survive",
+      "minMoves": 3,
+      "maxMoves": 3,
+      "maxLoss": 0
+    },
+    "tags": [
+      "save"
+    ],
+    "objective": {
+      "kind": "save",
+      "square": "g5"
+    },
+    "scenario": "save:q:q:q:d2",
+    "subskill": "save",
+    "sourceRef": "validated:local-game:5:41",
+    "choices": [
+      "c6e4",
+      "g5d2",
+      "g5g2"
+    ],
+    "line": [
+      "g5d2",
+      "a1a2",
+      "d2a2",
+      "c1a2",
+      "c6e4",
+      "d3e4"
+    ],
+    "hidden": true
+  },
+  {
+    "id": "advanced-defense-game-16-43",
+    "family": "advanced-game-16-43",
+    "skill": "defense",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 4,
+    "fen": "5b2/N3p1p1/2Q2nkr/1P1p3p/P2P3P/3BP3/5PP1/1R2K2R b - - 2 22",
+    "player": "b",
+    "solutions": [
+      "g6f7"
+    ],
+    "prompt": "The king is in check. Find the only escape.",
+    "explanation": "The king moved to its only safe square.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "escapeCheck"
+    ],
+    "objective": {
+      "kind": "escapeCheck"
+    },
+    "scenario": "check:k:block:f7",
+    "subskill": "escapeCheck",
+    "sourceRef": "validated:local-game:16:43",
+    "choices": [
+      "g6f7"
+    ]
+  },
+  {
+    "id": "advanced-defense-game-17-10",
+    "family": "advanced-game-17-10",
+    "skill": "defense",
+    "type": "MOVE",
+    "chapter": 2,
+    "difficulty": 5,
+    "fen": "rnb1kbnr/pppp1ppp/4p3/8/3Nq3/8/PPPPK1PP/RNBQ1B1R w kq - 0 6",
+    "player": "w",
+    "solutions": [
+      "e2f2"
+    ],
+    "prompt": "The king is in check. Find the only escape.",
+    "explanation": "The king moved to its only safe square.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "escapeCheck"
+    ],
+    "objective": {
+      "kind": "escapeCheck"
+    },
+    "scenario": "check:k:block:f2",
+    "subskill": "escapeCheck",
+    "sourceRef": "validated:local-game:17:10",
+    "choices": [
+      "e2f2"
+    ]
+  },
+  {
+    "id": "advanced-defense-game-17-30",
+    "family": "advanced-game-17-30",
+    "skill": "defense",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 5,
+    "fen": "rnb1k1nr/pp1p2pp/3bpp2/2pq4/5KQ1/8/PPPP2PP/RNB2B1R w kq - 2 16",
+    "player": "w",
+    "solutions": [
+      "f4e3"
+    ],
+    "prompt": "The king is in check. Find the only escape.",
+    "explanation": "The king moved to its only safe square.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "escapeCheck"
+    ],
+    "objective": {
+      "kind": "escapeCheck"
+    },
+    "scenario": "check:k:block:e3",
+    "subskill": "escapeCheck",
+    "sourceRef": "validated:local-game:17:30",
+    "choices": [
+      "f4e3"
+    ],
+    "source": "f4"
+  },
+  {
+    "id": "advanced-defense-game-18-42",
+    "family": "advanced-game-18-42",
+    "skill": "defense",
+    "type": "MOVE",
+    "chapter": 2,
+    "difficulty": 5,
+    "fen": "r1b1r3/1pp1k1pp/1b1ppp2/p7/P1P1PPP1/3P4/1PnN3P/R2NKB1R w - - 4 22",
+    "player": "w",
+    "solutions": [
+      "e1e2"
+    ],
+    "prompt": "The king is in check. Find the only escape.",
+    "explanation": "The king moved to its only safe square.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "escapeCheck"
+    ],
+    "objective": {
+      "kind": "escapeCheck"
+    },
+    "scenario": "check:k:block:e2",
+    "subskill": "escapeCheck",
+    "sourceRef": "validated:local-game:18:42",
+    "choices": [
+      "e1e2"
+    ]
+  },
+  {
+    "id": "advanced-defense-game-22-52",
+    "family": "advanced-game-22-52",
+    "skill": "defense",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 4,
+    "fen": "4k2r/p3b2p/1n1p1p2/1pp1p3/4P3/2PP4/PP1B3P/1K1q2NR w k - 0 27",
+    "player": "w",
+    "solutions": [
+      "d2c1"
+    ],
+    "prompt": "The king is in check. Find the only escape.",
+    "explanation": "Your piece blocked the check. The king is safe.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "escapeCheck"
+    ],
+    "objective": {
+      "kind": "escapeCheck"
+    },
+    "scenario": "check:b:block:c1",
+    "subskill": "escapeCheck",
+    "sourceRef": "validated:local-game:22:52",
+    "choices": [
+      "d2c1"
+    ]
+  },
+  {
+    "id": "advanced-defense-game-28-42",
+    "family": "advanced-game-28-42",
+    "skill": "defense",
+    "type": "MOVE",
+    "chapter": 2,
+    "difficulty": 5,
+    "fen": "rn3b1r/4p1pp/p1pkb3/3p1p2/1p1P1P2/1P1KP2P/PRP1NnP1/2B2B2 w - - 4 22",
+    "player": "w",
+    "solutions": [
+      "d3d2"
+    ],
+    "prompt": "The king is in check. Find the only escape.",
+    "explanation": "The king moved to its only safe square.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "escapeCheck"
+    ],
+    "objective": {
+      "kind": "escapeCheck"
+    },
+    "scenario": "check:k:block:d2",
+    "subskill": "escapeCheck",
+    "sourceRef": "validated:local-game:28:42",
+    "choices": [
+      "d3d2"
+    ],
+    "source": "d3"
+  },
+  {
+    "id": "advanced-defense-game-1000-38",
+    "family": "advanced-game-1000-38",
+    "skill": "defense",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 4,
+    "fen": "4kbnr/4pp2/6pp/p1N1P3/2Pp1P2/3P4/PP1K1q2/R1B5 w k - 8 20",
+    "player": "w",
+    "solutions": [
+      "d2d1"
+    ],
+    "prompt": "The king is in check. Find the only escape.",
+    "explanation": "The king moved to its only safe square.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "escapeCheck"
+    ],
+    "objective": {
+      "kind": "escapeCheck"
+    },
+    "scenario": "check:k:block:d1",
+    "subskill": "escapeCheck",
+    "sourceRef": "validated:local-game:1000:38",
+    "choices": [
+      "d2d1"
+    ]
+  },
+  {
+    "id": "advanced-defense-game-1001-96",
+    "family": "advanced-game-1001-96",
+    "skill": "defense",
+    "type": "MOVE",
+    "chapter": 2,
+    "difficulty": 3,
+    "fen": "5b2/5k2/1n5r/3K1p1p/5PnP/1P1B4/P2B4/5N2 w - - 7 49",
+    "player": "w",
+    "solutions": [
+      "d5d4"
+    ],
+    "prompt": "The king is in check. Find the only escape.",
+    "explanation": "The king moved to its only safe square.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "escapeCheck"
+    ],
+    "objective": {
+      "kind": "escapeCheck"
+    },
+    "scenario": "check:k:block:d4",
+    "subskill": "escapeCheck",
+    "sourceRef": "validated:local-game:1001:96",
+    "choices": [
+      "d5d4"
+    ]
+  },
+  {
+    "id": "advanced-defense-game-1001-98",
+    "family": "advanced-game-1001-98",
+    "skill": "defense",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 3,
+    "fen": "8/5kb1/1n5r/5p1p/3K1PnP/1P1B4/P2B4/5N2 w - - 9 50",
+    "player": "w",
+    "solutions": [
+      "d4c5"
+    ],
+    "prompt": "The king is in check. Find the only escape.",
+    "explanation": "The king moved to its only safe square.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "escapeCheck"
+    ],
+    "objective": {
+      "kind": "escapeCheck"
+    },
+    "scenario": "check:k:block:c5",
+    "subskill": "escapeCheck",
+    "sourceRef": "validated:local-game:1001:98",
+    "choices": [
+      "d4c5"
+    ],
+    "source": "d4"
+  },
+  {
+    "id": "advanced-defense-game-1004-73",
+    "family": "advanced-game-1004-73",
+    "skill": "defense",
+    "type": "MOVE",
+    "chapter": 2,
+    "difficulty": 3,
+    "fen": "3k4/1Q6/1B5p/6p1/P1P1K1P1/4PP2/2r4P/7R b - - 2 37",
+    "player": "b",
+    "solutions": [
+      "d8e8"
+    ],
+    "prompt": "The king is in check. Find the only escape.",
+    "explanation": "The king moved to its only safe square.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "escapeCheck"
+    ],
+    "objective": {
+      "kind": "escapeCheck"
+    },
+    "scenario": "check:k:block:e8",
+    "subskill": "escapeCheck",
+    "sourceRef": "validated:local-game:1004:73",
+    "choices": [
+      "d8e8"
+    ]
+  },
+  {
+    "id": "advanced-doubleAttack-game-1000-21",
+    "family": "advanced-game-1000-21",
+    "skill": "doubleAttack",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 5,
+    "fen": "q3kbnr/4ppp1/7p/p1N1P3/3p1P2/8/PPPP2PP/R1B1K1NR b KQk - 0 11",
+    "player": "b",
+    "solutions": [
+      "a8g2"
+    ],
+    "prompt": "Create two threats in one move. Check your opponent’s reply.",
+    "explanation": "The piece on g2 attacks rook h1 and knight g1.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "doubleAttack"
+    ],
+    "objective": {
+      "kind": "doubleAttack"
+    },
+    "scenario": "q:nr:6,-6",
+    "subskill": "doubleAttack",
+    "sourceRef": "validated:local-game:1000:21",
+    "choices": [
+      "a8g2",
+      "f7f5",
+      "g8f6"
+    ]
+  },
+  {
+    "id": "advanced-doubleAttack-game-1000-49",
+    "family": "advanced-game-1000-49",
+    "skill": "doubleAttack",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 4,
+    "fen": "4kbnr/4pp2/6pp/p1N1q3/2Pp4/3P4/PP1B4/R2K4 b k - 1 25",
+    "player": "b",
+    "solutions": [
+      "e5h5"
+    ],
+    "prompt": "Create two threats in one move. Check your opponent’s reply.",
+    "explanation": "The piece on h5 attacks king d1 and knight c5.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "doubleAttack"
+    ],
+    "objective": {
+      "kind": "doubleAttack"
+    },
+    "scenario": "q:kn:3,0",
+    "subskill": "doubleAttack",
+    "sourceRef": "validated:local-game:1000:49",
+    "choices": [
+      "e5c5",
+      "e5h5",
+      "g8f6"
+    ],
+    "source": "e5"
+  },
+  {
+    "id": "advanced-doubleAttack-game-1001-102",
+    "family": "advanced-game-1001-102",
+    "skill": "doubleAttack",
+    "type": "MOVE",
+    "chapter": 1,
+    "difficulty": 3,
+    "fen": "8/3n1k2/7r/1K3p1p/3b1PnP/1P1B4/P2B4/5N2 w - - 13 52",
+    "player": "w",
+    "solutions": [
+      "d3f5"
+    ],
+    "prompt": "Create two threats in one move. Check your opponent’s reply.",
+    "explanation": "The piece on f5 attacks knight g4 and knight d7.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "doubleAttack"
+    ],
+    "objective": {
+      "kind": "doubleAttack"
+    },
+    "scenario": "b:nn:2,2",
+    "subskill": "doubleAttack",
+    "sourceRef": "validated:local-game:1001:102",
+    "choices": [
+      "a2a4",
+      "d3f5",
+      "f1e3"
+    ]
+  },
+  {
+    "id": "advanced-fork-prevent-0-110",
+    "family": "advanced-fork-prevent-0-110",
+    "skill": "fork",
+    "type": "MOVE",
+    "chapter": 3,
+    "difficulty": 2,
+    "fen": "8/pp4p1/3k3r/PP3pN1/2KP1P2/7p/7P/8 b - - 1 56",
+    "player": "b",
+    "solutions": [
+      "h6h4",
+      "d6c7",
+      "d6d7",
+      "d6e7",
+      "h6h5"
+    ],
+    "goal": {
+      "kind": "move"
+    },
+    "objective": {
+      "kind": "defendFork"
+    },
+    "scenario": "Stop your opponent’s threat",
+    "subskill": "anticipate-fork",
+    "prompt": "Stop your opponent’s threat. Choose a defense.",
+    "explanation": "You prevented a double attack.",
+    "tags": [
+      "prevention"
+    ],
+    "choices": [
+      "d6c7",
+      "h6f6",
+      "h6g6",
+      "h6h4"
+    ],
+    "sourceRef": "validated:fork-prevent-0-110"
+  },
+  {
+    "id": "advanced-fork-prevent-6-16",
+    "family": "advanced-fork-prevent-6-16",
+    "skill": "fork",
+    "type": "MOVE",
+    "chapter": 3,
+    "difficulty": 5,
+    "fen": "rnb1kb1r/p1pp2pp/1p6/1N2N1q1/5n2/3P4/PPPKPPPP/R2Q1BR1 b kq - 2 9",
+    "player": "b",
+    "solutions": [
+      "g5e5"
+    ],
+    "goal": {
+      "kind": "move"
+    },
+    "objective": {
+      "kind": "defendFork"
+    },
+    "scenario": "Stop your opponent’s threat",
+    "subskill": "anticipate-fork",
+    "prompt": "Stop your opponent’s threat. Choose a defense.",
+    "explanation": "You prevented a double attack.",
+    "tags": [
+      "prevention"
+    ],
+    "choices": [
+      "f4d3",
+      "g5e5",
+      "g5g2"
+    ],
+    "sourceRef": "validated:fork-prevent-6-16"
+  },
+  {
+    "id": "advanced-fork-prevent-6-18",
+    "family": "advanced-fork-prevent-6-18",
+    "skill": "fork",
+    "type": "MOVE",
+    "chapter": 3,
+    "difficulty": 4,
+    "fen": "rnbk1b1r/p1Np2pp/1p6/4N1q1/5n2/3P4/PPPKPPPP/R2Q1BR1 b - - 1 10",
+    "player": "b",
+    "solutions": [
+      "g5e5"
+    ],
+    "goal": {
+      "kind": "move"
+    },
+    "objective": {
+      "kind": "defendFork"
+    },
+    "scenario": "Stop your opponent’s threat",
+    "subskill": "anticipate-fork",
+    "prompt": "Stop your opponent’s threat. Choose a defense.",
+    "explanation": "You prevented a double attack.",
+    "tags": [
+      "prevention"
+    ],
+    "choices": [
+      "d8c7",
+      "f4d3",
+      "g5e5"
+    ],
+    "sourceRef": "validated:fork-prevent-6-18"
+  },
+  {
+    "id": "advanced-fork-prevent-6-28",
+    "family": "advanced-fork-prevent-6-28",
+    "skill": "fork",
+    "type": "MOVE",
+    "chapter": 3,
+    "difficulty": 4,
+    "fen": "Nnb1kb1r/6pp/1p2q3/p2p4/3P1n1P/2P5/PP2PPP1/R1KQ1BR1 b - - 1 15",
+    "player": "b",
+    "solutions": [
+      "e6e2",
+      "f4e2"
+    ],
+    "goal": {
+      "kind": "move"
+    },
+    "objective": {
+      "kind": "defendFork"
+    },
+    "scenario": "Stop your opponent’s threat",
+    "subskill": "anticipate-fork",
+    "prompt": "Stop your opponent’s threat. Choose a defense.",
+    "explanation": "You prevented a double attack.",
+    "tags": [
+      "prevention"
+    ],
+    "choices": [
+      "b8d7",
+      "e6e2",
+      "f4e2",
+      "f4g2"
+    ],
+    "sourceRef": "validated:fork-prevent-6-28"
+  },
+  {
+    "id": "advanced-doubleAttack-prevent-0-101",
+    "family": "advanced-doubleAttack-prevent-0-101",
+    "skill": "doubleAttack",
+    "type": "MOVE",
+    "chapter": 3,
+    "difficulty": 3,
+    "fen": "5r2/pp4p1/4k2r/PP2Np2/2NP1P2/7p/4K2P/8 w - - 15 51",
+    "player": "w",
+    "solutions": [
+      "c4e3",
+      "e5d3",
+      "c4d2",
+      "e5f3",
+      "c4b2",
+      "c4a3"
+    ],
+    "goal": {
+      "kind": "move"
+    },
+    "objective": {
+      "kind": "defendDouble"
+    },
+    "scenario": "Stop your opponent’s threat",
+    "subskill": "anticipate-doubleAttack",
+    "prompt": "Stop your opponent’s threat. Choose a defense.",
+    "explanation": "You prevented a double attack.",
+    "tags": [
+      "prevention"
+    ],
+    "choices": [
+      "c4e3",
+      "e2f1",
+      "e2f2",
+      "e5d3"
+    ],
+    "sourceRef": "validated:doubleAttack-prevent-0-101"
+  },
+  {
+    "id": "advanced-doubleAttack-prevent-1-38",
+    "family": "advanced-doubleAttack-prevent-1-38",
+    "skill": "doubleAttack",
+    "type": "MOVE",
+    "chapter": 3,
+    "difficulty": 4,
+    "fen": "r1b3nB/ppp1n2p/4k3/5p2/7P/1P1R1P2/P1P1P1P1/4KBR1 b - - 1 20",
+    "player": "b",
+    "solutions": [
+      "c8d7",
+      "e7d5",
+      "e7c6",
+      "g8h6"
+    ],
+    "goal": {
+      "kind": "move"
+    },
+    "objective": {
+      "kind": "defendDouble"
+    },
+    "scenario": "Stop your opponent’s threat",
+    "subskill": "anticipate-doubleAttack",
+    "prompt": "Stop your opponent’s threat. Choose a defense.",
+    "explanation": "You prevented a double attack.",
+    "tags": [
+      "prevention"
+    ],
+    "choices": [
+      "c7c5",
+      "c8d7",
+      "e7d5",
+      "e7g6"
+    ],
+    "sourceRef": "validated:doubleAttack-prevent-1-38"
+  },
+  {
+    "id": "advanced-doubleAttack-prevent-1-78",
+    "family": "advanced-doubleAttack-prevent-1-78",
+    "skill": "doubleAttack",
+    "type": "MOVE",
+    "chapter": 3,
+    "difficulty": 3,
+    "fen": "8/pp2B2p/1kb5/5p2/2P4r/PP2PP2/3K1R2/8 b - - 2 40",
+    "player": "b",
+    "solutions": [
+      "h4h5",
+      "h4h6",
+      "h4h3",
+      "h4h1"
+    ],
+    "goal": {
+      "kind": "move"
+    },
+    "objective": {
+      "kind": "defendDouble"
+    },
+    "scenario": "Stop your opponent’s threat",
+    "subskill": "anticipate-doubleAttack",
+    "prompt": "Stop your opponent’s threat. Choose a defense.",
+    "explanation": "You prevented a double attack.",
+    "tags": [
+      "prevention"
+    ],
+    "choices": [
+      "c6f3",
+      "h4e4",
+      "h4h5",
+      "h4h6"
+    ],
+    "sourceRef": "validated:doubleAttack-prevent-1-78"
+  },
+  {
+    "id": "advanced-doubleAttack-prevent-1-112",
+    "family": "advanced-doubleAttack-prevent-1-112",
+    "skill": "doubleAttack",
+    "type": "MOVE",
+    "chapter": 3,
+    "difficulty": 2,
+    "fen": "8/pp6/2k1b2p/P1P5/1P3P2/2B1K3/3R4/8 b - - 6 57",
+    "player": "b",
+    "solutions": [
+      "c6b5",
+      "e6d5",
+      "c6c7"
+    ],
+    "goal": {
+      "kind": "move"
+    },
+    "objective": {
+      "kind": "defendDouble"
+    },
+    "scenario": "Stop your opponent’s threat",
+    "subskill": "anticipate-doubleAttack",
+    "prompt": "Stop your opponent’s threat. Choose a defense.",
+    "explanation": "You prevented a double attack.",
+    "tags": [
+      "prevention"
+    ],
+    "choices": [
+      "c6b5",
+      "e6c4",
+      "e6d5",
+      "e6f5"
+    ],
+    "sourceRef": "validated:doubleAttack-prevent-1-112"
+  },
+  {
+    "id": "advanced-pin-prevent-0-107",
+    "family": "advanced-pin-prevent-0-107",
+    "skill": "pin",
+    "type": "MULTI_STEP",
+    "chapter": 4,
+    "difficulty": 3,
+    "fen": "8/pp1k2p1/7r/PP3pN1/2rP1P2/3K3p/7P/8 w - - 3 54",
+    "player": "w",
+    "solutions": [
+      "d3c4"
+    ],
+    "goal": {
+      "kind": "material",
+      "gain": 100,
+      "minMoves": 3,
+      "maxMoves": 5,
+      "requireObjective": {
+        "kind": "defendPin"
+      }
+    },
+    "objective": {
+      "kind": "defendPin"
+    },
+    "scenario": "Stop your opponent’s threat",
+    "subskill": "anticipate-pin",
+    "prompt": "Gain an advantage and keep it until the battle ends.",
+    "explanation": "You used the tactic and kept the material you won.",
+    "tags": [
+      "prevention"
+    ],
+    "choices": [
+      "d3c4",
+      "g5e4",
+      "g5h3"
+    ],
+    "sourceRef": "validated:pin-prevent-0-107",
+    "line": [
+      "d3c4",
+      "h6h4",
+      "c4c3",
+      "h4f4",
+      "d4d5",
+      "f4a4"
+    ],
+    "hidden": true
+  },
+  {
+    "id": "advanced-pin-prevent-0-133",
+    "family": "advanced-pin-prevent-0-133",
+    "skill": "pin",
+    "type": "MOVE",
+    "chapter": 3,
+    "difficulty": 2,
+    "fen": "8/pk6/3K2p1/PP1P1p2/5r2/7p/7P/8 w - - 0 67",
+    "player": "w",
+    "solutions": [
+      "a5a6",
+      "d6e7",
+      "d6e6",
+      "d6c5",
+      "d6e5"
+    ],
+    "goal": {
+      "kind": "move"
+    },
+    "objective": {
+      "kind": "defendPin"
+    },
+    "scenario": "Stop your opponent’s threat",
+    "subskill": "anticipate-pin",
+    "prompt": "Stop your opponent’s threat. Choose a defense.",
+    "explanation": "You stopped your opponent pinning your piece.",
+    "tags": [
+      "prevention"
+    ],
+    "choices": [
+      "a5a6",
+      "b5b6",
+      "d6d7",
+      "d6e7"
+    ],
+    "sourceRef": "validated:pin-prevent-0-133"
+  },
+  {
+    "id": "advanced-pin-prevent-1-19",
+    "family": "advanced-pin-prevent-1-19",
+    "skill": "pin",
+    "type": "MOVE",
+    "chapter": 3,
+    "difficulty": 5,
+    "fen": "r1b2bnr/pppk2pp/2n1qP2/3p2B1/8/1PN1QP2/P1P1P1PP/R3KBNR w KQ - 0 10",
+    "player": "w",
+    "solutions": [
+      "e3e6"
+    ],
+    "goal": {
+      "kind": "move"
+    },
+    "objective": {
+      "kind": "defendPin"
+    },
+    "scenario": "Stop your opponent’s threat",
+    "subskill": "anticipate-pin",
+    "prompt": "Stop your opponent’s threat. Choose a defense.",
+    "explanation": "You stopped your opponent pinning your piece.",
+    "tags": [
+      "prevention"
+    ],
+    "choices": [
+      "c3d5",
+      "e3e6",
+      "f6g7"
+    ],
+    "sourceRef": "validated:pin-prevent-1-19"
+  },
+  {
+    "id": "advanced-pin-prevent-1-20",
+    "family": "advanced-pin-prevent-1-20",
+    "skill": "pin",
+    "type": "MOVE",
+    "chapter": 3,
+    "difficulty": 5,
+    "fen": "r1b2bnr/pppk2pp/2n2P2/3p2B1/8/1PN1qP2/P1P1P1PP/R3KBNR b KQ - 0 11",
+    "player": "b",
+    "solutions": [
+      "e3c3"
+    ],
+    "goal": {
+      "kind": "move"
+    },
+    "objective": {
+      "kind": "defendPin"
+    },
+    "scenario": "Stop your opponent’s threat",
+    "subskill": "anticipate-pin",
+    "prompt": "Stop your opponent’s threat. Choose a defense.",
+    "explanation": "You stopped your opponent pinning your piece.",
+    "tags": [
+      "prevention"
+    ],
+    "choices": [
+      "e3c3",
+      "e3g1",
+      "e3g5"
+    ],
+    "sourceRef": "validated:pin-prevent-1-20"
+  },
+  {
+    "id": "advanced-mate-prevent-9-95",
+    "family": "advanced-mate-prevent-9-95",
+    "skill": "mate",
+    "type": "MOVE",
+    "chapter": 3,
+    "difficulty": 3,
+    "fen": "rnb1k2r/5p2/1ppp4/p1q1p2p/K7/8/8/6N1 w kq - 5 48",
+    "player": "w",
+    "solutions": [
+      "a4b3"
+    ],
+    "goal": {
+      "kind": "move"
+    },
+    "objective": {
+      "kind": "defendMate"
+    },
+    "scenario": "Stop your opponent’s threat",
+    "subskill": "anticipate-mate",
+    "prompt": "Stop your opponent’s threat. Choose a defense.",
+    "explanation": "You stopped the checkmate threat.",
+    "tags": [
+      "prevention"
+    ],
+    "choices": [
+      "a4b3",
+      "g1e2",
+      "g1f3"
+    ],
+    "sourceRef": "validated:mate-prevent-9-95"
+  },
+  {
+    "id": "advanced-mate-prevent-10-35",
+    "family": "advanced-mate-prevent-10-35",
+    "skill": "mate",
+    "type": "MOVE",
+    "chapter": 3,
+    "difficulty": 4,
+    "fen": "rn1k3r/p1p3Qp/4p3/q2p1p2/3K1Pbb/3PP3/PP4PP/RN3BNR w - - 6 18",
+    "player": "w",
+    "solutions": [
+      "g7h8"
+    ],
+    "goal": {
+      "kind": "move"
+    },
+    "objective": {
+      "kind": "defendMate"
+    },
+    "scenario": "Stop your opponent’s threat",
+    "subskill": "anticipate-mate",
+    "prompt": "Stop your opponent’s threat. Choose a defense.",
+    "explanation": "You stopped the checkmate threat.",
+    "tags": [
+      "prevention"
+    ],
+    "choices": [
+      "g7c7",
+      "g7g4",
+      "g7h8"
+    ],
+    "sourceRef": "validated:mate-prevent-10-35"
+  },
+  {
+    "id": "advanced-mate-prevent-11-133",
+    "family": "advanced-mate-prevent-11-133",
+    "skill": "mate",
+    "type": "MOVE",
+    "chapter": 3,
+    "difficulty": 3,
+    "fen": "1k1r2nr/3bb1pp/1p1p1p2/p1pK4/6PQ/7P/2q5/8 w - - 15 67",
+    "player": "w",
+    "solutions": [
+      "h4g3"
+    ],
+    "goal": {
+      "kind": "move"
+    },
+    "objective": {
+      "kind": "defendMate"
+    },
+    "scenario": "Stop your opponent’s threat",
+    "subskill": "anticipate-mate",
+    "prompt": "Stop your opponent’s threat. Choose a defense.",
+    "explanation": "You stopped the checkmate threat.",
+    "tags": [
+      "prevention"
+    ],
+    "choices": [
+      "g4g5",
+      "h4g3",
+      "h4h7"
+    ],
+    "sourceRef": "validated:mate-prevent-11-133"
+  },
+  {
+    "id": "advanced-mate-prevent-17-49",
+    "family": "advanced-mate-prevent-17-49",
+    "skill": "mate",
+    "type": "MOVE",
+    "chapter": 3,
+    "difficulty": 4,
+    "fen": "r1b3nr/1p1pk1pp/2nbpp2/p1p5/2P1K3/N4Q2/PP1PB2P/R1B3q1 w - - 5 25",
+    "player": "w",
+    "solutions": [
+      "f3f6"
+    ],
+    "goal": {
+      "kind": "move"
+    },
+    "objective": {
+      "kind": "defendMate"
+    },
+    "scenario": "Stop your opponent’s threat",
+    "subskill": "anticipate-mate",
+    "prompt": "Stop your opponent’s threat. Choose a defense.",
+    "explanation": "You stopped the checkmate threat.",
+    "tags": [
+      "prevention"
+    ],
+    "choices": [
+      "a3b5",
+      "b2b4",
+      "f3f6"
+    ],
+    "sourceRef": "validated:mate-prevent-17-49"
+  },
+  {
+    "id": "advanced-mate-story-back-rank",
+    "family": "advanced-mate-story-back-rank",
+    "skill": "mate",
+    "type": "MOVE",
+    "difficulty": 2,
+    "chapter": 3,
+    "fen": "6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "a1a8"
+    ],
+    "prompt": "Rook and a blocked back rank. Find a strong continuation.",
+    "explanation": "The king has no safe square left.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "back-rank"
+    ],
+    "objective": {
+      "kind": "mate",
+      "moves": 1
+    },
+    "scenario": "Rook and a blocked back rank",
+    "subskill": "back-rank",
+    "sourceRef": "validated:authored:back-rank",
+    "choices": [
+      "a1a4",
+      "a1a5",
+      "a1a8"
+    ]
+  },
+  {
+    "id": "advanced-mate-story-queen-net",
+    "family": "advanced-mate-story-queen-net",
+    "skill": "mate",
+    "type": "MOVE",
+    "difficulty": 2,
+    "chapter": 3,
+    "fen": "7k/8/5K2/6Q1/8/8/8/8 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "g5g7"
+    ],
+    "prompt": "A queen protected by its king. Find a strong continuation.",
+    "explanation": "The king has no safe square left.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "queen-net"
+    ],
+    "objective": {
+      "kind": "mate",
+      "moves": 1
+    },
+    "scenario": "A queen protected by its king",
+    "subskill": "queen-net",
+    "sourceRef": "validated:authored:queen-net",
+    "choices": [
+      "f6f7",
+      "f6g6",
+      "g5g7"
+    ],
+    "source": "g5"
+  },
+  {
+    "id": "advanced-mate-story-smothered",
+    "family": "advanced-mate-story-smothered",
+    "skill": "mate",
+    "type": "MOVE",
+    "difficulty": 2,
+    "chapter": 3,
+    "fen": "6rk/6pp/8/4N3/8/3Q4/8/6K1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "e5f7"
+    ],
+    "prompt": "A knight in a closed fortress. Find a strong continuation.",
+    "explanation": "The king has no safe square left.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "smothered"
+    ],
+    "objective": {
+      "kind": "mate",
+      "moves": 1
+    },
+    "scenario": "A knight in a closed fortress",
+    "subskill": "smothered",
+    "sourceRef": "validated:authored:smothered",
+    "choices": [
+      "d3d4",
+      "e5f7",
+      "g1h1"
+    ]
+  },
+  {
+    "id": "advanced-mate-story-bishop-mate",
+    "family": "advanced-mate-story-bishop-mate",
+    "skill": "mate",
+    "type": "MOVE",
+    "difficulty": 2,
+    "chapter": 3,
+    "fen": "7k/6Rp/8/8/2B5/8/8/6K1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "g7g8"
+    ],
+    "prompt": "A bishop closes the last diagonal. Find a strong continuation.",
+    "explanation": "The king has no safe square left.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "bishop-mate"
+    ],
+    "objective": {
+      "kind": "mate",
+      "moves": 1
+    },
+    "scenario": "A bishop closes the last diagonal",
+    "subskill": "bishop-mate",
+    "sourceRef": "validated:authored:bishop-mate",
+    "choices": [
+      "g7e7",
+      "g7g5",
+      "g7g8"
+    ]
+  },
+  {
+    "id": "advanced-mate-story-pawn-mate",
+    "family": "advanced-mate-story-pawn-mate",
+    "skill": "mate",
+    "type": "MOVE",
+    "difficulty": 2,
+    "chapter": 3,
+    "fen": "7k/5K1p/6P1/8/8/8/8/8 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "g6g7"
+    ],
+    "prompt": "A pawn gives the final check. Find a strong continuation.",
+    "explanation": "The king has no safe square left.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "pawn-mate"
+    ],
+    "objective": {
+      "kind": "mate",
+      "moves": 1
+    },
+    "scenario": "A pawn gives the final check",
+    "subskill": "pawn-mate",
+    "sourceRef": "validated:authored:pawn-mate",
+    "choices": [
+      "f7f6",
+      "g6g7",
+      "g6h7"
+    ],
+    "source": "g6"
+  },
+  {
+    "id": "advanced-mate-story-rook-box",
+    "family": "advanced-mate-story-rook-box",
+    "skill": "mate",
+    "type": "MULTI_STEP",
+    "difficulty": 3,
+    "chapter": 3,
+    "fen": "7k/8/5K2/8/8/8/R7/8 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "f6f7",
+      "f6g6"
+    ],
+    "prompt": "Rook and king at the edge. Find a strong continuation.",
+    "explanation": "The king has no safe square left.",
+    "goal": {
+      "kind": "mate",
+      "minMoves": 2,
+      "maxMoves": 2
+    },
+    "tags": [
+      "rook-box"
+    ],
+    "objective": {
+      "kind": "mate",
+      "moves": 2
+    },
+    "scenario": "Rook and king at the edge",
+    "subskill": "rook-box",
+    "sourceRef": "validated:authored:rook-box"
+  },
+  {
+    "id": "advanced-mate-story-ladder",
+    "family": "advanced-mate-story-ladder",
+    "skill": "mate",
+    "type": "MULTI_STEP",
+    "difficulty": 3,
+    "chapter": 3,
+    "fen": "7k/8/8/8/8/8/1R6/R5K1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "a1a7",
+      "b2b7"
+    ],
+    "prompt": "Two rooks cut off the king. Find a strong continuation.",
+    "explanation": "The king has no safe square left.",
+    "goal": {
+      "kind": "mate",
+      "minMoves": 2,
+      "maxMoves": 2
+    },
+    "tags": [
+      "ladder"
+    ],
+    "objective": {
+      "kind": "mate",
+      "moves": 2
+    },
+    "scenario": "Two rooks cut off the king",
+    "subskill": "ladder",
+    "sourceRef": "validated:authored:ladder"
+  },
+  {
+    "id": "advanced-mate-story-rook-and-king",
+    "family": "advanced-mate-story-rook-and-king",
+    "skill": "mate",
+    "type": "MULTI_STEP",
+    "difficulty": 5,
+    "chapter": 2,
+    "fen": "8/7k/7p/5K2/8/8/8/R7 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "a1h1",
+      "f5g4",
+      "a1a7",
+      "a1a4",
+      "a1a5",
+      "a1d1",
+      "a1e1",
+      "a1a3",
+      "a1a6",
+      "a1c1",
+      "a1f1",
+      "f5f6",
+      "a1a2",
+      "a1b1",
+      "a1g1",
+      "f5e6",
+      "f5f4",
+      "a1a8",
+      "f5e4",
+      "f5e5"
+    ],
+    "prompt": "Finish the attack in eight moves.",
+    "explanation": "You finished the attack: the king has nowhere to go.",
+    "goal": {
+      "kind": "mate",
+      "minMoves": 3,
+      "maxMoves": 8
+    },
+    "tags": [
+      "rook-and-king"
+    ],
+    "objective": {
+      "kind": "best"
+    },
+    "scenario": "A rook cuts off the king along a line",
+    "subskill": "rook-and-king",
+    "sourceRef": "validated:authored:rook-and-king",
+    "line": [
+      "a1h1",
+      "h7g7",
+      "h1h4",
+      "g7h7",
+      "f5f6",
+      "h7h8",
+      "f6g6",
+      "h6h5",
+      "g6f7",
+      "h8h7",
+      "h4h5"
+    ],
+    "hidden": true
+  },
+  {
+    "id": "advanced-mate-story-luft",
+    "family": "advanced-mate-story-luft",
+    "skill": "mate",
+    "type": "MOVE",
+    "difficulty": 4,
+    "chapter": 3,
+    "fen": "r5k1/6pp/8/8/8/8/P4PPP/5RK1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "f1a1"
+    ],
+    "prompt": "Make an escape square. Find a strong continuation.",
+    "explanation": "Your opponent no longer has checkmate on the next move.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "luft"
+    ],
+    "objective": {
+      "kind": "defendMate"
+    },
+    "scenario": "Make an escape square",
+    "subskill": "luft",
+    "sourceRef": "validated:authored:luft",
+    "choices": [
+      "f1a1",
+      "f2f4",
+      "g2g4"
+    ]
+  },
+  {
+    "id": "advanced-mate-story-queen-threat",
+    "family": "advanced-mate-story-queen-threat",
+    "skill": "mate",
+    "type": "MOVE",
+    "difficulty": 2,
+    "chapter": 3,
+    "fen": "6k1/8/8/2b5/7q/8/5PPP/5RK1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "g2g3",
+      "h2h3"
+    ],
+    "prompt": "Remove the queen from the mating net. Find a strong continuation.",
+    "explanation": "Your opponent no longer has checkmate on the next move.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "queen-threat"
+    ],
+    "objective": {
+      "kind": "defendMate"
+    },
+    "scenario": "Remove the queen from the mating net",
+    "subskill": "queen-threat",
+    "sourceRef": "validated:authored:queen-threat",
+    "choices": [
+      "f1d1",
+      "g1h1",
+      "g2g3",
+      "h2h3"
+    ]
+  },
+  {
+    "id": "advanced-pin-story-absolute-knight",
+    "family": "advanced-pin-story-absolute-knight",
+    "skill": "pin",
+    "type": "MOVE",
+    "difficulty": 3,
+    "chapter": 3,
+    "fen": "6k1/5np1/8/8/8/8/B7/6K1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "a2d5",
+      "a2c4",
+      "a2e6",
+      "a2b3"
+    ],
+    "prompt": "A knight shields its king. Find a strong continuation.",
+    "explanation": "The piece is pinned to a more valuable piece behind it.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "absolute-knight"
+    ],
+    "objective": {
+      "kind": "pin"
+    },
+    "scenario": "A knight shields its king",
+    "subskill": "absolute-knight",
+    "sourceRef": "validated:authored:absolute-knight",
+    "choices": [
+      "a2c4",
+      "a2d5",
+      "g1h1",
+      "g1h2"
+    ],
+    "source": "a2"
+  },
+  {
+    "id": "advanced-pin-story-absolute-rook",
+    "family": "advanced-pin-story-absolute-rook",
+    "skill": "pin",
+    "type": "MOVE",
+    "difficulty": 4,
+    "chapter": 3,
+    "fen": "6k1/5r2/8/8/8/8/B7/6K1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "a2d5",
+      "a2c4",
+      "a2e6",
+      "a2b3"
+    ],
+    "prompt": "A rook cannot abandon its king. Find a strong continuation.",
+    "explanation": "The piece is pinned to a more valuable piece behind it.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "absolute-rook"
+    ],
+    "objective": {
+      "kind": "pin"
+    },
+    "scenario": "A rook cannot abandon its king",
+    "subskill": "absolute-rook",
+    "sourceRef": "validated:authored:absolute-rook",
+    "choices": [
+      "a2c4",
+      "a2d5",
+      "a2f7",
+      "g1h1"
+    ]
+  },
+  {
+    "id": "advanced-pin-story-absolute-queen",
+    "family": "advanced-pin-story-absolute-queen",
+    "skill": "pin",
+    "type": "MOVE",
+    "difficulty": 2,
+    "chapter": 3,
+    "fen": "4k3/8/8/4q3/8/8/8/R4K2 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "a1e1"
+    ],
+    "prompt": "Queen in front of the king. Find a strong continuation.",
+    "explanation": "The piece is pinned to a more valuable piece behind it.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "absolute-queen"
+    ],
+    "objective": {
+      "kind": "pin"
+    },
+    "scenario": "Queen in front of the king",
+    "subskill": "absolute-queen",
+    "sourceRef": "validated:authored:absolute-queen",
+    "choices": [
+      "a1a4",
+      "a1a5",
+      "a1e1"
+    ]
+  },
+  {
+    "id": "advanced-pin-story-relative-rook",
+    "family": "advanced-pin-story-relative-rook",
+    "skill": "pin",
+    "type": "MOVE",
+    "difficulty": 4,
+    "chapter": 3,
+    "fen": "r6k/8/8/b7/8/8/8/R5K1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "a1a2"
+    ],
+    "prompt": "A bishop shields a rook. Find a strong continuation.",
+    "explanation": "The piece is pinned to a more valuable piece behind it.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "relative-rook"
+    ],
+    "objective": {
+      "kind": "pin"
+    },
+    "scenario": "A bishop shields a rook",
+    "subskill": "relative-rook",
+    "sourceRef": "validated:authored:relative-rook",
+    "choices": [
+      "a1a2",
+      "a1d1",
+      "g1h1"
+    ]
+  },
+  {
+    "id": "advanced-pin-story-attack-pinned",
+    "family": "advanced-pin-story-attack-pinned",
+    "skill": "pin",
+    "type": "MOVE",
+    "difficulty": 2,
+    "chapter": 3,
+    "fen": "4k3/p7/2n5/1B6/2P5/8/8/6K1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "b5c6"
+    ],
+    "prompt": "A pawn attacks a pinned knight. Find a strong continuation.",
+    "explanation": "The pinned piece could not do its defensive job.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "attack-pinned"
+    ],
+    "objective": {
+      "kind": "exploitPin"
+    },
+    "scenario": "A pawn attacks a pinned knight",
+    "subskill": "attack-pinned",
+    "sourceRef": "validated:authored:attack-pinned",
+    "choices": [
+      "b5c6",
+      "c4c5",
+      "g1h1"
+    ]
+  },
+  {
+    "id": "advanced-pin-story-pinned-defender",
+    "family": "advanced-pin-story-pinned-defender",
+    "skill": "pin",
+    "type": "MOVE",
+    "difficulty": 3,
+    "chapter": 3,
+    "fen": "4k3/4n3/8/3r4/2B5/8/8/4R1K1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "c4d5"
+    ],
+    "prompt": "A pinned knight cannot defend the rook. Find a strong continuation.",
+    "explanation": "The pinned piece could not do its defensive job.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "pinned-defender"
+    ],
+    "objective": {
+      "kind": "exploitPin"
+    },
+    "scenario": "A pinned knight cannot defend the rook",
+    "subskill": "pinned-defender",
+    "sourceRef": "validated:authored:pinned-defender",
+    "choices": [
+      "c4d5",
+      "e1e4",
+      "e1e7"
+    ],
+    "source": "c4"
+  },
+  {
+    "id": "advanced-pin-story-king-unpins",
+    "family": "advanced-pin-story-king-unpins",
+    "skill": "pin",
+    "type": "MOVE",
+    "difficulty": 4,
+    "chapter": 3,
+    "fen": "4r1k1/8/8/8/8/4N3/8/1R2K3 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "e1f2",
+      "e1d2"
+    ],
+    "prompt": "Move the king off the line. Find a strong continuation.",
+    "explanation": "You broke the pin and freed your piece.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "king-unpins"
+    ],
+    "objective": {
+      "kind": "unpin"
+    },
+    "scenario": "Move the king off the line",
+    "subskill": "king-unpins",
+    "sourceRef": "validated:authored:king-unpins",
+    "choices": [
+      "b1b3",
+      "e1d2",
+      "e1e2",
+      "e1f2"
+    ]
+  },
+  {
+    "id": "advanced-pin-story-line-capture",
+    "family": "advanced-pin-story-line-capture",
+    "skill": "pin",
+    "type": "MOVE",
+    "difficulty": 3,
+    "chapter": 3,
+    "fen": "4r1k1/8/8/8/8/4R3/8/4K3 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "e3e8"
+    ],
+    "prompt": "A pinned rook captures the attacker. Find a strong continuation.",
+    "explanation": "You broke the pin and freed your piece.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "line-capture"
+    ],
+    "objective": {
+      "kind": "unpin"
+    },
+    "scenario": "A pinned rook captures the attacker",
+    "subskill": "line-capture",
+    "sourceRef": "validated:authored:line-capture",
+    "choices": [
+      "e1d2",
+      "e1f2",
+      "e3e8"
+    ]
+  },
+  {
+    "id": "advanced-pin-story-false-pin",
+    "family": "advanced-pin-story-false-pin",
+    "skill": "pin",
+    "type": "MOVE",
+    "difficulty": 4,
+    "chapter": 3,
+    "fen": "4r2k/8/8/8/8/4N3/8/4Q1K1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "e1c3",
+      "e1h4",
+      "e1a1",
+      "e1d2",
+      "e1f2",
+      "e1g3",
+      "e1c1"
+    ],
+    "prompt": "A relative pin: a legal counterattack. Find a strong continuation.",
+    "explanation": "You broke the pin and freed your piece.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "false-pin"
+    ],
+    "objective": {
+      "kind": "unpin"
+    },
+    "scenario": "A relative pin: a legal counterattack",
+    "subskill": "false-pin",
+    "sourceRef": "validated:authored:false-pin",
+    "choices": [
+      "e1c3",
+      "e1e2",
+      "e1h4",
+      "g1h1"
+    ]
+  },
+  {
+    "id": "advanced-pin-story-use-pin",
+    "family": "advanced-pin-story-use-pin",
+    "skill": "pin",
+    "type": "MOVE",
+    "difficulty": 2,
+    "chapter": 3,
+    "fen": "4k3/4n3/8/3p4/2B5/8/8/4R1K1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "c4d5"
+    ],
+    "prompt": "Exchange on the pinning line. Find a strong continuation.",
+    "explanation": "The pinned piece could not do its defensive job.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "use-pin"
+    ],
+    "objective": {
+      "kind": "exploitPin"
+    },
+    "scenario": "Exchange on the pinning line",
+    "subskill": "use-pin",
+    "sourceRef": "validated:authored:use-pin",
+    "choices": [
+      "c4b5",
+      "c4d3",
+      "c4d5"
+    ]
+  },
+  {
+    "id": "advanced-defense-story-retreat",
+    "family": "advanced-defense-story-retreat",
+    "skill": "defense",
+    "type": "MOVE",
+    "difficulty": 3,
+    "chapter": 3,
+    "fen": "6k1/8/8/5n2/3Q4/8/8/6K1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "d4d5"
+    ],
+    "prompt": "Move the queen away from the knight. Find a strong continuation.",
+    "explanation": "Your piece escaped the attack or gained protection.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "retreat"
+    ],
+    "objective": {
+      "kind": "save",
+      "square": "d4"
+    },
+    "scenario": "Move the queen away from the knight",
+    "subskill": "retreat",
+    "sourceRef": "validated:authored:retreat",
+    "choices": [
+      "d4d5",
+      "d4e5",
+      "d4g4"
+    ]
+  },
+  {
+    "id": "advanced-defense-story-add-defender",
+    "family": "advanced-defense-story-add-defender",
+    "skill": "defense",
+    "type": "MOVE",
+    "difficulty": 4,
+    "chapter": 3,
+    "fen": "3r2k1/8/8/8/3B4/8/8/R5K1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "a1a4",
+      "a1d1",
+      "d4e5",
+      "d4c5",
+      "d4e3",
+      "d4f6",
+      "d4c3",
+      "d4b6",
+      "d4f2",
+      "d4b2"
+    ],
+    "prompt": "A rook defends a bishop. Find a strong continuation.",
+    "explanation": "Your piece escaped the attack or gained protection.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "add-defender"
+    ],
+    "objective": {
+      "kind": "save",
+      "square": "d4"
+    },
+    "scenario": "A rook defends a bishop",
+    "subskill": "add-defender",
+    "sourceRef": "validated:authored:add-defender",
+    "choices": [
+      "a1a4",
+      "a1d1",
+      "d4a7",
+      "d4g7"
+    ]
+  },
+  {
+    "id": "advanced-defense-story-exchange-attacker",
+    "family": "advanced-defense-story-exchange-attacker",
+    "skill": "defense",
+    "type": "MOVE",
+    "difficulty": 2,
+    "chapter": 3,
+    "fen": "3r3k/8/8/8/2B5/8/8/3R2K1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "d1d8"
+    ],
+    "prompt": "Exchange the attacking rook. Find a strong continuation.",
+    "explanation": "The capture solved the challenge without losing your attacking piece.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "exchange-attacker"
+    ],
+    "objective": {
+      "kind": "capture",
+      "square": "d8"
+    },
+    "scenario": "Exchange the attacking rook",
+    "subskill": "exchange-attacker",
+    "sourceRef": "validated:authored:exchange-attacker",
+    "choices": [
+      "c4d3",
+      "c4d5",
+      "d1d8"
+    ]
+  },
+  {
+    "id": "advanced-defense-story-interpose",
+    "family": "advanced-defense-story-interpose",
+    "skill": "defense",
+    "type": "MOVE",
+    "difficulty": 3,
+    "chapter": 3,
+    "fen": "6rk/8/8/8/8/8/5P1P/2B3K1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "g1h1",
+      "g1f1"
+    ],
+    "prompt": "Block check with a bishop. Find a strong continuation.",
+    "explanation": "You stopped check and kept your king safe.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "interpose"
+    ],
+    "objective": {
+      "kind": "escapeCheck"
+    },
+    "scenario": "Block check with a bishop",
+    "subskill": "interpose",
+    "sourceRef": "validated:authored:interpose",
+    "choices": [
+      "c1g5",
+      "g1f1",
+      "g1h1"
+    ]
+  },
+  {
+    "id": "advanced-defense-story-capture-checker",
+    "family": "advanced-defense-story-capture-checker",
+    "skill": "defense",
+    "type": "MOVE",
+    "difficulty": 4,
+    "chapter": 3,
+    "fen": "6k1/8/8/8/8/5n2/8/2B1K3 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "e1f1",
+      "e1f2",
+      "e1d1",
+      "e1e2"
+    ],
+    "prompt": "Remove the checking knight. Find a strong continuation.",
+    "explanation": "You stopped check and kept your king safe.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "capture-checker"
+    ],
+    "objective": {
+      "kind": "escapeCheck"
+    },
+    "scenario": "Remove the checking knight",
+    "subskill": "capture-checker",
+    "sourceRef": "validated:authored:capture-checker",
+    "choices": [
+      "e1f1",
+      "e1f2"
+    ]
+  },
+  {
+    "id": "advanced-defense-story-counterattack",
+    "family": "advanced-defense-story-counterattack",
+    "skill": "defense",
+    "type": "MOVE",
+    "difficulty": 2,
+    "chapter": 3,
+    "fen": "q5k1/8/8/8/R7/7B/8/6K1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "a4a8"
+    ],
+    "prompt": "A countercheck saves the rook. Find a strong continuation.",
+    "explanation": "Your piece escaped the attack or gained protection.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "counterattack"
+    ],
+    "objective": {
+      "kind": "save",
+      "square": "a4"
+    },
+    "scenario": "A countercheck saves the rook",
+    "subskill": "counterattack",
+    "sourceRef": "validated:authored:counterattack",
+    "choices": [
+      "a4a8",
+      "h3e6",
+      "h3f5"
+    ]
+  },
+  {
+    "id": "advanced-defense-story-king-flight",
+    "family": "advanced-defense-story-king-flight",
+    "skill": "defense",
+    "type": "MOVE",
+    "difficulty": 3,
+    "chapter": 3,
+    "fen": "4r1k1/8/8/8/8/8/5P2/4K3 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "e1f1",
+      "e1d1",
+      "e1d2"
+    ],
+    "prompt": "The king escapes check. Find a strong continuation.",
+    "explanation": "You stopped check and kept your king safe.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "king-flight"
+    ],
+    "objective": {
+      "kind": "escapeCheck"
+    },
+    "scenario": "The king escapes check",
+    "subskill": "king-flight",
+    "sourceRef": "validated:authored:king-flight",
+    "choices": [
+      "e1d1",
+      "e1f1"
+    ]
+  },
+  {
+    "id": "advanced-defense-story-luft",
+    "family": "advanced-defense-story-luft",
+    "skill": "defense",
+    "type": "MOVE",
+    "difficulty": 4,
+    "chapter": 3,
+    "fen": "r5k1/1p6/8/8/8/8/5PPP/5RK1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "f2f4",
+      "g2g4",
+      "h2h4",
+      "f1b1",
+      "f2f3",
+      "g2g3",
+      "h2h3",
+      "g1h1",
+      "f1e1",
+      "f1d1",
+      "f1c1"
+    ],
+    "prompt": "Breathing room for the king. Find a strong continuation.",
+    "explanation": "Your opponent no longer has checkmate on the next move.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "luft"
+    ],
+    "objective": {
+      "kind": "defendMate"
+    },
+    "scenario": "Breathing room for the king",
+    "subskill": "luft",
+    "sourceRef": "validated:authored:luft",
+    "choices": [
+      "f1a1",
+      "f2f4",
+      "g2g4"
+    ]
+  },
+  {
+    "id": "advanced-defense-story-prevent-fork",
+    "family": "advanced-defense-story-prevent-fork",
+    "skill": "defense",
+    "type": "MOVE",
+    "difficulty": 2,
+    "chapter": 3,
+    "fen": "6k1/8/8/8/2n5/8/7P/R3K3 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "h2h4",
+      "h2h3",
+      "a1a8",
+      "a1a4",
+      "a1d1",
+      "a1a6",
+      "a1c1",
+      "e1f1",
+      "a1a2",
+      "a1a7",
+      "a1b1",
+      "e1f2",
+      "e1d1",
+      "e1e2"
+    ],
+    "prompt": "Stop the knight fork threat. Find a strong continuation.",
+    "explanation": "Your opponent’s double attack no longer works.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "prevent-fork"
+    ],
+    "objective": {
+      "kind": "defendFork"
+    },
+    "scenario": "Stop the knight fork threat",
+    "subskill": "prevent-fork",
+    "sourceRef": "validated:authored:prevent-fork",
+    "choices": [
+      "a1a3",
+      "a1a5",
+      "h2h3",
+      "h2h4"
+    ]
+  },
+  {
+    "id": "advanced-defense-story-prevent-pin",
+    "family": "advanced-defense-story-prevent-pin",
+    "skill": "defense",
+    "type": "MOVE",
+    "difficulty": 3,
+    "chapter": 3,
+    "fen": "6k1/8/8/b7/8/8/3N4/4KB2 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "f1c4",
+      "f1d3",
+      "e1d1",
+      "e1f2",
+      "f1e2",
+      "f1b5",
+      "f1a6",
+      "f1g2",
+      "f1h3",
+      "e1e2"
+    ],
+    "prompt": "Avoid a pin. Find a strong continuation.",
+    "explanation": "You changed the position and prevented a pin.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "prevent-pin"
+    ],
+    "objective": {
+      "kind": "defendPin"
+    },
+    "scenario": "Avoid a pin",
+    "subskill": "prevent-pin",
+    "sourceRef": "validated:authored:prevent-pin",
+    "choices": [
+      "f1c4",
+      "f1d3"
+    ]
+  },
+  {
+    "id": "advanced-defense-story-protect-pawn",
+    "family": "advanced-defense-story-protect-pawn",
+    "skill": "defense",
+    "type": "MOVE",
+    "difficulty": 4,
+    "chapter": 3,
+    "fen": "6k1/r5P1/5K2/8/8/8/8/8 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "f6g6"
+    ],
+    "prompt": "Protect the promoting pawn. Find a strong continuation.",
+    "explanation": "Your piece escaped the attack or gained protection.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "protect-pawn"
+    ],
+    "objective": {
+      "kind": "save",
+      "square": "g7"
+    },
+    "scenario": "Protect the promoting pawn",
+    "subskill": "protect-pawn",
+    "sourceRef": "validated:authored:protect-pawn",
+    "choices": [
+      "f6f5",
+      "f6g5",
+      "f6g6"
+    ]
+  },
+  {
+    "id": "advanced-defense-story-save-bishop",
+    "family": "advanced-defense-story-save-bishop",
+    "skill": "defense",
+    "type": "MOVE",
+    "difficulty": 2,
+    "chapter": 3,
+    "fen": "6k1/8/8/8/3Br3/8/8/6K1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "d4c5",
+      "d4f6",
+      "d4c3",
+      "d4b6",
+      "d4f2",
+      "d4b2",
+      "d4a7"
+    ],
+    "prompt": "A bishop retreats with a threat. Find a strong continuation.",
+    "explanation": "Your piece escaped the attack or gained protection.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "save-bishop"
+    ],
+    "objective": {
+      "kind": "save",
+      "square": "d4"
+    },
+    "scenario": "A bishop retreats with a threat",
+    "subskill": "save-bishop",
+    "sourceRef": "validated:authored:save-bishop",
+    "choices": [
+      "d4a1",
+      "d4c5",
+      "d4f6",
+      "d4g7"
+    ]
+  },
+  {
+    "id": "advanced-defense-story-save-knight",
+    "family": "advanced-defense-story-save-knight",
+    "skill": "defense",
+    "type": "MOVE",
+    "difficulty": 3,
+    "chapter": 3,
+    "fen": "4r1k1/8/8/1p6/4N3/8/8/6K1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "e4f6"
+    ],
+    "prompt": "A knight seeks a safe square. Find a strong continuation.",
+    "explanation": "Your piece escaped the attack or gained protection.",
+    "goal": {
+      "kind": "move"
+    },
+    "tags": [
+      "save-knight"
+    ],
+    "objective": {
+      "kind": "save",
+      "square": "e4"
+    },
+    "scenario": "A knight seeks a safe square",
+    "subskill": "save-knight",
+    "sourceRef": "validated:authored:save-knight",
+    "choices": [
+      "e4c5",
+      "e4d6",
+      "e4f6"
+    ]
+  },
+  {
+    "id": "advanced-defense-story-active-defense",
+    "family": "advanced-defense-story-active-defense",
+    "skill": "defense",
+    "type": "MULTI_STEP",
+    "difficulty": 5,
+    "chapter": 1,
+    "fen": "r5k1/7p/8/3PK3/8/8/8/3R4 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "d1g1",
+      "d5d6",
+      "e5f6",
+      "d1d4",
+      "d1h1",
+      "d1d3",
+      "e5d6",
+      "e5e6",
+      "e5f5",
+      "e5f4",
+      "d1d2",
+      "e5e4",
+      "e5d4",
+      "d1f1",
+      "d1c1",
+      "d1b1"
+    ],
+    "prompt": "Withstand the attack and keep your pieces safe.",
+    "explanation": "You withstood the attack and kept your material.",
+    "goal": {
+      "kind": "survive",
+      "minMoves": 3,
+      "maxMoves": 3,
+      "maxLoss": 0
+    },
+    "tags": [
+      "active-defense"
+    ],
+    "objective": {
+      "kind": "best"
+    },
+    "scenario": "Protect an attacked passed pawn",
+    "subskill": "active-defense",
+    "sourceRef": "validated:authored:active-defense",
+    "line": [
+      "d1g1",
+      "g8h8",
+      "d5d6",
+      "h7h5",
+      "d6d7",
+      "h5h4"
+    ],
+    "hidden": true
+  },
+  {
+    "id": "advanced-defense-story-simplify",
+    "family": "advanced-defense-story-simplify",
+    "skill": "defense",
+    "type": "MULTI_STEP",
+    "difficulty": 5,
+    "chapter": 2,
+    "fen": "3q1rk1/5pp1/8/8/8/8/5PP1/3Q1RK1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "f2f4",
+      "g2g4",
+      "d1d8",
+      "f2f3",
+      "g2g3",
+      "g1h1",
+      "d1e2",
+      "d1f3",
+      "d1g4",
+      "f1e1",
+      "d1c2",
+      "d1b3",
+      "d1a4",
+      "d1h5",
+      "d1e1",
+      "g1h2",
+      "d1c1",
+      "d1b1",
+      "d1a1"
+    ],
+    "prompt": "Withstand the attack and keep your pieces safe.",
+    "explanation": "You withstood the attack and kept your material.",
+    "goal": {
+      "kind": "survive",
+      "minMoves": 3,
+      "maxMoves": 3,
+      "maxLoss": 0
+    },
+    "tags": [
+      "simplify"
+    ],
+    "objective": {
+      "kind": "best"
+    },
+    "scenario": "Exchanges favouring the defender",
+    "subskill": "simplify",
+    "sourceRef": "validated:authored:simplify",
+    "line": [
+      "f2f4",
+      "f7f5",
+      "d1d8",
+      "f8d8",
+      "g2g3",
+      "g7g6"
+    ],
+    "hidden": true
+  },
+  {
+    "id": "advanced-doubleAttack-story-prevent-pawn-double",
+    "family": "advanced-doubleAttack-story-prevent-pawn-double",
+    "skill": "doubleAttack",
+    "type": "MULTI_STEP",
+    "difficulty": 2,
+    "chapter": 4,
+    "fen": "7k/8/8/1N1B4/8/2p5/8/6K1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "b5c3",
+      "d5e4",
+      "d5b3"
+    ],
+    "prompt": "Gain an advantage and keep it until the battle ends.",
+    "explanation": "You used the tactic and kept the material you won.",
+    "goal": {
+      "kind": "material",
+      "gain": 100,
+      "minMoves": 3,
+      "maxMoves": 5,
+      "requireObjective": {
+        "kind": "defendFork"
+      }
+    },
+    "tags": [
+      "prevent-pawn-double"
+    ],
+    "objective": {
+      "kind": "defendFork"
+    },
+    "scenario": "Defend against a pawn’s double attack",
+    "subskill": "prevent-pawn-double",
+    "sourceRef": "validated:authored:prevent-pawn-double",
+    "choices": [
+      "b5c3",
+      "b5d4",
+      "b5d6",
+      "d5e4"
+    ],
+    "line": [
+      "b5c3",
+      "h8h7",
+      "c3e4",
+      "h7h8",
+      "g1h2",
+      "h8h7"
+    ],
+    "hidden": true
+  },
+  {
+    "id": "advanced-doubleAttack-story-queen-distance",
+    "family": "advanced-doubleAttack-story-queen-distance",
+    "skill": "doubleAttack",
+    "type": "MULTI_STEP",
+    "difficulty": 2,
+    "chapter": 4,
+    "fen": "1r5k/8/8/8/5n2/8/8/1Q4K1 w - - 0 1",
+    "player": "w",
+    "solutions": [
+      "b1b8"
+    ],
+    "prompt": "Gain an advantage and keep it until the battle ends.",
+    "explanation": "You used the tactic and kept the material you won.",
+    "goal": {
+      "kind": "material",
+      "gain": 100,
+      "minMoves": 3,
+      "maxMoves": 5,
+      "requireObjective": {
+        "kind": "doubleAttack"
+      }
+    },
+    "tags": [
+      "queen-distance"
+    ],
+    "objective": {
+      "kind": "doubleAttack"
+    },
+    "scenario": "Queen at a safe distance",
+    "subskill": "queen-distance",
+    "sourceRef": "validated:authored:queen-distance",
+    "choices": [
+      "b1b8",
+      "b1e4",
+      "b1f5"
+    ],
+    "line": [
+      "b1b8",
+      "h8h7",
+      "b8f4",
+      "h7h8",
+      "g1h1",
+      "h8h7"
+    ],
+    "hidden": true
+  }
+]
