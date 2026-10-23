@@ -17,4 +17,27 @@ if(boardElement){
  }}draw();document.querySelector<HTMLButtonElement>('#challenge-reset')!.onclick=()=>{board.load(exercise.fen);selected=null;solved=false;started=false;status.textContent='White to move. Can your knight attack the king and rook at once?';document.querySelector('#challenge-reward')?.setAttribute('hidden','');draw();};
 }
 
+// Small progressive enhancement for the static, server-rendered game examples.
+document.querySelectorAll<HTMLElement>('.example-card[data-fen]').forEach(card=>{
+ const position=new Chess(card.dataset.fen),solution=card.dataset.solution;
+ const status=card.querySelector<HTMLElement>('.example-feedback');
+ const squares=Array.from(card.querySelectorAll<HTMLButtonElement>('.example-square'));
+ let selected:Square|null=null,solved=false,started=false;
+ squares.forEach(square=>square.addEventListener('click',()=>{
+  if(solved)return;
+  if(!started){track('puzzle_start');started=true;}
+  const target=square.dataset.square as Square,piece=position.get(target);
+  if(!selected){if(piece?.color!==position.turn()){status!.textContent='Select one of your pieces first.';return;}selected=target;square.setAttribute('aria-pressed','true');status!.textContent=`${piece.type.toUpperCase()} selected. Choose a destination.`;return;}
+  const from=selected;selected=null;
+  squares.forEach(item=>item.setAttribute('aria-pressed','false'));
+  let move;try{move=position.move({from,to:target,promotion:'q'});}catch{/* An illegal move remains on the initial board. */}
+  if(!move){status!.textContent='That move is not legal. Try another square.';return;}
+  if(from+target!==solution){position.undo();status!.textContent='A legal move, but look for the move that solves this challenge.';return;}
+  solved=true;status!.textContent=`Correct: ${move.san}. Open the solution below to see why it works.`;
+  const source=card.querySelector<HTMLButtonElement>(`[data-square="${from}"]`),image=source?.querySelector('img');
+  if(image)square.replaceChildren(image);
+  track('puzzle_complete');
+ }));
+});
+
 if ('serviceWorker' in navigator) void navigator.serviceWorker.getRegistration('/').then(r=>r?.update()).catch(()=>{});

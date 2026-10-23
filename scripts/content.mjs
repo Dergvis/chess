@@ -7,10 +7,10 @@ export const pages=[
 ['What is a good chess game for a beginner?','Look for understandable goals, legal moves and feedback that explains the position. A short challenge can be easier to approach than an entire game. In CHEZZIES, children can explore the piece guide and practise one idea at a time.'],
 ['Is CHEZZIES free?','Yes. The international version is free to play. There are no subscriptions or paid content limits. Some locations open through gameplay progress.']
 ],links:['online-chess-for-kids','chess-puzzles-for-kids']},
-{slug:'online-chess-for-kids',title:'Online Chess for Kids | CHEZZIES',h1:'Online Chess for Kids',intro:'CHEZZIES is an online chess adventure for kids. Play free in a web browser, choose a hero, solve short challenges and face computer opponents in the Arena.',sections:[
+{slug:'online-chess-for-kids',title:'Online Chess for Kids | CHEZZIES',h1:'Online Chess for Kids',intro:'CHEZZIES is a free browser-based chess adventure for kids. Choose a hero, solve short challenges and face computer opponents in the Arena.',sections:[
 ['How do children start playing?','Select Start Adventure, choose a hero and tell the game how familiar you are with chess. Explore the map or open the piece guide. You do not need an account or a payment to begin.'],
 ['Who do children play against?','The Arena uses computer-controlled opponents with different difficulty levels. This version does not provide live multiplayer matchmaking or a player chat.'],
-['Where is progress saved?','Guest progress is saved in the current browser. Account registration and cloud saves are being connected and are not available yet. Clearing browser data can remove unsaved guest progress.'],
+['Where is progress saved?','Guest progress stays in the current browser. Register a free CHEZZIES account to save the adventure online and restore it on another device. If you play as a guest, clearing browser data can remove your progress.'],
 ['Does it work on a phone?','CHEZZIES runs in a browser on phones, tablets and desktop computers. The game adapts its navigation and board to the screen. A larger screen can help when first learning to recognise pieces.']
 ],links:['chess-games-for-kids','parents']},
 {slug:'learn-chess-for-kids',title:'Learn Chess for Kids | CHEZZIES',h1:'Learn Chess for Kids',intro:'Kids can learn chess one idea at a time through short practice. CHEZZIES introduces piece movement, checkmate, forks, pins and defense in an interactive adventure.',sections:[
@@ -40,11 +40,36 @@ export const pages=[
 ['Who is CHEZZIES for?','CHEZZIES is designed for young chess beginners. A child who is still learning to read may enjoy playing with an adult alongside them.'],
 ['What will my child do?','Children practise checkmate, forks, pins, double attacks and defense. They progress through fortress stages, develop their chosen hero and can play longer games in the Arena. The training ground offers a short arcade activity with the same heroes.'],
 ['Is everything free?','Yes. The international version has no payment requirement, subscriptions or paid limits. Locked locations reflect adventure progress or content not yet available, not a purchase requirement.'],
-['Can I see progress?','The in-game progress summary shows recorded activity and skill practice. Guest progress stays in this browser. Account registration and cloud saves are not available yet. Please keep your browser data to preserve your adventure.'],
+['Can I see progress?','The in-game progress summary shows recorded activity and skill practice. Guest progress stays in this browser. A free CHEZZIES account can save and restore the adventure across devices.'],
 ['Are there other players or chat?','The Arena opponents are computer-controlled. This international release has no player chat or multiplayer matchmaking. It does not offer parental time controls or a separate parent account.'],
 ['What data does this version use?','The browser stores game progress and a limited local activity log. The activity interface accepts event names and broad traffic categories, without names, emails or full referring URLs. Vercel Web Analytics measures visits, page views and traffic sources without analytics cookies. We remove query strings and fragments from page URLs before sending page-view events. With your permission, Google Analytics also uses analytics cookies to measure visits and game activity. Choose No thanks to play without Google Analytics, or use Privacy settings to change your choice. We do not send names, email addresses or saved games to Google. Learn how Google uses information at https://policies.google.com/technologies/partner-sites.'],
 ['How can I help my child?','Try a challenge together and ask what each piece attacks. Let the child make a move, inspect the feedback and try again. Stop when the child wants a break; there is no required daily schedule.']
 ],links:['learn-chess-for-kids','online-chess-for-kids']}
+];
+
+// IDs refer to reviewed, playable positions in the production challenge catalogue.
+export const puzzleExamples=[
+  {id:'mate-1',topic:'Checkmate',summary:'A rook and king can trap the opposing king on the edge.',tryIt:'White to move: how can the rook finish the game?',answer:'Rh1# — the rook checks along the h-file while the white king controls the remaining escape squares.'},
+  {id:'fork-1',topic:'Fork',summary:'A single knight move can threaten two pieces at once.',tryIt:'White to move: find a knight move that checks the king and attacks the rook.',answer:'Nd6+ — the knight checks the king on e8 and also attacks the rook on c8.'},
+  {id:'pin-1',topic:'Pin',summary:'A piece cannot leave a line if that would expose its own king to check.',tryIt:'White to move: put the black knight on a diagonal with its king.',answer:'Bb5 — bishop, knight on d7, and king on e8 line up. The knight cannot move off that diagonal.'},
+  {id:'double-1',topic:'Double Attack',summary:'One move can create two separate threats.',tryIt:'White to move: check the king and attack the rook at the same time.',answer:'Qd5+ — the queen checks the king on g8 and attacks the rook on a8.'},
+  {id:'defense-2',topic:'Defense',summary:'Sometimes the safest defense is to remove the threat.',tryIt:'White to move: the rook attacks your king. Find a safe reply.',answer:'Bxe4 — the bishop captures the attacking rook, ending the check.'}
+];
+export const learningSteps=[
+  ['Meet the pieces','Use the in-game piece guide to recognise the king, queen, rooks, bishops, knights and pawns.','/play/'],
+  ['Learn legal moves','Try moving each piece on the game board; the game checks legal moves. Review pawn movement and knight jumps in the beginner guide.','/how-to-play-chess-for-kids/'],
+  ['Keep the king safe','Look for checks before planning an attack. The Defense Fortress asks you to remove threats.','/play/'],
+  ['Find checkmate','In the Checkmate Fortress, inspect the king’s escape squares before moving.','/chess-puzzles-for-kids/#checkmate'],
+  ['Spot two threats','Visit Fork Kingdom, Pin Tower and Double Attack Citadel for short tactical positions.','/chess-puzzles-for-kids/#fork'],
+  ['Play a full game','Try an Arena game against a computer opponent, then use the progress view to review what you played.','/play/']
+];
+export const pieceRules=[
+  ['Pawn','p','Moves one square forward; from its starting square it may move two if the path is clear. Captures one square diagonally forward.'],
+  ['Knight','n','Moves in an L shape: two squares in one direction, then one sideways. It can jump over pieces.'],
+  ['Bishop','b','Moves diagonally any number of clear squares.'],
+  ['Rook','r','Moves along rows or columns any number of clear squares.'],
+  ['Queen','q','Combines the bishop’s diagonals and the rook’s straight lines.'],
+  ['King','k','Moves one square in any direction, but may never move into check.']
 ];
 
 
