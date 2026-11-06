@@ -8,6 +8,7 @@ A free chess adventure for kids, migrated from the actual September v18 CHEZZIES
 - Accounts: separate international database and API service, with the existing account/save logic.
 
 See [source verification](docs/PRODUCTION-SOURCE-VERIFICATION.md), [migration report](docs/IMPLEMENTATION-REPORT.md) and [deployment instructions](docs/DEPLOYMENT.md).
+For a current end-to-end architecture and operations handoff, read [CHEZZIES International handoff](docs/CHEZZIES-INTERNATIONAL-HANDOFF.md) first; some earlier reports describe historical Preview states.
 
 ## Development
 
