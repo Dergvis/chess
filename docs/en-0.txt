@@ -1,0 +1,300 @@
+0 Getting to know the game
+1 Learning to spot threats
+2 Thinking about replies
+3 A serious opponent
+4 Grows with you
+5 The game record is damaged
+6 Could not save the game in this browser.
+7 Your opponent is thinking. You can try again.
+8 Opponent
+9 ← Map · save game
+10 ARENA · USE YOUR DISCOVERIES
+11 Try again
+12 A draw!
+13 You won!
+14 Thanks for the game!
+15 Collect your discoveries →
+16 End this game?
+17 You can save it and continue later.
+18 Save and return to the map
+19 Resign and see the review
+20 Keep playing
+21 of
+22 Fork Kingdom
+23 Fork
+24 One piece attacks two targets. Your opponent saves one, leaving the other to capture!
+25 Double Attack Citadel
+26 Double attack
+27 Make two threats with one move. For example, check the king and attack a rook.
+28 Pin Tower
+29 Pin
+30 A piece stands in front of its king. Moving it would expose the king to check, so it is pinned.
+31 Defense Fortress
+32 Defense
+33 Find the threat. Move away, block the attack or capture the attacker.
+34 Checkmate Fortress
+35 Checkmate
+36 Checkmate is check with no escape. Look at every possible escape route.
+37 Opponents Arena
+38 Arena
+39 Try your discoveries in a full game.
+40 Laserhorse
+41 Amplifier
+42 Energy core
+43 Focusing lens
+44 Mastery beam
+45 Ladiator
+46 Storm conductor
+47 Storm core
+48 Sceptre ring
+49 Mastery lightning
+50 Officer Cannon
+51 Stabiliser
+52 Energy charge
+53 Precision sight
+54 Mastery rocket
+55 This happened in your game. Move
+56 . Find a strong continuation.
+57 Capture an unprotected enemy piece.
+58 The rook captured an unprotected rook.
+59 Find a way out of this tricky position.
+60 Find checkmate in one move.
+61 Find a strong move.
+62 Watch an example
+63 My turn to try →
+64 Learn to checkmate
+65 Learn to make a fork
+66 Learn to make a pin
+67 See how this tactic works
+68 WATCH AN EXAMPLE
+69 You did it! Checkmate
+70 Watch the example, then try it yourself.
+71 FORTRESS FREED
+72 YOUR ADVENTURE
+73 You defeated the Guardian!
+74 ♜ Learn
+75 ♟ Find
+76 ⚑ Create
+77 ♛ Guardian
+78 Completed ✓
+79 You changed this world. Your next adventure is waiting on the map.
+80 First, watch a simple example and try with hints.
+81 Spot the tactic on the board yourself.
+82 Use your discovery in a real position.
+83 Use everything you have learned.
+84 Mastery challenge — a harder task
+85 Continue the journey
+86 Start the journey
+87 Discoveries await in the mist
+88 Complete some fortress challenges first. Here you will meet familiar tactics without being told the topic.
+89 To the fortresses →
+90 Have you played chess before?
+91 Choose what fits you. We will suggest a starting point for your adventure.
+92 🌱 Just starting
+93 ♟ I know a little
+94 🔥 I play confidently
+95 Fortress gates:
+96 Solve the challenges to prepare your strike.
+97 Gain an advantage and keep it until the challenge ends.
+98 Find a strong continuation.
+99 FORTRESS GUARDIAN
+100 Guardian shields
+101 Start the battle →
+102 ← World map
+103 HERO CHALLENGE ·
+104 OF 7
+105 GUARDIAN CHALLENGE ·
+106 OF 2
+107 GUARDIAN BATTLE ·
+108 Test your hero’s strength →
+109 Continue →
+110 Learn
+111 Spot the tactic
+112 Use it
+113 Guardian battle
+114 Gates
+115 Tower
+116 Courtyard
+117 Guardian
+118 with the knight
+119 with the pawn
+120 with the bishop
+121 with the rook
+122 with the queen
+123 with the king
+124 knight
+125 pawn
+126 bishop
+127 rook
+128 queen
+129 king
+130 The opponent’s king is already in check, but the attacking side is marked to move.
+131 A finished position cannot require another move.
+132 No verified answer is available.
+133 The saved answer does not give checkmate in one move.
+134 Protect a piece
+135 Stop your opponent winning your piece on the next move.
+136 You did it! The threat is stopped.
+137 Find the piece under attack.
+138 You can move away, defend it or capture the attacker.
+139 Check what your opponent can capture after your move.
+140 Is this checkmate yet?
+141 Checkmate in 1 move
+142 Finish the attack
+143 Check: can the king escape, block the attack or capture the attacker?
+144 Find a check that leaves no escape, block or capture.
+145 Checkmate! The king cannot escape, block or capture the attacker.
+146 Look at where the king can move.
+147 Which squares do your pieces already cover?
+148 Find a check that leaves no way to escape.
+149 Do not let the highlighted king escape.
+150 Is the king in check now?
+151 Can it move to a safe square?
+152 Can the check be blocked or the attacker captured?
+153 Make a fork
+154 Find a move that creates a fork
+155 Make two threats in one move
+156 Find a move that lets one of your pieces attack two targets at once.
+157 You did it! One piece attacks several targets at once.
+158 Find two enemy pieces near each other.
+159 Which of your pieces can attack both at once?
+160 Try
+161 Look for checks and attacks.
+162 Find a move that lets one piece attack the highlighted targets.
+163 Find the pinned piece
+164 Use the pin
+165 Make a pin
+166 Mark the piece in front of the king that the highlighted piece attacks.
+167 Line up with an enemy piece and its king. The first piece cannot move away and expose its king to check.
+168 Correct! This piece shields the king.
+169 You did it! The pin helped your attack.
+170 You did it! The piece is pinned to its king and cannot expose it to check.
+171 Find the piece shielding the king.
+172 Look at the line between that piece and its king.
+173 Check the lines of the rook, bishop and queen.
+174 Find a useful continuation: a pinned piece cannot defend freely.
+175 Pin a piece to a more valuable piece behind it.
+176 Find the pieces under attack
+177 Mark all the pieces attacked by
+178 piece
+179 on
+180 . You do not need to move a piece.
+181 Correct! You found every target of the highlighted piece.
+182 Start with the highlighted piece on
+183 Trace its attacks. Other pieces can block the path.
+184 Mark only enemy pieces that its attack can reach.
+185 Win a piece
+186 Find a useful capture. Check that the reply will not cost you more.
+187 You did it! You won material.
+188 Promote a pawn
+189 Take your pawn to the last rank and choose a new piece.
+190 You did it! The pawn promoted.
+191 Keep your pieces safe
+192 Stop the threats and do not leave your pieces unprotected.
+193 You did it! You held the position.
+194 Escape check and give checkmate
+195 Escape check and make a fork
+196 Save your king from check
+197 Your king is already in check.
+198 Find a move that protects it and checkmates the other king.
+199 Find a safe move that also creates a double attack.
+200 Move away, block the attack or capture the attacker.
+201 Opponent’s reply · after your move
+202 Last move
+203 Your move
+204 · up to
+205 moves
+206 Great! You won material with a fork.
+207 Prepare a fork
+208 First draw the king away so the knight can create a double threat.
+209 Your opponent answers the threat
+210 See which piece is saved and which remains under attack.
+211 Now find a move that attacks two enemy pieces at once.
+212 Capture the piece under attack
+213 Keep your advantage
+214 Find a useful capture after the reply. Check your piece’s protection.
+215 Do not give your gain back. Move your piece to a safe square.
+216 Find the best move
+217 Your king is in check. Find the strongest escape.
+218 Compare checks, captures and threats. Choose a move that improves your position.
+219 Checkmate!
+220 The king cannot escape, block or capture the attacker.
+221 Trace the attacks first. Mark the pieces the highlighted piece can reach.
+222 Take the pawn to the last rank.
+223 Withstand the attack and keep your pieces safe.
+224 Finish the attack in
+225 moves.
+226 Mark every piece attacked by the highlighted piece.
+227 The hint has not loaded yet. Try again.
+228 The goal was not reached this time. Explore a similar position and try again.
+229 Check every escape: move away, block or capture the attacker.
+230 CHESS CHALLENGE
+231 You did it!
+232 Nearly!
+233 Position finished · checkmate
+234 ⚫ Black to move
+235 ⚪ White to move
+236 · just choose an answer
+237 Could not check this position.
+238 Preparing your challenge…
+239 Check again
+240 You solved it with help. To open the next chapter, beat the Guardian without hints or retries.
+241 You spotted the tactic:
+242 Look closely at the highlighted piece.
+243 Compare the squares marked in gold.
+244 It is checkmate
+245 The king can escape
+246 Selected:
+247 Check my choices
+248 · promotion
+249 Your opponent is thinking.
+250 Retry the reply
+251 Preparing a hint…
+252 Hint
+253 Try once more
+254 We will return to this tactic later.
+255 I am not sure yet
+256 I need more practice
+257 Chess challenge
+258 The queen moves closer to the king.
+259 The king is in check and looks for an escape.
+260 The queen covers a7 and b8. The white king protects the queen. Checkmate.
+261 The knight moves.
+262 One piece attacks two targets.
+263 The king must escape check, leaving the rook under attack.
+264 The rook moves onto the king’s file.
+265 The knight stands between the rook and the king.
+266 If the knight moves away, its king will be in check.
+267 The pawn spots an unprotected target.
+268 The pawn captures the enemy piece.
+269 The enemy piece leaves the board.
+270 The king is in check.
+271 The attacking rook is unprotected.
+272 The king captures the rook. No more check.
+273 The queen moves.
+274 Check along one diagonal.
+275 The rook is attacked along the other diagonal. Two threats!
+276 Animated example
+277 Close the example
+278 Watch an example of this tactic
+279 Explanation of your current result
+280 A separate example, not the solution to this challenge
+281 Look at the resulting position.
+282 The king is in check. It has no safe move, block or capture.
+283 Look at how the attacks changed after your move.
+284 Your result
+285 Example on another board
+286 Watch the example again
+287 The king has no escape from this check. Checkmate!
+288 Save the piece your opponent is attacking.
+289 The piece is safe: your opponent can no longer capture it.
+290 Find a move that attacks two pieces at once.
+291 One piece attacks two targets at once.
+292 Pin the piece to the king behind it.
+293 The piece shields its king and cannot leave the line.
+294 Find a piece you can safely capture.
+295 You captured a piece and kept your own protected.
+296 Find a defense against check.
+297 The check is stopped. Your king is safe.
+298 You found a strong move. Show it again.
+299 Analysis took too long. Try again.

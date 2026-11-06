@@ -51,7 +51,7 @@ export default function CheckmateAnimation({
             </div>
           </div>
           <div className="winner-text">
-            {winner === 'w' ? 'Белые' : 'Чёрные'} выиграли!
+            {winner === 'w' ? "White" : "Black"} wins!
           </div>
         </div>
 
@@ -78,7 +78,7 @@ export default function CheckmateAnimation({
 
         {/* Текст "МАТ!" */}
         {intensity === 'full' && (
-          <div className="checkmate-text">🏆 МАТ! 🏆</div>
+          <div className="checkmate-text">🏆 CHECKMATE! 🏆</div>
         )}
       </div>
     </div>

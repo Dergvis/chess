@@ -1,53 +1,88 @@
+import { useState, useEffect } from 'react';
+import { getActiveSubscription, getDaysRemaining, getFormattedExpiryDate } from '../../shared/storage/subscriptionStorage';
 import './HomeScreen.css';
 
 interface HomeScreenProps {
+  childName: string;
   onPlay: () => void;
-  onSettings: () => void;
+  onProfile: () => void;
+  onLogout: () => void;
 }
 
-export default function HomeScreen({ onPlay, onSettings }: HomeScreenProps) {
-  return (
-    <div className="home-screen">
-      <div className="home-container animate-fadeIn">
-        <header className="home-header">
-          <h1 className="home-title">
-            <span className="title-icon">♔</span>
-            Шахматы для Гоши
-          </h1>
-          <p className="home-subtitle">Увлекательные шахматы для детей</p>
-        </header>
+const GREETINGS = [
+  "A lovely day for chess.",
+  "The pieces are waiting for your move.",
+  "Time for a good game.",
+  "Every move is a chance to discover something.",
+  "Let’s find the best move.",
+  "The chessboard is ready.",
+  "Try a clever plan today.",
+  "Victories start with the first move.",
+  "Ready for battle. The board awaits.",
+  "Ready for a new game?",
+];
 
+export default function HomeScreen({ childName, onPlay, onProfile, onLogout }: HomeScreenProps) {
+  const [isMobile, setIsMobile] = useState(false);
+  const [greetingIndex, setGreetingIndex] = useState(0);
+  const subscription = getActiveSubscription();
+  const daysRemaining = getDaysRemaining();
+  const expiryDate = getFormattedExpiryDate();
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768 || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent));
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    const todayKey = Math.floor(Date.now() / (24 * 60 * 60 * 1000));
+    const nameSeed = childName.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0);
+    setGreetingIndex((todayKey + nameSeed) % GREETINGS.length);
+  }, [childName]);
+
+  const backgroundSrc = isMobile ? '/backgrounds/backgroundforallmobile.png' : '/backgrounds/backgroundforallweb.png';
+
+  return (
+    <div className="home-screen" data-page="3">
+      <img
+        src={backgroundSrc}
+        alt="Home Background"
+        className="home-background"
+      />
+      <div className="home-overlay" />
+      <div className="home-container">
         <main className="home-main">
           <div className="home-menu">
-            <button className="home-menu-item btn btn-primary btn-large" onClick={onPlay}>
+            <div className="home-greeting">
+              <div className="home-greeting-title">Hello, {childName || "Player"}!</div>
+              <div className="home-greeting-text">{GREETINGS[greetingIndex]}</div>
+            </div>
+
+            {subscription.isActive && (
+              <div className="home-subscription-status">
+                Subscription active: {daysRemaining} days
+                {expiryDate ? ` until ${expiryDate}` : ''}
+              </div>
+            )}
+
+            <button className="home-menu-item btn btn-primary btn-large btn-play" onClick={onPlay}>
               <span className="menu-icon">🎮</span>
-              <span className="menu-text">Играть</span>
+              <span className="menu-text">Play!</span>
             </button>
-
-            <button className="home-menu-item btn btn-secondary btn-large" onClick={onSettings}>
-              <span className="menu-icon">⚙️</span>
-              <span className="menu-text">Настройки</span>
+            <button className="home-menu-item btn btn-secondary btn-large btn-profile" onClick={onProfile}>
+              <span className="menu-icon">⚔️</span>
+              <span className="menu-text">My hero</span>
             </button>
-
-            <div className="home-menu-item home-menu-item-disabled btn btn-large">
-              <span className="menu-icon">📚</span>
-              <span className="menu-text">Учиться</span>
-              <span className="menu-badge">Скоро</span>
-            </div>
-
-            <div className="home-menu-item home-menu-item-disabled btn btn-large">
-              <span className="menu-icon">🏆</span>
-              <span className="menu-text">Награды</span>
-              <span className="menu-badge">Скоро</span>
-            </div>
+            <button className="home-menu-item btn btn-logout-home btn-large" onClick={onLogout}>
+              <span className="menu-icon">📤</span>
+              <span className="menu-text">Sign out</span>
+            </button>
           </div>
         </main>
-
-        <footer className="home-footer">
-          <p className="home-footer-text">
-            Приятной игры! 😊
-          </p>
-        </footer>
       </div>
     </div>
   );

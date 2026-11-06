@@ -12,41 +12,44 @@
   --color-success: #66BB6A;
   --color-error: #EF5350;
   --color-warning: #FFA726;
-  
+
   /* Цвета доски */
   --board-light: #F0D9B5;
   --board-dark: #B58863;
   --board-highlight: #AAA23A;
   --board-capture: #E57373;
-  
+
   /* Фоновые цвета */
   --bg-primary: #FFFFFF;
   --bg-secondary: #F5F5F5;
   --bg-accent: #E3F2FD;
-  
+
   /* Текст */
   --text-primary: #212121;
   --text-secondary: #757575;
-  
-  /* Размеры */
-  --board-size-mobile: min(90vw, 90vh - 200px);
-  --board-size-tablet: min(60vw, 80vh);
-  --board-size-desktop: min(50vw, 70vh);
-  
+
   /* Шрифты */
   --font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Размер доски: десктоп-дефолт, переопределяется в @media мобильных */
+  --board-safe-size: min(85vw, 80dvh);
 }
 
 html, body {
   font-family: var(--font-family);
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
+  min-height: 100dvh;
   overflow-x: hidden;
+  overflow-y: auto;
   -webkit-tap-highlight-color: transparent;
 }
 
 #root {
   min-height: 100vh;
+  min-height: 100dvh;
+  padding-left: env(safe-area-inset-left, 0);
+  padding-right: env(safe-area-inset-right, 0);
   display: flex;
   flex-direction: column;
 }
@@ -57,6 +60,40 @@ html, body {
   margin: 0 auto;
   padding: 16px;
   width: 100%;
+}
+
+.no-overflow {
+  overflow: hidden;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.grid-auto-fill {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 140px), 1fr));
 }
 
 .btn {
@@ -72,10 +109,18 @@ html, body {
   cursor: pointer;
   transition: all 0.2s ease;
   touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .btn:active {
   transform: scale(0.95);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .btn-primary {
@@ -84,7 +129,7 @@ html, body {
   box-shadow: 0 4px 12px rgba(74, 144, 217, 0.4);
 }
 
-.btn-primary:hover {
+.btn-primary:hover:not(:disabled) {
   box-shadow: 0 6px 16px rgba(74, 144, 217, 0.5);
 }
 
@@ -92,6 +137,10 @@ html, body {
   background: linear-gradient(135deg, var(--color-secondary), #F57F17);
   color: white;
   box-shadow: 0 4px 12px rgba(249, 168, 37, 0.4);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  box-shadow: 0 6px 16px rgba(249, 168, 37, 0.5);
 }
 
 .btn-success {
@@ -102,6 +151,10 @@ html, body {
 .btn-large {
   padding: 16px 32px;
   font-size: 18px;
+}
+
+.btn-full {
+  width: 100%;
 }
 
 .card {
@@ -150,15 +203,47 @@ html, body {
   animation: fadeIn 0.5s ease-out;
 }
 
-/* Адаптивность */
+/* Глобальная адаптивность */
+@media (min-width: 1200px) {
+  .container { max-width: 1140px; }
+}
+
+@media (max-width: 1199px) {
+  .container { max-width: 960px; }
+}
+
+@media (max-width: 1024px) {
+  .container { max-width: 100%; padding: 14px; }
+}
+
 @media (max-width: 768px) {
-  .btn {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-  
-  .btn-large {
-    padding: 14px 28px;
-    font-size: 16px;
-  }
+  .container { padding: 12px; }
+  .btn { padding: 10px 20px; font-size: 14px; }
+  .btn-large { padding: 14px 28px; font-size: 16px; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 10px; }
+  .btn { padding: 10px 16px; font-size: 13px; }
+  .btn-large { padding: 12px 20px; font-size: 14px; }
+  .card { padding: 16px; border-radius: 12px; }
+}
+
+@media (max-width: 375px) {
+  .container { padding: 8px; }
+  .btn { padding: 8px 14px; font-size: 12px; }
+}
+
+/* Ultra-small screens (320-359px) */
+@media (max-width: 359px) {
+  .container { padding: 6px; }
+  .btn { padding: 6px 10px; font-size: 11px; }
+  .btn-large { padding: 10px 16px; font-size: 12px; }
+  .card { padding: 12px; border-radius: 10px; }
+}
+
+/* Global overflow protection */
+* {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }

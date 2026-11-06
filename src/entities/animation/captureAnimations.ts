@@ -22,8 +22,8 @@ export interface CaptureAnimation {
 export const captureAnimations: CaptureAnimation[] = [
   {
     id: 'catapult',
-    name: 'Катапульта',
-    description: 'Фигура запускается из катапульты',
+    name: "Catapult",
+    description: "The piece launches from a catapult",
     eventType: 'MOVE_CAPTURE',
     duration: {
       full: 1500,
@@ -35,8 +35,8 @@ export const captureAnimations: CaptureAnimation[] = [
   },
   {
     id: 'cannon',
-    name: 'Игрушечная пушка',
-    description: 'Пуф! И фигура улетает',
+    name: "Toy cannon",
+    description: "Poof! The piece flies away",
     eventType: 'MOVE_CAPTURE',
     duration: {
       full: 1200,
@@ -48,8 +48,8 @@ export const captureAnimations: CaptureAnimation[] = [
   },
   {
     id: 'spring',
-    name: 'Пружина',
-    description: 'Фигура подпрыгивает на пружине',
+    name: "Spring",
+    description: "The piece bounces on a spring",
     eventType: 'MOVE_CAPTURE',
     duration: {
       full: 1000,
@@ -61,8 +61,8 @@ export const captureAnimations: CaptureAnimation[] = [
   },
   {
     id: 'ambulance',
-    name: 'Скорая помощь',
-    description: 'Приезжает скорая и увозит фигуру',
+    name: "Ambulance",
+    description: "An ambulance takes the piece away",
     eventType: 'MOVE_CAPTURE',
     duration: {
       full: 1800,
@@ -74,8 +74,8 @@ export const captureAnimations: CaptureAnimation[] = [
   },
   {
     id: 'trapdoor',
-    name: 'Люк',
-    description: 'Фигура проваливается в люк',
+    name: "Trapdoor",
+    description: "The piece falls through a trapdoor",
     eventType: 'MOVE_CAPTURE',
     duration: {
       full: 1000,
@@ -87,8 +87,8 @@ export const captureAnimations: CaptureAnimation[] = [
   },
   {
     id: 'rocket',
-    name: 'Ракета',
-    description: 'Фигура улетает на ракете',
+    name: "Rocket",
+    description: "The piece flies off on a rocket",
     eventType: 'MOVE_CAPTURE',
     duration: {
       full: 1600,
@@ -100,8 +100,8 @@ export const captureAnimations: CaptureAnimation[] = [
   },
   {
     id: 'fan',
-    name: 'Вентилятор',
-    description: 'Мощный вентилятор сдувает фигуру',
+    name: "Fan",
+    description: "A powerful fan blows the piece away",
     eventType: 'MOVE_CAPTURE',
     duration: {
       full: 1200,
@@ -113,8 +113,8 @@ export const captureAnimations: CaptureAnimation[] = [
   },
   {
     id: 'banana',
-    name: 'Банановая кожура',
-    description: 'Фигура поскользнулась на банане',
+    name: "Banana peel",
+    description: "The piece slips on a banana",
     eventType: 'MOVE_CAPTURE',
     duration: {
       full: 1300,
@@ -126,8 +126,8 @@ export const captureAnimations: CaptureAnimation[] = [
   },
   {
     id: 'balloons',
-    name: 'Воздушные шарики',
-    description: 'Шарики уносят фигуру в небо',
+    name: "Balloons",
+    description: "Balloons carry the piece into the sky",
     eventType: 'MOVE_CAPTURE',
     duration: {
       full: 1600,
@@ -139,8 +139,8 @@ export const captureAnimations: CaptureAnimation[] = [
   },
   {
     id: 'teleport',
-    name: 'Телепорт',
-    description: 'Фигура телепортируется с доски',
+    name: "Teleport",
+    description: "The piece teleports off the board",
     eventType: 'MOVE_CAPTURE',
     duration: {
       full: 1000,
@@ -152,8 +152,8 @@ export const captureAnimations: CaptureAnimation[] = [
   },
   {
     id: 'spider',
-    name: 'Паутинка',
-    description: 'Паучок спускается и забирает фигуру',
+    name: "Spider web",
+    description: "A spider comes down and takes the piece",
     eventType: 'MOVE_CAPTURE',
     duration: {
       full: 1400,
@@ -165,8 +165,8 @@ export const captureAnimations: CaptureAnimation[] = [
   },
   {
     id: 'broom',
-    name: 'Метла',
-    description: 'Метла подметает фигуру с доски',
+    name: "Broom",
+    description: "A broom sweeps the piece off the board",
     eventType: 'MOVE_CAPTURE',
     duration: {
       full: 1300,

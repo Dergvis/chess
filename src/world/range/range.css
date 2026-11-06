@@ -1,0 +1,493 @@
+.polygon,
+.polygon-lobby {
+  color: #f9edcd;
+  background: #0e292d url("/world-art/courtyard.png") center/cover;
+  min-height: 100dvh;
+  position: relative;
+  font-family: inherit;
+  isolation: isolate;
+}
+.polygon:before,
+.polygon-lobby:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #07282fce, #0b22243d 55%, #071c26d6);
+  z-index: -1;
+  pointer-events: none;
+}
+.range-header,
+.range-other > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 24px;
+  position: relative;
+  z-index: 4;
+  background: #071f29a8;
+}
+.range-header > div {
+  display: grid;
+  gap: 4px;
+  text-align: center;
+}
+.range-header small {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #f2cd82;
+}
+.range-header strong {
+  font-size: 18px;
+}
+.range-header button {
+  margin: 0;
+  color: #fff3d2;
+  background: #123a42;
+  border: 1px solid #bfa76c;
+}
+.polygon .polygon-lobby {
+  min-height: calc(100dvh - 90px);
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 40px 6%;
+  gap: 40px;
+}
+.polygon .polygon-lobby:before {
+  display: none;
+}
+.range-lobby-hero {
+  position: absolute;
+  left: 7%;
+  bottom: 3%;
+  width: min(34vw, 400px);
+  pointer-events: none;
+  filter: drop-shadow(0 20px 14px #081a32aa);
+}
+.range-card {
+  width: min(430px, 100%);
+  padding: 30px;
+  background: linear-gradient(140deg, #fff7dc, #e5d5ad);
+  border: 1px solid #e9c571;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px #061b2780;
+  color: #153940;
+  position: relative;
+  z-index: 2;
+}
+.range-card h1 {
+  font-size: 34px;
+  line-height: 1.08;
+  margin: 12px 0 18px;
+}
+.range-card p {
+  line-height: 1.5;
+  margin: 13px 0;
+}
+.range-card button {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+}
+.range-card > small {
+  display: block;
+  margin-top: 16px;
+  line-height: 1.5;
+  color: #576450;
+}
+.range-power {
+  padding: 14px;
+  border-left: 4px solid #be8b32;
+  background: #ffecc0;
+}
+.range-power p {
+  margin: 6px 0 0;
+}
+.range-target-key {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 12px;
+  gap: 8px;
+  margin: 20px 0;
+}
+.range-record {
+  font-size: 20px;
+  font-weight: 800;
+}
+.range-other .range-card {
+  margin: 8vh 6% 0 auto;
+}
+.range-score {
+  font-size: 56px;
+  font-weight: 900;
+  color: #875620;
+}
+.range-score small {
+  font-size: 14px;
+  font-weight: 500;
+}
+.range-comparison {
+  display: flex;
+  gap: 26px;
+  padding: 14px 0;
+  border-top: 1px solid #b9a877;
+  border-bottom: 1px solid #b9a877;
+}
+.range-comparison span {
+  display: grid;
+  gap: 5px;
+  font-size: 12px;
+}
+.range-comparison strong {
+  font-size: 24px;
+}
+.range-medal {
+  background: #fff4c5;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 800;
+}
+.range-hud {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 14px 18px;
+  background: #0b2a32dd;
+  border-bottom: 1px solid #dfc0855c;
+}
+.range-hud span {
+  display: grid;
+  gap: 3px;
+  text-align: center;
+}
+.range-hud small {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #d9c58f;
+}
+.range-hud strong {
+  font-size: 25px;
+}
+.range-hud .range-urgent {
+  color: #ffbe80;
+}
+.range-stage {
+  position: relative;
+  width: min(1100px, 100%);
+  aspect-ratio: 1000/590;
+  max-height: calc(100dvh - 205px);
+  margin: auto;
+  overflow: hidden;
+  background: linear-gradient(180deg, #1c576046, #5a78642c 60%, #58432880);
+  border-bottom: 2px solid #e2bd7166;
+}
+.range-stage canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  touch-action: none;
+  cursor: crosshair;
+  outline-offset: -4px;
+}
+.range-stage canvas:focus-visible {
+  outline: 3px solid #ffe4a1;
+}
+.range-lane {
+  position: absolute;
+  inset: 9% 4% 39% 42%;
+  border: 1px solid #f0d59e66;
+  border-radius: 42%;
+  transform: rotate(-6deg);
+  background: #11313e28;
+}
+.range-shooting-hero {
+  position: absolute;
+  left: 3%;
+  bottom: -2%;
+  width: 29%;
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 13px 7px #0c202ea0);
+}
+.range-callout {
+  position: absolute;
+  bottom: 18px;
+  right: 6%;
+  color: #fff5cc;
+  font-size: 17px;
+  font-weight: 700;
+  pointer-events: none;
+  z-index: 4;
+  text-shadow: 0 2px 5px #132d32;
+}
+.range-instruction {
+  text-align: center;
+  margin: 12px;
+  padding: 0 16px;
+  font-size: 13px;
+  color: #f4dfb5;
+}
+.range-pause {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: #061e31b8;
+  backdrop-filter: blur(7px);
+  display: grid;
+  place-items: center;
+  padding: 22px;
+}
+.officer-body-split {
+  clip-path: inset(54% 0 0 0);
+}
+.officer-aim-rig {
+  position: absolute;
+  inset: 0;
+  transform-origin: 46% 53%;
+  transform: rotate(var(--range-aim, var(--aim-angle, 0deg)));
+  transition: transform 0.08s linear;
+  will-change: transform;
+}
+.officer-aim-rig > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  clip-path: inset(0 0 45.9% 0);
+}
+.range-shooting-hero .actor-rig {
+  animation: range-breath 2.6s ease-in-out infinite;
+}
+.range-stage[data-attack-phase="charge"] .officer-aim-rig {
+  filter: brightness(1.08);
+}
+.range-stage[data-attack-phase="fire"] .officer-aim-rig {
+  transform: rotate(calc(var(--range-aim, 0deg) - 4deg)) translate(-6px, 3px);
+}
+.range-stage[data-attack-phase="fire"] .actor-rig {
+  animation: range-recoil 0.18s ease-out;
+}
+.range-stage[data-attack-phase="impact"] {
+  box-shadow: inset 0 0 80px #ffd66b25;
+}
+@keyframes range-breath {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-0.3deg);
+  }
+  50% {
+    transform: translateY(-3px) rotate(0.4deg);
+  }
+}
+@keyframes range-recoil {
+  0% {
+    transform: translate(-7px, 3px) rotate(-1deg);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+.range-upgrade-actions {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 5;
+}
+.range-upgrade-actions .upgrade-done {
+  position: static;
+  transform: none;
+  margin: 0;
+}
+.range-upgrade-actions .lesson-secondary {
+  background: #fff2ce;
+  color: #234648;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-weight: 800;
+}
+@media (max-width: 700px) {
+  .range-header {
+    padding: 10px;
+    gap: 7px;
+  }
+  .range-header strong {
+    font-size: 13px;
+  }
+  .range-header small {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+  .range-header button {
+    padding: 9px;
+    font-size: 12px;
+  }
+  .range-hud {
+    gap: 0;
+    justify-content: space-around;
+    padding: 12px 5px;
+  }
+  .range-hud strong {
+    font-size: 20px;
+  }
+  .range-hud small {
+    font-size: 8px;
+  }
+  .range-stage {
+    aspect-ratio: 3/4;
+    max-height: calc(100dvh - 200px);
+    min-height: 340px;
+  }
+  .range-shooting-hero {
+    width: 44%;
+    left: -1%;
+    bottom: 0;
+  }
+  .range-callout {
+    font-size: 13px;
+    right: 5%;
+    bottom: 12px;
+    max-width: 48%;
+    text-align: right;
+  }
+  .range-lane {
+    inset: 11% 3% 40% 42%;
+  }
+  .polygon .polygon-lobby {
+    padding: 230px 16px 24px;
+    display: block;
+    min-height: calc(100dvh - 66px);
+  }
+  .range-lobby-hero {
+    width: 175px;
+    left: calc(50% - 87px);
+    bottom: auto;
+    top: 0;
+  }
+  .range-card {
+    width: 100%;
+    padding: 22px;
+  }
+  .range-card h1 {
+    font-size: 28px;
+  }
+  .range-card > small {
+    font-size: 11px;
+  }
+  .range-other .range-lobby-hero {
+    top: 70px;
+  }
+  .range-other .range-card {
+    margin: 245px 16px 0;
+    width: calc(100% - 32px);
+  }
+  .range-upgrade-actions {
+    width: 90%;
+    flex-direction: column;
+    bottom: 18px;
+  }
+  .range-instruction {
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .range-shooting-hero .actor-rig {
+    animation: none;
+  }
+  .officer-aim-rig {
+    transition: none;
+  }
+}
+.range-tier {
+  display: inline-block;
+  color: #94652a;
+  font-size: 0.7em;
+  vertical-align: middle;
+  border: 1px solid #b89a60;
+  border-radius: 8px;
+  padding: 5px 10px;
+  margin-left: 4px;
+}
+.range-result-stats {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin: 22px 0;
+  font-size: 30px;
+  color: #8a5b25;
+}
+.range-best-blast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border-block: 1px solid #c6ae76;
+  padding: 16px 0;
+}
+.range-best-blast span {
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  font-weight: 800;
+}
+.range-best-blast strong {
+  font-size: 25px;
+}
+.range-tested {
+  color: #846016;
+  font-weight: 800;
+}
+.range-card .range-power {
+  margin: 18px 0;
+  padding: 14px;
+}
+.range-result-actions {
+  margin-top: 20px;
+}
+.range-hud {
+  gap: 65px;
+  padding: 16px;
+}
+.range-hud strong {
+  font-size: 24px;
+}
+.range-lane {
+  border: none;
+  border-radius: 0;
+  background: linear-gradient(180deg, #052d3933, transparent);
+}
+.range-stage[data-attack-phase="impact"][data-weapon-level="5"] {
+  box-shadow: inset 0 0 110px #ffc45345;
+}
+.range-shooting-hero .officer-body-split {
+  clip-path: inset(46% 0 0 0);
+}
+@media (max-width: 700px) {
+  .range-hud {
+    gap: 16px;
+    padding: 13px 7px;
+  }
+  .range-hud strong {
+    font-size: 19px;
+  }
+  .range-result-stats {
+    font-size: 26px;
+    gap: 24px;
+  }
+  .range-best-blast strong {
+    font-size: 22px;
+  }
+  .polygon .polygon-lobby {
+    padding-top: 235px;
+  }
+  .range-card .eyebrow {
+    color: #886023;
+  }
+  .range-stage {
+    max-height: calc(100dvh - 160px);
+  }
+}

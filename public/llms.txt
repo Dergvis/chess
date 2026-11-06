@@ -1,0 +1,26 @@
+# CHEZZIES
+
+> CHEZZIES is an online chess adventure game for kids. Explore a fantasy world and practice chess through interactive challenges, free in your browser.
+
+CHEZZIES (also written CHEZZIES Chess) is an English-language chess adventure game for young beginners at https://chezzies.app/. Children choose a hero (Laserhorse, Ladiator or Officer Cannon), travel a fantasy world map, solve chess challenges in themed fortresses and play full games against computer opponents in the Arena.
+
+## Key facts
+
+- Price: Free. No subscriptions, purchases or paid content limits.
+- Ads: No ads.
+- Download: None needed. CHEZZIES runs in a web browser.
+- Devices: Phones, tablets and desktop computers.
+- Opponents: Computer opponents in the Arena. No live multiplayer and no player chat.
+- Account: Optional. Guest progress stays in the browser; a free account saves the adventure online across devices.
+- Chess skills: Piece movement, checkmate, forks, pins, double attacks and defense.
+- Language: English.
+
+## Pages
+
+- [Play CHEZZIES](https://chezzies.app/play/): the game itself
+- [Chess Games for Kids](https://chezzies.app/chess-games-for-kids/): A good chess game for kids makes practice feel like play. CHEZZIES offers short chess challenges, computer opponents and a fantasy world to explore for free in your browser.
+- [Online Chess for Kids](https://chezzies.app/online-chess-for-kids/): CHEZZIES is a free browser-based chess adventure for kids. Choose a hero, solve short challenges and face computer opponents in the Arena.
+- [Learn Chess for Kids](https://chezzies.app/learn-chess-for-kids/): Kids can learn chess one idea at a time through short practice. CHEZZIES introduces piece movement, checkmate, forks, pins and defense in an interactive adventure.
+- [How to Play Chess for Kids](https://chezzies.app/how-to-play-chess-for-kids/): Chess is a two-player game where each side moves one piece per turn. Learn the board, how pieces move and how to win by checkmate, then practise in CHEZZIES.
+- [Chess Puzzles for Kids](https://chezzies.app/chess-puzzles-for-kids/): Try five short chess challenges from the CHEZZIES game. Each one asks you to find a single move. Tap a white piece, then tap where you want it to go. Stuck? Open the hint or answer.
+- [CHEZZIES for parents](https://chezzies.app/parents/): CHEZZIES is a free browser-based chess adventure for young beginners. Children choose a hero, solve chess challenges, explore a fantasy map and play against computer opponents.

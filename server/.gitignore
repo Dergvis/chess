@@ -1,0 +1,10 @@
+.env*
+!.env.example
+node_modules/
+*.db*
+world-data/
+analytics/
+*.log
+client*
+cookies*
+data-international/

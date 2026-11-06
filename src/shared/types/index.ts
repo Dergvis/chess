@@ -157,10 +157,13 @@ export interface UserSettings {
 }
 
 // Типы для состояний приложения
-export type AppState = 
-  | 'boot'
-  | 'onboarding'
+export type AppState =
+  | 'splash'
+  | 'login'
+  | 'reset_password'
+  | 'hero_select'
   | 'home'
+  | 'profile'
   | 'match_setup'
   | 'game_ready'
   | 'player_turn'
@@ -169,11 +172,25 @@ export type AppState =
   | 'animation_playing'
   | 'engine_turn'
   | 'game_over'
-  | 'settings';
+  | 'settings'
+  | 'subscribe'
+  | 'payment'
+  | 'payment_success'
+  | 'billing_required'
+  | 'admin';
 
 export interface GameResult {
   winner: Color | 'draw' | null;
   reason: 'checkmate' | 'stalemate' | 'timeout' | 'resign' | 'draw';
   moves: number;
   duration: number;
+  matchId?: string;
+}
+
+// Типы для биллинга (СБП подписка)
+export interface BillingState {
+  isGuest: boolean;
+  hasSubscription: boolean;
+  subscriptionExpiresAt: string | null;
+  daysRemaining: number;
 }

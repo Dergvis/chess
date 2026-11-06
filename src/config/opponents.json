@@ -2,10 +2,10 @@
   "opponents": [
     {
       "id": "builder_bob",
-      "name": "Боб-строитель",
+      "name": "Builder Bob",
       "theme": "block",
       "avatar": "/assets/characters/builder_bob.png",
-      "description": "Весёлый строитель, любит простые ходы",
+      "description": "A cheerful builder who likes simple moves",
       "difficultyPreset": "level_3",
       "personality": {
         "aggression": 0.3,
@@ -28,10 +28,10 @@
     },
     {
       "id": "queen_luna",
-      "name": "Королева Луна",
+      "name": "Queen Luna",
       "theme": "royal",
       "avatar": "/assets/characters/queen_luna.png",
-      "description": "Умная и сильная, играет аккуратно",
+      "description": "Thoughtful and strong, plays carefully",
       "difficultyPreset": "level_5",
       "personality": {
         "aggression": 0.5,
@@ -54,10 +54,10 @@
     },
     {
       "id": "wizard_max",
-      "name": "Волшебник Макс",
+      "name": "Wizard Max",
       "theme": "magic",
       "avatar": "/assets/characters/wizard_max.png",
-      "description": "Могущественный маг, любит сложные комбинации",
+      "description": "A powerful wizard who likes complex combinations",
       "difficultyPreset": "level_8",
       "personality": {
         "aggression": 0.7,
@@ -80,14 +80,14 @@
     },
     {
       "id": "grandmaster_k",
-      "name": "Гроссмейстер К",
+      "name": "Grandmaster K",
       "theme": "legend",
       "avatar": "/assets/characters/grandmaster_k.png",
-      "description": "Легендарный гроссмейстер. Непобедим.",
+      "description": "A legendary grandmaster. A difficult opponent.",
       "difficultyPreset": "level_10",
       "personality": {
         "aggression": 0.9,
-        "emotionsIntensity": 1.0,
+        "emotionsIntensity": 1,
         "animationStyle": "epic"
       },
       "reactions": {

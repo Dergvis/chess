@@ -1,0 +1,300 @@
+600 Hold to charge. Aim and release!
+601 HERO TRAINING GROUND ·
+602 Great practice!
+603 Record:
+604 Hits:
+605 Best streak: x
+606 works!
+607 Set your record in 60 seconds.
+608 Basic mode. Your improvements are saved.
+609 Again
+610 Start · 60 seconds
+611 Return to the training ground
+612 Pause
+613 sec ·
+614 Aim: hold, point and release
+615 Ladiator’s targets
+616 Target
+617 CHARGE:
+618 low
+619 good
+620 maximum
+621 Low
+622 Good
+623 Maximum
+624 Continue
+625 End the round
+626 One rocket, one target. Hit armour twice to break through.
+627 Target spotted!
+628 The sight shows the blast area. Charge faster and break armour in one hit.
+629 Powerful volley
+630 A fast rocket breaks a whole group. Catch targets together!
+631 Area strike
+632 The energy module widens the blast. Hit several targets at once!
+633 Solar rocket
+634 A heavy charge and a solar shock wave cover a wide area.
+635 ← Map
+636 HERO TRAINING GROUND
+637 Today: rocket trials
+638 This training ground is ready for Officer Cannon. Take the launcher and test the strength you earned in chess.
+639 Choose Officer Cannon →
+640 Return to your adventure
+641 Map
+642 sec
+643 Training ground. Aim with your mouse or tap a target to fire. Arrow keys aim; space fires.
+644 Streak
+645 Catch three shields in one blast
+646 Aim a little ahead
+647 Aim and click. On a phone, tap where you want to shoot.
+648 NEW POWER-UP!
+649 New sight
+650 Area blast
+651 Solar blast
+652 Catch a group of shields in one shot!
+653 Aim a little ahead of a moving shield.
+654 Try it
+655 Start
+656 60 seconds · 15 shields
+657 CHALLENGE COMPLETE!
+658 ROUND STOPPED
+659 🏆 New record!
+660 A precise volley!
+661 Good practice!
+662 💥 BEST BLAST
+663 target
+664 targets
+665 targets
+666 Solar launcher tested!
+667 New weapon tested!
+668 Previous record for this launcher:
+669 🥇 Golden volley
+670 🥈 Silver shooter
+671 🥉 First trophy
+672 Again →
+673 Return to the world →
+674 Back to chess for your next power-up
+675 An unfinished round does not change records or medals.
+676 Training ground paused
+677 Take a breath
+678 Time has stopped. Your rocket can wait.
+679 Finish and return to the map
+680 Tactics Pass
+681 New positions from familiar topics
+682 Mastery Heights
+683 Calculate a continuation several moves ahead
+684 The path is hidden in mist
+685 Could not start again. Try later.
+686 Start again
+687 Start the whole adventure again?
+688 This resets every hero, power-up, achievement, challenge and training ground record for this account. You will begin with the opening video and hero choice.
+689 Your login remains. A copy of your progress will be saved and downloaded before the reset.
+690 Cancel
+691 Saving a copy…
+692 Save a copy and start again
+693 This moment is unavailable
+694 Return to the result
+695 See what happened
+696 You played this move
+697 First, your opponent’s move.
+698 Now your reply.
+699 You found a strong move. Play it again!
+700 There was another interesting option here.
+701 Repeat your move
+702 Try another way
+703 Watch again
+704 Find the mating move
+705 Give checkmate
+706 Find a fork opportunity
+707 Find a pin opportunity
+708 Create a pin
+709 Learn to make a double attack
+710 Find a double threat
+711 Create two threats
+712 Learn to defend
+713 Find the threat
+714 Protect your pieces
+715 Find an opportunity
+716 Use the tactic
+717 Move and victory sounds
+718 Mute sound
+719 Enable sound
+720 Sound
+721 Reset is unavailable now.
+722 Reset is available only in the local version.
+723 Could not check the saved progress. Try later.
+724 The account changed. Open the game again.
+725 Could not start again. A copy of your previous progress is saved.
+726 Two targets, one knight
+727 Attack the king and rook with your knight.
+728 The knight on d6 gives check and attacks the rook on c8.
+729 Knight fork
+730 A fork among pieces
+731 Your knight is selected. Find a safe fork.
+732 The piece on d5 attacks the bishop on b6 and king on c3.
+733 A fork in a game position
+734 Find a safe fork. Do not lose your attacking piece.
+735 The piece on e4 attacks the rook on f3 and king on d3.
+736 Guardian’s fork
+737 The piece on f7 attacks the rook on h6 and king on d6.
+738 The piece on a4 attacks the rook on b2 and king on c3.
+739 The piece on e3 attacks the queen on c4, bishop on f1 and king on g2.
+740 The piece on g2 attacks the king on e3 and bishop on e1.
+741 The piece on c4 attacks the king on e3 and bishop on b2.
+742 The piece on e2 attacks the knight on f1 and rook on d1.
+743 The piece on e7 attacks the bishop on c8 and queen on c6.
+744 The piece on g5 attacks the queen on h4 and king on f4.
+745 The piece on f7 attacks the rook on h8, king on d8 and bishop on d6.
+746 The piece on c2 attacks the rooks on e3 and a1.
+747 The piece on f3 attacks the queen on e1 and bishop on d2.
+748 The piece on d6 attacks the bishop on c8 and king on b5.
+749 The piece on e5 attacks the king on d7 and bishop on c4.
+750 The last rank
+751 Give checkmate with your rook in one move.
+752 The rook covers the h-file and your king covers g8 and g7.
+753 Find checkmate
+754 Find checkmate in one move. Check every escape route.
+755 Check! The king cannot escape, block or capture the attacker.
+756 Checkmate among pieces
+757 Guardian’s checkmate
+758 Remove the threat
+759 The rook gives check. Capture it with your bishop.
+760 Sometimes the best defense is to capture the attacker.
+761 Save a piece
+762 The king is in check. Find the only escape.
+763 The king moved to its only safe square.
+764 Defense in a game
+765 Guardian’s defense
+766 The piece on g1 is attacked. Save it by capturing the attacker.
+767 You removed the attacker on a1. The threat is gone.
+768 The piece on h8 is attacked. Save it by capturing the attacker.
+769 You removed the attacker on a8. The threat is gone.
+770 The piece on a7 is attacked. Save it by capturing the attacker.
+771 You removed the attacker on c5. The threat is gone.
+772 The piece on a8 is attacked. Save it by capturing the attacker.
+773 You removed the attacker on h8. The threat is gone.
+774 The piece on f6 is attacked. Save it by capturing the attacker.
+775 You removed the attacker on g7. The threat is gone.
+776 The piece on d5 is attacked. Save it by capturing the attacker.
+777 You removed the attacker on g2. The threat is gone.
+778 The piece on d4 is attacked. Save it by capturing the attacker.
+779 Pin the knight
+780 Place the bishop so the knight cannot move away from its king.
+781 Bishop b5, knight d7 and king e8 share a diagonal. The knight is pinned.
+782 A hidden pin
+783 Create a new pin to the king. Choose a safe move.
+784 The king is behind the pinned piece. It cannot leave the line and expose check.
+785 A pin in a game
+786 Guardian’s pin
+787 Check and a tower
+788 Give check and attack the rook at the same time.
+789 The queen on d5 gives check along the g8 diagonal and attacks rook a8 along the other diagonal.
+790 Two threats
+791 Create two threats in one move. Check your opponent’s reply.
+792 The piece on d6 attacks the bishop on e6 and king on c6.
+793 A double attack in a game
+794 Guardian’s double attack
+795 The piece on d5 attacks the knights on c4 and e5.
+796 The piece on c1 attacks the knights on e1 and c3.
+797 The piece on e7 attacks the king on g5 and bishop on d7.
+798 The piece on b8 attacks the knight on a8 and bishop on b4.
+799 The piece on d8 attacks the rook on h4 and king on b6.
+800 The piece on d8 attacks the knight on g8 and bishop on c8.
+801 The piece on d2 attacks the knight on c3, king on f2 and knight on d3.
+802 The piece on e5 attacks the knight on b8 and bishop on e6.
+803 The piece on b4 attacks the rook on e7 and bishop on h4.
+804 The piece on a3 attacks the king on d6 and knight on a5.
+805 Already equipped
+806 💥 −30 strength
+807 Weapon level
+808 Continue the adventure →
+809 Try it in the training ground
+810 The review did not finish. You can try again.
+811 Child’s progress
+812 Practice
+813 Training ground
+814 Adventure
+815 Where shall we go?
+816 ⚔ Opponents Arena
+817 ◎ Hero training ground
+818 Hero training ground
+819 Try your hero
+820 Test your weapon and new improvements. Set a record in 60 seconds.
+821 New improvement:
+822 Try your hero →
+823 Practise skills
+824 5 short chess puzzles on topics worth revisiting now.
+825 Today’s suggestion:
+826 Mixed practice — 5 puzzles from familiar topics
+827 Explore a tactic in its fortress first, then practise it here
+828 5 puzzles · about 3 minutes
+829 One free practice series. Then available in the full version.
+830 Personal challenges are available in the full version
+831 Practise skills →
+832 Try it free
+833 Your game is waiting.
+834 Power-up
+835 DISCOVERIES BECOME STRENGTH
+836 Try what you have learned. After the game, explore a useful moment.
+837 games ·
+838 wins
+839 King Nexus remembers your games. You grow together.
+840 Games played so far:
+841 Your pieces
+842 ♔ White
+843 ♚ Black
+844 You have a saved game. Continue it first.
+845 Continue game
+846 Start game
+847 Opening your adventure book…
+848 Your browser could not save progress. Free up space to keep your discoveries.
+849 Progress is in this browser for now. We will check your profile save when the connection returns.
+850 Retry
+851 First chapter complete!
+852 Five fortresses freed. Beyond the mist, Tactics Pass has opened: new positions and longer continuations.
+853 See the new path →
+854 Your adventure
+855 Achievements
+856 Open my hero
+857 Lv.
+858 Level
+859 task
+860 tasks
+861 tasks
+862 — and your hero earns a new improvement!
+863 Every improvement collected!
+864 My hero →
+865 Change hero
+866 ← Move the map sideways →
+867 A mountain valley with castles, a river and paths
+868 Practise
+869 👀 Worth practising
+870 🔒 This path is not open yet
+871 Play against the computer
+872 ✓ Freed
+873 Continue here
+874 A suggested starting point
+875 Ready to explore
+876 ⌂ Your camp
+877 Challenges without topic clues
+878 The topic is hidden. Choose the tactic yourself.
+879 🔒 Opens after you learn
+880 tactics
+881 Next destination:
+882 At the gates!
+883 prepares for the journey…
+884 is on the way…
+885 Let’s go →
+886 This is the world of CHEZZIES. Fortresses filled with chess challenges await.
+887 Explore a new tactic, solve puzzles and weaken each fortress’s defenses.
+888 Solve puzzles to help your hero break through the fortress gates.
+889 Play a full chess game against the computer here.
+890 Try a quick practice session here.
+891 Start with the first fortress and help your hero break through its defenses!
+892 Explore the world ·
+893 Puzzle, solution, shot, damage to the gates
+894 ♟ Puzzle
+895 ✓ Solution
+896 ✦ Shot
+897 ♜ Gate damage
+898 Let’s go!
+899 Next →

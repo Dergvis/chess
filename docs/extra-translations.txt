@@ -1,0 +1,342 @@
+0 → newState:
+1 Opponent
+2 🤖
+3 Loading your adventure…
+4 ← Back
+5 Parent account
+6 You are playing as a guest.
+7 Hero progress is saved separately for your account.
+8 Your guest adventure stays on this device after you sign in.
+9 Subscription and promo code
+10 Profile and previous games
+11 Sign out
+12 Sign in or register
+13 Catapult
+14 The piece launches from a catapult
+15 Toy cannon
+16 Poof! The piece flies away
+17 Banana peel
+18 The piece slips on a banana
+19 Spring
+20 The piece bounces on a spring
+21 Ambulance
+22 An ambulance takes the piece away
+23 Rocket
+24 The piece flies off on a rocket
+25 Trapdoor
+26 The piece falls through a trapdoor
+27 Fan
+28 A powerful fan blows the piece away
+29 Balloons
+30 Balloons carry the piece into the sky
+31 Teleport
+32 The piece teleports off the board
+33 Spider web
+34 A spider comes down and takes the piece
+35 Broom
+36 A broom sweeps the piece off the board
+37 🤷 STALEMATE!
+38 Builder Bob
+39 A cheerful builder who likes simple moves
+40 Queen Luna
+41 Thoughtful and strong, plays carefully
+42 Wizard Max
+43 A powerful wizard who likes complex combinations
+44 Grandmaster K
+45 A legendary grandmaster. A difficult opponent.
+46 Startled jump
+47 Angry look
+48 A tear
+49 Mind blown
+50 Helmet / saucepan
+51 White flag
+52 Suitcase
+53 Crooked crown
+54 Dramatic fall
+55 Victory dance
+56 Royal victory
+57 Greeting
+58 Royal nod
+59 Happy jump
+60 Sad shake
+61 Magical greeting
+62 Disappearance
+63 Standard
+64 Classic chess pieces
+122 Loading...
+139 You
+146 Register
+154 Enter an email address
+155 Enter a valid email address
+156 If the account exists, we have sent a password reset link.
+157 Could not send the email
+158 Use at least 6 characters for your password
+159 Enter your child’s name
+160 The passwords do not match
+161 Account created.
+162 Promo code not applied.
+163 Could not sign in
+164 A chess adventure for kids
+165 Parent’s email
+166 Password
+167 At least 6 characters
+168 Repeat password
+169 Enter the same password again
+170 Child’s name
+171 What is your young player’s name?
+172 Promo code (optional)
+174 Code validity and access duration are checked by the server.
+175 Continue without a promo code
+176 Please wait...
+177 Apply code and continue
+178 Create account
+179 Send link
+180 Sign in
+181 Back to sign in
+182 Forgot password?
+183 Your account is saved on the server. Passwords are stored as secure hashes.
+184 This reset link is invalid
+185 Password updated. You can sign in now.
+186 Could not update the password
+187 New password
+188 Save password
+189 [getBattleVideo] No mapping for:
+224 Start playing!
+252 A lovely day for chess.
+253 The pieces are waiting for your move.
+254 Time for a good game.
+255 Every move is a chance to discover something.
+256 Let’s find the best move.
+257 The chessboard is ready.
+258 Try a clever plan today.
+259 Victories start with the first move.
+260 Ready for battle. The board awaits.
+261 Ready for a new game?
+262 Hello,
+263 Subscription active:
+264 days
+265 until
+266 Play!
+267 Sign out
+268 Hello! 👋
+269 Let’s get to know each other!
+270 What should we call you?
+271 Your name
+272 Chess experience 🎮
+273 Have you played chess before?
+274 No, I am new
+275 Never played
+276 Played a little
+277 I know the rules
+278 I play well
+279 Experienced player
+280 Choose pieces ♟️
+281 Which pieces do you like?
+282 All ready! 🎉
+283 friend
+284 Time to start playing!
+285 Experience:
+286 Newcomer
+287 Intermediate
+288 Experienced
+289 Pieces:
+290 Back
+291 Next
+292 White piece
+293 Classic chess style
+294 A simple opponent for learning the basics.
+295 A little trickier. Think about your move!
+296 Medium difficulty. Look carefully!
+297 A strong opponent for experienced players.
+298 A difficult opponent. Try your strongest plans.
+299 New game
+300 YOUR HERO
+301 CHOOSE AN OPPONENT
+302 CHOOSE YOUR COLOUR
+303 🚀 Start the game!
+308 After choosing a hero, you will see statistics, achievements and game history here.
+309 XP until the next evolution
+310 📊 Statistics
+311 🏆 Achievements (
+312 📋 Missions
+313 📜 History
+314 🎮 Play!
+315 h
+316 m
+317 Wins
+318 Losses
+319 Draws
+320 Win rate
+321 Winning streak
+322 Best streak
+323 Checkmates
+324 Games
+325 Favourite piece
+326 Time played
+327 📋 Daily missions
+328 completed
+329 Collect!
+330 You have not played a game yet!
+331 Play your first game
+332 Win
+333 Against:
+334 moves •
+335 Play free
+336 Already have a hero? Sign in
+337 Could not load support messages
+338 Enter an email so we can reply
+339 Could not send the message
+340 CHEZZIES help
+341 A reply will appear here
+342 Close support
+343 Email for a reply
+344 Name (optional)
+345 Describe what happened, which screen you were on and what did not work. Do not include your password.
+346 Support
+347 Write your question...
+348 Send
+349 Help
+350 New messages:
+351 Level 1
+352 Almost random moves. A starting point for newcomers.
+353 Level 2
+354 Beginner
+355 Makes simple moves and frequent mistakes.
+356 Level 3
+357 Learner
+358 Understands the rules and is still learning.
+359 Level 4
+360 Casual player
+361 Knows the basics and spots simple tactics.
+362 Level 5
+363 Club player
+364 A stronger practice opponent.
+365 Level 6
+366 A serious, experienced opponent.
+367 Level 7
+368 Master
+369 A strong player.
+370 Level 8
+371 Expert
+372 A challenge for experienced players.
+373 Level 9
+374 Grandmaster
+375 A very strong opponent.
+376 Level 10
+377 Legend
+378 Maximum difficulty.
+379 Authentication error
+380 Could not create the account
+391 Gain an advantage and keep it until the battle ends.
+392 You used the tactic and kept the material you won.
+393 The bishop on b2 is attacked. Save it by capturing the attacker.
+394 You removed the attacker on d1. The threat is gone.
+395 The rook on h8 is attacked. Save it by capturing the attacker.
+396 You removed the attacker on f6. The threat is gone.
+397 You withstood the attack and kept your material.
+398 Your piece blocked the check. The king is safe.
+402 Stop your opponent’s threat
+403 Stop your opponent’s threat. Choose a defense.
+404 You prevented a double attack.
+405 You stopped your opponent pinning your piece.
+406 You stopped the checkmate threat.
+407 Rook and a blocked back rank. Find a strong continuation.
+408 The king has no safe square left.
+409 Rook and a blocked back rank
+410 A queen protected by its king. Find a strong continuation.
+411 A queen protected by its king
+412 A knight in a closed fortress. Find a strong continuation.
+413 A knight in a closed fortress
+414 A bishop closes the last diagonal. Find a strong continuation.
+415 A bishop closes the last diagonal
+416 A pawn gives the final check. Find a strong continuation.
+417 A pawn gives the final check
+418 Rook and king at the edge. Find a strong continuation.
+419 Rook and king at the edge
+420 Two rooks cut off the king. Find a strong continuation.
+421 Two rooks cut off the king
+422 Finish the attack in eight moves.
+423 You finished the attack: the king has nowhere to go.
+424 A rook cuts off the king along a line
+425 Make an escape square. Find a strong continuation.
+426 Your opponent no longer has checkmate on the next move.
+427 Make an escape square
+428 Remove the queen from the mating net. Find a strong continuation.
+429 Remove the queen from the mating net
+430 A knight shields its king. Find a strong continuation.
+431 The piece is pinned to a more valuable piece behind it.
+432 A knight shields its king
+433 A rook cannot abandon its king. Find a strong continuation.
+434 A rook cannot abandon its king
+435 Queen in front of the king. Find a strong continuation.
+436 Queen in front of the king
+437 A bishop shields a rook. Find a strong continuation.
+438 A bishop shields a rook
+439 A pawn attacks a pinned knight. Find a strong continuation.
+440 The pinned piece could not do its defensive job.
+441 A pawn attacks a pinned knight
+442 A pinned knight cannot defend the rook. Find a strong continuation.
+443 A pinned knight cannot defend the rook
+444 Move the king off the line. Find a strong continuation.
+445 You broke the pin and freed your piece.
+446 Move the king off the line
+447 A pinned rook captures the attacker. Find a strong continuation.
+448 A pinned rook captures the attacker
+449 A relative pin: a legal counterattack. Find a strong continuation.
+450 A relative pin: a legal counterattack
+451 Exchange on the pinning line. Find a strong continuation.
+452 Exchange on the pinning line
+453 Move the queen away from the knight. Find a strong continuation.
+454 Your piece escaped the attack or gained protection.
+455 Move the queen away from the knight
+456 A rook defends a bishop. Find a strong continuation.
+457 A rook defends a bishop
+458 Exchange the attacking rook. Find a strong continuation.
+459 The capture solved the challenge without losing your attacking piece.
+460 Exchange the attacking rook
+461 Block check with a bishop. Find a strong continuation.
+462 You stopped check and kept your king safe.
+463 Block check with a bishop
+464 Remove the checking knight. Find a strong continuation.
+465 Remove the checking knight
+466 A countercheck saves the rook. Find a strong continuation.
+467 A countercheck saves the rook
+468 The king escapes check. Find a strong continuation.
+469 The king escapes check
+470 Breathing room for the king. Find a strong continuation.
+471 Breathing room for the king
+472 Stop the knight fork threat. Find a strong continuation.
+473 Your opponent’s double attack no longer works.
+474 Stop the knight fork threat
+475 Avoid a pin. Find a strong continuation.
+476 You changed the position and prevented a pin.
+477 Avoid a pin
+478 Protect the promoting pawn. Find a strong continuation.
+479 Protect the promoting pawn
+480 A bishop retreats with a threat. Find a strong continuation.
+481 A bishop retreats with a threat
+482 A knight seeks a safe square. Find a strong continuation.
+483 A knight seeks a safe square
+484 Protect an attacked passed pawn
+485 Exchanges favouring the defender
+486 Defend against a pawn’s double attack
+487 Queen at a safe distance
+488 / 4 stages ·
+489 Your piece is selected. Find a strong square for it.
+490 Compare the options and choose a strong move.
+491 Mark all pieces attacked by the highlighted piece.
+492 One piece attacks several targets. That is a double attack.
+493 Which of your pieces are attacked by the highlighted opponent?
+494 Your opponent attacks several of your pieces at once.
+495 Your opponent is preparing a double attack. Stop the tactic.
+496 You changed the position so the double attack no longer works.
+497 Win material and keep it. You have up to five moves.
+498 You created threats and kept your advantage to the end.
+499 Create a double threat, wait for the reply and use it.
+500 You looked beyond the first move and used the double attack.
+501 Prepare a double attack. Calculate three of your moves.
+502 The rook sacrifice drew the king to h7. The knight made a fork and captured the queen.
+503 Beat the Guardian: gain an advantage over several moves.
+504 Guardian challenge. Find a strong continuation.
+505 Which pieces does the highlighted piece attack?
+506 / 4 stages
