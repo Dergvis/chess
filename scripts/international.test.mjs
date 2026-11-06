@@ -14,7 +14,19 @@ test('Public SEO URLs use one host and internal game states stay out of the inde
  assert(config.headers.some(rule=>rule.source.includes('home|login')&&rule.headers.some(header=>header.key==='X-Robots-Tag'&&header.value==='noindex, follow')));
  for(const rule of config.redirects){assert(rule.source.endsWith('/'),'redirect source must match Vercel trailingSlash URL');if(rule.source.startsWith('/play/'))assert.equal(rule.destination,'/play/');}
 });
-test('Homepage puzzle remains the actual production knight fork',()=>{const q=JSON.parse(readFileSync('src/quick-challenge.json'));const production=JSON.parse(readFileSync('src/world/challenges/prepared.json')).find(c=>c.id===q.id);assert.equal(q.fen,production.fen);assert.deepEqual(q.solutions,production.solutions);const b=new Chess(q.fen);b.move({from:'e4',to:'d6'});assert(b.inCheck());assert(b.isAttacked('c8','w'));});
+test('Homepage puzzles are real production positions with correct answers',()=>{
+ const quick=JSON.parse(readFileSync('src/quick-challenge.json'));const catalogue=JSON.parse(readFileSync('src/world/challenges/prepared.json'));
+ assert.equal(quick.length,5);
+ for(const q of quick){const production=catalogue.find(c=>c.id===q.id);assert(production,`Missing ${q.id}`);assert.equal(q.fen,production.fen);assert.deepEqual(q.solutions,production.solutions);const b=new Chess(q.fen);assert.equal(b.turn(),'w');assert(b.move({from:q.solutions[0].slice(0,2),to:q.solutions[0].slice(2,4)}));assert(q.prompt&&q.success&&q.retry&&q.title);}
+ const home=readFileSync('dist/index.html','utf8');assert(home.includes('id="challenge-next"'));assert(home.includes('href="/chess-puzzles-for-kids/"'));
+});
+test('Puzzle hub lists every single-move production puzzle by theme with a legal answer',async()=>{
+ const {puzzleSets,puzzleCount}=await import('./puzzles.mjs');
+ const html=readFileSync('dist/chess-puzzles-for-kids/index.html','utf8');
+ assert(puzzleCount>=50);assert.equal((html.match(/class="example-card puzzle-card"/g)||[]).length,puzzleCount);
+ assert(html.includes(`<title>Chess Puzzles for Kids — ${puzzleCount} Free Puzzles with Answers | CHEZZIES</title>`));assert(!html.includes('{count}'));
+ for(const set of puzzleSets){assert(html.includes(`id="${set.anchor}"`));for(const p of set.puzzles){const b=new Chess(p.fen);const m=b.move({from:p.solution.slice(0,2),to:p.solution.slice(2,4),promotion:'q'});assert(m,p.id);if(set.anchor==='checkmate')assert(b.isCheckmate(),p.id);assert(html.includes(`data-puzzle-id="${p.id}"`));assert(!/undefined|null/.test(p.task+p.hint+p.answer),p.id);}}
+});
 test('Five article examples use playable positions from the production game',()=>{
  const catalogue=JSON.parse(readFileSync('src/world/challenges/prepared.json'));
  const html=readFileSync('dist/chess-puzzles-for-kids/index.html','utf8');

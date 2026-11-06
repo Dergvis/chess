@@ -1,1 +1,57 @@
-{"id":"fork-1","fen":"2r1k3/8/8/8/4N3/8/8/6K1 w - - 0 1","solutions":["e4d6"]}
+[
+ {
+  "id": "fork-1",
+  "fen": "2r1k3/8/8/8/4N3/8/8/6K1 w - - 0 1",
+  "solutions": [
+   "e4d6"
+  ],
+  "title": "THE KNIGHT’S DOUBLE THREAT",
+  "prompt": "White to move. Can your knight attack the king and rook at once?",
+  "success": "Great move! ★ Your knight checks the king and attacks the rook. You earned a star.",
+  "retry": "A legal move. Try finding a square where the knight attacks both the king and the rook."
+ },
+ {
+  "id": "mate-1",
+  "fen": "7k/5K2/8/8/8/8/8/6R1 w - - 0 1",
+  "solutions": [
+   "g1h1"
+  ],
+  "title": "CHECKMATE IN ONE",
+  "prompt": "White to move. Can your rook trap the black king in one move?",
+  "success": "Checkmate! ★ The rook attacks the king, and your king guards every escape square.",
+  "retry": "A legal move. Look for a rook move that checks the king on the edge of the board."
+ },
+ {
+  "id": "pin-1",
+  "fen": "4k3/3n4/8/8/8/8/8/5BK1 w - - 0 1",
+  "solutions": [
+   "f1b5"
+  ],
+  "title": "THE BISHOP’S PIN",
+  "prompt": "White to move. Where can your bishop hold the black knight in place?",
+  "success": "Pinned! ★ The knight cannot move without exposing its own king.",
+  "retry": "A legal move. Try putting your bishop, the knight and the black king on one diagonal."
+ },
+ {
+  "id": "double-1",
+  "fen": "r5k1/8/8/8/8/8/8/3Q2K1 w - - 0 1",
+  "solutions": [
+   "d1d5"
+  ],
+  "title": "THE QUEEN’S DOUBLE ATTACK",
+  "prompt": "White to move. Can your queen attack the king and the rook together?",
+  "success": "Double attack! ★ The queen checks the king and also attacks the rook on a8.",
+  "retry": "A legal move. Look for a queen move that points at the king and the rook at the same time."
+ },
+ {
+  "id": "defense-2",
+  "fen": "7k/8/8/8/4r3/8/2B5/4K3 w - - 0 1",
+  "solutions": [
+   "c2e4"
+  ],
+  "title": "SAVE YOUR KING",
+  "prompt": "The black rook is checking your king. Can your bishop stop it?",
+  "success": "Safe! ★ Your bishop captured the attacking rook.",
+  "retry": "Sometimes the best defense is to capture the attacker. Try again."
+ }
+]
