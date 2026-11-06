@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/generate-site.mjs && vite --host 127.0.0.1",
-    "build": "node scripts/generate-site.mjs && vite build",
+    "build": "node scripts/generate-site.mjs && vite build && vite build --config vite.es.config.mjs",
     "preview": "node scripts/serve.mjs",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "lint": "eslint --config eslint.siege.config.mjs src",

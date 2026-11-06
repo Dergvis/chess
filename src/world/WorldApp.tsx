@@ -57,6 +57,7 @@ import type {
   WorldSave,
 } from "./types";
 import "./world.css";
+import { SITE_ROOT } from "../locale";
 type Screen =
   | "activities"
   | "polygon"
@@ -343,7 +344,7 @@ export default function WorldApp({
       try {
         const next = JSON.parse(event.newValue);
         if ((next.restartedAt || 0) > (saveRef.current.restartedAt || 0))
-          window.location.assign("/");
+          window.location.assign(SITE_ROOT);
       } catch {
         /* Ignore unrelated malformed storage writes. */
       }

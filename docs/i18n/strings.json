@@ -1,0 +1,6446 @@
+[
+ {
+  "en": "← Back",
+  "file": "src/app/App.tsx"
+ },
+ {
+  "en": "→ newState:",
+  "file": "src/app/App.tsx"
+ },
+ {
+  "en": "Achievements",
+  "file": "src/app/App.tsx"
+ },
+ {
+  "en": "CHEZZIES home",
+  "file": "src/app/App.tsx"
+ },
+ {
+  "en": "Child’s progress",
+  "file": "src/app/App.tsx"
+ },
+ {
+  "en": "Hero progress is saved separately for your account.",
+  "file": "src/app/App.tsx"
+ },
+ {
+  "en": "Loading your adventure…",
+  "file": "src/app/App.tsx"
+ },
+ {
+  "en": "Opponent",
+  "file": "src/app/App.tsx"
+ },
+ {
+  "en": "Page not found.",
+  "file": "src/app/App.tsx"
+ },
+ {
+  "en": "Parent account",
+  "file": "src/app/App.tsx"
+ },
+ {
+  "en": "Profile and previous games",
+  "file": "src/app/App.tsx"
+ },
+ {
+  "en": "Return to the world",
+  "file": "src/app/App.tsx"
+ },
+ {
+  "en": "Sign in or register",
+  "file": "src/app/App.tsx"
+ },
+ {
+  "en": "Sign out",
+  "file": "src/app/App.tsx"
+ },
+ {
+  "en": "Subscription and promo code",
+  "file": "src/app/App.tsx"
+ },
+ {
+  "en": "Unknown state",
+  "file": "src/app/App.tsx"
+ },
+ {
+  "en": "You are playing as a guest.",
+  "file": "src/app/App.tsx"
+ },
+ {
+  "en": "Your guest adventure stays on this device after you sign in.",
+  "file": "src/app/App.tsx"
+ },
+ {
+  "en": "A broom sweeps the piece off the board",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "A powerful fan blows the piece away",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "A spider comes down and takes the piece",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "Ambulance",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "An ambulance takes the piece away",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "Balloons",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "Balloons carry the piece into the sky",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "Banana peel",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "Broom",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "Catapult",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "Fan",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "Poof! The piece flies away",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "Rocket",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "Spider web",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "Spring",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "Teleport",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "The piece bounces on a spring",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "The piece falls through a trapdoor",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "The piece flies off on a rocket",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "The piece launches from a catapult",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "The piece slips on a banana",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "The piece teleports off the board",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "Toy cannon",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "Trapdoor",
+  "file": "src/config/animations.json"
+ },
+ {
+  "en": "⚠️ CHECK!",
+  "file": "src/config/eventMapping.json"
+ },
+ {
+  "en": "🏆 CHECKMATE! 🏆",
+  "file": "src/config/eventMapping.json"
+ },
+ {
+  "en": "🤷 STALEMATE!",
+  "file": "src/config/eventMapping.json"
+ },
+ {
+  "en": "A cheerful builder who likes simple moves",
+  "file": "src/config/opponents.json"
+ },
+ {
+  "en": "A legendary grandmaster. A difficult opponent.",
+  "file": "src/config/opponents.json"
+ },
+ {
+  "en": "A powerful wizard who likes complex combinations",
+  "file": "src/config/opponents.json"
+ },
+ {
+  "en": "Builder Bob",
+  "file": "src/config/opponents.json"
+ },
+ {
+  "en": "Grandmaster K",
+  "file": "src/config/opponents.json"
+ },
+ {
+  "en": "Queen Luna",
+  "file": "src/config/opponents.json"
+ },
+ {
+  "en": "Thoughtful and strong, plays carefully",
+  "file": "src/config/opponents.json"
+ },
+ {
+  "en": "Wizard Max",
+  "file": "src/config/opponents.json"
+ },
+ {
+  "en": "A tear",
+  "file": "src/config/reactions.json"
+ },
+ {
+  "en": "Angry look",
+  "file": "src/config/reactions.json"
+ },
+ {
+  "en": "Crooked crown",
+  "file": "src/config/reactions.json"
+ },
+ {
+  "en": "Disappearance",
+  "file": "src/config/reactions.json"
+ },
+ {
+  "en": "Dramatic fall",
+  "file": "src/config/reactions.json"
+ },
+ {
+  "en": "Greeting",
+  "file": "src/config/reactions.json"
+ },
+ {
+  "en": "Happy jump",
+  "file": "src/config/reactions.json"
+ },
+ {
+  "en": "Helmet / saucepan",
+  "file": "src/config/reactions.json"
+ },
+ {
+  "en": "Magical greeting",
+  "file": "src/config/reactions.json"
+ },
+ {
+  "en": "Mind blown",
+  "file": "src/config/reactions.json"
+ },
+ {
+  "en": "Royal nod",
+  "file": "src/config/reactions.json"
+ },
+ {
+  "en": "Royal victory",
+  "file": "src/config/reactions.json"
+ },
+ {
+  "en": "Sad shake",
+  "file": "src/config/reactions.json"
+ },
+ {
+  "en": "Startled jump",
+  "file": "src/config/reactions.json"
+ },
+ {
+  "en": "Suitcase",
+  "file": "src/config/reactions.json"
+ },
+ {
+  "en": "Victory dance",
+  "file": "src/config/reactions.json"
+ },
+ {
+  "en": "White flag",
+  "file": "src/config/reactions.json"
+ },
+ {
+  "en": "A hundred victories",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "A week of chess!",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "Capture an enemy queen",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "Captured the queen!",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "Checkmate master",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "Common",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "Complete 20 daily missions",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "Epic",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "First checkmate!",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "First victory!",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "Give 50 checkmates",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "Give your first checkmate",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "Legendary",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "Mission explorer",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "No losses!",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "On fire!",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "Play for 7 days in a row",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "Rare",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "Ten victories",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "Unstoppable!",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "Win 10 games",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "Win 10 games in a row",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "Win 100 games",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "Win 3 games in a row",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "Win a game without losing a piece",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "Win your first game",
+  "file": "src/entities/character/achievements.ts"
+ },
+ {
+  "en": "A battle strategist who likes setting traps",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "A friendly beginner learning to play chess",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "A great king with big ambitions",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "A powerful magister who plays like a champion",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "A well-earned victory!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "A wise choice!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Aha, check!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "All right, you won!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "An experienced captain who plays calmly and thoughtfully",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Captain Knight",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Check! Be careful!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Check! Defend yourself!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Check! Grr!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Check! Think carefully!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Checkmate! Game over!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Chess rewards good thinking!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Chess! I love it!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Clever!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Clever! I like it!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Congratulations on your win!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Dragon attack!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Good game, friend!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Good game!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Good thinking!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Great game!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Great move!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Greetings! Ready for a thoughtful game?",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Grr! Hello, champion!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Grr! Victory is mine!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Hello there! Shall we play?",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Hello! Let’s battle!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Hi! I’m Pawnie. Let’s play!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Hi! Let’s play!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Hooray!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Hooray! I won!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "I can still come back!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "I love chess!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "I’ll be stronger next time!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "I’m attacking!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "I’m the champion!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "King Nexus",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Let’s begin!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Look closely!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Oh, my piece!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Pawnie",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Powerful!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Queen Magister",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Ready for a game?",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Ready for a strong game?",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Respect!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Sergeant Rook",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Strong move!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Strong!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "That’s checkmate!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "The game is over!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Things are heating up!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "This will be fiery!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Unlucky...",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Victory!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Victory! A fiery champion!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Watch out, check!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Well played! I’m learning!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "Wow, nice!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "You beat me! I’ll be back!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "You beat the king! Amazing!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "You found the wiser plan this time!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "You outsmarted me! Bravo!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "You were stronger today! Well played!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "You won! Well played!",
+  "file": "src/entities/character/characters.ts"
+ },
+ {
+  "en": "A knight’s move",
+  "file": "src/entities/character/dailyMissions.ts"
+ },
+ {
+  "en": "Capture an enemy bishop",
+  "file": "src/entities/character/dailyMissions.ts"
+ },
+ {
+  "en": "Capture the enemy queen",
+  "file": "src/entities/character/dailyMissions.ts"
+ },
+ {
+  "en": "Castle your king",
+  "file": "src/entities/character/dailyMissions.ts"
+ },
+ {
+  "en": "Chess player",
+  "file": "src/entities/character/dailyMissions.ts"
+ },
+ {
+  "en": "completed",
+  "file": "src/entities/character/dailyMissions.ts"
+ },
+ {
+  "en": "Fortress",
+  "file": "src/entities/character/dailyMissions.ts"
+ },
+ {
+  "en": "Give checkmate",
+  "file": "src/entities/character/dailyMissions.ts"
+ },
+ {
+  "en": "Hunter",
+  "file": "src/entities/character/dailyMissions.ts"
+ },
+ {
+  "en": "Marathon player",
+  "file": "src/entities/character/dailyMissions.ts"
+ },
+ {
+  "en": "Play 2 games",
+  "file": "src/entities/character/dailyMissions.ts"
+ },
+ {
+  "en": "Play 3 games",
+  "file": "src/entities/character/dailyMissions.ts"
+ },
+ {
+  "en": "Player",
+  "file": "src/entities/character/dailyMissions.ts"
+ },
+ {
+  "en": "Queen hunter",
+  "file": "src/entities/character/dailyMissions.ts"
+ },
+ {
+  "en": "Win 1 game",
+  "file": "src/entities/character/dailyMissions.ts"
+ },
+ {
+  "en": "Win while capturing a piece with a knight",
+  "file": "src/entities/character/dailyMissions.ts"
+ },
+ {
+  "en": "Winner",
+  "file": "src/entities/character/dailyMissions.ts"
+ },
+ {
+  "en": "A companion appeared!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "A draw... I’m not giving up!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "A streak! My gadgets work!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "A strong strike!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "A victory spell!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "A winning streak! Powerful!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "An even game!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Basic form",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Brilliant!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Checkmate! A chess strike! ⚔️",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Checkmate! An engineer’s approach! 🛠️",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Chess magic!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Engineering wins!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Even mechanics! More tests needed.",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Even the moon is in my sights!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Evenly matched... An interesting game.",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Every move calculated!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "For honour and glory!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Glow and aura",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Hello! Magic awaits!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Hello! The machines are ready!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "I can blow the roof off!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "I can fix this!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "I charge up from storm clouds!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "I need a better plan...",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "I’ll be back!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "I’ll return with a new plan!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "I’m unstoppable! 🔥",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Invention of the century!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "knight",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Ladiator",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Laserhorse",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Legendary form!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Let’s create something!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Magic won! ✨",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Magical checkmate! 🌟",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Mechanical checkmate!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "My machine is unstoppable! ⚡",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "My magic is unstoppable! 🔮",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "New armour",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Not every gear is in place yet.",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Nothing can stop me!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Officer Cannon",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Ready for battle?",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Ready to invent?",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Ready to plan?",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Royal checkmate!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "That was a worthy opponent!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "The invention worked! 🔧",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "The machine needs some work...",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "The plan worked!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "The runes showed the way!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "The victory machine is running!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Thinking wins!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Victory is mine!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Victory! Honour and glory!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "We won!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "We’ll win next time!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Wisdom comes with practice.",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Wisdom is my strength!",
+  "file": "src/entities/character/playerHeroes.ts"
+ },
+ {
+  "en": "Classic chess pieces",
+  "file": "src/entities/piece-skins/pieceSkins.ts"
+ },
+ {
+  "en": "Standard",
+  "file": "src/entities/piece-skins/pieceSkins.ts"
+ },
+ {
+  "en": "без email",
+  "file": "src/features/admin/AdminDashboard.tsx"
+ },
+ {
+  "en": "Уникальные браузеры/телефоны за выбранный период. Считается по deviceId в браузере",
+  "file": "src/features/admin/AdminDashboard.tsx"
+ },
+ {
+  "en": "ADMIN_TOKEN",
+  "file": "src/features/admin/AdminDashboard.tsx"
+ },
+ {
+  "en": "Bearer",
+  "file": "src/features/admin/AdminDashboard.tsx"
+ },
+ {
+  "en": "Chezzies Admin",
+  "file": "src/features/admin/AdminDashboard.tsx"
+ },
+ {
+  "en": "DeviceId впервые появился в выбранный период",
+  "file": "src/features/admin/AdminDashboard.tsx"
+ },
+ {
+  "en": "DeviceId уже был раньше и снова активен в выбранный период",
+  "file": "src/features/admin/AdminDashboard.tsx"
+ },
+ {
+  "en": "Email",
+  "file": "src/features/admin/AdminDashboard.tsx"
+ },
+ {
+  "en": "Loading...",
+  "file": "src/features/admin/AdminDashboard.tsx"
+ },
+ {
+  "en": "Payment",
+  "file": "src/features/admin/AdminDashboard.tsx"
+ },
+ {
+  "en": "Register",
+  "file": "src/features/admin/AdminDashboard.tsx"
+ },
+ {
+  "en": "You",
+  "file": "src/features/admin/AdminDashboard.tsx"
+ },
+ {
+  "en": "A chess adventure for kids",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Account created.",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "At least 8 characters",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Back to sign in",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Chezzies",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Child’s name",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Code validity and access duration are checked by the server.",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Continue",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Continue without a promo code",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Could not send the email",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Could not sign in",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Create account",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Enter a valid email address",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Enter an email address",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Enter the same password again",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Enter your child’s name",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Forgot password?",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "If the account exists, we have sent a password reset link.",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Login Background",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Parent’s email",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "parent@example.com",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Password",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Please wait...",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Promo code (optional)",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Promo code not applied.",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Repeat password",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Send link",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Sign in",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "The passwords do not match",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Use at least 8 characters for your password",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "What is your young player’s name?",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Your account is saved on the server. Passwords are stored as secure hashes.",
+  "file": "src/features/auth/LoginScreen.tsx"
+ },
+ {
+  "en": "Could not update the password",
+  "file": "src/features/auth/ResetPasswordScreen.tsx"
+ },
+ {
+  "en": "New password",
+  "file": "src/features/auth/ResetPasswordScreen.tsx"
+ },
+ {
+  "en": "Password updated. You can sign in now.",
+  "file": "src/features/auth/ResetPasswordScreen.tsx"
+ },
+ {
+  "en": "Request a new link",
+  "file": "src/features/auth/ResetPasswordScreen.tsx"
+ },
+ {
+  "en": "Save password",
+  "file": "src/features/auth/ResetPasswordScreen.tsx"
+ },
+ {
+  "en": "This reset link is incomplete. Open the full link from your email, or request a new one.",
+  "file": "src/features/auth/ResetPasswordScreen.tsx"
+ },
+ {
+  "en": "This reset link is invalid",
+  "file": "src/features/auth/ResetPasswordScreen.tsx"
+ },
+ {
+  "en": "[getBattleVideo] No mapping for:",
+  "file": "src/features/battle/battleVideos.ts"
+ },
+ {
+  "en": "Bishop",
+  "file": "src/features/billing/BillingRequiredScreen.tsx"
+ },
+ {
+  "en": "King",
+  "file": "src/features/billing/BillingRequiredScreen.tsx"
+ },
+ {
+  "en": "Knight",
+  "file": "src/features/billing/BillingRequiredScreen.tsx"
+ },
+ {
+  "en": "Queen",
+  "file": "src/features/billing/BillingRequiredScreen.tsx"
+ },
+ {
+  "en": "Rook",
+  "file": "src/features/billing/BillingRequiredScreen.tsx"
+ },
+ {
+  "en": "Выберите «Оплата по QR» или «СБП»",
+  "file": "src/features/billing/PaymentScreen.tsx"
+ },
+ {
+  "en": "Наведите камеру на QR-код",
+  "file": "src/features/billing/PaymentScreen.tsx"
+ },
+ {
+  "en": "Отсканируйте QR-код через приложение банка",
+  "file": "src/features/billing/PaymentScreen.tsx"
+ },
+ {
+  "en": "Создаём QR-код для оплаты...",
+  "file": "src/features/billing/PaymentScreen.tsx"
+ },
+ {
+  "en": "Executed",
+  "file": "src/features/billing/PaymentScreen.tsx"
+ },
+ {
+  "en": "QR-код действителен 30 минут. После оплаты подписка активируется автоматически.",
+  "file": "src/features/billing/PaymentScreen.tsx"
+ },
+ {
+  "en": "QR-код для оплаты",
+  "file": "src/features/billing/PaymentScreen.tsx"
+ },
+ {
+  "en": "Ваша подписка Chezzies активирована",
+  "file": "src/features/billing/PaymentSuccessScreen.tsx"
+ },
+ {
+  "en": "Start playing!",
+  "file": "src/features/billing/PaymentSuccessScreen.tsx"
+ },
+ {
+  "en": "Отсканируйте QR-код через приложение банка:",
+  "file": "src/features/billing/SubscribeScreen.tsx"
+ },
+ {
+  "en": "Подписка Chezzies",
+  "file": "src/features/billing/SubscribeScreen.tsx"
+ },
+ {
+  "en": "Accepted",
+  "file": "src/features/billing/SubscribeScreen.tsx"
+ },
+ {
+  "en": "Rejected",
+  "file": "src/features/billing/SubscribeScreen.tsx"
+ },
+ {
+  "en": "Black",
+  "file": "src/features/game/CheckmateAnimation.tsx"
+ },
+ {
+  "en": "White",
+  "file": "src/features/game/CheckmateAnimation.tsx"
+ },
+ {
+  "en": "wins!",
+  "file": "src/features/game/CheckmateAnimation.tsx"
+ },
+ {
+  "en": "A draw!",
+  "file": "src/features/game/GameScreen.tsx"
+ },
+ {
+  "en": "Check!",
+  "file": "src/features/game/GameScreen.tsx"
+ },
+ {
+  "en": "Checkmate!",
+  "file": "src/features/game/GameScreen.tsx"
+ },
+ {
+  "en": "Game Background",
+  "file": "src/features/game/GameScreen.tsx"
+ },
+ {
+  "en": "Loading the game...",
+  "file": "src/features/game/GameScreen.tsx"
+ },
+ {
+  "en": "Only pawns are available in the free version. Subscribe to unlock the rest.",
+  "file": "src/features/game/GameScreen.tsx"
+ },
+ {
+  "en": "Resign",
+  "file": "src/features/game/GameScreen.tsx"
+ },
+ {
+  "en": "Stalemate!",
+  "file": "src/features/game/GameScreen.tsx"
+ },
+ {
+  "en": "Subscribe",
+  "file": "src/features/game/GameScreen.tsx"
+ },
+ {
+  "en": "To move:",
+  "file": "src/features/game/GameScreen.tsx"
+ },
+ {
+  "en": "Video unavailable",
+  "file": "src/features/game/GameScreen.tsx"
+ },
+ {
+  "en": "Your move",
+  "file": "src/features/game/GameScreen.tsx"
+ },
+ {
+  "en": "Pawn",
+  "file": "src/features/game/pieceLabels.ts"
+ },
+ {
+  "en": "Choose a piece:",
+  "file": "src/features/game/PromotionModal.tsx"
+ },
+ {
+  "en": "Pawn promotion",
+  "file": "src/features/game/PromotionModal.tsx"
+ },
+ {
+  "en": "🎉 Victory!",
+  "file": "src/features/game/ResultScreen.tsx"
+ },
+ {
+  "en": "🏠 Menu",
+  "file": "src/features/game/ResultScreen.tsx"
+ },
+ {
+  "en": "🔄 Play again",
+  "file": "src/features/game/ResultScreen.tsx"
+ },
+ {
+  "en": "🤝 Draw!",
+  "file": "src/features/game/ResultScreen.tsx"
+ },
+ {
+  "en": "🤝 Stalemate!",
+  "file": "src/features/game/ResultScreen.tsx"
+ },
+ {
+  "en": "😢 Defeat",
+  "file": "src/features/game/ResultScreen.tsx"
+ },
+ {
+  "en": "An interesting game!",
+  "file": "src/features/game/ResultScreen.tsx"
+ },
+ {
+  "en": "Checkmate",
+  "file": "src/features/game/ResultScreen.tsx"
+ },
+ {
+  "en": "Defeat",
+  "file": "src/features/game/ResultScreen.tsx"
+ },
+ {
+  "en": "Draw",
+  "file": "src/features/game/ResultScreen.tsx"
+ },
+ {
+  "en": "Moves",
+  "file": "src/features/game/ResultScreen.tsx"
+ },
+ {
+  "en": "Reason",
+  "file": "src/features/game/ResultScreen.tsx"
+ },
+ {
+  "en": "Resignation",
+  "file": "src/features/game/ResultScreen.tsx"
+ },
+ {
+  "en": "Result Background",
+  "file": "src/features/game/ResultScreen.tsx"
+ },
+ {
+  "en": "Stalemate",
+  "file": "src/features/game/ResultScreen.tsx"
+ },
+ {
+  "en": "Time",
+  "file": "src/features/game/ResultScreen.tsx"
+ },
+ {
+  "en": "Try again!",
+  "file": "src/features/game/ResultScreen.tsx"
+ },
+ {
+  "en": "You resigned. Your opponent won the game.",
+  "file": "src/features/game/ResultScreen.tsx"
+ },
+ {
+  "en": "Your opponent resigned. You won the game.",
+  "file": "src/features/game/ResultScreen.tsx"
+ },
+ {
+  "en": "(prefers-reduced-motion: reduce)",
+  "file": "src/features/hero/HeroSelectScreen.tsx"
+ },
+ {
+  "en": "Choose a hero",
+  "file": "src/features/hero/HeroSelectScreen.tsx"
+ },
+ {
+  "en": "Choose your hero!",
+  "file": "src/features/hero/HeroSelectScreen.tsx"
+ },
+ {
+  "en": "Enter",
+  "file": "src/features/hero/HeroSelectScreen.tsx"
+ },
+ {
+  "en": "Hero pages",
+  "file": "src/features/hero/HeroSelectScreen.tsx"
+ },
+ {
+  "en": "Next hero",
+  "file": "src/features/hero/HeroSelectScreen.tsx"
+ },
+ {
+  "en": "Previous hero",
+  "file": "src/features/hero/HeroSelectScreen.tsx"
+ },
+ {
+  "en": "Show hero:",
+  "file": "src/features/hero/HeroSelectScreen.tsx"
+ },
+ {
+  "en": "Start the adventure!",
+  "file": "src/features/hero/HeroSelectScreen.tsx"
+ },
+ {
+  "en": "Swipe through heroes ·",
+  "file": "src/features/hero/HeroSelectScreen.tsx"
+ },
+ {
+  "en": "This is your chess hero. You will grow and develop together!",
+  "file": "src/features/hero/HeroSelectScreen.tsx"
+ },
+ {
+  "en": "A lovely day for chess.",
+  "file": "src/features/onboarding/HomeScreen.tsx"
+ },
+ {
+  "en": "days",
+  "file": "src/features/onboarding/HomeScreen.tsx"
+ },
+ {
+  "en": "Every move is a chance to discover something.",
+  "file": "src/features/onboarding/HomeScreen.tsx"
+ },
+ {
+  "en": "Hello,",
+  "file": "src/features/onboarding/HomeScreen.tsx"
+ },
+ {
+  "en": "Home Background",
+  "file": "src/features/onboarding/HomeScreen.tsx"
+ },
+ {
+  "en": "Let’s find the best move.",
+  "file": "src/features/onboarding/HomeScreen.tsx"
+ },
+ {
+  "en": "My hero",
+  "file": "src/features/onboarding/HomeScreen.tsx"
+ },
+ {
+  "en": "Play!",
+  "file": "src/features/onboarding/HomeScreen.tsx"
+ },
+ {
+  "en": "Ready for a new game?",
+  "file": "src/features/onboarding/HomeScreen.tsx"
+ },
+ {
+  "en": "Ready for battle. The board awaits.",
+  "file": "src/features/onboarding/HomeScreen.tsx"
+ },
+ {
+  "en": "Subscription active:",
+  "file": "src/features/onboarding/HomeScreen.tsx"
+ },
+ {
+  "en": "The chessboard is ready.",
+  "file": "src/features/onboarding/HomeScreen.tsx"
+ },
+ {
+  "en": "The pieces are waiting for your move.",
+  "file": "src/features/onboarding/HomeScreen.tsx"
+ },
+ {
+  "en": "Time for a good game.",
+  "file": "src/features/onboarding/HomeScreen.tsx"
+ },
+ {
+  "en": "Try a clever plan today.",
+  "file": "src/features/onboarding/HomeScreen.tsx"
+ },
+ {
+  "en": "until",
+  "file": "src/features/onboarding/HomeScreen.tsx"
+ },
+ {
+  "en": "Victories start with the first move.",
+  "file": "src/features/onboarding/HomeScreen.tsx"
+ },
+ {
+  "en": "All ready! 🎉",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "Back",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "Chess experience 🎮",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "Choose pieces ♟️",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "Experience:",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "Experienced",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "Experienced player",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "friend",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "Have you played chess before?",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "Hello! 👋",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "I know the rules",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "I play well",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "Intermediate",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "Let’s get to know each other!",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "Never played",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "Newcomer",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "Next",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "No, I am new",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "Pieces:",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "Played a little",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "Time to start playing!",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "What should we call you?",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "Which pieces do you like?",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "Your name",
+  "file": "src/features/onboarding/OnboardingScreen.tsx"
+ },
+ {
+  "en": "/фигурки/белая Ladia.png",
+  "file": "src/features/opponents/HeroCarousel.tsx"
+ },
+ {
+  "en": "Classic chess style",
+  "file": "src/features/opponents/HeroCarousel.tsx"
+ },
+ {
+  "en": "White piece",
+  "file": "src/features/opponents/HeroCarousel.tsx"
+ },
+ {
+  "en": "🚀 Start the game!",
+  "file": "src/features/opponents/MatchSetupScreen.tsx"
+ },
+ {
+  "en": "A difficult opponent. Try your strongest plans.",
+  "file": "src/features/opponents/MatchSetupScreen.tsx"
+ },
+ {
+  "en": "A little trickier. Think about your move!",
+  "file": "src/features/opponents/MatchSetupScreen.tsx"
+ },
+ {
+  "en": "A simple opponent for learning the basics.",
+  "file": "src/features/opponents/MatchSetupScreen.tsx"
+ },
+ {
+  "en": "A strong opponent for experienced players.",
+  "file": "src/features/opponents/MatchSetupScreen.tsx"
+ },
+ {
+  "en": "CHOOSE AN OPPONENT",
+  "file": "src/features/opponents/MatchSetupScreen.tsx"
+ },
+ {
+  "en": "CHOOSE YOUR COLOUR",
+  "file": "src/features/opponents/MatchSetupScreen.tsx"
+ },
+ {
+  "en": "Match Background",
+  "file": "src/features/opponents/MatchSetupScreen.tsx"
+ },
+ {
+  "en": "Medium difficulty. Look carefully!",
+  "file": "src/features/opponents/MatchSetupScreen.tsx"
+ },
+ {
+  "en": "New game",
+  "file": "src/features/opponents/MatchSetupScreen.tsx"
+ },
+ {
+  "en": "YOUR HERO",
+  "file": "src/features/opponents/MatchSetupScreen.tsx"
+ },
+ {
+  "en": "🎮 Play!",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "🏆 Achievements (",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "📊 Statistics",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "📋 Daily missions",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "📋 Missions",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "📜 History",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "44 0%, transparent 70%)",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "After choosing a hero, you will see statistics, achievements and game history here.",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "Against:",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "Best streak",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "Checkmates",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "Collect!",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "Draws",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "Favourite piece",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "Games",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "Level",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "Losses",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "Lv.",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "moves •",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "Play your first game",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "Time played",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "Win",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "Win rate",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "Winning streak",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "Wins",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "XP",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "XP until the next evolution",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "You have not played a game yet!",
+  "file": "src/features/profile/ProfileScreen.tsx"
+ },
+ {
+  "en": "Already have a hero? Sign in",
+  "file": "src/features/splash/SplashScreen.tsx"
+ },
+ {
+  "en": "Chezzies Background",
+  "file": "src/features/splash/SplashScreen.tsx"
+ },
+ {
+  "en": "Play free",
+  "file": "src/features/splash/SplashScreen.tsx"
+ },
+ {
+  "en": "As a guest, replies are available in this browser. Sign in to keep them across devices.",
+  "file": "src/features/support/SupportChat.tsx"
+ },
+ {
+  "en": "CHEZZIES help",
+  "file": "src/features/support/SupportChat.tsx"
+ },
+ {
+  "en": "CHEZZIES team",
+  "file": "src/features/support/SupportChat.tsx"
+ },
+ {
+  "en": "Close help",
+  "file": "src/features/support/SupportChat.tsx"
+ },
+ {
+  "en": "Could not load your questions.",
+  "file": "src/features/support/SupportChat.tsx"
+ },
+ {
+  "en": "Could not send your question.",
+  "file": "src/features/support/SupportChat.tsx"
+ },
+ {
+  "en": "Help",
+  "file": "src/features/support/SupportChat.tsx"
+ },
+ {
+  "en": "Question",
+  "file": "src/features/support/SupportChat.tsx"
+ },
+ {
+  "en": "Send a question to the game team",
+  "file": "src/features/support/SupportChat.tsx"
+ },
+ {
+  "en": "Send question",
+  "file": "src/features/support/SupportChat.tsx"
+ },
+ {
+  "en": "Tell us what happened and which screen you were on. Do not include passwords or personal details. The CHEZZIES team can reply here.",
+  "file": "src/features/support/SupportChat.tsx"
+ },
+ {
+  "en": "Write your question...",
+  "file": "src/features/support/SupportChat.tsx"
+ },
+ {
+  "en": "Your question",
+  "file": "src/features/support/SupportChat.tsx"
+ },
+ {
+  "en": "Your questions and replies follow your account across devices. Your email is not sent to Telegram.",
+  "file": "src/features/support/SupportChat.tsx"
+ },
+ {
+  "en": "; Domain=chezzies.app",
+  "file": "src/googleAnalytics.ts"
+ },
+ {
+  "en": "; Domain=www.chezzies.app",
+  "file": "src/googleAnalytics.ts"
+ },
+ {
+  "en": "; SameSite=Lax; Secure",
+  "file": "src/googleAnalytics.ts"
+ },
+ {
+  "en": "=; Max-Age=0; Path=/",
+  "file": "src/googleAnalytics.ts"
+ },
+ {
+  "en": "About analytics",
+  "file": "src/googleAnalytics.ts"
+ },
+ {
+  "en": "Allow analytics",
+  "file": "src/googleAnalytics.ts"
+ },
+ {
+  "en": "For parents: allow optional Google Analytics cookies to help us understand visits and game activity? We do not send names, email addresses or saved games. You can play without accepting and change your choice at any time.",
+  "file": "src/googleAnalytics.ts"
+ },
+ {
+  "en": "No thanks",
+  "file": "src/googleAnalytics.ts"
+ },
+ {
+  "en": "Optional analytics",
+  "file": "src/googleAnalytics.ts"
+ },
+ {
+  "en": "Play CHEZZIES",
+  "file": "src/googleAnalytics.ts"
+ },
+ {
+  "en": "Privacy settings",
+  "file": "src/googleAnalytics.ts"
+ },
+ {
+  "en": "CHEZZIES",
+  "file": "src/international.tsx"
+ },
+ {
+  "en": ", empty",
+  "file": "src/marketing.ts"
+ },
+ {
+  "en": "bishop",
+  "file": "src/marketing.ts"
+ },
+ {
+  "en": "Choose a white piece first.",
+  "file": "src/marketing.ts"
+ },
+ {
+  "en": "Great move! Open the answer below to see why it works.",
+  "file": "src/marketing.ts"
+ },
+ {
+  "en": "king",
+  "file": "src/marketing.ts"
+ },
+ {
+  "en": "pawn",
+  "file": "src/marketing.ts"
+ },
+ {
+  "en": "piece to start.",
+  "file": "src/marketing.ts"
+ },
+ {
+  "en": "queen",
+  "file": "src/marketing.ts"
+ },
+ {
+  "en": "rook",
+  "file": "src/marketing.ts"
+ },
+ {
+  "en": "selected. Choose a destination.",
+  "file": "src/marketing.ts"
+ },
+ {
+  "en": "selected. Now tap the square where it should go.",
+  "file": "src/marketing.ts"
+ },
+ {
+  "en": "Tap a",
+  "file": "src/marketing.ts"
+ },
+ {
+  "en": "That move is allowed, but it does not solve this challenge. Try again or open the hint.",
+  "file": "src/marketing.ts"
+ },
+ {
+  "en": "That move is not allowed. Try a different square, or open the hint.",
+  "file": "src/marketing.ts"
+ },
+ {
+  "en": "That move is not legal. Try another square.",
+  "file": "src/marketing.ts"
+ },
+ {
+  "en": "A challenge for experienced players.",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "A serious, experienced opponent.",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "A strong player.",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "A stronger practice opponent.",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "A very strong opponent.",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Almost random moves. A starting point for newcomers.",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Beginner",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Casual player",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Club player",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Expert",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Grandmaster",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Knows the basics and spots simple tactics.",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Learner",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Legend",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Level 1",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Level 10",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Level 2",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Level 3",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Level 4",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Level 5",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Level 6",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Level 7",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Level 8",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Level 9",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Makes simple moves and frequent mistakes.",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Master",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Maximum difficulty.",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Understands the rules and is still learning.",
+  "file": "src/shared/config/difficulty.ts"
+ },
+ {
+  "en": "Authentication error",
+  "file": "src/shared/lib/authApi.ts"
+ },
+ {
+  "en": "Could not create the account",
+  "file": "src/shared/lib/authApi.ts"
+ },
+ {
+  "en": "Failed to verify subscription",
+  "file": "src/shared/lib/sbpBilling.ts"
+ },
+ {
+  "en": "Waiting",
+  "file": "src/shared/lib/sbpBilling.ts"
+ },
+ {
+  "en": "moves",
+  "file": "src/shared/storage/activeGameStorage.ts"
+ },
+ {
+  "en": "tactics",
+  "file": "src/shared/types/progress.ts"
+ },
+ {
+  "en": "wins",
+  "file": "src/shared/types/progress.ts"
+ },
+ {
+  "en": "← Map · save game",
+  "file": "src/world/ArenaGame.tsx"
+ },
+ {
+  "en": "A serious opponent",
+  "file": "src/world/ArenaGame.tsx"
+ },
+ {
+  "en": "ARENA · USE YOUR DISCOVERIES",
+  "file": "src/world/ArenaGame.tsx"
+ },
+ {
+  "en": "Collect your discoveries →",
+  "file": "src/world/ArenaGame.tsx"
+ },
+ {
+  "en": "Could not save the game in this browser.",
+  "file": "src/world/ArenaGame.tsx"
+ },
+ {
+  "en": "End this game?",
+  "file": "src/world/ArenaGame.tsx"
+ },
+ {
+  "en": "Getting to know the game",
+  "file": "src/world/ArenaGame.tsx"
+ },
+ {
+  "en": "Grows with you",
+  "file": "src/world/ArenaGame.tsx"
+ },
+ {
+  "en": "Keep playing",
+  "file": "src/world/ArenaGame.tsx"
+ },
+ {
+  "en": "Learning to spot threats",
+  "file": "src/world/ArenaGame.tsx"
+ },
+ {
+  "en": "Resign and see the review",
+  "file": "src/world/ArenaGame.tsx"
+ },
+ {
+  "en": "Save and return to the map",
+  "file": "src/world/ArenaGame.tsx"
+ },
+ {
+  "en": "Thanks for the game!",
+  "file": "src/world/ArenaGame.tsx"
+ },
+ {
+  "en": "The game record is damaged",
+  "file": "src/world/ArenaGame.tsx"
+ },
+ {
+  "en": "Thinking about replies",
+  "file": "src/world/ArenaGame.tsx"
+ },
+ {
+  "en": "Try again",
+  "file": "src/world/ArenaGame.tsx"
+ },
+ {
+  "en": "You can save it and continue later.",
+  "file": "src/world/ArenaGame.tsx"
+ },
+ {
+  "en": "You won!",
+  "file": "src/world/ArenaGame.tsx"
+ },
+ {
+  "en": "Your opponent is thinking. You can try again.",
+  "file": "src/world/ArenaGame.tsx"
+ },
+ {
+  "en": "of",
+  "file": "src/world/Badge.tsx"
+ },
+ {
+  "en": "puzzles",
+  "file": "src/world/Badge.tsx"
+ },
+ {
+  "en": "A piece stands in front of its king. Moving it would expose the king to check, so it is pinned.",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Amplifier",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Arena",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Checkmate Fortress",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Checkmate is check with no escape. Look at every possible escape route.",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Defense",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Defense Fortress",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Double attack",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Double Attack Citadel",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Energy charge",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Energy core",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Find the threat. Move away, block the attack or capture the attacker.",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Focusing lens",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Fork",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Fork Kingdom",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Make two threats with one move. For example, check the king and attack a rook.",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Mastery beam",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Mastery lightning",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Mastery rocket",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "One piece attacks two targets. Your opponent saves one, leaving the other to capture!",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Opponents Arena",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Pin",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Pin Tower",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "polygon(25% 17%,31% 12%,36% 13%,40% 19%,38% 24%,33% 27%,34% 31%,38% 36%,45% 31%,61% 28%,66% 34%,64% 42%,70% 48%,75% 51%,77% 72%,72% 81%,65% 84%,51% 88%,44% 86%,40% 81%,36% 88%,27% 88%,23% 84%,26% 77%,11% 77%,9% 70%,18% 58%,26% 47%,30% 43%,28% 38%,28% 32%,31% 29%,29% 25%,24% 23%)",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "polygon(33% 13%,35% 13%,30% 38%,42% 26%,53% 25%,57% 33%,61% 37%,61% 43%,55% 46%,48% 43%,49% 55%,57% 55%,58% 63%,54% 73%,48% 74%,45% 87%,35% 89%,34% 78%,29% 82%,30% 86%,22% 86%,20% 81%,18% 86%,10% 87%,9% 80%,10% 67%,8% 61%,4% 52%,5% 44%,12% 41%,16% 39%,14% 35%,9% 33%,13% 28%,18% 28%,22% 31%,25% 38%,28% 37%)",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "polygon(67% 21%,73% 19%,78% 24%,75% 29%,60% 39%,61% 43%,56% 49%,49% 53%,52% 59%,56% 72%,55% 85%,48% 88%,36% 86%,34% 79%,31% 87%,21% 88%,20% 84%,25% 71%,26% 62%,22% 52%,19% 50%,19% 45%,25% 43%,22% 40%,22% 37%,34% 32%,39% 36%,44% 33%,54% 29%)",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Precision sight",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Sceptre ring",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Stabiliser",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Storm conductor",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Storm core",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Try your discoveries in a full game.",
+  "file": "src/world/catalog.ts"
+ },
+ {
+  "en": "Mate proof needs more time",
+  "file": "src/world/challenges/acceptance.ts"
+ },
+ {
+  "en": "targets",
+  "file": "src/world/challenges/adaptive.ts"
+ },
+ {
+  "en": "A bishop closes the last diagonal",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A bishop closes the last diagonal. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A bishop retreats with a threat",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A bishop retreats with a threat. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A bishop shields a rook",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A bishop shields a rook. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A countercheck saves the rook",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A countercheck saves the rook. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A knight in a closed fortress",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A knight in a closed fortress. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A knight seeks a safe square",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A knight seeks a safe square. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A knight shields its king",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A knight shields its king. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A pawn attacks a pinned knight",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A pawn attacks a pinned knight. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A pawn gives the final check",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A pawn gives the final check. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A pinned knight cannot defend the rook",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A pinned knight cannot defend the rook. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A pinned rook captures the attacker",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A pinned rook captures the attacker. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A queen protected by its king",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A queen protected by its king. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A relative pin: a legal counterattack",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A relative pin: a legal counterattack. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A rook cannot abandon its king",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A rook cannot abandon its king. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A rook cuts off the king along a line",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A rook defends a bishop",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "A rook defends a bishop. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Avoid a pin",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Avoid a pin. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Block check with a bishop",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Block check with a bishop. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Breathing room for the king",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Breathing room for the king. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Check! The king cannot escape, block or capture the attacker.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Create a new pin to the king. Choose a safe move.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Create two threats in one move. Check your opponent’s reply.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Defend against a pawn’s double attack",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Exchange on the pinning line",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Exchange on the pinning line. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Exchange the attacking rook",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Exchange the attacking rook. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Exchanges favouring the defender",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Find a safe fork. Do not lose your attacking piece.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Find checkmate in one move. Check every escape route.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Finish the attack in eight moves.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Gain an advantage and keep it until the battle ends.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Make an escape square",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Make an escape square. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Move the king off the line",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Move the king off the line. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Move the queen away from the knight",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Move the queen away from the knight. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Protect an attacked passed pawn",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Protect the promoting pawn",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Protect the promoting pawn. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Queen at a safe distance",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Queen in front of the king",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Queen in front of the king. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Remove the checking knight",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Remove the checking knight. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Remove the queen from the mating net",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Remove the queen from the mating net. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Rook and a blocked back rank",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Rook and a blocked back rank. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Rook and king at the edge",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Rook and king at the edge. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Stop the knight fork threat",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Stop the knight fork threat. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Stop your opponent’s threat",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Stop your opponent’s threat. Choose a defense.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "The bishop on b2 is attacked. Save it by capturing the attacker.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "The capture solved the challenge without losing your attacking piece.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "The king escapes check",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "The king escapes check. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "The king has no safe square left.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "The king is behind the pinned piece. It cannot leave the line and expose check.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "The king is in check. Find the only escape.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "The king moved to its only safe square.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "The piece is pinned to a more valuable piece behind it.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "The piece on b5 attacks king c6 and rook a6.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "The piece on e4 attacks bishop d2 and queen c3.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "The piece on e5 attacks queen f7 and king d7.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "The piece on e6 attacks bishop f8 and queen d8.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "The piece on e6 attacks bishop g5 and rook c5.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "The piece on f5 attacks knight g4 and knight d7.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "The piece on f6 attacks king e8 and queen g4.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "The piece on f6 attacks rook e8 and bishop d5.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "The piece on g2 attacks rook h1 and knight g1.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "The piece on h5 attacks king d1 and knight c5.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "The pinned piece could not do its defensive job.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "The rook on h8 is attacked. Save it by capturing the attacker.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Two rooks cut off the king",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Two rooks cut off the king. Find a strong continuation.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Withstand the attack and keep your pieces safe.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "You broke the pin and freed your piece.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "You changed the position and prevented a pin.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "You finished the attack: the king has nowhere to go.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "You prevented a double attack.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "You removed the attacker on d1. The threat is gone.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "You removed the attacker on f6. The threat is gone.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "You stopped check and kept your king safe.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "You stopped the checkmate threat.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "You stopped your opponent pinning your piece.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "You used the tactic and kept the material you won.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "You withstood the attack and kept your material.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Your opponent no longer has checkmate on the next move.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Your opponent’s double attack no longer works.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Your piece blocked the check. The king is safe.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": "Your piece escaped the attack or gained protection.",
+  "file": "src/world/challenges/advanced.json"
+ },
+ {
+  "en": ". Find a strong continuation.",
+  "file": "src/world/challenges/catalog.ts"
+ },
+ {
+  "en": "Capture an unprotected enemy piece.",
+  "file": "src/world/challenges/catalog.ts"
+ },
+ {
+  "en": "Duplicate exercise",
+  "file": "src/world/challenges/catalog.ts"
+ },
+ {
+  "en": "Find a strong move.",
+  "file": "src/world/challenges/catalog.ts"
+ },
+ {
+  "en": "Find a way out of this tricky position.",
+  "file": "src/world/challenges/catalog.ts"
+ },
+ {
+  "en": "Find checkmate in one move.",
+  "file": "src/world/challenges/catalog.ts"
+ },
+ {
+  "en": "k7/3r4/8/8/8/8/8/3R2K1 w - - 0 1",
+  "file": "src/world/challenges/catalog.ts"
+ },
+ {
+  "en": "The rook captured an unprotected rook.",
+  "file": "src/world/challenges/catalog.ts"
+ },
+ {
+  "en": "This happened in your game. Move",
+  "file": "src/world/challenges/catalog.ts"
+ },
+ {
+  "en": "Topic already registered",
+  "file": "src/world/challenges/catalog.ts"
+ },
+ {
+  "en": "Topic mismatch",
+  "file": "src/world/challenges/catalog.ts"
+ },
+ {
+  "en": "Learn to checkmate",
+  "file": "src/world/challenges/Example.tsx"
+ },
+ {
+  "en": "Learn to make a fork",
+  "file": "src/world/challenges/Example.tsx"
+ },
+ {
+  "en": "Learn to make a pin",
+  "file": "src/world/challenges/Example.tsx"
+ },
+ {
+  "en": "My turn to try →",
+  "file": "src/world/challenges/Example.tsx"
+ },
+ {
+  "en": "See how this tactic works",
+  "file": "src/world/challenges/Example.tsx"
+ },
+ {
+  "en": "Watch an example",
+  "file": "src/world/challenges/Example.tsx"
+ },
+ {
+  "en": "WATCH AN EXAMPLE",
+  "file": "src/world/challenges/Example.tsx"
+ },
+ {
+  "en": "Watch the example, then try it yourself.",
+  "file": "src/world/challenges/Example.tsx"
+ },
+ {
+  "en": "You did it! Checkmate",
+  "file": "src/world/challenges/Example.tsx"
+ },
+ {
+  "en": "/ 4 stages ·",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "← World map",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "♛ Guardian",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "♜ Learn",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "♟ Find",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "♟ I know a little",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "⚑ Create",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "🌱 Just starting",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "🔥 I play confidently",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "Choose what fits you. We will suggest a starting point for your adventure.",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "Complete some fortress challenges first. Here you will meet familiar tactics without being told the topic.",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "Completed ✓",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "Continue →",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "Continue the journey",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "Discoveries await in the mist",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "Find a strong continuation.",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "First, watch a simple example and try with hints.",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "FORTRESS FREED",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "Fortress gates:",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "FORTRESS GUARDIAN",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "Gain an advantage and keep it until the challenge ends.",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "GUARDIAN BATTLE ·",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "GUARDIAN CHALLENGE ·",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "Guardian shields",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "HERO CHALLENGE ·",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "Mastery challenge — a harder task",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "OF 2",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "OF 7",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "Solve the challenges to prepare your strike.",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "Spot the tactic on the board yourself.",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "Start the battle →",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "Start the journey",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "Test your hero’s strength →",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "To the fortresses →",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "Use everything you have learned.",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "Use your discovery in a real position.",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "You changed this world. Your next adventure is waiting on the map.",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "You defeated the Guardian!",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "YOUR ADVENTURE",
+  "file": "src/world/challenges/Flow.tsx"
+ },
+ {
+  "en": "Courtyard",
+  "file": "src/world/challenges/model.ts"
+ },
+ {
+  "en": "Gates",
+  "file": "src/world/challenges/model.ts"
+ },
+ {
+  "en": "Guardian",
+  "file": "src/world/challenges/model.ts"
+ },
+ {
+  "en": "Guardian battle",
+  "file": "src/world/challenges/model.ts"
+ },
+ {
+  "en": "Learn",
+  "file": "src/world/challenges/model.ts"
+ },
+ {
+  "en": "Spot the tactic",
+  "file": "src/world/challenges/model.ts"
+ },
+ {
+  "en": "Tower",
+  "file": "src/world/challenges/model.ts"
+ },
+ {
+  "en": "Use it",
+  "file": "src/world/challenges/model.ts"
+ },
+ {
+  "en": "Attack the king and rook with your knight.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "Beat the Guardian: gain an advantage over several moves.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "Bishop b5, knight d7 and king e8 share a diagonal. The knight is pinned.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "Compare the options and choose a strong move.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "Create a double threat, wait for the reply and use it.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "Guardian challenge. Find a strong continuation.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "Mark all pieces attacked by the highlighted piece.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "One piece attacks several targets. That is a double attack.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "Prepare a double attack. Calculate three of your moves.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "Sometimes the best defense is to capture the attacker.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The knight on d6 gives check and attacks the rook on c8.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on a3 attacks the king on d6 and knight on a5.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on a4 attacks the rook on b2 and king on c3.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on a7 is attacked. Save it by capturing the attacker.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on a8 is attacked. Save it by capturing the attacker.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on b4 attacks the rook on e7 and bishop on h4.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on b8 attacks the knight on a8 and bishop on b4.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on c1 attacks the knights on e1 and c3.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on c2 attacks the rooks on e3 and a1.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on c4 attacks the king on e3 and bishop on b2.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on d2 attacks the knight on c3, king on f2 and knight on d3.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on d4 is attacked. Save it by capturing the attacker.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on d5 attacks the bishop on b6 and king on c3.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on d5 attacks the knights on c4 and e5.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on d6 attacks the bishop on c8 and king on b5.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on d6 attacks the bishop on e6 and king on c6.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on d8 attacks the knight on g8 and bishop on c8.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on d8 attacks the rook on h4 and king on b6.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on e2 attacks the knight on f1 and rook on d1.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on e3 attacks the queen on c4, bishop on f1 and king on g2.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on e4 attacks the rook on f3 and king on d3.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on e5 attacks the king on d7 and bishop on c4.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on e5 attacks the knight on b8 and bishop on e6.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on e7 attacks the bishop on c8 and queen on c6.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on e7 attacks the king on g5 and bishop on d7.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on f3 attacks the queen on e1 and bishop on d2.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on f7 attacks the rook on h6 and king on d6.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on f7 attacks the rook on h8, king on d8 and bishop on d6.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on g2 attacks the king on e3 and bishop on e1.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The piece on g5 attacks the queen on h4 and king on f4.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The queen on d5 gives check along the g8 diagonal and attacks rook a8 along the other diagonal.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The rook covers the h-file and your king covers g8 and g7.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "The rook sacrifice drew the king to h7. The knight made a fork and captured the queen.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "Which of your pieces are attacked by the highlighted opponent?",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "Which pieces does the highlighted piece attack?",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "Win material and keep it. You have up to five moves.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "You changed the position so the double attack no longer works.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "You created threats and kept your advantage to the end.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "You looked beyond the first move and used the double attack.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "You removed the attacker on a1. The threat is gone.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "You removed the attacker on a8. The threat is gone.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "You removed the attacker on c5. The threat is gone.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "You removed the attacker on g2. The threat is gone.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "You removed the attacker on g7. The threat is gone.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "You removed the attacker on h8. The threat is gone.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "Your opponent attacks several of your pieces at once.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "Your opponent is preparing a double attack. Stop the tactic.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": "Your piece is selected. Find a strong square for it.",
+  "file": "src/world/challenges/prepared.json"
+ },
+ {
+  "en": ". You do not need to move a piece.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "· up to",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "A finished position cannot require another move.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Can it move to a safe square?",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Can the check be blocked or the attacker captured?",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Capture the piece under attack",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Check the lines of the rook, bishop and queen.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Check what your opponent can capture after your move.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Check: can the king escape, block the attack or capture the attacker?",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Checkmate in 1 move",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Checkmate! The king cannot escape, block or capture the attacker.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Compare checks, captures and threats. Choose a move that improves your position.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Correct! This piece shields the king.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Correct! You found every target of the highlighted piece.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Do not give your gain back. Move your piece to a safe square.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Do not let the highlighted king escape.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Escape check and give checkmate",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Escape check and make a fork",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Find a check that leaves no escape, block or capture.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Find a check that leaves no way to escape.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Find a move that creates a fork",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Find a move that lets one of your pieces attack two targets at once.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Find a move that lets one piece attack the highlighted targets.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Find a move that protects it and checkmates the other king.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Find a safe move that also creates a double attack.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Find a useful capture after the reply. Check your piece’s protection.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Find a useful capture. Check that the reply will not cost you more.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Find a useful continuation: a pinned piece cannot defend freely.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Find the best move",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Find the piece shielding the king.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Find the piece under attack.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Find the pieces under attack",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Find the pinned piece",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Find two enemy pieces near each other.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Finish the attack",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "First draw the king away so the knight can create a double threat.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Great! You won material with a fork.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Is the king in check now?",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Is this checkmate yet?",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Keep your advantage",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Keep your pieces safe",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Last move",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Line up with an enemy piece and its king. The first piece cannot move away and expose its king to check.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Look at the line between that piece and its king.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Look at where the king can move.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Look for checks and attacks.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Make a fork",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Make a pin",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Make two threats in one move",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Mark all the pieces attacked by",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Mark only enemy pieces that its attack can reach.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Mark the piece in front of the king that the highlighted piece attacks.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Move away, block the attack or capture the attacker.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "No verified answer is available.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Now find a move that attacks two enemy pieces at once.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "on",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Opponent’s reply · after your move",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "piece",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Pin a piece to a more valuable piece behind it.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Prepare a fork",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Promote a pawn",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Protect a piece",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Save your king from check",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "See which piece is saved and which remains under attack.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Start with the highlighted piece on",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Stop the threats and do not leave your pieces unprotected.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Stop your opponent winning your piece on the next move.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Take your pawn to the last rank and choose a new piece.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "The king cannot escape, block or capture the attacker.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "The opponent’s king is already in check, but the attacking side is marked to move.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "The saved answer does not give checkmate in one move.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Trace its attacks. Other pieces can block the path.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Try",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Use the pin",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Which of your pieces can attack both at once?",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Which squares do your pieces already cover?",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Win a piece",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "with the bishop",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "with the king",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "with the knight",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "with the pawn",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "with the queen",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "with the rook",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "You can move away, defend it or capture the attacker.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "You did it! One piece attacks several targets at once.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "You did it! The pawn promoted.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "You did it! The piece is pinned to its king and cannot expose it to check.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "You did it! The pin helped your attack.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "You did it! The threat is stopped.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "You did it! You held the position.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "You did it! You won material.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Your king is already in check.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Your king is in check. Find the strongest escape.",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Your opponent answers the threat",
+  "file": "src/world/challenges/presentation.ts"
+ },
+ {
+  "en": "Finish the attack in",
+  "file": "src/world/challenges/selector.ts"
+ },
+ {
+  "en": "Mark every piece attacked by the highlighted piece.",
+  "file": "src/world/challenges/selector.ts"
+ },
+ {
+  "en": "Mixed practice needs a previously learned topic",
+  "file": "src/world/challenges/selector.ts"
+ },
+ {
+  "en": "moves.",
+  "file": "src/world/challenges/selector.ts"
+ },
+ {
+  "en": "No exercises registered for",
+  "file": "src/world/challenges/selector.ts"
+ },
+ {
+  "en": "Take the pawn to the last rank.",
+  "file": "src/world/challenges/selector.ts"
+ },
+ {
+  "en": "Trace the attacks first. Mark the pieces the highlighted piece can reach.",
+  "file": "src/world/challenges/selector.ts"
+ },
+ {
+  "en": "· just choose an answer",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "· promotion",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "(max-width:767px), (max-width:960px) and (max-height:500px)",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "⚪ White to move",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "⚫ Black to move",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "Check again",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "Check every escape: move away, block or capture the attacker.",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "Check my choices",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "Chess challenge",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "CHESS CHALLENGE",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "Compare the squares marked in gold.",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "Could not check this position.",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "Hint",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "I am not sure yet",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "I need more practice",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "It is checkmate",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "Look closely at the highlighted piece.",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "Nearly!",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "Position finished · checkmate",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "Preparing a hint…",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "Preparing your challenge…",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "Retry the reply",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "Selected:",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "The goal was not reached this time. Explore a similar position and try again.",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "The hint has not loaded yet. Try again.",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "The king can escape",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "Try once more",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "We will return to this tactic later.",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "You did it!",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "You solved it with help. To open the next chapter, beat the Guardian without hints or retries.",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "You spotted the tactic:",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "Your opponent is thinking.",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "1r5k/8/8/8/8/8/8/4Q1K1 w - - 0 1",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "3k4/8/8/3n4/8/8/8/R5K1 w - - 0 1",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "8/4k3/8/8/8/2N1r3/8/6K1 w - - 0 1",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "A separate example, not the solution to this challenge",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "Animated example",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "Check along one diagonal.",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "Close the example",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "Example on another board",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "Explanation of your current result",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "If the knight moves away, its king will be in check.",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "k7/4Q3/2K5/8/8/8/8/8 w - - 0 1",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "k7/8/8/3b4/4P3/8/8/6K1 w - - 0 1",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "k7/8/8/8/8/8/4r3/4K3 w - - 0 1",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "Look at how the attacks changed after your move.",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "Look at the resulting position.",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "One piece attacks two targets.",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "The attacking rook is unprotected.",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "The enemy piece leaves the board.",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "The king captures the rook. No more check.",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "The king is in check and looks for an escape.",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "The king is in check.",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "The king is in check. It has no safe move, block or capture.",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "The king must escape check, leaving the rook under attack.",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "The knight moves.",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "The knight stands between the rook and the king.",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "The pawn captures the enemy piece.",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "The pawn spots an unprotected target.",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "The queen covers a7 and b8. The white king protects the queen. Checkmate.",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "The queen moves closer to the king.",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "The queen moves.",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "The rook is attacked along the other diagonal. Two threats!",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "The rook moves onto the king’s file.",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "transform .65s ease, opacity .45s",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "Watch an example of this tactic",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "Watch the example again",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "Your result",
+  "file": "src/world/challenges/TacticDemo.tsx"
+ },
+ {
+  "en": "Find a defense against check.",
+  "file": "src/world/engine.ts"
+ },
+ {
+  "en": "Find a move that attacks two pieces at once.",
+  "file": "src/world/engine.ts"
+ },
+ {
+  "en": "Find a piece you can safely capture.",
+  "file": "src/world/engine.ts"
+ },
+ {
+  "en": "One piece attacks two targets at once.",
+  "file": "src/world/engine.ts"
+ },
+ {
+  "en": "Pin the piece to the king behind it.",
+  "file": "src/world/engine.ts"
+ },
+ {
+  "en": "Save the piece your opponent is attacking.",
+  "file": "src/world/engine.ts"
+ },
+ {
+  "en": "The check is stopped. Your king is safe.",
+  "file": "src/world/engine.ts"
+ },
+ {
+  "en": "The king has no escape from this check. Checkmate!",
+  "file": "src/world/engine.ts"
+ },
+ {
+  "en": "The piece is safe: your opponent can no longer capture it.",
+  "file": "src/world/engine.ts"
+ },
+ {
+  "en": "The piece shields its king and cannot leave the line.",
+  "file": "src/world/engine.ts"
+ },
+ {
+  "en": "You captured a piece and kept your own protected.",
+  "file": "src/world/engine.ts"
+ },
+ {
+  "en": "You found a strong move. Show it again.",
+  "file": "src/world/engine.ts"
+ },
+ {
+  "en": "Analysis took too long. Try again.",
+  "file": "src/world/engineClient.ts"
+ },
+ {
+  "en": "Cancelled",
+  "file": "src/world/engineClient.ts"
+ },
+ {
+  "en": "Could not start the chess engine.",
+  "file": "src/world/engineClient.ts"
+ },
+ {
+  "en": "CHEZZIES · Arena",
+  "file": "src/world/gameRecord.ts"
+ },
+ {
+  "en": "Event",
+  "file": "src/world/gameRecord.ts"
+ },
+ {
+  "en": "Result",
+  "file": "src/world/gameRecord.ts"
+ },
+ {
+  "en": "Round",
+  "file": "src/world/gameRecord.ts"
+ },
+ {
+  "en": "The game sequence is invalid",
+  "file": "src/world/gameRecord.ts"
+ },
+ {
+  "en": "The position does not match the played move",
+  "file": "src/world/gameRecord.ts"
+ },
+ {
+  "en": "A GOOD BATTLE!",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "A short game is the start of a journey.",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "Another",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "challenge",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "challenges",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "Collect your power-up →",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "Continue the skill journey",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "EVENLY MATCHED!",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "Every fortress is yours!",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "HERO",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "Looking for discoveries…",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "New experience",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "Practice challenge →",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "Replay a moment from your game",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "Retry the review",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "Reviewing your game…",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "Rewards earned",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "See a moment from your game",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "SKILL",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "step",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "steps",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "This game did not contain a simple learning moment.",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "VICTORY!",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "WORLD",
+  "file": "src/world/GameResult.tsx"
+ },
+ {
+  "en": "— opens",
+  "file": "src/world/growth.ts"
+ },
+ {
+  "en": ". Solve new challenges and use your discoveries in the Arena.",
+  "file": "src/world/growth.ts"
+ },
+ {
+  "en": "A storm in the sceptre — direct the lightning.",
+  "file": "src/world/growth.ts"
+ },
+ {
+  "en": "Adventure ahead",
+  "file": "src/world/growth.ts"
+ },
+ {
+  "en": "Challenges completed. Use your discoveries in the Arena!",
+  "file": "src/world/growth.ts"
+ },
+ {
+  "en": "Confident learner",
+  "file": "src/world/growth.ts"
+ },
+ {
+  "en": "Confident tactician",
+  "file": "src/world/growth.ts"
+ },
+ {
+  "en": "Continue the journey: learn, spot, use and beat the Guardian.",
+  "file": "src/world/growth.ts"
+ },
+ {
+  "en": "Every part collected! Test your strength in the Arena.",
+  "file": "src/world/growth.ts"
+ },
+ {
+  "en": "First discoveries",
+  "file": "src/world/growth.ts"
+ },
+ {
+  "en": "Game master",
+  "file": "src/world/growth.ts"
+ },
+ {
+  "en": "Laser gaze — two beams from the eyes.",
+  "file": "src/world/growth.ts"
+ },
+ {
+  "en": "point",
+  "file": "src/world/growth.ts"
+ },
+ {
+  "en": "points",
+  "file": "src/world/growth.ts"
+ },
+ {
+  "en": "Practise a tactic that appeared in your game.",
+  "file": "src/world/growth.ts"
+ },
+ {
+  "en": "puzzle",
+  "file": "src/world/growth.ts"
+ },
+ {
+  "en": "Solve another",
+  "file": "src/world/growth.ts"
+ },
+ {
+  "en": "Sunshine shot — launch a rocket.",
+  "file": "src/world/growth.ts"
+ },
+ {
+  "en": "There is a useful moment in your game. Shall we try again?",
+  "file": "src/world/growth.ts"
+ },
+ {
+  "en": "There was a fork in your game. Shall we find it together?",
+  "file": "src/world/growth.ts"
+ },
+ {
+  "en": "Until the next part —",
+  "file": "src/world/growth.ts"
+ },
+ {
+  "en": ") rotate(-38)",
+  "file": "src/world/HeroAbility.tsx"
+ },
+ {
+  "en": "Hero attack",
+  "file": "src/world/HeroAbility.tsx"
+ },
+ {
+  "en": "polygon(12% 64%,40% 64%,43% 100%,10% 100%)",
+  "file": "src/world/HeroActor.tsx"
+ },
+ {
+  "en": "polygon(19% 68%,35% 68%,36% 100%,18% 100%)",
+  "file": "src/world/HeroActor.tsx"
+ },
+ {
+  "en": "polygon(25% 72%,52% 72%,54% 100%,24% 100%)",
+  "file": "src/world/HeroActor.tsx"
+ },
+ {
+  "en": "polygon(34% 68%,50% 68%,53% 100%,33% 100%)",
+  "file": "src/world/HeroActor.tsx"
+ },
+ {
+  "en": "polygon(40% 64%,65% 64%,72% 100%,40% 100%)",
+  "file": "src/world/HeroActor.tsx"
+ },
+ {
+  "en": "polygon(50% 60%,67% 60%,71% 100%,52% 100%)",
+  "file": "src/world/HeroActor.tsx"
+ },
+ {
+  "en": "polygon(54% 72%,81% 72%,84% 100%,53% 100%)",
+  "file": "src/world/HeroActor.tsx"
+ },
+ {
+  "en": "polygon(71% 58%,90% 58%,94% 100%,71% 100%)",
+  "file": "src/world/HeroActor.tsx"
+ },
+ {
+  "en": "A chain of three targets",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Aim and hit the target.",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Basic cannon",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Beam amplifier",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Boosted charge",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Bright spark and two targets",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Chain lightning",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Conductors",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Double beam",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Easier to catch the charge",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Energy reaches farther",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Focusing lenses",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Hold to charge. Aim and release to fire.",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Laser gaze",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Lightning crystal",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Long-range chain lightning",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "One eye beam",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "One target",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Optical sight",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Powerful blast",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Powerful charge",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Precision shot",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Sceptre",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Steady aim",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Storm sceptre",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Strong pulse",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Super shot",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Tap the first target. Lightning jumps to nearby targets.",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "The beam reaches a nearby target",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "The sight helps you aim the cannon",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "Two eye beams",
+  "file": "src/world/heroConfig.ts"
+ },
+ {
+  "en": "/ 4 stages",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "Adventure book",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "ADVENTURE BOOK",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "Chess week",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "Close the book",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "Escape",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "Every power-up collected!",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "FORKS",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "FORTRESSES",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "Freed ✓",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "Game practice awaits",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "GAMES",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "Hero appearances",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "LEVEL",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "My achievements",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "My fortresses",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "My skills",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "Other heroes",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "PUZZLES",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "Skills",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "SKILLS",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "steps to a power-up",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "Tab",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "Used in a game",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "Weapon level",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "WINS",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": "Your progress",
+  "file": "src/world/HeroJournal.tsx"
+ },
+ {
+  "en": ": see level",
+  "file": "src/world/HeroRoster.tsx"
+ },
+ {
+  "en": "← Return to the world",
+  "file": "src/world/HeroRoster.tsx"
+ },
+ {
+  "en": "A completed stage",
+  "file": "src/world/HeroRoster.tsx"
+ },
+ {
+  "en": "Change hero",
+  "file": "src/world/HeroRoster.tsx"
+ },
+ {
+  "en": "Choose an adventure hero",
+  "file": "src/world/HeroRoster.tsx"
+ },
+ {
+  "en": "Continue with this hero",
+  "file": "src/world/HeroRoster.tsx"
+ },
+ {
+  "en": "Each grows in a different way. All earned improvements are saved.",
+  "file": "src/world/HeroRoster.tsx"
+ },
+ {
+  "en": "Future improvement · not earned yet",
+  "file": "src/world/HeroRoster.tsx"
+ },
+ {
+  "en": "Hero stages",
+  "file": "src/world/HeroRoster.tsx"
+ },
+ {
+  "en": "Your hero now",
+  "file": "src/world/HeroRoster.tsx"
+ },
+ {
+  "en": "Your level:",
+  "file": "src/world/HeroRoster.tsx"
+ },
+ {
+  "en": "Fortress gates",
+  "file": "src/world/HeroTaskAction.tsx"
+ },
+ {
+  "en": "Guardian shields:",
+  "file": "src/world/HeroTaskAction.tsx"
+ },
+ {
+  "en": "Hit! Your attack charge is ready.",
+  "file": "src/world/HeroTaskAction.tsx"
+ },
+ {
+  "en": "Solve puzzles to weaken the gates. At 0%, the fortress is yours!",
+  "file": "src/world/HeroTaskAction.tsx"
+ },
+ {
+  "en": "Strength:",
+  "file": "src/world/HeroTaskAction.tsx"
+ },
+ {
+  "en": ", completed",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "A GREAT START",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "A new hero part:",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "A passage opened in the wall!",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "A tower battlement has fallen!",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Another discovery!",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "AT THE GATES",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "attacks!",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Challenge",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Challenges completed. Now use this skill in a full game.",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "challenges.",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Chapter completed. New ways to spot and use the tactic await.",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Close the explanation",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Completed",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Enemy king",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Enemy rook",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Fork Kingdom completed!",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Fork Kingdom: a stone castle with blue towers",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Fortress chapters",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Four chapters to free the fortress",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Gate strength:",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Great hit! The fortress gates weakened",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Hit! Damage: −",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "inset(43% 25% 23% 60%)",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "JOURNEY COMPLETE",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Next challenge",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Next stage",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "One piece. Two targets.",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Repeat the challenges",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Return to the map",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Show it on our board →",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Start the challenge",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "TEST YOUR HERO’S STRENGTH",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "The first crack appeared in the gates!",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "The first gate panel is broken!",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "The gates are almost open!",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "The gates are broken!",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "The knight attacks the king and rook together. The king must escape, leaving the rook to capture.",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "The stone arch has cracked!",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "The tower’s defenses weakened!",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "This is an explanation. Fortress progress does not change here.",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Try it: one piece — two targets",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Until the next fortress stage:",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Watch the gates…",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "What is a fork?",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "World map",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Your knight",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Account",
+  "file": "src/world/mobile/MobileGameShell.tsx"
+ },
+ {
+  "en": "Choose your hero",
+  "file": "src/world/mobile/MobileGameShell.tsx"
+ },
+ {
+  "en": "Hero",
+  "file": "src/world/mobile/MobileGameShell.tsx"
+ },
+ {
+  "en": "How to play",
+  "file": "src/world/mobile/MobileGameShell.tsx"
+ },
+ {
+  "en": "M12 5c-3-3-7-3-10-2v16c4-1 7 0 10 2 3-2 6-3 10-2V3c-3-1-7-1-10 2v16",
+  "file": "src/world/mobile/MobileGameShell.tsx"
+ },
+ {
+  "en": "M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0 M4 21v-3a8 6 0 0 1 16 0v3z",
+  "file": "src/world/mobile/MobileGameShell.tsx"
+ },
+ {
+  "en": "M3 3l5 2 12 15 M21 3l-5 2L4 20 M2 16l6 6 M16 22l6-6",
+  "file": "src/world/mobile/MobileGameShell.tsx"
+ },
+ {
+  "en": "M3 5l6-2 6 2 6-2v16l-6 2-6-2-6 2V5 M9 3v16 M15 5v16",
+  "file": "src/world/mobile/MobileGameShell.tsx"
+ },
+ {
+  "en": "M5 21h14l-1-4H7z M8 17c0-5 7-4 5-8l-4 3-4-3 5-6 6 1 3 6-2 7 M10 3V1",
+  "file": "src/world/mobile/MobileGameShell.tsx"
+ },
+ {
+  "en": "Main sections",
+  "file": "src/world/mobile/MobileGameShell.tsx"
+ },
+ {
+  "en": "Map",
+  "file": "src/world/mobile/MobileGameShell.tsx"
+ },
+ {
+  "en": "Play",
+  "file": "src/world/mobile/MobileGameShell.tsx"
+ },
+ {
+  "en": "Subscription",
+  "file": "src/world/mobile/MobileGameShell.tsx"
+ },
+ {
+  "en": "♟ Meet the pieces",
+  "file": "src/world/mobile/MobilePieceGuide.tsx"
+ },
+ {
+  "en": "Close the piece guide",
+  "file": "src/world/mobile/MobilePieceGuide.tsx"
+ },
+ {
+  "en": "Meet the pieces",
+  "file": "src/world/mobile/MobilePieceGuide.tsx"
+ },
+ {
+  "en": "Next piece",
+  "file": "src/world/mobile/MobilePieceGuide.tsx"
+ },
+ {
+  "en": "Previous piece",
+  "file": "src/world/mobile/MobilePieceGuide.tsx"
+ },
+ {
+  "en": "Swipe through pieces ·",
+  "file": "src/world/mobile/MobilePieceGuide.tsx"
+ },
+ {
+  "en": "Find the best move.",
+  "file": "src/world/personalLearning.ts"
+ },
+ {
+  "en": "Getting there",
+  "file": "src/world/personalLearning.ts"
+ },
+ {
+  "en": "Going very well",
+  "file": "src/world/personalLearning.ts"
+ },
+ {
+  "en": "In progress",
+  "file": "src/world/personalLearning.ts"
+ },
+ {
+  "en": "Worth practising",
+  "file": "src/world/personalLearning.ts"
+ },
+ {
+  "en": ": this tactic was well hidden today. Practise it in the training ground?",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "· Puzzle",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "+1 hero development point",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "Challenges from familiar topics will appear here.",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "Explore the tactics first",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "Good practice. We will revisit these tactics later.",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "Misty Lands",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "Next series →",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "Nobody tells you which tactic to use here. Find the idea yourself.",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "of 5",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "Practice completed!",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "Practice:",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "Practise:",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "puzzles per series · continue with another series",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "Revisit the tactics in new positions. Your freed fortresses stay yours.",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "Skill practice",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "solutions per series · difficulty reached",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "Solved",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "Start practice →",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "The mist is clearing",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "To the map →",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "Today’s practice:",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "Training hall",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "You are gaining practice at spotting chess tactics!",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "Your first answers help us choose the difficulty.",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "Your record:",
+  "file": "src/world/PersonalTraining.tsx"
+ },
+ {
+  "en": "♟ Meet the pieces?",
+  "file": "src/world/PieceGuide.tsx"
+ },
+ {
+  "en": "Black side:",
+  "file": "src/world/PieceGuide.tsx"
+ },
+ {
+  "en": "Chess pieces",
+  "file": "src/world/PieceGuide.tsx"
+ },
+ {
+  "en": "Swipe through the pieces",
+  "file": "src/world/PieceGuide.tsx"
+ },
+ {
+  "en": "White side:",
+  "file": "src/world/PieceGuide.tsx"
+ },
+ {
+  "en": "A similar idea will appear again in mixed challenges later.",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "All fortresses, Misty Lands, the expanded training ground and new opponents.",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "Ask a grown-up",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "Ask a parent to help open new practice activities.",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "CHEZZIES notices which chess topics are trickier and suggests short challenges on those topics.",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "Continue without an account",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "Days played:",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "For example, repeated mistakes with pins lead to more pin practice.",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "For parents: more adventures and chess practice for your child.",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "Games played:",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "Go back",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "Not now",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "Open full access",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "Open personal practice",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "Open the whole world",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "Opens the whole world",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "Progress will stay on this device.",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "Puzzles solved:",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "Revisits the topic",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "Save progress",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "Save your hero?",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "Save your results?",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "See what is going well and what to practise again.",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "Shows progress to a parent",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "The game notices tricky topics",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "This week",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": "Your adventure has begun. Create a free profile to save your hero, fortresses and games, and continue on another device.",
+  "file": "src/world/ProductPanels.tsx"
+ },
+ {
+  "en": ": another",
+  "file": "src/world/progress.ts"
+ },
+ {
+  "en": "A new clue appeared in your game. Look in",
+  "file": "src/world/progress.ts"
+ },
+ {
+  "en": "challenges, and the fortress will change!",
+  "file": "src/world/progress.ts"
+ },
+ {
+  "en": "First challenges completed. Use your discoveries in the Arena!",
+  "file": "src/world/progress.ts"
+ },
+ {
+  "en": "% skill · +",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "⚪ WHITE TO MOVE",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "⚫ BLACK TO MOVE",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "✓ Correct!",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "Chapter",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "Choose a piece, then a destination square.",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "Choose one of three moves.",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "Find a strong move",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "hero steps",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "How can it attack two targets?",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "Look closely at the piece on",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "Nearly! The move is legal. Look at the goal and try another way.",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "Nearly! The threat remains. Protect both targets or remove the attacker.",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "Nearly! Your piece attacks only one target. Find a square for two.",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "Nearly! Your piece is not attacking a target yet. Try another square.",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "One piece → two targets",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "Return to the fortress",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "Save your king from check.",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "Think about the challenge’s goal.",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "Try again →",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "Try again. Find a move that meets the goal.",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "You found two targets. Check whether your opponent can capture your piece or whether you must escape check.",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "YOUR GAME · MOVE",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "Your knight is selected. Choose a square for the fork.",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "Chain x",
+  "file": "src/world/range/energyModel.ts"
+ },
+ {
+  "en": "Hit!",
+  "file": "src/world/range/energyModel.ts"
+ },
+ {
+  "en": "Miss!",
+  "file": "src/world/range/energyModel.ts"
+ },
+ {
+  "en": "Streak x",
+  "file": "src/world/range/energyModel.ts"
+ },
+ {
+  "en": "Again",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Aim → hold → release!",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Aim: hold, point and release",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Arrow",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Basic mode. Your improvements are saved.",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Best streak: x",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "CHARGE:",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Choose the chain’s first target",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Choose the first target. Catch the moment when targets are close together!",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "deg, transparent 0deg)",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "End the round",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "good",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Good",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Got it, let’s play!",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Great practice!",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "HERO TRAINING GROUND ·",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Hits:",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Hold to charge. Aim and release!",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Hold, move your aim and release. More charge makes a stronger beam.",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "How to play in the training ground",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Ladiator’s targets",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "low",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Low",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "maximum",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Maximum",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Pause",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Record:",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Return to the training ground",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "sec ·",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Set your record in 60 seconds.",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Start · 60 seconds",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Tap a target to strike with the sceptre.",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Tap a target. With an improved sceptre, lightning jumps to its neighbours!",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "target",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "Target",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "works!",
+  "file": "src/world/range/HeroPolygon.tsx"
+ },
+ {
+  "en": "A fast rocket breaks a whole group. Catch targets together!",
+  "file": "src/world/range/model.ts"
+ },
+ {
+  "en": "A heavy charge and a solar shock wave cover a wide area.",
+  "file": "src/world/range/model.ts"
+ },
+ {
+  "en": "Area strike",
+  "file": "src/world/range/model.ts"
+ },
+ {
+  "en": "One rocket, one target. Hit armour twice to break through.",
+  "file": "src/world/range/model.ts"
+ },
+ {
+  "en": "Powerful volley",
+  "file": "src/world/range/model.ts"
+ },
+ {
+  "en": "Solar rocket",
+  "file": "src/world/range/model.ts"
+ },
+ {
+  "en": "Target spotted!",
+  "file": "src/world/range/model.ts"
+ },
+ {
+  "en": "The energy module widens the blast. Hit several targets at once!",
+  "file": "src/world/range/model.ts"
+ },
+ {
+  "en": "The sight shows the blast area. Charge faster and break armour in one hit.",
+  "file": "src/world/range/model.ts"
+ },
+ {
+  "en": "← Map",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "🏆 New record!",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "💥 BEST BLAST",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "🥇 Golden volley",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "🥈 Silver shooter",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "🥉 First trophy",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "60 seconds · 15 shields",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "A precise volley!",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Again →",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Aim a little ahead",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Aim a little ahead of a moving shield.",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Aim and click. On a phone, tap where you want to shoot.",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "An unfinished round does not change records or medals.",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Area blast",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Back to chess for your next power-up",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Catch a group of shields in one shot!",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Catch three shields in one blast",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "CHALLENGE COMPLETE!",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Choose Officer Cannon →",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Finish and return to the map",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Good practice!",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "HERO TRAINING GROUND",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "NEW POWER-UP!",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "New sight",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "New weapon tested!",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Previous record for this launcher:",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Return to the world →",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Return to your adventure",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "ROUND STOPPED",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "sec",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Solar blast",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Solar launcher tested!",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Start",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Streak",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Take a breath",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "This training ground is ready for Officer Cannon. Take the launcher and test the strength you earned in chess.",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Time has stopped. Your rocket can wait.",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Today: rocket trials",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Training ground paused",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Training ground. Aim with your mouse or tap a target to fire. Arrow keys aim; space fires.",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Try it",
+  "file": "src/world/range/Polygon.tsx"
+ },
+ {
+  "en": "Invalid range result",
+  "file": "src/world/range/progress.ts"
+ },
+ {
+  "en": "px Georgia,serif",
+  "file": "src/world/range/render.ts"
+ },
+ {
+  "en": "Calculate a continuation several moves ahead",
+  "file": "src/world/regions.ts"
+ },
+ {
+  "en": "Mastery Heights",
+  "file": "src/world/regions.ts"
+ },
+ {
+  "en": "New positions from familiar topics",
+  "file": "src/world/regions.ts"
+ },
+ {
+  "en": "Tactics Pass",
+  "file": "src/world/regions.ts"
+ },
+ {
+  "en": "The path is hidden in mist",
+  "file": "src/world/regions.ts"
+ },
+ {
+  "en": "Cancel",
+  "file": "src/world/RestartAdventure.tsx"
+ },
+ {
+  "en": "Could not start again. Try later.",
+  "file": "src/world/RestartAdventure.tsx"
+ },
+ {
+  "en": "Save a copy and start again",
+  "file": "src/world/RestartAdventure.tsx"
+ },
+ {
+  "en": "Saving a copy…",
+  "file": "src/world/RestartAdventure.tsx"
+ },
+ {
+  "en": "Start again",
+  "file": "src/world/RestartAdventure.tsx"
+ },
+ {
+  "en": "Start the whole adventure again?",
+  "file": "src/world/RestartAdventure.tsx"
+ },
+ {
+  "en": "This resets every hero, power-up, achievement, challenge and training ground record for this account. You will begin with the opening video and hero choice.",
+  "file": "src/world/RestartAdventure.tsx"
+ },
+ {
+  "en": "Your login remains. A copy of your progress will be saved and downloaded before the reset.",
+  "file": "src/world/RestartAdventure.tsx"
+ },
+ {
+  "en": "First, your opponent’s move.",
+  "file": "src/world/ReviewMoment.tsx"
+ },
+ {
+  "en": "Now your reply.",
+  "file": "src/world/ReviewMoment.tsx"
+ },
+ {
+  "en": "Repeat your move",
+  "file": "src/world/ReviewMoment.tsx"
+ },
+ {
+  "en": "Return to the result",
+  "file": "src/world/ReviewMoment.tsx"
+ },
+ {
+  "en": "See what happened",
+  "file": "src/world/ReviewMoment.tsx"
+ },
+ {
+  "en": "There was another interesting option here.",
+  "file": "src/world/ReviewMoment.tsx"
+ },
+ {
+  "en": "This moment is unavailable",
+  "file": "src/world/ReviewMoment.tsx"
+ },
+ {
+  "en": "Try another way",
+  "file": "src/world/ReviewMoment.tsx"
+ },
+ {
+  "en": "Watch again",
+  "file": "src/world/ReviewMoment.tsx"
+ },
+ {
+  "en": "You found a strong move. Play it again!",
+  "file": "src/world/ReviewMoment.tsx"
+ },
+ {
+  "en": "You played this move",
+  "file": "src/world/ReviewMoment.tsx"
+ },
+ {
+  "en": "Create a pin",
+  "file": "src/world/siege.ts"
+ },
+ {
+  "en": "Create two threats",
+  "file": "src/world/siege.ts"
+ },
+ {
+  "en": "Find a double threat",
+  "file": "src/world/siege.ts"
+ },
+ {
+  "en": "Find a fork opportunity",
+  "file": "src/world/siege.ts"
+ },
+ {
+  "en": "Find a pin opportunity",
+  "file": "src/world/siege.ts"
+ },
+ {
+  "en": "Find an opportunity",
+  "file": "src/world/siege.ts"
+ },
+ {
+  "en": "Find the mating move",
+  "file": "src/world/siege.ts"
+ },
+ {
+  "en": "Find the threat",
+  "file": "src/world/siege.ts"
+ },
+ {
+  "en": "Learn to defend",
+  "file": "src/world/siege.ts"
+ },
+ {
+  "en": "Learn to make a double attack",
+  "file": "src/world/siege.ts"
+ },
+ {
+  "en": "Protect your pieces",
+  "file": "src/world/siege.ts"
+ },
+ {
+  "en": "Use the tactic",
+  "file": "src/world/siege.ts"
+ },
+ {
+  "en": "Enable sound",
+  "file": "src/world/SoundToggle.tsx"
+ },
+ {
+  "en": "Move and victory sounds",
+  "file": "src/world/SoundToggle.tsx"
+ },
+ {
+  "en": "Mute sound",
+  "file": "src/world/SoundToggle.tsx"
+ },
+ {
+  "en": "Sound",
+  "file": "src/world/SoundToggle.tsx"
+ },
+ {
+  "en": "Could not check the saved progress. Try later.",
+  "file": "src/world/storage.ts"
+ },
+ {
+  "en": "Could not start again. A copy of your previous progress is saved.",
+  "file": "src/world/storage.ts"
+ },
+ {
+  "en": "Reset is available only in the local version.",
+  "file": "src/world/storage.ts"
+ },
+ {
+  "en": "Reset is unavailable now.",
+  "file": "src/world/storage.ts"
+ },
+ {
+  "en": "The account changed. Open the game again.",
+  "file": "src/world/storage.ts"
+ },
+ {
+  "en": "1k1r4/3bb3/1p1p1p2/p1pK4/6PQ/7P/2q5/8 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "1k4n1/6pp/4pp2/8/5KPQ/7P/5B1N/8 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "1nbr4/3p2k1/2q1ppNp/8/3P4/1K6/8/8 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "1nk5/8/4b3/p2p2Q1/3P1P1P/2PBP1P1/8/2K5 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "1r6/1P6/8/2p1p3/b1P4k/2KP4/5r2/8 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "2b2r2/pp1p4/5P1p/1kp1P1p1/2N5/2B5/8/4K3 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "2bk3r/3p3p/2pbp1p1/5pN1/3P4/8/3K1P2/8 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "2r1k3/8/8/8/4N3/8/8/6K1 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "2R5/1r6/3pnb2/pp3p2/4kP1p/4P3/2K3P1/8 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "2r5/5pb1/2ppkB2/4p2p/4P1b1/8/6P1/4K1N1 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "3B4/pp6/2b5/1kp5/2P5/PP6/3K4/8 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "3k4/2r5/2p2p2/2P4p/4Pp2/5P2/8/4K3 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "3R4/2r2k2/p1p2p2/7p/2P1Pp2/5P2/4K3/8 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "4B3/8/1b1kp3/3pRp2/3p1P2/8/2R5/3KQ3 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "4k2r/6Qp/3K1n2/3pp2P/8/5P2/8/8 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "4k3/3n4/8/8/8/8/8/5BK1 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "4k3/8/1n1p1p2/1pp1p3/8/2P5/PP5P/K1B3q1 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "4k3/8/1pp5/4p3/1PP1P3/q1KP4/3BN3/8 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "4k3/8/8/4p3/2P1P2n/1q1PK3/8/4B1N1 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "4k3/p7/1n6/1pp5/8/2Pq4/PP6/1KB3N1 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "4k3/p7/1p6/1Pp5/K1PB4/3P4/P5P1/bN2NB1R w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "4n3/1k1rbb2/pp1p4/5p2/2P5/P3PP2/2K5/8 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "5bn1/4k2p/1Q6/4p1pB/5q2/1PP5/5P2/3RK3 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "5r2/pp2k1p1/5r2/PP2Np2/3P1P2/4K3/3N4/8 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "7k/5K2/8/8/8/8/8/6R1 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "7k/8/8/8/4r3/8/2B5/4K3 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/1k6/3K4/PP1P1p2/5r2/7p/8/8 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/1p6/2k1b3/2P5/5P2/2B1K3/3R4/8 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/1p6/4k3/PP2Np2/2NP1P2/8/4K3/8 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/1pp1r3/4k3/Q2p4/7b/1PPPP3/3N4/2RK4 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/2pbr1pp/8/3p1pk1/1Q6/8/8/3K4 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/2pQ4/8/3p1p1k/8/1PPPP3/3NP3/3K4 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/3k4/4p1p1/2bp1p1p/2bp1P1P/5NP1/3B4/3KQ3 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/3Q4/8/5P2/1k6/1P1P4/P1R1KP2/3N4 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/4b3/3p1pk1/4p1qp/PPP1P3/2N2P2/5K2/3RN3 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/4k3/1np5/1p6/p2PPP2/P1P1K3/1B6/8 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/5k2/8/4P3/Pn3q2/4R1N1/3PK1P1/RNB2B2 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/6k1/3p4/3Bp1q1/1PP1P3/P1NN1P2/5K2/R7 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/6k1/5N2/4Bn2/2Q5/3P4/4P1K1/5BR1 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/7r/4Rb2/1p3p2/5k1p/7P/3K2P1/8 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/8/1B2pn1p/5pp1/4k3/2K5/8/8 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/8/2k5/p7/PbP5/1P1B4/2K5/R5q1 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/8/3Q4/8/3Pk3/1KP5/P5P1/5B2 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/8/4p2k/2p2p2/2P4P/1P1Pp3/8/2KR1N2 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/8/5kp1/3b1p2/5K1P/4P1P1/1P1P1PB1/2B4R b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/8/5p1k/3pnP2/6rP/1RP1P2K/3B4/4Q2R b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/8/6k1/6q1/1PP1P3/2NR1P2/5K2/4N3 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/8/6Q1/5p2/6k1/4P3/6PP/3K3R b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/8/8/2P1Bk2/3Q1N1P/3P4/1P2PK1P/5B2 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/8/8/3k1p2/1P2PP2/2BK1R2/8/8 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/N4k2/4pn2/1Pbp4/P2P4/3BP3/3K4/8 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/N4k2/8/1Pnpp3/P7/2K1P3/1R6/8 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/pk6/6p1/PP1PKp2/1r6/7p/7P/8 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/pp2B2p/1kb5/5p2/2P4r/4PP2/3K4/8 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "8/pp4p1/3k3r/5pN1/2KP1P2/8/8/8 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "A double attack in a game",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "A fork among pieces",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "A fork in a game position",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "A hidden pin",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "A pin in a game",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "Check and a tower",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "Checkmate among pieces",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "Defense in a game",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "Find checkmate",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "Give check and attack the rook at the same time.",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "Give checkmate with your rook in one move.",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "Guardian’s checkmate",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "Guardian’s defense",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "Guardian’s double attack",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "Guardian’s fork",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "Guardian’s pin",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "Knight fork",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "N3qk2/4p3/p1pp4/8/1BPP4/8/1P6/4K3 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "Pin the knight",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "Place the bishop so the knight cannot move away from its king.",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "Q6r/5kpp/4pn2/5p1P/5P1R/4q1PK/8/8 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "r1b3nB/ppp1n3/4k3/5p2/8/3R4/8/4K3 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "r5k1/8/8/8/8/8/8/3Q2K1 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "r5n1/1ppb3p/1k6/5p2/8/4P3/8/4K3 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "r6Q/p2k4/1pp5/1b6/1P6/8/PK6/8 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "r7/ppp5/3k4/n2p4/8/1PPPP3/1Q1NP3/2RK4 w - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "Remove the threat",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "rnb1k3/8/1ppp4/p1q1p2p/K7/8/8/8 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "rnb2b2/p1pp4/2k5/3p4/1P6/K2Q4/P1P4P/1q6 b - - 0 1",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "Save a piece",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "The last rank",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "The piece on d5 is attacked. Save it by capturing the attacker.",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "The piece on f6 is attacked. Save it by capturing the attacker.",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "The piece on g1 is attacked. Save it by capturing the attacker.",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "The piece on h8 is attacked. Save it by capturing the attacker.",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "The rook gives check. Capture it with your bishop.",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "Two targets, one knight",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "Two threats",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "Your knight is selected. Find a safe fork.",
+  "file": "src/world/trainingChallenges.ts"
+ },
+ {
+  "en": "💥 −30 strength",
+  "file": "src/world/UpgradeScene.tsx"
+ },
+ {
+  "en": "Already equipped",
+  "file": "src/world/UpgradeScene.tsx"
+ },
+ {
+  "en": "Continue the adventure →",
+  "file": "src/world/UpgradeScene.tsx"
+ },
+ {
+  "en": "Try it in the training ground",
+  "file": "src/world/UpgradeScene.tsx"
+ },
+ {
+  "en": "◎ Hero training ground",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "♔ White",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "♚ Black",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "⚔ Opponents Arena",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "5 puzzles · about 3 minutes",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "5 short chess puzzles on topics worth revisiting now.",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Adventure",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Continue game",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "DISCOVERIES BECOME STRENGTH",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Explore a tactic in its fortress first, then practise it here",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "First chapter complete!",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Five fortresses freed. Beyond the mist, Tactics Pass has opened: new positions and longer continuations.",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "games ·",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Games played so far:",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Hero training ground",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "King Nexus remembers your games. You grow together.",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Mixed practice — 5 puzzles from familiar topics",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "New improvement:",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "One free practice series. Then available in the full version.",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Opening your adventure book…",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Personal challenges are available in the full version",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Power-up",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Practice",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Practise skills",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Practise skills →",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Progress is in this browser for now. We will check your profile save when the connection returns.",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Retry",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "See the new path →",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Start game",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Test your weapon and new improvements. Set a record in 60 seconds.",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "The review did not finish. You can try again.",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Today’s suggestion:",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Training ground",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Try it free",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Try what you have learned. After the game, explore a useful moment.",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Try your hero",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Try your hero →",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Where shall we go?",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "You have a saved game. Continue it first.",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Your browser could not save progress. Free up space to keep your discoveries.",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Your game is waiting.",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Your pieces",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "— and your hero earns a new improvement!",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "← Move the map sideways →",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "⌂ Your camp",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "✓ Freed",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "👀 Worth practising",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "🔒 Opens after you learn",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "🔒 This path is not open yet",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "A mountain valley with castles, a river and paths",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "A suggested starting point",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "At the gates!",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "Challenges without topic clues",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "Continue here",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "Every improvement collected!",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "is on the way…",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "Let’s go →",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "My hero →",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "Next destination:",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "Open my hero",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "Play against the computer",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "Practise",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "prepares for the journey…",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "Ready to explore",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "task",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "tasks",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "The topic is hidden. Choose the tactic yourself.",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "Your adventure",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "♜ Gate damage",
+  "file": "src/world/WorldTour.tsx"
+ },
+ {
+  "en": "♟ Puzzle",
+  "file": "src/world/WorldTour.tsx"
+ },
+ {
+  "en": "✓ Solution",
+  "file": "src/world/WorldTour.tsx"
+ },
+ {
+  "en": "✦ Shot",
+  "file": "src/world/WorldTour.tsx"
+ },
+ {
+  "en": "Explore a new tactic, solve puzzles and weaken each fortress’s defenses.",
+  "file": "src/world/WorldTour.tsx"
+ },
+ {
+  "en": "Explore the world ·",
+  "file": "src/world/WorldTour.tsx"
+ },
+ {
+  "en": "Let’s go!",
+  "file": "src/world/WorldTour.tsx"
+ },
+ {
+  "en": "Next →",
+  "file": "src/world/WorldTour.tsx"
+ },
+ {
+  "en": "Play a full chess game against the computer here.",
+  "file": "src/world/WorldTour.tsx"
+ },
+ {
+  "en": "Puzzle, solution, shot, damage to the gates",
+  "file": "src/world/WorldTour.tsx"
+ },
+ {
+  "en": "Skip",
+  "file": "src/world/WorldTour.tsx"
+ },
+ {
+  "en": "Solve puzzles to help your hero break through the fortress gates.",
+  "file": "src/world/WorldTour.tsx"
+ },
+ {
+  "en": "Start with the first fortress and help your hero break through its defenses!",
+  "file": "src/world/WorldTour.tsx"
+ },
+ {
+  "en": "This is the world of CHEZZIES. Fortresses filled with chess challenges await.",
+  "file": "src/world/WorldTour.tsx"
+ },
+ {
+  "en": "Try a quick practice session here.",
+  "file": "src/world/WorldTour.tsx"
+ }
+]

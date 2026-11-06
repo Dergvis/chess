@@ -18,6 +18,7 @@ function cleanLocation() {
   url.hash = '';
   // Account/reset routes may contain sensitive context. Group gameplay together.
   if (url.pathname.startsWith('/play')) url.pathname = '/play/';
+  if (url.pathname.startsWith('/es/play')) url.pathname = '/es/play/';
   return url.origin + url.pathname;
 }
 
@@ -37,7 +38,7 @@ function start() {
     allow_ad_personalization_signals: false,
     page_location: cleanLocation(),
     page_referrer: '',
-    page_title: location.pathname.startsWith('/play') ? 'Play CHEZZIES' : document.title,
+    page_title: location.pathname.startsWith('/play') || location.pathname.startsWith('/es/play') ? 'Play CHEZZIES' : document.title,
   });
   const script = document.createElement('script');
   script.async = true;

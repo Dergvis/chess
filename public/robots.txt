@@ -3,4 +3,6 @@ Allow: /
 Disallow: /api/
 Disallow: /play/account/
 Disallow: /play/login/
+Disallow: /es/play/account/
+Disallow: /es/play/login/
 Sitemap: https://chezzies.app/sitemap.xml

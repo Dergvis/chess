@@ -155,3 +155,41 @@ YouTube-канал CHEZZIES Chess: 2–5-минутные ролики из ге
 - Google Search Console chezzies.app (чтение) — реальные запросы, позиции, бренд.
 - Google Ads Keyword Planner (или Ahrefs/Semrush) — частотности, чтобы расставить приоритеты внутри кластеров.
 - Bing Webmaster Tools — подтвердить сайт.
+
+## Дополнение 6 ноября: как ещё ищут — страны и языки
+
+Источник: подсказки Google (autocomplete) по 16 английским «семенам» с перебором `семя + a…z` для 12 англоязычных стран (US, GB, CA, AU, IN, IE, NZ, ZA, SG, PH, PK, NG) и по 2–5 семенам на 11 языках (DE, CH-de, FR, CH-fr, ES, MX, BR, IT, NL, PL, TR, ID, UA). Всего 4768 уникальных запросов, полный список с разметкой интента — `docs/keyword-suggestions-2026-11.csv`. Частотностей нет: подсказка означает «так ищут достаточно часто», но не «сколько». Google Trends по странам из нашего IP данных не отдал.
+
+### Англоязычные страны
+
+Подсказки для разных стран почти совпадают (отличаются только местные клубы: «kids chess club toronto / perth», «kids chess coaching near me» в Индии). Разница между США и Британией — в словах, а не в спросе:
+- США: «grade», «elementary»; Британия/Ирландия/Австралия: «children», «primary school», «year 3», «KS1/KS2». В текстах страниц стоит использовать оба варианта: «kids» и «children», «grade» и «year/primary school».
+
+Интенты (из ~2800 английских подсказок):
+| Интент | Примеры | Что для нас |
+|---|---|---|
+| Офлайн: клубы, кружки, «near me» (~440) | chess club for kids near me, chess classes for kids | Не наш интент, пропускаем |
+| Физические наборы, книги (~350) | chess set for kids, winning chess puzzles for kids coakley, murray chandler | Не наш интент; книги — повод для сравнительных статей |
+| Приложения (~200) | chess app for kids no ads, offline, safe, ipad, «best chess app for kids reddit», duolingo chess | Наши аргументы: без рекламы, без скачивания, работает в браузере на iPad. Нужен Google Play |
+| Играть онлайн бесплатно (~350) | chess for kids online free, chess game for kids to play, chess for toddlers online | Главная, /online-chess-for-kids/ |
+| Возраст (~160) | chess for 3…10 year olds, can a 4 year old learn chess, chess puzzles for 5/6/7 year olds, chess for toddlers | **Новый кластер страниц по возрасту** |
+| Задачи и тактика (~140) | mate in 1 / mate in 2 chess puzzles for kids, chess puzzles for kids easy/online, endgame puzzles, kids chess openings | Страница задач есть; добавить «мат в 2», задачи по возрасту, дебюты для детей |
+| Обучение и правила (~430) | how to teach kids chess openings/strategy, chess for kids how to play and win | Гиды для родителей |
+| Польза (~20) | is chess good for kids, chess for kids with adhd/autism | Статья про пользу с источниками |
+
+### Другие языки — где спрос без конкуренции на английском
+
+Сайт сейчас только английский, поэтому весь этот спрос нам недоступен, пока нет локализованных страниц и интерфейса игры.
+- **Испанский (ES, MX, AR, CO…)** — самый широкий: «ajedrez para niños» + возраст (de 3 a 5 años, 6 años), «en línea», «gratis», «imprimir/pdf», «con autismo / TDAH», «aprende con Rey».
+- **Немецкий (DE, AT, CH)** — «schach app für kinder ohne Werbung / kostenlos / offline», «ab 4 / 5 / 6 Jahren», «gegen den Computer»; сильный конкурент — «Fritz und Fertig». Швейцария (Basel, Bern) — те же запросы.
+- **Французский (FR, CH, BE, CA)** — «apprendre les échecs à un enfant de 5 ans», «jeu d'échecs enfant en ligne», «application échecs pour enfants».
+- **Польский** — «nauka gry w szachy dla dzieci» (+ online, aplikacja, города).
+- **Турецкий** — «çocuklar için satranç oyunu», «TRT çocuk satranç oyunu» (детский канал TRT).
+- **Итальянский, нидерландский, индонезийский, украинский** — меньше подсказок.
+- **Португальский (BR)**: «xadrez» также значит «клетка» (ткань) — много шума про рубашки; запросы «xadrez para crianças / aprender xadrez criança» есть, но их меньше.
+
+### Что предлагаю
+
+1. Английский: кластер страниц по возрасту (3–4, 5–6, 7–8 лет + «can a 4 year old learn chess»), задачи по возрасту, «мат в 2» для детей; в текстах — «children / primary school / year», аргументы «no ads, no download, works on iPad».
+2. Первая локализация — **испанский**, затем **немецкий**: перевод интерфейса игры + 3–4 посадочные страницы + `hreflang`. Это продуктовое решение (перевод игры), не только SEO.
+3. Перед локализацией — частотности из Google Keyword Planner (бесплатный аккаунт Google Ads) по «ajedrez para niños», «schach für kinder», «échecs enfant» против английских запросов.

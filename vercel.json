@@ -40,6 +40,15 @@
           "value": "noindex, follow"
         }
       ]
+    },
+    {
+      "source": "/es/play/:path(home|login|reset-password|hero-select|account|profile|match|game|result)/",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
     }
   ],
   "rewrites": [
@@ -50,6 +59,10 @@
     {
       "source": "/play/:path(home|login|reset-password|hero-select|account|profile|match|game|result)/",
       "destination": "/play/index.html"
+    },
+    {
+      "source": "/es/play/:path(home|login|reset-password|hero-select|account|profile|match|game|result)/",
+      "destination": "/es/play/index.html"
     }
   ],
   "redirects": [

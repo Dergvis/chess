@@ -2,7 +2,7 @@
 
 > CHEZZIES is an online chess adventure game for kids. Explore a fantasy world and practice chess through interactive challenges, free in your browser.
 
-CHEZZIES (also written CHEZZIES Chess) is an English-language chess adventure game for young beginners at https://chezzies.app/. Children choose a hero (Laserhorse, Ladiator or Officer Cannon), travel a fantasy world map, solve chess challenges in themed fortresses and play full games against computer opponents in the Arena.
+CHEZZIES (also written CHEZZIES Chess) is a chess adventure game for young beginners at https://chezzies.app/, available in English and Spanish (https://chezzies.app/es/). Children choose a hero (Laserhorse, Ladiator or Officer Cannon), travel a fantasy world map, solve chess challenges in themed fortresses and play full games against computer opponents in the Arena.
 
 ## Key facts
 
@@ -24,3 +24,14 @@ CHEZZIES (also written CHEZZIES Chess) is an English-language chess adventure ga
 - [How to Play Chess for Kids](https://chezzies.app/how-to-play-chess-for-kids/): Chess is a two-player game where each side moves one piece per turn. Learn the board, how pieces move and how to win by checkmate, then practise in CHEZZIES.
 - [Chess Puzzles for Kids](https://chezzies.app/chess-puzzles-for-kids/): Solve 64 free chess puzzles for kids from the CHEZZIES game: checkmate in one, forks, pins, double attacks and defense. Each puzzle asks for one move and has a hint and the answer.
 - [CHEZZIES for parents](https://chezzies.app/parents/): CHEZZIES is a free browser-based chess adventure for young beginners. Children choose a hero, solve chess challenges, explore a fantasy map and play against computer opponents.
+
+## Español
+
+- [CHEZZIES en español](https://chezzies.app/es/): CHEZZIES es un juego de aventuras de ajedrez para niños. Explora un mundo de fantasía y practica ajedrez con retos interactivos, gratis en tu navegador.
+- [Jugar a CHEZZIES](https://chezzies.app/es/play/): el juego en español
+- [Juegos de ajedrez para niños](https://chezzies.app/es/juegos-de-ajedrez-para-ninos/): Un buen juego de ajedrez para niños hace que practicar se sienta como jugar. CHEZZIES ofrece retos cortos de ajedrez, rivales de computadora y un mundo de fantasía para explorar gratis en tu navegador.
+- [Ajedrez online para niños](https://chezzies.app/es/ajedrez-online-para-ninos/): CHEZZIES es una aventura de ajedrez gratis para niños que se juega en el navegador. Elige un héroe, resuelve retos cortos y enfrenta a rivales de computadora en la Arena.
+- [Aprender ajedrez para niños](https://chezzies.app/es/aprender-ajedrez-para-ninos/): Los niños pueden aprender ajedrez una idea a la vez con práctica corta. CHEZZIES enseña cómo se mueven las piezas, el jaque mate, la horquilla, la clavada y la defensa en una aventura interactiva.
+- [Cómo jugar ajedrez para niños](https://chezzies.app/es/como-jugar-ajedrez-para-ninos/): El ajedrez es un juego para dos personas en el que cada bando mueve una pieza por turno. Aprende el tablero, cómo se mueven las piezas y cómo se gana con jaque mate, y luego practica en CHEZZIES.
+- [Problemas de ajedrez para niños](https://chezzies.app/es/problemas-de-ajedrez-para-ninos/): Resuelve 64 problemas de ajedrez gratis del juego CHEZZIES: jaque mate en una jugada, horquillas, clavadas, ataques dobles y defensa. Cada problema pide una jugada y tiene una pista y la solución.
+- [CHEZZIES para madres y padres](https://chezzies.app/es/padres/): CHEZZIES es una aventura de ajedrez gratis en el navegador para principiantes. Los niños eligen un héroe, resuelven retos de ajedrez, exploran un mapa de fantasía y juegan contra rivales de computadora.

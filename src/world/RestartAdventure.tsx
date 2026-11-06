@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { WorldSave } from "./types";
 import { newWorld } from "./progress";
 import { restartLocalWorld } from "./storage";
+import { SITE_ROOT } from "../locale";
 
 export default function RestartAdventure({ save }: { save: WorldSave }) {
   const [confirm, setConfirm] = useState(false),
@@ -22,7 +23,7 @@ export default function RestartAdventure({ save }: { save: WorldSave }) {
       link.click();
       setTimeout(() => {
         URL.revokeObjectURL(url);
-        window.location.assign("/");
+        window.location.assign(SITE_ROOT);
       }, 500);
     } catch (e) {
       setError(
