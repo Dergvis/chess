@@ -50,3 +50,13 @@ test('Learning pages contain useful static examples and the same real game art',
 });
 test('Account bridge never falls back to the Russian backend',async()=>{const before=process.env.CHEZZIES_API_ORIGIN;process.env.CHEZZIES_API_ORIGIN='https://chezzies.ru';process.env.API_BRIDGE_TOKEN='test';let status,data;const res={setHeader(){},status(s){status=s;return this},json(d){data=d;return this}};await proxy({url:'/api/auth/me',query:{route:'auth/me'},headers:{},method:'GET'},res);assert.equal(status,503);assert(data.error.includes('international'));if(before===undefined)delete process.env.CHEZZIES_API_ORIGIN;else process.env.CHEZZIES_API_ORIGIN=before;delete process.env.API_BRIDGE_TOKEN;});
 test('Payment endpoints cannot reach the account bridge',async()=>{let status;const res={setHeader(){},status(s){status=s;return this},json(){return this}};await proxy({url:'/api/billing/create',query:{route:'billing/create'},headers:{},method:'POST'},res);assert.equal(status,404);});
+test('Search and AI answer basics: keyword H1, key facts, FAQ data, llms.txt, clean 404',()=>{
+ const home=readFileSync('dist/index.html','utf8');
+ assert.match(home.match(/<h1[\s>][\s\S]*?<\/h1>/)[0],/chess adventure game for kids/i);
+ assert(home.includes('CHEZZIES at a glance'));assert(readFileSync('dist/parents/index.html','utf8').includes('CHEZZIES at a glance'));
+ const graph=html=>JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/)[1].replaceAll('\u003c','<'))['@graph'];
+ assert(graph(home).some(e=>Array.isArray(e['@type'])&&e['@type'].includes('VideoGame')&&e.offers.price==='0'));
+ for(const page of pages){const faq=graph(readFileSync(`dist/${page.slug}/index.html`,'utf8')).find(e=>e['@type']==='FAQPage');assert(faq,`Missing FAQPage on ${page.slug}`);assert.equal(faq.mainEntity.length,page.sections.filter(([q])=>q.endsWith('?')).length);}
+ const llms=readFileSync('dist/llms.txt','utf8');assert(llms.startsWith('# CHEZZIES'));for(const page of pages)assert(llms.includes(`https://chezzies.app/${page.slug}/`));
+ const notFound=readFileSync('dist/404.html','utf8');assert(!notFound.includes('rel="canonical"'));assert(!notFound.includes('og:url'));assert(notFound.includes('noindex,nofollow'));
+});

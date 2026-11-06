@@ -73,3 +73,15 @@ export const pieceRules=[
 ];
 
 
+
+// Plain product facts for parents, search snippets and AI answers. Keep each claim true for the current release.
+export const keyFacts=[
+  ['Price','Free. No subscriptions, purchases or paid content limits.'],
+  ['Ads','No ads.'],
+  ['Download','None needed. CHEZZIES runs in a web browser.'],
+  ['Devices','Phones, tablets and desktop computers.'],
+  ['Opponents','Computer opponents in the Arena. No live multiplayer and no player chat.'],
+  ['Account','Optional. Guest progress stays in the browser; a free account saves the adventure online across devices.'],
+  ['Chess skills','Piece movement, checkmate, forks, pins, double attacks and defense.'],
+  ['Language','English.']
+];
