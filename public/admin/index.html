@@ -21,7 +21,7 @@ main{padding:12px;max-width:1100px;margin:auto}.mut{color:var(--mut)}.small{font
 table{border-collapse:collapse;width:100%;font-size:13px}td,th{padding:6px 5px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--mut);font-weight:500}td.num,th.num{text-align:right}
 .pl{display:block;width:100%;text-align:left;background:var(--card);border-radius:12px;padding:10px 12px;margin-bottom:8px;white-space:normal}
 .pl b{font-size:15px}.pl .mut{font-size:13px}.chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}.chip{background:var(--bg);border-radius:8px;padding:2px 7px;font-size:12px}
-.visit{border-left:3px solid var(--acc);padding:4px 0 4px 10px;margin:10px 0}.visit ol{margin:6px 0 0;padding-left:18px}.visit li{margin:2px 0;font-size:14px}.t{color:var(--mut);font-size:12px;margin-right:4px}
+.visit{border-left:3px solid var(--acc);padding:4px 0 4px 10px;margin:10px 0}.visit li.hot{font-weight:600}.t i{font-style:normal;opacity:.7}button.trail{margin:2px 0 6px}.visit ol{margin:6px 0 0;padding-left:18px}.visit li{margin:2px 0;font-size:14px}.t{color:var(--mut);font-size:12px;margin-right:4px}
 .search{display:flex;gap:6px;margin-bottom:10px}.search input{flex:1;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px}
 .q{border-top:1px solid var(--line);padding:10px 0}.q.open{border-left:3px solid var(--acc);padding-left:8px}.msg{white-space:pre-wrap;margin:4px 0}.reply{background:var(--bg);border-radius:8px;padding:6px 8px;margin:4px 0;white-space:pre-wrap}
 textarea{width:100%;min-height:70px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px}
@@ -51,7 +51,18 @@ const REASON={hidden:'свернул вкладку',left:'закрыл стра
 const HERO={inventor:'Изобретатель',mage:'Маг',knight:'Рыцарь'};
 const opp=p=>OPP[p?.opponent]||OPP[OPPS[(p?.level||0)-1]]||'бот';
 const lvl=p=>p?.level?'уровень '+p.level:'';
+const PIECE={p:'пешкой',n:'конём',b:'слоном',r:'ладьёй',q:'ферзём',k:'королём'},PIECE1={p:'пешка',n:'конь',b:'слон',r:'ладья',q:'ферзь',k:'король'},PROMO={q:'ферзя',r:'ладью',b:'слона',n:'коня'};
+const MODE={arena:'партия',puzzle:'задача',training:'тренировка',classic:'партия'};
+const mode=p=>MODE[p?.mode]?' <span class="mut small">('+MODE[p.mode]+')</span>':'';
+const sq=v=>/^[a-h][1-8]$/.test(String(v||''))?v:'?';
+const TAP={empty:'пустая клетка',opponent_piece:'чужая фигура',wait:'сейчас не его ход'};
 const EV={
+ move_made:p=>`ход ${PIECE[p?.piece]||'фигурой'} ${sq(p?.from)}→${sq(p?.to)}${p?.capture?' со взятием':''}${PROMO[p?.promotion]?', пешка стала: '+PROMO[p.promotion]:''}${p?.move?' · '+p.move+'-й ход':''}`,
+ move_rejected:p=>`неверный ход ${PIECE[p?.piece]||'фигурой'} ${sq(p?.from)}→${sq(p?.to)}: ${p?.reason==='opponent_piece'?'эту фигуру соперника так не взять':'так фигура не ходит'}`,
+ illegal_tap:p=>`неверное нажатие на ${sq(p?.square)}: ${TAP[p?.reason]||'ничего не произошло'}`,
+ drag_attempt:p=>`⚠️ пытался перетащить фигуру${PIECE1[p?.piece]?' ('+PIECE1[p.piece]+(p?.own===false?', чужая':'')+')':''} с ${sq(p?.from)}${p?.to?' на '+sq(p.to):''}${p?.n>1?' · уже '+p.n+'-й раз':''}`,
+ drag_hint_shown:()=>'💡 показали подсказку «нажми на фигуру, потом на клетку»',
+ help_sent:()=>'✉️ написал вопрос в «Помощь»',
  game_started:p=>`начал партию (${[lvl(p),'против: '+opp(p)].filter(Boolean).join(', ')})`,
  game_result:p=>`итог партии: ${RES[p?.result]||p?.result||'?'}${p?.level?' ('+lvl(p)+')':''}`,
  game_finished:p=>`партия закончена${p?.reason?': '+(REASON[p.reason]||p.reason):''}`,
@@ -167,13 +178,21 @@ const VIEWS={
   if(s.pages)h+=card('Страницы в выдаче','Какие страницы сайта показывались в Google.',tbl(rowsOf(s.pages.data),'page','Страница')+stamp(s.pages));
   return h;},
  async help(){const q=await api('admin/support');
-  return card('Вопросы из «Помощи»','Ответ уходит в Telegram-группу ответом на вопрос и появляется у игрока.',q.requests.map(r=>`<div class="q ${r.replies.length?'':'open'}"><span class="mut small">#${r.ticket} · ${when(r.created_at)} · ${r.signed?'с аккаунтом':'гость'}</span><div class="msg">${esc(r.message)}</div>${r.replies.map(p=>`<div class="reply">↩ ${esc(p.message)}</div>`).join('')}<textarea data-id="${r.id}" placeholder="Ответ…"></textarea><button data-reply="${r.id}">Ответить</button></div>`).join('')||'<p class="mut">Вопросов пока нет.</p>');}
+  const dt=t=>t?new Date(t).toLocaleDateString('ru',{day:'numeric',month:'short',year:'numeric'}):'';
+  const accountLine=r=>{const a=r.account;if(!a)return '';const p=a.progress||{},n=(v,t)=>v!=null?v+' '+t:'';
+   const parts=[n(p.games??p.gamesPlayed,'партий'),n(p.wins,'побед'),n(p.puzzles,'задач'),n(p.challenges,'испытаний'),n(p.trainings,'тренировок'),p.hero?'герой: '+esc(HERO[p.hero]||p.hero):'',p.location?'место: '+esc(p.location):''].filter(Boolean);
+   return `<div class="mut small">Аккаунт с ${esc(dt(a.registered_at))||'?'} · ${a.progress?(parts.join(', ')||'прогресса пока нет')+(p.savedAt?' · сохранено '+esc(when(p.savedAt)):''):'сохранённого прогресса нет'}</div>`;};
+  return card('Вопросы из «Помощи»','Ответ уходит в Telegram-группу ответом на вопрос и появляется у игрока.',q.requests.map(r=>`<div class="q ${r.replies.length?'':'open'}"><span class="mut small">#${r.ticket} · ${when(r.created_at)} · ${r.signed?'с аккаунтом':'гость'}</span>${accountLine(r)}<div class="msg">${esc(r.message)}</div>${r.player_id?`<button class="trail" data-player="${esc(r.player_id)}">Что делал игрок</button>`:'<p class="mut small">Номер игрока не записан (вопрос до 24.11 или браузер без хранилища).</p>'}${r.replies.map(p=>`<div class="reply">↩ ${esc(p.message)}</div>`).join('')}<textarea data-id="${r.id}" placeholder="Ответ…"></textarea><button data-reply="${r.id}">Ответить</button></div>`).join('')||'<p class="mut">Вопросов пока нет.</p>');}
 };
-async function viewPlayer(id){const d=await api('admin/player',{q:'?id='+encodeURIComponent(id)}),s=d.summary;
- const item=i=>i.kind==='screen'?`открыл раздел «${esc(scr(i.name))}»`:i.kind==='click'?`нажал «${esc(i.label)}»${i.params?.screen?' <span class="mut small">('+esc(scr(i.params.screen))+')</span>':''}`:esc(evName(i.name,i.params))+(EV[i.name.replace(/^game:/,'')]||!i.params?'':' <span class="mut small">'+esc(paramText(i.params))+'</span>');
- return `<button class="link" id="back">← Все игроки</button>
+const BOARD=new Set(['game:move_made','game:move_rejected','game:illegal_tap','game:drag_attempt','game:drag_hint_shown']);
+const hms=t=>new Date(t).toLocaleTimeString('ru',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+const since=(t,start)=>{const s=Math.max(0,Math.round((new Date(t)-new Date(start))/1000));return '+'+Math.floor(s/60)+':'+String(s%60).padStart(2,'0');};
+const backBtn=()=>`<button class="link" id="back">${tab==='help'?'← К вопросам':'← Все игроки'}</button>`;
+async function viewPlayer(id){let d;try{d=await api('admin/player',{q:'?id='+encodeURIComponent(id)});}catch(x){if(x.status===404||x.status===400)return backBtn()+card('Игрок №'+esc(id.slice(0,6)),'',`<p class="mut">Действий этого игрока пока нет. Статистика собирается только на chezzies.app, и хранится 395 дней.</p>`);throw x;}const s=d.summary;
+ const item=i=>i.kind==='screen'?`открыл раздел «${esc(scr(i.name))}»`:i.kind==='click'?`нажал «${esc(i.label)}»${i.params?.screen?' <span class="mut small">('+esc(scr(i.params.screen))+')</span>':''}`:esc(evName(i.name,i.params))+(BOARD.has(i.name)?mode(i.params):'')+(EV[i.name.replace(/^game:/,'')]||!i.params?'':' <span class="mut small">'+esc(paramText(i.params))+'</span>');
+ return `${backBtn()}
  ${card(country(s.country)+' · игрок №'+esc(id.slice(0,6)),'Случайный номер устройства. Имени, почты и адреса мы не храним.',`<div class="tiles">${tile(s.visits,'заходов','')}${tile(dur(s.seconds),'всего на сайте','')}${tile(s.started,'партий начато',`доиграл ${s.finished}, побед ${s.won}, бросил ${s.abandoned}`)}${tile(s.clicks,'нажатий','')}</div><p class="mut small">Впервые: ${when(s.first_seen)} · последний раз: ${when(s.last_seen)} · ${DEV[s.device]||esc(s.device)} · ${LANG[s.lang]||esc(s.lang)} · первый раз пришёл ${SOURCES[s.source]||esc(s.source)} на ${esc(s.landing)}</p>${s.truncated?'<p class="mut small">Показаны последние 5000 событий.</p>':''}`)}
- ${card('Что делал','Заходы — от последнего к первому, внутри захода — по порядку.',d.visits.map(v=>`<div class="visit"><b>${when(v.started)}</b> <span class="mut small">· ${dur(v.seconds)} · ${country(v.country)} · ${DEV[v.device]||esc(v.device)} · ${SOURCES[v.source]||esc(v.source)} · вход: ${esc(v.landing)}${v.ret?' · вернулся':''}</span><ol>${v.items.map(i=>`<li><span class="t">${new Date(i.t).toLocaleTimeString('ru',{hour:'2-digit',minute:'2-digit'})}</span>${item(i)}</li>`).join('')||'<li class="mut">только смотрел страницу</li>'}</ol></div>`).join(''))}`;}
+ ${card('Что делал','Заходы — от последнего к первому. Внутри захода — всё подряд, как было: время до секунды и сколько прошло от начала захода.',d.visits.map(v=>`<div class="visit"><b>${when(v.started)}</b> <span class="mut small">· ${dur(v.seconds)} · ${country(v.country)} · ${DEV[v.device]||esc(v.device)} · ${SOURCES[v.source]||esc(v.source)} · вход: ${esc(v.landing)}${v.ret?' · вернулся':''}</span><ol>${v.items.map(i=>`<li class="${i.name==='game:drag_attempt'||i.name==='game:help_sent'?'hot':''}"><span class="t">${hms(i.t)} <i>${since(i.t,v.started)}</i></span>${item(i)}</li>`).join('')||'<li class="mut">только смотрел страницу</li>'}</ol></div>`).join(''))}`;}
 function bind(){
  $('#back')&&($('#back').onclick=()=>{player=null;shell();});
  document.querySelectorAll('[data-player]').forEach(b=>b.onclick=()=>{player=b.dataset.player;shell();scrollTo(0,0);});

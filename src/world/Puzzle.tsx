@@ -274,6 +274,7 @@ export default function Puzzle({
         onResign={() => onBack(false)}
         isEngineTurn={status !== "playing"}
         onAnimationBusyChange={setVideoBusy}
+        trailMode="puzzle"
         training={{
           panel,
           targets: enemyFork && status === "playing" ? ["c4", "g4"] : victims,

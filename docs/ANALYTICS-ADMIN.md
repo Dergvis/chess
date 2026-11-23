@@ -41,3 +41,13 @@ body `{kind, data}`. Latest 60 snapshots per kind are kept; the admin shows the 
 
 ## Admin app
 `/admin/` is installable (manifest, icons, `sw.js` scoped to `/admin/`, network-first shell, never caches `/api/`).
+
+## Board trail and Help link (24.11)
+- Board events (all boards via `GameScreen` `trailMode`: arena, puzzle, training, classic), first-party only, not sent to Google:
+  `game:move_made` (piece, from, to, move, capture, promotion, mode), `game:move_rejected` (piece, from, to, reason `not_legal|opponent_piece`),
+  `game:illegal_tap` (square, reason `empty|opponent_piece|wait`), `game:drag_attempt` (piece, own, from, to, how `move|cancel`, n),
+  `game:drag_hint_shown`. Limits (`createBoardTrail` in `src/analyticsCore.ts`): 200 events per board, drag_attempt once per 3 s, same rejected tap once per second.
+  3 drag attempts with no successful move → one-time hint on the board ("Tap a piece, then tap the square to move it", ES in `docs/i18n/es.json`).
+- Help: the widget sends the anonymous player id `p`; stored in `international_support_requests.player_id` (nullable); event `game:help_sent`.
+  `/api/admin/support` returns `player_id` and, for accounts, registration date + short progress summary (no e-mail, child name or password data).
+  Admin «Помощь» → «Что делал игрок» opens the player card; the card lists each visit in order, time to the second and +m:ss from the visit start.

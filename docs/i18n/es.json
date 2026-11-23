@@ -1473,5 +1473,6 @@
  "{} / 4 stages": "{} / 4 etapas",
  "Games played so far: {}.": "Partidas jugadas hasta ahora: {}.",
  "A new clue appeared in your game. Look in {}?": "Apareció una nueva pista en tu partida. ¿La buscamos en {}?",
- "Register": "Registrarse"
+ "Register": "Registrarse",
+ "Tap a piece, then tap the square to move it": "Toca una pieza y luego la casilla a donde quieres moverla"
 }

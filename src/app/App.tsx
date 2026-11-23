@@ -825,6 +825,7 @@ export default function App() {
             isEngineTurn={appState === 'engine_turn'}
             isGuest={!getAuth().isLoggedIn}
             onNavigate={navigate}
+            trailMode="classic"
           />
         );
 

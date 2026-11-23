@@ -1,7 +1,7 @@
 import {createHash, randomBytes, randomInt, randomUUID, scrypt as scryptCallback, timingSafeEqual} from 'node:crypto';
 import {promisify} from 'node:util';
 import {neon} from '@neondatabase/serverless';
-import {statsDb,ingest,seoImport,adminData} from './_stats.mjs';
+import {statsDb,ingest,seoImport,adminData,supportRow} from './_stats.mjs';
 
 const scrypt=promisify(scryptCallback), name='chezzies_international_session';
 const sha=value=>createHash('sha256').update(value).digest('hex');
@@ -25,6 +25,7 @@ async function db(){
     await sql`ALTER TABLE international_support_requests ADD COLUMN IF NOT EXISTS telegram_message_id BIGINT`;
     await sql`CREATE UNIQUE INDEX IF NOT EXISTS international_support_telegram_idx ON international_support_requests(telegram_message_id)`;
     await sql`CREATE INDEX IF NOT EXISTS international_support_guest_idx ON international_support_requests(guest_hash)`;
+    await sql`ALTER TABLE international_support_requests ADD COLUMN IF NOT EXISTS player_id TEXT`;
     await sql`CREATE TABLE IF NOT EXISTS international_support_replies (id BIGSERIAL PRIMARY KEY,request_id UUID NOT NULL REFERENCES international_support_requests(id) ON DELETE CASCADE,telegram_message_id BIGINT NOT NULL UNIQUE,message TEXT NOT NULL,created_at TIMESTAMPTZ NOT NULL DEFAULT now())`;
   })().catch(e=>{initialized=undefined;throw e;});
   await initialized;return sql;
@@ -85,8 +86,18 @@ export default async function account(req,res,path){
     if(path==='/api/admin/logout'){const t=adminTokenOf(req);if(t)await sql`DELETE FROM international_admin_sessions WHERE token_hash=${sha(t)}`;res.setHeader('Set-Cookie','chezzies_admin=; Path=/api/admin; HttpOnly; SameSite=Strict; Max-Age=0');return out(res,200,{ok:true});}
     if(req.method==='GET'&&await adminData(sql,req,res,path))return;
     if(path==='/api/admin/support'){
-      const rows=await sql`SELECT r.id,r.message,r.created_at,(r.user_id IS NOT NULL) AS signed,COALESCE((SELECT json_agg(json_build_object('message',p.message,'createdAt',p.created_at) ORDER BY p.created_at) FROM international_support_replies p WHERE p.request_id=r.id),'[]'::json) AS replies FROM international_support_requests r ORDER BY r.created_at DESC LIMIT 200`;
-      return out(res,200,{requests:rows.map(r=>({...r,ticket:String(r.id).slice(0,8).toUpperCase()}))});
+      // Account facts for signed-in askers: registration date and a short game summary only (no e-mail, child name or password data).
+      const rows=await sql`SELECT r.id,r.message,r.created_at,r.player_id,(r.user_id IS NOT NULL) AS signed,u.created_at AS registered_at,
+        CASE WHEN w.user_id IS NULL THEN NULL ELSE json_build_object('games',CASE WHEN jsonb_typeof(w.save_json->'games')='array' THEN jsonb_array_length(w.save_json->'games') END,
+          'gamesPlayed',w.save_json#>>'{achievements,gamesPlayed}','wins',w.save_json#>>'{achievements,wins}','puzzles',w.save_json#>>'{achievements,puzzlesSolved}',
+          'challenges',CASE WHEN jsonb_typeof(w.save_json#>'{worldProgress,completedChallenges}')='array' THEN jsonb_array_length(w.save_json#>'{worldProgress,completedChallenges}') END,
+          'trainings',CASE WHEN jsonb_typeof(w.save_json->'trainingSessions')='array' THEN jsonb_array_length(w.save_json->'trainingSessions') END,
+          'hero',w.save_json#>>'{player,selectedCharacter}','location',w.save_json#>>'{worldProgress,location}','savedAt',w.updated_at) END AS world,
+        pp.updated_at AS progress_at,
+        COALESCE((SELECT json_agg(json_build_object('message',p.message,'createdAt',p.created_at) ORDER BY p.created_at) FROM international_support_replies p WHERE p.request_id=r.id),'[]'::json) AS replies
+        FROM international_support_requests r LEFT JOIN international_users u ON u.id=r.user_id LEFT JOIN international_world_saves w ON w.user_id=r.user_id LEFT JOIN international_player_progress pp ON pp.user_id=r.user_id
+        ORDER BY r.created_at DESC LIMIT 200`;
+      return out(res,200,{requests:rows.map(supportRow)});
     }
     if(path==='/api/admin/reply'){
       const text=String(b.text||'').trim();if(!/^[0-9a-f-]{36}$/.test(String(b.id||'')))return out(res,400,{error:'Нет вопроса'});if(!text||text.length>4000)return out(res,400,{error:'Пустой или слишком длинный ответ'});
@@ -134,7 +145,8 @@ export default async function account(req,res,path){
       const sent=await telegram.json();
       if(!telegram.ok||!sent.ok||!Number.isSafeInteger(sent.result?.message_id))return out(res,502,{error:'Could not deliver your question. Please try again later.'});
       const guest=guestOf(req)||randomBytes(32).toString('hex');
-      await sql`INSERT INTO international_support_requests(id,user_id,guest_hash,telegram_message_id,message) VALUES(${id},${u?.id||null},${sha(guest)},${sent.result.message_id},${message})`;
+      const player=/^[a-f0-9]{16}$/.test(String(b.p||''))?String(b.p):null;
+      await sql`INSERT INTO international_support_requests(id,user_id,guest_hash,telegram_message_id,message,player_id) VALUES(${id},${u?.id||null},${sha(guest)},${sent.result.message_id},${message},${player})`;
       if(!guestOf(req))setGuestCookie(req,res,guest);
       return out(res,201,{ticket});
     }

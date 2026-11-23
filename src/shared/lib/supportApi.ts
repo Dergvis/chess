@@ -1,12 +1,15 @@
+import { anonymousPlayerId, trackGameEvent } from '../../analytics';
 export async function sendSupportMessage(message: string): Promise<{ ticket: string }> {
   const response = await fetch('/api/support/messages', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     credentials: 'include',
-    body: JSON.stringify({ message }),
+    // The anonymous device id links the question to this player's trail in the admin page (no name or e-mail).
+    body: JSON.stringify({ message, p: anonymousPlayerId() }),
   });
   const data = await response.json().catch(() => ({}));
   if (!response.ok) throw new Error(data.error || 'Could not send your question.');
+  trackGameEvent('help_sent');
   return data;
 }
 

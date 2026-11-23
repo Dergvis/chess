@@ -665,6 +665,7 @@ export default function ChallengeSession({
         }
         isGuest={isGuest}
         onAnimationBusyChange={setVideoBusy}
+        trailMode="training"
         training={{
           header,
           panel,

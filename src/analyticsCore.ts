@@ -39,3 +39,44 @@ export function clickLabel(el: LabelSource): string {
   const img = el.querySelector?.('img[alt],svg[aria-label]');
   return cleanLabel(img?.getAttribute('alt') || img?.getAttribute('aria-label'));
 }
+/** Board trail events (sent as `game:<name>`). */
+export type TrailEvent = 'move_made' | 'move_rejected' | 'illegal_tap' | 'drag_attempt' | 'drag_hint_shown';
+export interface BoardTrail {
+  /** A legal move by the player. Resets the drag counter. */
+  move(p: Record<string, unknown>): void;
+  /** A tap that did nothing: `illegal_tap` (empty/opponent square, not your turn) or `move_rejected` (illegal target). */
+  reject(name: 'illegal_tap' | 'move_rejected', p: Record<string, unknown>): void;
+  /** The player tried to drag a piece. Returns true exactly once per board: when the one-time hint should appear. */
+  drag(p: Record<string, unknown>): boolean;
+}
+/**
+ * Per-board (one game, puzzle or task) event budget so one game cannot flood the statistics:
+ * at most `max` events, drag_attempt at most once per 3 s, the same rejected tap at most once per second.
+ * After 3 drag attempts with no successful move in between, `drag()` asks for the hint once.
+ */
+export function createBoardTrail(mode: string, sink: (name: TrailEvent, params: Params) => void, now: () => number = () => Date.now(), max = 200): BoardTrail {
+  let sent = 0, drags = 0, hinted = false, lastDrag = -Infinity, lastTap = '', lastTapAt = -Infinity;
+  const emit = (name: TrailEvent, p: Record<string, unknown>) => {
+    if (sent >= max) return;
+    sent++;
+    sink(name, sanitizeParams({ ...p, mode }) || {});
+  };
+  return {
+    move(p) { drags = 0; emit('move_made', p); },
+    reject(name, p) {
+      const key = name + ':' + String(p.from ?? '') + String(p.square ?? p.to ?? ''), t = now();
+      if (key === lastTap && t - lastTapAt < 1000) return;
+      lastTap = key; lastTapAt = t;
+      emit(name, p);
+    },
+    drag(p) {
+      drags++;
+      const t = now();
+      if (t - lastDrag >= 3000) { lastDrag = t; emit('drag_attempt', { ...p, n: drags }); }
+      if (hinted || drags < 3) return false;
+      hinted = true;
+      emit('drag_hint_shown', {});
+      return true;
+    },
+  };
+}

@@ -1,5 +1,9 @@
 [
  {
+  "en": "(max-width: 767px)",
+  "file": "src/analytics.ts"
+ },
+ {
   "en": "← Back",
   "file": "src/app/App.tsx"
  },
@@ -976,14 +980,6 @@
   "file": "src/entities/piece-skins/pieceSkins.ts"
  },
  {
-  "en": "без email",
-  "file": "src/features/admin/AdminDashboard.tsx"
- },
- {
-  "en": "Уникальные браузеры/телефоны за выбранный период. Считается по deviceId в браузере",
-  "file": "src/features/admin/AdminDashboard.tsx"
- },
- {
   "en": "ADMIN_TOKEN",
   "file": "src/features/admin/AdminDashboard.tsx"
  },
@@ -1021,6 +1017,14 @@
  },
  {
   "en": "You",
+  "file": "src/features/admin/AdminDashboard.tsx"
+ },
+ {
+  "en": "без email",
+  "file": "src/features/admin/AdminDashboard.tsx"
+ },
+ {
+  "en": "Уникальные браузеры/телефоны за выбранный период. Считается по deviceId в браузере",
   "file": "src/features/admin/AdminDashboard.tsx"
  },
  {
@@ -1204,6 +1208,18 @@
   "file": "src/features/billing/BillingRequiredScreen.tsx"
  },
  {
+  "en": "Executed",
+  "file": "src/features/billing/PaymentScreen.tsx"
+ },
+ {
+  "en": "QR-код действителен 30 минут. После оплаты подписка активируется автоматически.",
+  "file": "src/features/billing/PaymentScreen.tsx"
+ },
+ {
+  "en": "QR-код для оплаты",
+  "file": "src/features/billing/PaymentScreen.tsx"
+ },
+ {
   "en": "Выберите «Оплата по QR» или «СБП»",
   "file": "src/features/billing/PaymentScreen.tsx"
  },
@@ -1220,32 +1236,12 @@
   "file": "src/features/billing/PaymentScreen.tsx"
  },
  {
-  "en": "Executed",
-  "file": "src/features/billing/PaymentScreen.tsx"
- },
- {
-  "en": "QR-код действителен 30 минут. После оплаты подписка активируется автоматически.",
-  "file": "src/features/billing/PaymentScreen.tsx"
- },
- {
-  "en": "QR-код для оплаты",
-  "file": "src/features/billing/PaymentScreen.tsx"
- },
- {
-  "en": "Ваша подписка Chezzies активирована",
-  "file": "src/features/billing/PaymentSuccessScreen.tsx"
- },
- {
   "en": "Start playing!",
   "file": "src/features/billing/PaymentSuccessScreen.tsx"
  },
  {
-  "en": "Отсканируйте QR-код через приложение банка:",
-  "file": "src/features/billing/SubscribeScreen.tsx"
- },
- {
-  "en": "Подписка Chezzies",
-  "file": "src/features/billing/SubscribeScreen.tsx"
+  "en": "Ваша подписка Chezzies активирована",
+  "file": "src/features/billing/PaymentSuccessScreen.tsx"
  },
  {
   "en": "Accepted",
@@ -1253,6 +1249,14 @@
  },
  {
   "en": "Rejected",
+  "file": "src/features/billing/SubscribeScreen.tsx"
+ },
+ {
+  "en": "Отсканируйте QR-код через приложение банка:",
+  "file": "src/features/billing/SubscribeScreen.tsx"
+ },
+ {
+  "en": "Подписка Chezzies",
   "file": "src/features/billing/SubscribeScreen.tsx"
  },
  {
@@ -1292,6 +1296,10 @@
   "file": "src/features/game/GameScreen.tsx"
  },
  {
+  "en": "puzzle",
+  "file": "src/features/game/GameScreen.tsx"
+ },
+ {
   "en": "Resign",
   "file": "src/features/game/GameScreen.tsx"
  },
@@ -1301,6 +1309,10 @@
  },
  {
   "en": "Subscribe",
+  "file": "src/features/game/GameScreen.tsx"
+ },
+ {
+  "en": "Tap a piece, then tap the square to move it",
   "file": "src/features/game/GameScreen.tsx"
  },
  {
@@ -1920,7 +1932,11 @@
   "file": "src/marketing.ts"
  },
  {
-  "en": "piece to start.",
+  "en": "Piece selected. Choose a destination.",
+  "file": "src/marketing.ts"
+ },
+ {
+  "en": "Piece selected. Now tap the square where it should go.",
   "file": "src/marketing.ts"
  },
  {
@@ -1932,15 +1948,11 @@
   "file": "src/marketing.ts"
  },
  {
-  "en": "selected. Choose a destination.",
+  "en": "Tap a black piece to start.",
   "file": "src/marketing.ts"
  },
  {
-  "en": "selected. Now tap the square where it should go.",
-  "file": "src/marketing.ts"
- },
- {
-  "en": "Tap a",
+  "en": "Tap a white piece to start.",
   "file": "src/marketing.ts"
  },
  {
@@ -2188,10 +2200,6 @@
   "file": "src/world/catalog.ts"
  },
  {
-  "en": "Arena",
-  "file": "src/world/catalog.ts"
- },
- {
   "en": "Checkmate Fortress",
   "file": "src/world/catalog.ts"
  },
@@ -2260,10 +2268,6 @@
   "file": "src/world/catalog.ts"
  },
  {
-  "en": "Opponents Arena",
-  "file": "src/world/catalog.ts"
- },
- {
   "en": "Pin",
   "file": "src/world/catalog.ts"
  },
@@ -2310,10 +2314,6 @@
  {
   "en": "Mate proof needs more time",
   "file": "src/world/challenges/acceptance.ts"
- },
- {
-  "en": "targets",
-  "file": "src/world/challenges/adaptive.ts"
  },
  {
   "en": "A bishop closes the last diagonal",
@@ -2852,10 +2852,6 @@
   "file": "src/world/challenges/Flow.tsx"
  },
  {
-  "en": "← World map",
-  "file": "src/world/challenges/Flow.tsx"
- },
- {
   "en": "♛ Guardian",
   "file": "src/world/challenges/Flow.tsx"
  },
@@ -2893,10 +2889,6 @@
  },
  {
   "en": "Completed ✓",
-  "file": "src/world/challenges/Flow.tsx"
- },
- {
-  "en": "Continue →",
   "file": "src/world/challenges/Flow.tsx"
  },
  {
@@ -3004,18 +2996,6 @@
   "file": "src/world/challenges/Flow.tsx"
  },
  {
-  "en": "Courtyard",
-  "file": "src/world/challenges/model.ts"
- },
- {
-  "en": "Gates",
-  "file": "src/world/challenges/model.ts"
- },
- {
-  "en": "Guardian",
-  "file": "src/world/challenges/model.ts"
- },
- {
   "en": "Guardian battle",
   "file": "src/world/challenges/model.ts"
  },
@@ -3025,10 +3005,6 @@
  },
  {
   "en": "Spot the tactic",
-  "file": "src/world/challenges/model.ts"
- },
- {
-  "en": "Tower",
   "file": "src/world/challenges/model.ts"
  },
  {
@@ -3680,10 +3656,6 @@
   "file": "src/world/challenges/Session.tsx"
  },
  {
-  "en": "(max-width:767px), (max-width:960px) and (max-height:500px)",
-  "file": "src/world/challenges/Session.tsx"
- },
- {
   "en": "⚪ White to move",
   "file": "src/world/challenges/Session.tsx"
  },
@@ -3704,10 +3676,6 @@
   "file": "src/world/challenges/Session.tsx"
  },
  {
-  "en": "Chess challenge",
-  "file": "src/world/challenges/Session.tsx"
- },
- {
   "en": "CHESS CHALLENGE",
   "file": "src/world/challenges/Session.tsx"
  },
@@ -3717,10 +3685,6 @@
  },
  {
   "en": "Could not check this position.",
-  "file": "src/world/challenges/Session.tsx"
- },
- {
-  "en": "Hint",
   "file": "src/world/challenges/Session.tsx"
  },
  {
@@ -3737,10 +3701,6 @@
  },
  {
   "en": "Look closely at the highlighted piece.",
-  "file": "src/world/challenges/Session.tsx"
- },
- {
-  "en": "Nearly!",
   "file": "src/world/challenges/Session.tsx"
  },
  {
@@ -3761,6 +3721,10 @@
  },
  {
   "en": "Selected:",
+  "file": "src/world/challenges/Session.tsx"
+ },
+ {
+  "en": "targets",
   "file": "src/world/challenges/Session.tsx"
  },
  {
@@ -4184,10 +4148,6 @@
   "file": "src/world/growth.ts"
  },
  {
-  "en": "puzzle",
-  "file": "src/world/growth.ts"
- },
- {
   "en": "Solve another",
   "file": "src/world/growth.ts"
  },
@@ -4548,6 +4508,10 @@
   "file": "src/world/KingdomScene.tsx"
  },
  {
+  "en": "← World map",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
   "en": "A GREAT START",
   "file": "src/world/KingdomScene.tsx"
  },
@@ -4600,6 +4564,10 @@
   "file": "src/world/KingdomScene.tsx"
  },
  {
+  "en": "Courtyard",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
   "en": "Enemy king",
   "file": "src/world/KingdomScene.tsx"
  },
@@ -4628,7 +4596,15 @@
   "file": "src/world/KingdomScene.tsx"
  },
  {
+  "en": "Gates",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
   "en": "Great hit! The fortress gates weakened",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
+  "en": "Guardian",
   "file": "src/world/KingdomScene.tsx"
  },
  {
@@ -4708,6 +4684,10 @@
   "file": "src/world/KingdomScene.tsx"
  },
  {
+  "en": "Tower",
+  "file": "src/world/KingdomScene.tsx"
+ },
+ {
   "en": "Try it: one piece — two targets",
   "file": "src/world/KingdomScene.tsx"
  },
@@ -4732,19 +4712,7 @@
   "file": "src/world/KingdomScene.tsx"
  },
  {
-  "en": "Account",
-  "file": "src/world/mobile/MobileGameShell.tsx"
- },
- {
-  "en": "Choose your hero",
-  "file": "src/world/mobile/MobileGameShell.tsx"
- },
- {
   "en": "Hero",
-  "file": "src/world/mobile/MobileGameShell.tsx"
- },
- {
-  "en": "How to play",
   "file": "src/world/mobile/MobileGameShell.tsx"
  },
  {
@@ -4776,10 +4744,6 @@
   "file": "src/world/mobile/MobileGameShell.tsx"
  },
  {
-  "en": "Play",
-  "file": "src/world/mobile/MobileGameShell.tsx"
- },
- {
   "en": "Subscription",
   "file": "src/world/mobile/MobileGameShell.tsx"
  },
@@ -4793,14 +4757,6 @@
  },
  {
   "en": "Meet the pieces",
-  "file": "src/world/mobile/MobilePieceGuide.tsx"
- },
- {
-  "en": "Next piece",
-  "file": "src/world/mobile/MobilePieceGuide.tsx"
- },
- {
-  "en": "Previous piece",
   "file": "src/world/mobile/MobilePieceGuide.tsx"
  },
  {
@@ -4932,6 +4888,10 @@
   "file": "src/world/PersonalTraining.tsx"
  },
  {
+  "en": "(max-width:767px), (max-width:960px) and (max-height:500px)",
+  "file": "src/world/PieceGuide.tsx"
+ },
+ {
   "en": "♟ Meet the pieces?",
   "file": "src/world/PieceGuide.tsx"
  },
@@ -4941,6 +4901,14 @@
  },
  {
   "en": "Chess pieces",
+  "file": "src/world/PieceGuide.tsx"
+ },
+ {
+  "en": "Next piece",
+  "file": "src/world/PieceGuide.tsx"
+ },
+ {
+  "en": "Previous piece",
   "file": "src/world/PieceGuide.tsx"
  },
  {
@@ -5096,6 +5064,10 @@
   "file": "src/world/Puzzle.tsx"
  },
  {
+  "en": "Chess challenge",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
   "en": "Choose a piece, then a destination square.",
   "file": "src/world/Puzzle.tsx"
  },
@@ -5112,11 +5084,19 @@
   "file": "src/world/Puzzle.tsx"
  },
  {
+  "en": "Hint",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
   "en": "How can it attack two targets?",
   "file": "src/world/Puzzle.tsx"
  },
  {
   "en": "Look closely at the piece on",
+  "file": "src/world/Puzzle.tsx"
+ },
+ {
+  "en": "Nearly!",
   "file": "src/world/Puzzle.tsx"
  },
  {
@@ -5456,10 +5436,6 @@
   "file": "src/world/range/Polygon.tsx"
  },
  {
-  "en": "NEW POWER-UP!",
-  "file": "src/world/range/Polygon.tsx"
- },
- {
   "en": "New sight",
   "file": "src/world/range/Polygon.tsx"
  },
@@ -5553,10 +5529,6 @@
  },
  {
   "en": "Tactics Pass",
-  "file": "src/world/regions.ts"
- },
- {
-  "en": "The path is hidden in mist",
   "file": "src/world/regions.ts"
  },
  {
@@ -6108,6 +6080,10 @@
   "file": "src/world/UpgradeScene.tsx"
  },
  {
+  "en": "NEW POWER-UP!",
+  "file": "src/world/UpgradeScene.tsx"
+ },
+ {
   "en": "Try it in the training ground",
   "file": "src/world/UpgradeScene.tsx"
  },
@@ -6137,6 +6113,18 @@
  },
  {
   "en": "Adventure",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Arena",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Choose your hero",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Continue →",
   "file": "src/world/WorldApp.tsx"
  },
  {
@@ -6192,7 +6180,15 @@
   "file": "src/world/WorldApp.tsx"
  },
  {
+  "en": "Opponents Arena",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
   "en": "Personal challenges are available in the full version",
+  "file": "src/world/WorldApp.tsx"
+ },
+ {
+  "en": "Play",
   "file": "src/world/WorldApp.tsx"
  },
  {
@@ -6316,6 +6312,10 @@
   "file": "src/world/WorldMap.tsx"
  },
  {
+  "en": "Account",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
   "en": "At the gates!",
   "file": "src/world/WorldMap.tsx"
  },
@@ -6329,6 +6329,10 @@
  },
  {
   "en": "Every improvement collected!",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "How to play",
   "file": "src/world/WorldMap.tsx"
  },
  {
@@ -6373,6 +6377,10 @@
  },
  {
   "en": "tasks",
+  "file": "src/world/WorldMap.tsx"
+ },
+ {
+  "en": "The path is hidden in mist",
   "file": "src/world/WorldMap.tsx"
  },
  {

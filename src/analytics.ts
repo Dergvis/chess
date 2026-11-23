@@ -1,6 +1,6 @@
 import {inject} from '@vercel/analytics';
 import {trackGoogle} from './googleAnalytics';
-import {sanitizeParams,clickLabel,blockedEvent,type Params} from './analyticsCore';
+import {sanitizeParams,clickLabel,blockedEvent,type Params,type TrailEvent} from './analyticsCore';
 export type SiteEvent = 'homepage_view'|'landing_view'|'play_click'|'game_start'|'puzzle_start'|'puzzle_complete'|'return_visit'|'signup_start'|'signup_complete';
 const paths=['/','/play/','/chess-games-for-kids/','/online-chess-for-kids/','/learn-chess-for-kids/','/how-to-play-chess-for-kids/','/chess-puzzles-for-kids/','/parents/'];
 const safePath=(value:string)=>value.startsWith('/play')?'/play/':value.startsWith('/es/play')?'/es/play/':paths.includes(value)||/^\/es\/([a-z-]+\/)?$/.test(value)?value:'/';
@@ -61,6 +61,10 @@ export function trackGameEvent(name:string,metadata?:unknown){
  send('event','game:'+name,undefined,{params});
  trackGoogle(name,{...googleBase(),...withoutId(params)});
 }
+/** Board trail (moves, rejected taps, drag attempts): first-party only, not sent to Google. Limits live in createBoardTrail. */
+export function trackBoardEvent(name:TrailEvent,params:Params){send('event','game:'+name,undefined,{params});}
+/** The anonymous device id, so a Help question can be linked to what this player did (empty if storage is off). */
+export function anonymousPlayerId(){return typeof window==='undefined'?'':playerId();}
 // Button and link clicks everywhere: one delegated listener, stable labels, throttled.
 let clicksInstalled=false,clicks=0,lastLabel='',lastAt=0;
 export function installClickTracking(){

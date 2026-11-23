@@ -114,8 +114,8 @@ export async function adminData(sql,req,res,path){
   if(path==='/api/admin/player'){
     const id=param(req,'id');if(!/^v?[a-f0-9]{16}$/.test(id)){out(res,400,{error:'Нет такого игрока'});return true;}
     const rows=id.startsWith('v')
-      ?await sql`SELECT visit_id,kind,name,label,params,lang,path,source,device,country,is_return,created_at FROM international_site_events WHERE visit_id=${id.slice(1)} ORDER BY created_at DESC LIMIT 5000`
-      :await sql`SELECT visit_id,kind,name,label,params,lang,path,source,device,country,is_return,created_at FROM international_site_events WHERE player_id=${id} ORDER BY created_at DESC LIMIT 5000`;
+      ?await sql`SELECT visit_id,kind,name,label,params,lang,path,source,device,country,is_return,created_at FROM international_site_events WHERE visit_id=${id.slice(1)} ORDER BY created_at DESC,id DESC LIMIT 5000`
+      :await sql`SELECT visit_id,kind,name,label,params,lang,path,source,device,country,is_return,created_at FROM international_site_events WHERE player_id=${id} ORDER BY created_at DESC,id DESC LIMIT 5000`;
     if(!rows.length){out(res,404,{error:'Игрок не найден'});return true;}
     rows.reverse();
     const visits=new Map();
@@ -176,4 +176,17 @@ export async function adminData(sql,req,res,path){
     out(res,200,{snapshots:Object.fromEntries(rows.map(r=>[r.kind,{taken_at:r.taken_at,data:r.data}]))});return true;
   }
   return false;
+}
+
+// ---- Help questions in the admin page ----
+const num=v=>{const n=Number(v);return v!=null&&v!==''&&Number.isFinite(n)&&n>=0?Math.round(n):null;};
+const code=v=>typeof v==='string'&&/^[a-z0-9_-]{1,30}$/i.test(v)?v:null;
+/** One /api/admin/support row: anonymous player id (to open the trail), registration date and a short, cleaned progress summary. */
+export function supportRow(r){
+  const w=r.world&&typeof r.world==='object'?r.world:null;
+  const saved=num(w?.savedAt);
+  const progress=w?{games:num(w.games),gamesPlayed:num(w.gamesPlayed),wins:num(w.wins),puzzles:num(w.puzzles),challenges:num(w.challenges),trainings:num(w.trainings),hero:code(w.hero),location:code(w.location),savedAt:saved&&saved>1e12?new Date(saved).toISOString():null}:null;
+  return {id:r.id,ticket:String(r.id).slice(0,8).toUpperCase(),message:r.message,created_at:r.created_at,signed:!!r.signed,replies:r.replies||[],
+    player_id:/^[a-f0-9]{16}$/.test(String(r.player_id||''))?r.player_id:null,
+    account:r.signed?{registered_at:r.registered_at||null,progress,progress_at:r.progress_at||null}:null};
 }

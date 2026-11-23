@@ -191,6 +191,7 @@ export default function ArenaGame({
         onResign={() => setResign(true)}
         isEngineTurn={state.turn !== game.playerColor || animationBusy || over}
         onAnimationBusyChange={setAnimationBusy}
+        trailMode="arena"
       />
       {error && (
         <div className="arena-error" role="alert">

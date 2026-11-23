@@ -12,9 +12,11 @@ import PromotionModal from './PromotionModal';
 import { getBattleVideo, getCheckmateVideo } from '../battle/battleVideos';
 import { animationEngine } from '../../config/animationEngine';
 import { soundSystem } from '../../shared/lib/soundSystem';
-import type { ReactNode, CSSProperties } from 'react';
+import type { ReactNode, CSSProperties, PointerEvent as ReactPointerEvent } from 'react';
 import AttackGuides from '../../world/AttackGuides';
 import './GameScreen.css';
+import { createBoardTrail, type BoardTrail } from '../../analyticsCore';
+import { trackBoardEvent } from '../../analytics';
 
 // Маппинг соперников к иконкам
 const OPPONENT_ICONS: Record<string, string> = {
@@ -51,6 +53,8 @@ interface GameScreenProps {
   isGuest?: boolean;
   onAnimationBusyChange?: (busy: boolean) => void;
   training?: { header?: ReactNode; panel: ReactNode; targets: string[]; candidates?: string[]; source?: string; move?: {from: string; to: string}; hint?: string; onSquare?: (square:string)=>void };
+  /** Records the player's board trail (moves, rejected taps, drag attempts) under this mode; omitted = not recorded. */
+  trailMode?: 'arena' | 'puzzle' | 'training' | 'classic';
 }
 
 interface CheckAnimationState {
@@ -78,7 +82,12 @@ export default function GameScreen({
   isGuest = false,
   onAnimationBusyChange,
   training,
+  trailMode,
 }: GameScreenProps) {
+  // One trail per mounted board (callers remount the board per game/puzzle/task with `key`).
+  const [trail] = useState<BoardTrail | null>(() => trailMode ? createBoardTrail(trailMode, trackBoardEvent) : null);
+  const [dragHint, setDragHint] = useState(false);
+  const dragRef = useRef<{ id: number; x: number; y: number; from: string; piece: Piece; moved: boolean } | null>(null);
   const [checkAnimation, setCheckAnimation] = useState<CheckAnimationState | null>(null);
   const [checkmateAnimation, setCheckmateAnimation] = useState<CheckmateAnimationState | null>(null);
   const [battleVideo, setBattleVideo] = useState<string | null>(null);
@@ -297,6 +306,44 @@ export default function GameScreen({
     return board;
   }, [gameState]);
 
+  const pieceOn = (square: string): Piece | null => {
+    const file = square.charCodeAt(0) - 97, rank = Number(square[1]) - 1;
+    return board?.[7 - rank]?.[file] ?? null;
+  };
+  const moveNumber = () => Number(gameState?.fen.split(' ')[5]) || 0;
+  const endDrag = (d: NonNullable<typeof dragRef.current>, to: string | undefined, how: 'move' | 'cancel') => {
+    if (!trail) return;
+    if (trail.drag({ piece: d.piece.type, own: d.piece.color === playerColor, from: d.from, to, how })) setDragHint(true);
+  };
+  const squareAt = (x: number, y: number) => document.elementFromPoint(x, y)?.closest('[data-square]')?.getAttribute('data-square') || undefined;
+  const dragHandlers = trail ? {
+    onPointerDown: (e: ReactPointerEvent) => {
+      const square = (e.target as Element).closest?.('[data-square]')?.getAttribute('data-square');
+      const piece = square ? pieceOn(square) : null;
+      dragRef.current = square && piece ? { id: e.pointerId, x: e.clientX, y: e.clientY, from: square, piece, moved: false } : null;
+    },
+    onPointerMove: (e: ReactPointerEvent) => {
+      const d = dragRef.current;
+      if (d && d.id === e.pointerId && !d.moved && Math.hypot(e.clientX - d.x, e.clientY - d.y) > 10) d.moved = true;
+    },
+    onPointerUp: (e: ReactPointerEvent) => {
+      const d = dragRef.current;
+      dragRef.current = null;
+      if (d && d.id === e.pointerId && d.moved) endDrag(d, squareAt(e.clientX, e.clientY), 'move');
+    },
+    // A touch drag is usually taken over by the browser (scroll / image drag): that also means "tried to drag".
+    onPointerCancel: (e: ReactPointerEvent) => {
+      const d = dragRef.current;
+      dragRef.current = null;
+      if (d && d.id === e.pointerId) endDrag(d, undefined, d.moved ? 'move' : 'cancel');
+    },
+  } : {};
+  useEffect(() => {
+    if (!dragHint) return;
+    const timer = window.setTimeout(() => setDragHint(false), 12000);
+    return () => window.clearTimeout(timer);
+  }, [dragHint]);
+
   // Получаем возможные ходы для подсветки
   const possibleMoves = useMemo(() => {
     return new Set(legalMoves.map(m => m.to));
@@ -425,6 +472,7 @@ export default function GameScreen({
 
     if (isEngineTurn || !isPlayerTurn) {
       console.log('❌ RETURN: Not player turn or engine turn');
+      trail?.reject('illegal_tap', { square, reason: 'wait' });
       return;
     }
 
@@ -439,6 +487,10 @@ export default function GameScreen({
     if (selectedSquare && possibleMoves.has(square)) {
       console.log('✅ VALID MOVE CLICKED');
       const capturingMove = legalMoves.find(m => m.to === square);
+      if (!capturingMove?.isPromotion) {
+        trail?.move({ piece: pieceOn(selectedSquare)?.type, from: selectedSquare, to: square, move: moveNumber(), capture: !!capturingMove?.capturedPiece });
+        setDragHint(false);
+      }
       console.log('CapturingMove:', capturingMove);
 
       if (capturingMove?.capturedPiece) {
@@ -480,7 +532,9 @@ export default function GameScreen({
       return;
     }
 
-    // Клик на пустую или вражескую (не ход) — ничего не делаем
+    // Клик на пустую или вражескую (не ход) — ничего не делаем, только записываем в след игрока
+    if (selectedSquare) trail?.reject('move_rejected', { piece: pieceOn(selectedSquare)?.type, from: selectedSquare, to: square, reason: piece ? 'opponent_piece' : 'not_legal' });
+    else trail?.reject('illegal_tap', { square, reason: piece ? 'opponent_piece' : 'empty' });
   };
 
   const handlePromotionSelect = (pieceType: 'q' | 'r' | 'b' | 'n') => {
@@ -489,6 +543,8 @@ export default function GameScreen({
       // Звук превращения
       soundSystem.play('promotion');
       // Делаем ход с превращением
+      trail?.move({ piece: 'p', from: promotionPending.from, to: promotionPending.to, move: moveNumber(), promotion: pieceType });
+      setDragHint(false);
       onMakeMove(promotionPending.to, pieceType);
       setPromotionPending(null);
     }
@@ -516,7 +572,7 @@ export default function GameScreen({
         <div className="game-board-section">
           {/* Доска */}
           <div className="board-container">
-            <div className="board-wrapper" ref={boardWrapperRef}>
+            <div className="board-wrapper" ref={boardWrapperRef} {...dragHandlers}>
               {(() => {
                 // board[0] = 8 ряд (чёрные), board[7] = 1 ряд (белые)
                 // Для белых: отображаем board[0]..board[7] → ряды 8,7,6,5,4,3,2,1 (белые снизу)
@@ -563,6 +619,11 @@ export default function GameScreen({
                 ))}
               </div>
               {training && <AttackGuides from={training.source} targets={training.targets} />}
+              {dragHint && (
+                <button type="button" className="board-drag-hint" role="status" data-track-off onClick={() => setDragHint(false)}>
+                  Tap a piece, then tap the square to move it
+                </button>
+              )}
             </div>
           </div>
         </div>
