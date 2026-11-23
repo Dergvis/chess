@@ -217,7 +217,7 @@
 /* A reserved bottom strip keeps Help clear of board controls. */
 .app{padding-bottom:52px}
 .support-chat{right:10px;bottom:max(8px,env(safe-area-inset-bottom));z-index:15000}
-.support-toggle{padding:9px 13px;font-size:12px;background:#174b52;min-height:36px}
+.support-toggle{padding:8px 16px 8px 9px;font-size:15px;min-height:40px}
 .support-panel{height:min(560px,calc(100dvh - 76px));max-width:calc(100vw - 20px)}
 .support-messages{min-height:0;overflow-wrap:anywhere}
 @media(max-width:520px){.support-chat{right:10px;bottom:max(8px,env(safe-area-inset-bottom))}.support-panel{height:calc(100dvh - 76px);width:calc(100vw - 20px)}.support-compose textarea,.support-guest-fields input{font-size:16px}}
