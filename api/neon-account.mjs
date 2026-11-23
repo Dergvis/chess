@@ -1,6 +1,7 @@
 import {createHash, randomBytes, randomInt, randomUUID, scrypt as scryptCallback, timingSafeEqual} from 'node:crypto';
 import {promisify} from 'node:util';
 import {neon} from '@neondatabase/serverless';
+import {statsDb,ingest,seoImport,adminData} from './_stats.mjs';
 
 const scrypt=promisify(scryptCallback), name='chezzies_international_session';
 const sha=value=>createHash('sha256').update(value).digest('hex');
@@ -48,16 +49,6 @@ async function limited(sql,key,max=8){const r=await sql`INSERT INTO internationa
 function validSave(s){return s&&s.version===1&&s.player&&['inventor','mage','knight',null].includes(s.player.selectedCharacter)&&Array.isArray(s.worldProgress?.completedChallenges)&&Array.isArray(s.games)&&s.mastery&&typeof s.mastery==='object'&&!Array.isArray(s.mastery)&&Number.isSafeInteger(s.updatedAt)&&s.updatedAt>=0&&s.updatedAt<Date.now()+86400000;}
 async function sendResetEmail(email,token){const base=process.env.VERCEL_ENV==='preview'&&process.env.VERCEL_URL?`https://${process.env.VERCEL_URL}`:'https://chezzies.app';const link=`${base}/play/reset-password/?token=${encodeURIComponent(token)}`;const r=await fetch('https://api.resend.com/emails',{method:'POST',headers:{Authorization:`Bearer ${process.env.RESEND_API_KEY}`,'Content-Type':'application/json'},body:JSON.stringify({from:process.env.RESET_EMAIL_FROM,to:email,subject:'Reset your CHEZZIES password',text:`Open this link to reset your CHEZZIES password:\n${link}\n\nThis link expires in one hour. If you did not request it, ignore this email.`,html:`<p>Open the button below to reset your CHEZZIES password.</p><p><a href="${link}">Reset password</a></p><p>This link expires in one hour. If you did not request it, ignore this email.</p>`}),signal:AbortSignal.timeout(10000)});if(!r.ok)throw Error('reset-email-failed');}
 
-let statsInit;
-async function statsDb(sql){
-  statsInit||=(async()=>{
-    await sql`CREATE TABLE IF NOT EXISTS international_site_events (id BIGSERIAL PRIMARY KEY,visit_id TEXT NOT NULL,kind TEXT NOT NULL,name TEXT NOT NULL,lang TEXT NOT NULL,path TEXT NOT NULL,source TEXT NOT NULL,device TEXT NOT NULL,country TEXT NOT NULL DEFAULT '',is_return BOOLEAN NOT NULL DEFAULT false,created_at TIMESTAMPTZ NOT NULL DEFAULT now())`;
-    await sql`CREATE INDEX IF NOT EXISTS international_site_events_time_idx ON international_site_events(created_at)`;
-    await sql`CREATE TABLE IF NOT EXISTS international_admin_codes (code_hash TEXT PRIMARY KEY,expires_at TIMESTAMPTZ NOT NULL,used_at TIMESTAMPTZ)`;
-    await sql`CREATE TABLE IF NOT EXISTS international_admin_sessions (token_hash TEXT PRIMARY KEY,expires_at TIMESTAMPTZ NOT NULL)`;
-  })().catch(e=>{statsInit=undefined;throw e;});
-  await statsInit;
-}
 const clientIp=req=>String(req.headers['x-forwarded-for']||req.socket?.remoteAddress||'unknown').split(',')[0].trim();
 function adminTokenOf(req){return String(req.headers.cookie||'').match(/(?:^|;\s*)chezzies_admin=([a-f0-9]{64})(?:;|$)/)?.[1]||'';}
 async function isAdmin(sql,req){const t=adminTokenOf(req);if(!t)return false;const r=await sql`SELECT 1 FROM international_admin_sessions WHERE token_hash=${sha(t)} AND expires_at>now() LIMIT 1`;return r.length>0;}
@@ -70,14 +61,8 @@ export default async function account(req,res,path){
     const b=typeof req.body==='string'?JSON.parse(req.body):req.body||{};
     // ---- Owner admin: anonymous visit statistics and Help questions ----
     if(path==='/api/site-events'||path.startsWith('/api/admin/'))await statsDb(sql);
-    if(path==='/api/site-events'){
-      if(/bot|crawl|spider|slurp|headless|lighthouse|preview|monitor/i.test(String(req.headers['user-agent']||'')))return res.status(204).end();
-      const e=b||{};const kinds=['event','screen','ping'],sources=['direct','internal','google','bing','referral'];
-      if(!/^[a-f0-9]{16}$/.test(String(e.v))||!kinds.includes(e.kind)||!/^[a-z_:]{2,48}$/.test(String(e.name))||!['en','es'].includes(e.lang)||!/^\/[a-z\-/]{0,60}$/.test(String(e.path))||!sources.includes(e.source)||!['mobile','desktop'].includes(e.device))return res.status(204).end();
-      const country=/^[A-Z]{2}$/.test(String(req.headers['x-vercel-ip-country']||''))?String(req.headers['x-vercel-ip-country']):'';
-      await sql`INSERT INTO international_site_events(visit_id,kind,name,lang,path,source,device,country,is_return) VALUES(${e.v},${e.kind},${e.name},${e.lang},${e.path},${e.source},${e.device},${country},${e.ret===true})`;
-      return res.status(204).end();
-    }
+    if(path==='/api/site-events')return ingest(sql,req,res,b);
+    if(path==='/api/admin/seo-import')return seoImport(sql,req,res,b);
     if(path==='/api/admin/code'){
       if(!process.env.TELEGRAM_BOT_TOKEN||!process.env.TELEGRAM_CHAT_ID)return out(res,503,{error:'Telegram не настроен'});
       if(await limited(sql,`admincode:${clientIp(req)}`,3))return out(res,429,{error:'Слишком часто. Подождите 15 минут.'});
@@ -98,15 +83,7 @@ export default async function account(req,res,path){
     }
     if(path.startsWith('/api/admin/')&&!await isAdmin(sql,req))return out(res,401,{error:'Нужен вход'});
     if(path==='/api/admin/logout'){const t=adminTokenOf(req);if(t)await sql`DELETE FROM international_admin_sessions WHERE token_hash=${sha(t)}`;res.setHeader('Set-Cookie','chezzies_admin=; Path=/api/admin; HttpOnly; SameSite=Strict; Max-Age=0');return out(res,200,{ok:true});}
-    if(path==='/api/admin/stats'){
-      const days=Math.min(365,Math.max(1,Number(new URL(req.url,'https://chezzies.app').searchParams.get('days'))||7));
-      await sql`DELETE FROM international_site_events WHERE created_at<now()-interval '400 days'`;
-      const visits=await sql`SELECT visit_id,min(created_at) AS started,max(created_at) AS ended,max(country) AS country,max(lang) AS lang,max(device) AS device,(array_agg(source ORDER BY created_at))[1] AS source,(array_agg(path ORDER BY created_at))[1] AS landing,bool_or(is_return) AS ret,array_agg(name ORDER BY created_at) FILTER (WHERE kind='screen') AS screens,count(*) FILTER (WHERE kind='event') AS events FROM international_site_events WHERE created_at>now()-make_interval(days=>${days}) GROUP BY visit_id ORDER BY min(created_at) DESC LIMIT 20000`;
-      const events=await sql`SELECT name,count(*)::int AS times,count(DISTINCT visit_id)::int AS visits FROM international_site_events WHERE kind='event' AND created_at>now()-make_interval(days=>${days}) GROUP BY name ORDER BY 3 DESC LIMIT 60`;
-      const users=await sql`SELECT count(*)::int AS total,count(*) FILTER (WHERE created_at>now()-make_interval(days=>${days}))::int AS fresh FROM international_users`;
-      const support=await sql`SELECT count(*)::int AS total,count(*) FILTER (WHERE NOT EXISTS (SELECT 1 FROM international_support_replies p WHERE p.request_id=r.id))::int AS unanswered FROM international_support_requests r`;
-      return out(res,200,{days,visits,events,users:users[0],support:support[0]});
-    }
+    if(req.method==='GET'&&await adminData(sql,req,res,path))return;
     if(path==='/api/admin/support'){
       const rows=await sql`SELECT r.id,r.message,r.created_at,(r.user_id IS NOT NULL) AS signed,COALESCE((SELECT json_agg(json_build_object('message',p.message,'createdAt',p.created_at) ORDER BY p.created_at) FROM international_support_replies p WHERE p.request_id=r.id),'[]'::json) AS replies FROM international_support_requests r ORDER BY r.created_at DESC LIMIT 200`;
       return out(res,200,{requests:rows.map(r=>({...r,ticket:String(r.id).slice(0,8).toUpperCase()}))});

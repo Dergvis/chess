@@ -90,10 +90,11 @@ function showChoices() {
   document.body.append(panel);
 }
 
-export function trackGoogle(event: string, data: {source: string; landing_page: string}) {
-  if (!production || !allowed) return;
+export function trackGoogle(event: string, data: {source: string; landing_page: string} & Record<string, string | number | boolean>) {
+  if (!production || !allowed || !/^[a-z][a-z0-9_]{1,39}$/.test(event)) return;
+  const {source, landing_page, ...extra} = data;
   analyticsWindow.gtag?.('event', event, {
-    traffic_source: data.source, landing_page: data.landing_page,
+    ...extra, traffic_source: source, landing_page,
     page_location: cleanLocation(), page_referrer: '',
   });
 }

@@ -7,6 +7,7 @@ import { getDifficultyPreset } from "../shared/config/difficulty";
 import { engineRequest } from "./engineClient";
 import type { GameRecord } from "./types";
 import { worldKey } from "./accountStorage";
+import { noteGameMoves } from "../analytics";
 export const ACTIVE_KEY = "gosha-world-active-v1";
 export const opponentIds = ["bear", "fox", "owl", "lion", "dragon"];
 export const levelDescriptions = [
@@ -83,6 +84,7 @@ export default function ArenaGame({
       after: core.getFen(),
       elapsed: Date.now() - lastTime.current,
     });
+    noteGameMoves(record.current.moves.length);
     lastTime.current = Date.now();
     setState(core.getState());
     setSelected(null);

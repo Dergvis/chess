@@ -1,6 +1,6 @@
 import neonAccount from './neon-account.mjs';
 const methods=new Map([
- ['/api/site-events',['POST']],['/api/admin/code',['POST']],['/api/admin/login',['POST']],['/api/admin/logout',['POST']],['/api/admin/stats',['GET']],['/api/admin/support',['GET']],['/api/admin/reply',['POST']],
+ ['/api/site-events',['POST']],['/api/admin/code',['POST']],['/api/admin/login',['POST']],['/api/admin/logout',['POST']],['/api/admin/stats',['GET']],['/api/admin/players',['GET']],['/api/admin/player',['GET']],['/api/admin/retention',['GET']],['/api/admin/games',['GET']],['/api/admin/seo',['GET']],['/api/admin/seo-import',['POST']],['/api/admin/support',['GET']],['/api/admin/reply',['POST']],
  ['/api/auth/register',['POST']],['/api/auth/login',['POST']],['/api/auth/logout',['POST']],['/api/auth/me',['GET']],['/api/auth/request-password-reset',['POST']],['/api/auth/reset-password',['POST']],['/api/player/progress',['GET','PUT']],['/api/world/account',['GET','PUT']],['/api/world/health',['GET']],['/api/support/my',['GET']],['/api/support/messages',['POST']],['/api/support/telegram-webhook',['POST']]
 ]);
 export default async function handler(req,res){

@@ -8,7 +8,7 @@ import './index.css';
 import './international.css';
 import {GAME_BASE,SITE_ROOT} from './locale';
 function InternationalGame(){
- useEffect(()=>{recordVisit();track('game_start');return connectAnalytics(e=>{trackGameEvent(e.eventName);if(['puzzle_started','challenge_started','misty_puzzle_started','post_game_puzzle_started'].includes(e.eventName))track('puzzle_start');if(['puzzle_solved','challenge_completed','misty_puzzle_solved','post_game_puzzle_completed'].includes(e.eventName))track('puzzle_complete');if(e.eventName==='registration_started')track('signup_start');if(e.eventName==='registration_completed')track('signup_complete');});},[]);
+ useEffect(()=>{recordVisit();track('game_start');return connectAnalytics(e=>{trackGameEvent(e.eventName,e.metadata);if(['puzzle_started','challenge_started','misty_puzzle_started','post_game_puzzle_started'].includes(e.eventName))track('puzzle_start');if(['puzzle_solved','challenge_completed','misty_puzzle_solved','post_game_puzzle_completed'].includes(e.eventName))track('puzzle_complete');if(e.eventName==='registration_started')track('signup_start');if(e.eventName==='registration_completed')track('signup_complete');});},[]);
  return <BrowserRouter basename={GAME_BASE}><a className="game-home" href={SITE_ROOT} aria-label="CHEZZIES home">CHEZZIES <span>↗</span></a><App/></BrowserRouter>;
 }
 createRoot(document.getElementById('root')!).render(<InternationalGame/>);

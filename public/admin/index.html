@@ -1,68 +1,187 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow"><title>CHEZZIES · админка</title><link rel="icon" href="/favicon.svg">
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow"><title>CHEZZIES · админка</title>
+<link rel="icon" href="/favicon.svg"><link rel="manifest" href="/admin/manifest.webmanifest"><link rel="apple-touch-icon" href="/admin/apple-touch-icon.png">
+<meta name="theme-color" content="#0b1d25"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="CHEZZIES">
 <style>
 :root{--bg:#0b1d25;--card:#12303b;--line:#24505e;--txt:#e8f1f3;--mut:#93b1b9;--acc:#ffd45c;--ok:#5fd39b;--bad:#ff8a7a}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-header{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:5}
-h1{font-size:19px;margin:0}h2{font-size:16px;margin:0 0 10px}main{padding:16px;max-width:1200px;margin:auto}
-button{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--txt);border-radius:10px;padding:7px 12px;cursor:pointer}
-button.on,button.main{background:var(--acc);color:#1b1b1b;border-color:var(--acc);font-weight:700}
-.periods{display:flex;gap:6px;flex-wrap:wrap}
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:14px}
-.tile{background:var(--card);border-radius:14px;padding:12px 14px}.tile b{display:block;font-size:26px}.tile span{color:var(--mut);font-size:13px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px;margin-bottom:14px}
-.card{background:var(--card);border-radius:14px;padding:14px;overflow:auto}
-.row{display:grid;grid-template-columns:minmax(90px,1.3fr) 2fr 48px;gap:8px;align-items:center;margin:5px 0;font-size:14px}
-.bar{height:10px;border-radius:6px;background:#0b1d25}.bar i{display:block;height:100%;border-radius:6px;background:var(--acc)}
-.num{text-align:right;font-variant-numeric:tabular-nums}
-.days{display:flex;align-items:flex-end;gap:3px;height:120px}.days div{flex:1;background:var(--acc);border-radius:4px 4px 0 0;min-height:2px;position:relative}
-.days div:hover::after{content:attr(title);position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:#000;padding:2px 6px;border-radius:6px;font-size:12px;white-space:nowrap}
-table{border-collapse:collapse;width:100%;font-size:13px}td,th{padding:6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--mut);font-weight:600}
-.mut{color:var(--mut)}.q{border:1px solid var(--line);border-radius:12px;padding:10px;margin:8px 0}.q.open{border-color:var(--bad)}
-.q .msg{white-space:pre-wrap;margin:6px 0}.q .rep{white-space:pre-wrap;background:#0b1d25;border-radius:8px;padding:6px 8px;margin:4px 0 4px 16px}
-textarea,input{width:100%;font:inherit;background:#0b1d25;color:var(--txt);border:1px solid var(--line);border-radius:10px;padding:8px}
-.login{max-width:360px;margin:12vh auto;display:grid;gap:12px;text-align:center}.err{color:var(--bad)}
-.badge{display:inline-block;font-size:12px;padding:1px 7px;border-radius:8px;background:#0b1d25;margin-left:6px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding-bottom:env(safe-area-inset-bottom)}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:calc(8px + env(safe-area-inset-top)) 12px 8px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:8px}h1{font-size:17px;margin:0}h2{font-size:16px;margin:0 0 6px}h3{font-size:14px;margin:12px 0 6px}
+nav,.periods{display:flex;gap:6px;overflow-x:auto;padding-top:8px;scrollbar-width:none}nav::-webkit-scrollbar{display:none}
+button,select,input,textarea{font:inherit;color:var(--txt)}button{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:7px 12px;cursor:pointer;white-space:nowrap}
+button.on,button.main{background:var(--acc);color:#1b1b1b;border-color:var(--acc);font-weight:700}button.link{background:none;border:0;color:var(--acc);padding:4px 0}
+main{padding:12px;max-width:1100px;margin:auto}.mut{color:var(--mut)}.small{font-size:13px}.err{color:var(--bad)}.ok{color:var(--ok)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-bottom:12px}
+.tile{background:var(--card);border-radius:14px;padding:10px 12px}.tile b{display:block;font-size:24px}.tile span{display:block;font-size:14px}.tile small{display:block;color:var(--mut);font-size:12px;margin-top:2px}
+.card{background:var(--card);border-radius:14px;padding:12px;margin-bottom:12px;overflow-x:auto}.card>p.mut{margin:0 0 8px;font-size:13px}
+.row{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(60px,1fr) 44px;gap:8px;align-items:center;margin:5px 0;font-size:14px}.row>span:first-child{overflow:hidden;text-overflow:ellipsis}
+.bar{height:9px;border-radius:6px;background:var(--bg)}.bar i{display:block;height:100%;border-radius:6px;background:var(--acc)}.num{text-align:right;font-variant-numeric:tabular-nums}
+.days{display:flex;align-items:flex-end;gap:2px;height:90px}.days div{flex:1;background:var(--acc);border-radius:3px 3px 0 0;min-height:2px}
+table{border-collapse:collapse;width:100%;font-size:13px}td,th{padding:6px 5px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--mut);font-weight:500}td.num,th.num{text-align:right}
+.pl{display:block;width:100%;text-align:left;background:var(--card);border-radius:12px;padding:10px 12px;margin-bottom:8px;white-space:normal}
+.pl b{font-size:15px}.pl .mut{font-size:13px}.chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}.chip{background:var(--bg);border-radius:8px;padding:2px 7px;font-size:12px}
+.visit{border-left:3px solid var(--acc);padding:4px 0 4px 10px;margin:10px 0}.visit ol{margin:6px 0 0;padding-left:18px}.visit li{margin:2px 0;font-size:14px}.t{color:var(--mut);font-size:12px;margin-right:4px}
+.search{display:flex;gap:6px;margin-bottom:10px}.search input{flex:1;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px}
+.q{border-top:1px solid var(--line);padding:10px 0}.q.open{border-left:3px solid var(--acc);padding-left:8px}.msg{white-space:pre-wrap;margin:4px 0}.reply{background:var(--bg);border-radius:8px;padding:6px 8px;margin:4px 0;white-space:pre-wrap}
+textarea{width:100%;min-height:70px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px}
+.login{max-width:360px;margin:12vh auto;display:grid;gap:12px;text-align:center;padding:12px}.login input{font-size:22px;letter-spacing:6px;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px}
+.hint{background:var(--card);border-radius:12px;padding:10px 12px;font-size:13px;margin-bottom:12px}
 </style></head><body>
 <div id="app"><p class="login mut">Загрузка…</p></div>
 <script>
-const $=s=>document.querySelector(s),app=$('#app');let days=7,data=null;
-const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const country=c=>{try{return c?new Intl.DisplayNames(['ru'],{type:'region'}).of(c):'не определена'}catch{return c}};
-const SCREENS={splash:'Заставка',login:'Вход / регистрация',reset_password:'Смена пароля',hero_select:'Выбор героя',home:'Главная игры',profile:'Профиль',match_setup:'Настройка партии',game_ready:'Партия',game_over:'Итог партии',player_turn:'Партия',map:'Карта мира',territory:'Территория',puzzle:'Задачи',arena:'Арена',game:'Партия в мире',result:'Итог партии в мире',review:'Разбор партии',activities:'Занятия',polygon:'Полигон',learning:'Обучение',upgrade:'Улучшения героя',choose:'Выбор занятия',reward:'Награда'};
-const SOURCES={direct:'Напрямую',google:'Google',bing:'Bing',referral:'С других сайтов',internal:'Внутри сайта'};
-const EVENTS={homepage_view:'Открыли главную',landing_view:'Открыли статью / лендинг',play_click:'Нажали «Играть»',game_start:'Открыли игру',puzzle_start:'Начали задачу',puzzle_complete:'Решили задачу',return_visit:'Вернулись снова',signup_start:'Начали регистрацию',signup_complete:'Зарегистрировались'};
-const ev=n=>n.startsWith('game:')?'Игра: '+n.slice(5).replaceAll('_',' '):(EVENTS[n]||n);
-const dur=s=>s<60?Math.round(s)+' с':s<3600?Math.floor(s/60)+' мин '+Math.round(s%60)+' с':Math.floor(s/3600)+' ч '+Math.round(s%3600/60)+' мин';
-async function api(p,o={}){const r=await fetch('/api/'+p+'/'+(o.q||''),{method:o.body?'POST':'GET',headers:{'Content-Type':'application/json'},body:o.body?JSON.stringify(o.body):undefined,credentials:'same-origin'});let j={};try{j=await r.json()}catch{}if(!r.ok)throw Object.assign(new Error(j.error||('Ошибка '+r.status)),{status:r.status});return j;}
-function login(msg=''){app.innerHTML=`<div class="login"><h1>CHEZZIES · админка</h1><p class="mut">Код входа придёт в Telegram-группу, куда приходят вопросы с сайта.</p><button class="main" id="send">Прислать код в Telegram</button><input id="code" inputmode="numeric" maxlength="6" placeholder="6 цифр из Telegram"><button id="go">Войти</button><p class="err" id="e">${esc(msg)}</p></div>`;
+'use strict';
+const $=s=>document.querySelector(s),app=$('#app');
+let days=7,tab='summary',player=null,cache={},query='';
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=n=>Number(n||0).toLocaleString('ru');
+const pct=(a,b)=>b?Math.round(a/b*100)+'%':'—';
+const dur=s=>{s=Math.round(s||0);if(s<60)return s+' с';const m=Math.round(s/60);return m<60?m+' мин':Math.floor(m/60)+' ч '+(m%60)+' мин';};
+const when=t=>{const d=new Date(t),now=new Date();const same=d.toDateString()===now.toDateString();const y=new Date(now-864e5).toDateString()===d.toDateString();const hm=d.toLocaleTimeString('ru',{hour:'2-digit',minute:'2-digit'});return same?'сегодня '+hm:y?'вчера '+hm:d.toLocaleDateString('ru',{day:'numeric',month:'short'})+' '+hm;};
+const flag=c=>c&&/^[A-Z]{2}$/.test(c)?String.fromCodePoint(...[...c].map(x=>127397+x.charCodeAt(0))):'🌐';
+const cname=c=>{try{return c?new Intl.DisplayNames(['ru'],{type:'region'}).of(c):'страна не определена'}catch{return c}};
+const country=c=>flag(c)+' '+esc(cname(c));
+const SCREENS={splash:'заставка',login:'вход / регистрация',reset_password:'смена пароля',hero_select:'выбор героя',home:'главная игры',profile:'профиль',match_setup:'настройка партии',game_ready:'партия',game_over:'итог партии',player_turn:'партия',settings:'настройки',map:'карта мира',territory:'территория',puzzle:'задачи',arena:'арена',game:'партия',result:'итог партии',review:'разбор партии',activities:'занятия',polygon:'полигон (мини-игра)',learning:'обучение',upgrade:'улучшение героя',choose:'выбор занятия',reward:'награда',site:'страница сайта',home_page:'главная сайта'};
+const scr=s=>SCREENS[s]||s||'—';
+const SOURCES={direct:'напрямую',google:'из Google',bing:'из Bing',referral:'с другого сайта',internal:'внутри сайта'};
+const DEV={mobile:'телефон',desktop:'компьютер'},LANG={en:'английская версия',es:'испанская версия'};
+const OPP={bear:'Медведь',fox:'Лис',owl:'Сова',lion:'Лев',dragon:'Дракон'},OPPS=['bear','fox','owl','lion','dragon'];
+const RES={win:'победа',loss:'поражение',draw:'ничья',quit:'вышел'};
+const REASON={hidden:'свернул вкладку',left:'закрыл страницу',new_game:'начал новую партию',checkmate:'мат',stalemate:'пат',resign:'сдался',resigned:'сдался',timeout:'время вышло',repetition:'повторение',insufficient:'мало фигур',draw:'ничья',quit:'вышел'};
+const HERO={inventor:'Изобретатель',mage:'Маг',knight:'Рыцарь'};
+const opp=p=>OPP[p?.opponent]||OPP[OPPS[(p?.level||0)-1]]||'бот';
+const lvl=p=>p?.level?'уровень '+p.level:'';
+const EV={
+ game_started:p=>`начал партию (${[lvl(p),'против: '+opp(p)].filter(Boolean).join(', ')})`,
+ game_result:p=>`итог партии: ${RES[p?.result]||p?.result||'?'}${p?.level?' ('+lvl(p)+')':''}`,
+ game_finished:p=>`партия закончена${p?.reason?': '+(REASON[p.reason]||p.reason):''}`,
+ game_abandoned:p=>`бросил партию${p?.moves!=null?' на '+p.moves+'-м ходу':''} (${[lvl(p),REASON[p?.reason]||p?.reason].filter(Boolean).join(', ')})`,
+ first_win:()=>'🏆 первая победа',puzzle_started:()=>'начал задачу',puzzle_solved:()=>'✅ решил задачу',puzzle_failed:()=>'ошибся в задаче',hint_used:()=>'взял подсказку',
+ hero_selected:p=>'выбрал героя: '+(HERO[p?.hero]||p?.hero||'?'),experience_selected:p=>'выбрал режим: '+(p?.experience||'?'),territory_selected:p=>'выбрал территорию '+(p?.territory||''),location_opened:p=>'открыл место '+(p?.location||''),map_opened:()=>'открыл карту',
+ mini_game_opened:()=>'открыл мини-игру',mini_game_started:()=>'начал мини-игру',mini_game_finished:()=>'закончил мини-игру',training_started:p=>'начал тренировку'+(p?.topic?' ('+p.topic+')':''),training_completed:()=>'закончил тренировку',training_recommended:()=>'игре предложена тренировка',
+ stage_started:p=>`начал этап${p?.skill?' «'+p.skill+'»':''}${p?.stage!=null?' №'+p.stage:''}`,stage_completed:p=>`прошёл этап${p?.skill?' «'+p.skill+'»':''}${p?.stage!=null?' №'+p.stage:''}`,
+ challenge_started:()=>'начал испытание',challenge_completed:()=>'✅ прошёл испытание',guardian_started:()=>'бой со стражем',guardian_defeated:()=>'🏆 победил стража',reward_unlocked:()=>'получил награду',upgrade_received:()=>'улучшил героя',
+ registration_started:()=>'начал регистрацию',registration_completed:()=>'🎉 зарегистрировался',guest_session_started:()=>'играет как гость',intro_video_completed:()=>'досмотрел вступление',play_free_clicked:()=>'нажал «Играть бесплатно»',
+ misty_lands_opened:()=>'открыл Туманные земли',misty_puzzle_started:()=>'задача в Туманных землях',misty_puzzle_solved:()=>'✅ решил задачу в Туманных землях',post_game_review_opened:()=>'открыл разбор партии',post_game_puzzle_started:()=>'задача после партии',post_game_puzzle_completed:()=>'✅ решил задачу после партии',
+ parent_progress_viewed:()=>'родитель смотрел прогресс',save_progress_prompt_shown:()=>'предложили сохранить прогресс',save_progress_prompt_skipped:()=>'отказался сохранять прогресс',world_first_view:()=>'впервые увидел мир',new_personal_record:()=>'новый личный рекорд',
+ return_visit:()=>'вернулся на сайт',homepage_view:()=>'открыл главную',landing_view:()=>'открыл статью',play_click:()=>'нажал «Играть»',game_start:()=>'открыл игру',puzzle_start:()=>'начал задачу',puzzle_complete:()=>'решил задачу',signup_start:()=>'начал регистрацию',signup_complete:()=>'зарегистрировался'};
+const evName=(n,p)=>{const k=String(n).replace(/^game:/,'');return EV[k]?EV[k](p||{}):k;};
+const paramText=p=>p?Object.entries(p).filter(([k])=>k!=='id').map(([k,v])=>k+': '+v).join(', '):'';
+
+async function api(p,o={}){const r=await fetch('/api/'+p+'/'+(o.q||''),{method:o.body?'POST':'GET',headers:o.body?{'Content-Type':'application/json'}:{},body:o.body?JSON.stringify(o.body):undefined,credentials:'same-origin'});const j=await r.json().catch(()=>({}));if(!r.ok){const e=Error(j.error||'Ошибка '+r.status);e.status=r.status;throw e;}return j;}
+async function get(p,q=''){const k=p+q;if(!cache[k])cache[k]=api(p,{q}).catch(e=>{delete cache[k];throw e;});return cache[k];}
+
+function login(msg=''){app.innerHTML=`<div class="login"><h1>CHEZZIES · админка</h1><p class="mut">Код входа придёт в Telegram-группу, куда приходят вопросы с сайта.</p><button class="main" id="send">Прислать код в Telegram</button><input id="code" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="••••••"><button id="go">Войти</button><p id="e" class="${msg?'err':'mut'}">${esc(msg)}</p></div>`;
  $('#send').onclick=async()=>{$('#e').textContent='';try{await api('admin/code',{body:{}});$('#e').className='mut';$('#e').textContent='Код отправлен в Telegram, действует 10 минут.';$('#code').focus();}catch(x){$('#e').className='err';$('#e').textContent=x.message}};
- const go=async()=>{try{await api('admin/login',{body:{code:$('#code').value}});load();}catch(x){$('#e').className='err';$('#e').textContent=x.message}};$('#go').onclick=go;$('#code').onkeydown=e=>{if(e.key==='Enter')go()};}
-function rows(map,total,label=x=>x){const list=Object.entries(map).sort((a,b)=>b[1]-a[1]);if(!list.length)return '<p class="mut">Пока нет данных</p>';const max=list[0][1]||1;
- return list.map(([k,v])=>`<div class="row"><span>${esc(label(k))}</span><div class="bar"><i style="width:${v/max*100}%"></i></div><span class="num">${v}${total?` <span class="mut">${Math.round(v/total*100)}%</span>`:''}</span></div>`).join('');}
-const count=(list,f)=>list.reduce((m,x)=>{const k=f(x);if(k!=null)m[k]=(m[k]||0)+1;return m},{});
-async function load(){try{const [s,q]=await Promise.all([api('admin/stats',{q:'?days='+days}),api('admin/support')]);data={s,q};render();}catch(x){if(x.status===401)login();else app.innerHTML=`<p class="login err">${esc(x.message)}</p>`}}
-function render(){const {s,q}=data,v=s.visits.map(x=>({...x,d:(new Date(x.ended)-new Date(x.started))/1000})),n=v.length;
- const ret=v.filter(x=>x.ret).length,played=v.filter(x=>x.d>0),avg=played.length?played.reduce((a,x)=>a+x.d,0)/played.length:0;
- const sorted=played.map(x=>x.d).sort((a,b)=>a-b),med=sorted.length?sorted[Math.floor(sorted.length/2)]:0;
- const byDay={};for(let i=days-1;i>=0;i--){const d=new Date(Date.now()-i*864e5);byDay[d.toISOString().slice(0,10)]=0}v.forEach(x=>{const k=new Date(x.started).toISOString().slice(0,10);if(k in byDay)byDay[k]++});
- const dmax=Math.max(1,...Object.values(byDay)),screens={};v.forEach(x=>new Set((x.screens||[]).map(k=>SCREENS[k]||k)).forEach(k=>screens[k]=(screens[k]||0)+1));
- const open=q.requests.filter(r=>!r.replies.length);
- app.innerHTML=`<header><h1>CHEZZIES · админка</h1><div class="periods">${[[1,'Сегодня'],[7,'7 дней'],[30,'30 дней'],[90,'90 дней']].map(([d,t])=>`<button data-d="${d}" class="${d===days?'on':''}">${t}</button>`).join('')}<button id="out">Выйти</button></div></header><main>
- <div class="tiles"><div class="tile"><b>${n}</b><span>посещений</span></div><div class="tile"><b>${n-ret} / ${ret}</b><span>новые / вернувшиеся</span></div><div class="tile"><b>${dur(avg)}</b><span>в среднем на сайте (медиана ${dur(med)})</span></div><div class="tile"><b>${s.users.fresh}</b><span>регистраций (всего ${s.users.total})</span></div><div class="tile"><b style="color:${s.support.unanswered?'var(--bad)':'var(--ok)'}">${s.support.unanswered}</b><span>вопросов без ответа (всего ${s.support.total})</span></div></div>
- ${days>1?`<div class="card" style="margin-bottom:14px"><h2>Посещения по дням</h2><div class="days">${Object.entries(byDay).map(([d,c])=>`<div title="${d.slice(8)}.${d.slice(5,7)}: ${c}" style="height:${c/dmax*100}%"></div>`).join('')}</div></div>`:''}
- <div class="grid"><div class="card"><h2>Страны</h2>${rows(count(v,x=>x.country||''),n,country)}</div>
- <div class="card"><h2>Версия сайта</h2>${rows(count(v,x=>x.lang==='es'?'Испанская (ES)':'Английская (EN)'),n)}<h2 style="margin-top:14px">Устройство</h2>${rows(count(v,x=>x.device==='mobile'?'Телефон':'Компьютер / планшет'),n)}</div>
- <div class="card"><h2>Откуда пришли</h2>${rows(count(v,x=>x.source),n,k=>SOURCES[k]||k)}<h2 style="margin-top:14px">Первая страница</h2>${rows(count(v,x=>x.landing),n)}</div></div>
- <div class="grid"><div class="card"><h2>Какие разделы открывали</h2><p class="mut">Сколько посещений дошло до раздела</p>${rows(screens,n)}</div>
- <div class="card"><h2>Что делали</h2><table><tr><th>Действие</th><th class="num">Посещений</th><th class="num">Раз</th></tr>${s.events.map(e=>`<tr><td>${esc(ev(e.name))}</td><td class="num">${e.visits}</td><td class="num">${e.times}</td></tr>`).join('')||'<tr><td class="mut">Пока нет данных</td></tr>'}</table></div></div>
- <div class="card" style="margin-bottom:14px"><h2>Вопросы из «Помощи» ${open.length?`<span class="badge" style="color:var(--bad)">${open.length} без ответа</span>`:''}</h2><p class="mut">Ответ появится у человека в окне «Помощь» на сайте и продублируется в Telegram-группу.</p>
- ${q.requests.map(r=>`<div class="q ${r.replies.length?'':'open'}"><span class="mut">#${r.ticket} · ${new Date(r.created_at).toLocaleString('ru')} · ${r.signed?'с аккаунтом':'гость'}</span><div class="msg">${esc(r.message)}</div>${r.replies.map(p=>`<div class="rep">↳ ${esc(p.message)} <span class="mut">${new Date(p.createdAt).toLocaleString('ru')}</span></div>`).join('')}<details${r.replies.length?'':' open'}><summary class="mut">Ответить</summary><textarea rows="3" data-id="${r.id}"></textarea><button class="main" data-reply="${r.id}" style="margin-top:6px">Отправить ответ</button></details></div>`).join('')||'<p class="mut">Вопросов пока нет</p>'}</div>
- <div class="card"><h2>Последние посещения</h2><table><tr><th>Когда</th><th>Страна</th><th>Версия</th><th>Устройство</th><th>Откуда</th><th>Пробыл</th><th>Разделы по порядку</th></tr>${v.slice(0,150).map(x=>`<tr><td>${new Date(x.started).toLocaleString('ru',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})}</td><td>${esc(country(x.country))}</td><td>${x.lang.toUpperCase()}</td><td>${x.device==='mobile'?'телефон':'компьютер'}</td><td>${esc(SOURCES[x.source]||x.source)}${x.ret?' <span class="mut">(вернулся)</span>':''}</td><td>${dur(x.d)}</td><td class="mut">${esc(x.landing)}${(x.screens||[]).length?' → '+(x.screens||[]).map(k=>esc(SCREENS[k]||k)).join(' → '):''}</td></tr>`).join('')}</table></div>
- <p class="mut">Посещения анонимные: без IP, почт и имён. Роботы поисковиков не считаются. Статистика начинает копиться с момента выкладки админки.</p></main>`;
- document.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>{days=+b.dataset.d;load()});
+ const go=async()=>{try{await api('admin/login',{body:{code:$('#code').value}});cache={};shell();}catch(x){$('#e').className='err';$('#e').textContent=x.message}};$('#go').onclick=go;$('#code').onkeydown=e=>{if(e.key==='Enter')go()};}
+
+const TABS=[['summary','Сводка'],['players','Игроки'],['retention','Удержание'],['games','Партии'],['seo','Поиск'],['help','Помощь']];
+const PERIODS=[[1,'Сегодня'],[7,'7 дней'],[30,'30 дней'],[90,'90 дней']];
+function shell(){
+ app.innerHTML=`<header><div class="top"><h1>CHEZZIES · админка</h1><button class="link" id="out">Выйти</button></div><nav>${TABS.map(([k,t])=>`<button data-tab="${k}" class="${k===tab?'on':''}">${t}</button>`).join('')}</nav><div class="periods" id="per">${PERIODS.map(([d,t])=>`<button data-days="${d}" class="${d===days?'on':''}">${t}</button>`).join('')}</div></header><main id="main"></main>`;
  $('#out').onclick=async()=>{await api('admin/logout',{body:{}}).catch(()=>{});login();};
- document.querySelectorAll('[data-reply]').forEach(b=>b.onclick=async()=>{const t=document.querySelector(`textarea[data-id="${b.dataset.reply}"]`);if(!t.value.trim())return;b.disabled=true;b.textContent='Отправляю…';try{await api('admin/reply',{body:{id:b.dataset.reply,text:t.value}});load();}catch(x){alert(x.message);b.disabled=false;b.textContent='Отправить ответ';}});}
-load();
+ document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{tab=b.dataset.tab;player=null;location.hash=tab;shell();});
+ document.querySelectorAll('[data-days]').forEach(b=>b.onclick=()=>{days=+b.dataset.days;cache={};shell();});
+ $('#per').style.display=['seo','help'].includes(tab)||player?'none':'flex';
+ show();
+}
+async function show(){const m=$('#main');m.innerHTML='<p class="mut">Загрузка…</p>';
+ try{m.innerHTML=await (player?viewPlayer(player):VIEWS[tab]());bind();}
+ catch(x){if(x.status===401)login();else m.innerHTML=`<p class="err">${esc(x.message)}</p><button onclick="cache={};show()">Повторить</button>`;}}
+const tile=(v,t,h)=>`<div class="tile"><b>${v}</b><span>${t}</span>${h?`<small>${h}</small>`:''}</div>`;
+const bars=(rows,label,val)=>{const max=Math.max(1,...rows.map(val));return rows.map(r=>`<div class="row"><span>${label(r)}</span><div class="bar"><i style="width:${val(r)/max*100}%"></i></div><span class="num">${fmt(val(r))}</span></div>`).join('')||'<p class="mut">Пока пусто.</p>';};
+const card=(title,explain,body)=>`<div class="card"><h2>${title}</h2>${explain?`<p class="mut">${explain}</p>`:''}${body}</div>`;
+const count=(arr,key)=>{const m=new Map();for(const x of arr){const k=key(x);m.set(k,(m.get(k)||0)+1);}return [...m].sort((a,b)=>b[1]-a[1]);};
+const per=()=>days===1?'сегодня':'за '+days+' дн.';
+
+const VIEWS={
+ async summary(){const [s,r]=await Promise.all([get('admin/stats','?days='+days),get('admin/retention','?days='+days)]);
+  const v=s.visits,n=v.length,ret=v.filter(x=>x.ret).length,time=v.reduce((a,x)=>a+x.pings*30,0),games=v.filter(x=>(x.screens||[]).some(s=>['game','arena','game_ready','player_turn'].includes(s))).length;
+  const ev=Object.fromEntries(s.events.map(e=>[e.name,e]));const g=n=>ev['game:'+n]?.times||0;
+  const maxDay=Math.max(1,...s.byDay.map(d=>d.visits));
+  return `<div class="hint" id="install" hidden></div><div class="tiles">
+   ${tile(fmt(s.players.players),'игроков','разные устройства '+per())}
+   ${tile(fmt(n),'заходов','каждая открытая вкладка — один заход')}
+   ${tile(fmt(n-ret)+' / '+fmt(ret),'новые / вернувшиеся','вернувшийся — уже был раньше')}
+   ${tile(dur(n?time/n:0),'в среднем на сайте','время, пока вкладка открыта на экране')}
+   ${tile(fmt(g('game_started')),'партий начато','с ботом на Арене и в мире')}
+   ${tile(pct(g('game_finished'),g('game_started')),'партий доиграно','доля начатых партий, дошедших до конца')}
+   ${tile(fmt(g('puzzle_solved')),'задач решено','обычные задачи в мире')}
+   ${tile(r.totals.d1.n?pct(r.totals.d1.r,r.totals.d1.n):'—','вернулись на след. день','среди новых игроков '+per())}
+   ${tile(fmt(s.users.fresh),'регистраций','всего аккаунтов: '+fmt(s.users.total))}
+   ${tile(fmt(s.support.unanswered),'вопросов без ответа','всего вопросов: '+fmt(s.support.total)+' — вкладка «Помощь»')}
+  </div>
+  ${card('Заходы по дням','Высота столбика — сколько заходов было в этот день.',`<div class="days">${s.byDay.map(d=>`<div style="height:${d.visits/maxDay*100}%" title="${d.day}: ${d.visits}"></div>`).join('')}</div><p class="mut small">${s.byDay[0]?.day||''} … ${s.byDay.at(-1)?.day||''}</p>`)}
+  ${card('Откуда пришли','Первая страница захода и источник.',bars(count(v,x=>SOURCES[x.source]||x.source),x=>esc(x[0]),x=>x[1]))}
+  ${card('Страны','По данным Vercel о стране сети, без адресов.',bars(count(v,x=>x.country||'').slice(0,15),x=>country(x[0]),x=>x[1]))}
+  ${card('Устройства и язык','',bars([...count(v,x=>DEV[x.device]||x.device),...count(v,x=>LANG[x.lang]||x.lang)],x=>esc(x[0]),x=>x[1]))}
+  ${card('Какие разделы игры открывают','Сколько заходов хотя бы раз открыли раздел.',bars(count(v.flatMap(x=>[...new Set(x.screens||[])]),x=>x).slice(0,20),x=>esc(scr(x[0])),x=>x[1]))}`;},
+ async players(){const d=await get('admin/players','?days='+days+'&q='+encodeURIComponent(query));
+  return `<form class="search" id="sf"><input id="sq" value="${esc(query)}" placeholder="Начало номера игрока или код страны (US, MX)"><button>Найти</button></form>
+  <p class="mut small">Игрок — это одно устройство (браузер). Имени и почты мы не знаем, только случайный номер. Сверху — кто был недавно. Нажмите на игрока, чтобы увидеть всё, что он делал.</p>
+  ${d.players.map(p=>`<button class="pl" data-player="${esc(p.id)}"><b>${country(p.country)}</b> <span class="mut">· №${esc(p.id.slice(0,6))}${p.id.startsWith('v')?' (без памяти браузера)':''}</span><br>
+   <span class="mut">был ${when(p.last_seen)} · впервые ${when(p.first_seen)}</span>
+   <div class="chips"><span class="chip">заходов: ${p.visits}${p.all_visits>p.visits?' (всего '+p.all_visits+')':''}</span><span class="chip">дней: ${p.days_active}</span><span class="chip">${dur(p.seconds)}</span><span class="chip">${DEV[p.device]||esc(p.device)}</span><span class="chip">${p.lang==='es'?'ES':'EN'}</span><span class="chip">${SOURCES[p.source]||esc(p.source)}</span>
+   ${p.started?`<span class="chip">партий: ${p.started} · доиграл ${p.finished} · побед ${p.won}${p.abandoned?' · бросил '+p.abandoned:''}</span>`:''}<span class="chip">последний раздел: ${esc(scr(p.last_screen))}</span></div></button>`).join('')||'<p class="mut">Никого за этот период.</p>'}
+  ${d.players.length>=300?'<p class="mut small">Показаны 300 последних.</p>':''}`;},
+ async retention(){const r=await get('admin/retention','?days='+Math.max(days,30)),t=r.totals;
+  const share=(a,b)=>a===null||a===undefined?'<span class="mut">рано</span>':pct(a,b);
+  return `<div class="tiles">
+   ${tile(t.d1.n?pct(t.d1.r,t.d1.n):'—','вернулись на следующий день',`из ${fmt(t.d1.n)} новых игроков`)}
+   ${tile(t.d7.n?pct(t.d7.r,t.d7.n):'—','вернулись в течение недели',`из ${fmt(t.d7.n)} новых, кому уже больше 7 дней`)}
+   ${tile(t.d30.n?pct(t.d30.r,t.d30.n):'—','вернулись в течение месяца',`из ${fmt(t.d30.n)} новых, кому уже больше 30 дней`)}
+   ${tile(fmt(t.returning),'игроков приходили в разные дни','из '+fmt(t.players)+' за период')}
+   ${tile(t.avg_visits,'заходов на игрока','в среднем за период')}
+   ${tile(t.avg_days,'дней с игрой на игрока','в среднем за период')}
+  </div>
+  ${card('Новые игроки по дням','Сколько новых пришло в этот день и какая доля из них вернулась потом. «Рано» — срок ещё не прошёл.',`<table><tr><th>День</th><th class="num">Новых</th><th class="num">Назавтра</th><th class="num">За 7 дн.</th><th class="num">За 30 дн.</th></tr>${r.daily.slice().reverse().map(d=>`<tr><td>${d.day}</td><td class="num">${d.new_players}</td><td class="num">${share(d.d1,d.new_players)}</td><td class="num">${share(d.d7,d.new_players)}</td><td class="num">${share(d.d30,d.new_players)}</td></tr>`).join('')||'<tr><td colspan="5" class="mut">Пока нет новых игроков.</td></tr>'}</table>`)}
+  ${card('По неделям','Игроки, впервые пришедшие на неделе, и доля тех, кто играл через 1, 2, 3 и 4 недели.',`<table><tr><th>Неделя с</th><th class="num">Новых</th><th class="num">+1 нед.</th><th class="num">+2</th><th class="num">+3</th><th class="num">+4</th></tr>${r.weekly.map(w=>`<tr><td>${w.week}</td><td class="num">${w.players}</td>${['w1','w2','w3','w4'].map(k=>`<td class="num">${share(w[k],w.players)}</td>`).join('')}</tr>`).join('')||'<tr><td colspan="6" class="mut">Пока пусто.</td></tr>'}</table>`)}
+  <p class="mut small">Считаем по устройствам: один ребёнок на двух устройствах — два игрока. Удержание до появления постоянного номера (до admin 2.0) не видно.</p>`;},
+ async games(){const g=await get('admin/games','?days='+days);const t=Object.fromEntries(g.totals.map(x=>[x.name.replace(/^game:/,''),x]));const c=k=>t[k]?.times||0;
+  const ab=g.abandoned.reduce((a,x)=>a+x.n,0);
+  const levels=[...new Set([...g.started.map(x=>x.level),...g.results.map(x=>x.level)])].sort();
+  const resRow=l=>{const r=k=>g.results.filter(x=>x.level===l&&x.result===k).reduce((a,x)=>a+x.n,0);const st=g.started.filter(x=>x.level===l).reduce((a,x)=>a+x.n,0);return `<tr><td>${l==='?'?'?':'Уровень '+esc(l)} <span class="mut">${OPP[OPPS[l-1]]||''}</span></td><td class="num">${st}</td><td class="num">${r('win')}</td><td class="num">${r('loss')}</td><td class="num">${r('draw')}</td><td class="num">${r('quit')}</td></tr>`;};
+  return `<div class="tiles">${tile(fmt(c('game_started')),'партий начато','')}${tile(fmt(c('game_finished')),'доиграно до конца','мат, пат, ничья или выход через меню')}${tile(fmt(ab),'брошено','начал и ушёл, не доиграв')}${tile(fmt(c('first_win')),'первых побед','ребёнок впервые обыграл бота')}${tile(fmt(c('puzzle_started')),'задач начато','')}${tile(fmt(c('puzzle_solved'))+' / '+fmt(c('puzzle_failed')),'задач решено / ошибок','')}</div>
+  ${card('Итоги по уровням','Сколько партий начали и чем закончились. Соперник зависит от уровня.',`<table><tr><th>Уровень</th><th class="num">Начато</th><th class="num">Победы</th><th class="num">Пораж.</th><th class="num">Ничьи</th><th class="num">Вышел</th></tr>${levels.map(resRow).join('')||'<tr><td colspan="6" class="mut">Партий не было.</td></tr>'}</table>`)}
+  ${card('Где бросают партии','На каком ходу (считаются ходы обеих сторон) и почему ушли. Если ребёнок вернулся и доиграл — партия не считается брошенной.',`<table><tr><th>Уровень</th><th>Ход</th><th>Что случилось</th><th class="num">Раз</th></tr>${g.abandoned.map(a=>`<tr><td>${esc(a.level)}</td><td>${esc(a.moves)}</td><td>${esc(REASON[a.reason]||a.reason)}</td><td class="num">${a.n}</td></tr>`).join('')||'<tr><td colspan="4" class="mut">Брошенных партий нет.</td></tr>'}</table>`)}
+  ${card('Как заканчиваются партии','Причина конца партии.',bars(g.reasons,x=>esc(REASON[x.reason]||x.reason),x=>x.n))}
+  ${card('Популярные разделы','Сколько заходов открыли раздел хотя бы раз.',bars(g.screens,x=>esc(scr(x.name)),x=>x.visits))}
+  ${card('Кнопки','На что нажимают чаще всего (надпись кнопки и раздел).',bars(g.buttons,x=>esc(x.label)+' <span class="mut small">· '+esc(scr(x.screen))+'</span>',x=>x.times))}
+  ${card('Все события игры','Сколько раз случилось и у скольких игроков.',`<table><tr><th>Событие</th><th class="num">Раз</th><th class="num">Игроков</th></tr>${g.totals.map(x=>`<tr><td>${esc(evName(x.name))}</td><td class="num">${x.times}</td><td class="num">${x.players}</td></tr>`).join('')}</table>`)}`;},
+ async seo(){const s=(await get('admin/seo')).snapshots;
+  if(!s.queries&&!s.pages&&!s.index)return card('Поиск Google','', '<p>Данные Search Console ещё не подключены.</p><p class="mut">Когда пульт начнёт присылать данные Google Search Console, здесь появятся: сколько страниц в Google, какие не попали и почему, показы, клики и позиции по запросам и страницам.</p>');
+  const num=(o,...k)=>{for(const x of k)if(o?.[x]!=null)return Number(o[x]);return null;};
+  const ctr=o=>{const c=num(o,'ctr');return c==null?'—':(c<=1?Math.round(c*1000)/10:Math.round(c*10)/10)+'%';};
+  const pos=o=>{const p=num(o,'position','pos');return p==null?'—':Math.round(p*10)/10;};
+  const stamp=x=>`<p class="mut small">Снимок: ${when(x.taken_at)}${x.data.period?` · период ${esc(x.data.period.start||'')} — ${esc(x.data.period.end||'')}`:''}</p>`;
+  const rowsOf=d=>Array.isArray(d)?d:d.rows||d.items||[];
+  const tbl=(rows,key,name)=>`<table><tr><th>${name}</th><th class="num">Показы</th><th class="num">Клики</th><th class="num">CTR</th><th class="num">Позиция</th></tr>${rows.slice(0,50).map(r=>`<tr><td>${esc(String(r[key]??(r.keys||[])[0]??'').replace(/^https:\/\/(www\.)?chezzies\.app/,''))}</td><td class="num">${fmt(num(r,'impressions'))}</td><td class="num">${fmt(num(r,'clicks'))}</td><td class="num">${ctr(r)}</td><td class="num">${pos(r)}</td></tr>`).join('')||'<tr><td colspan="5" class="mut">Пусто.</td></tr>'}</table>`;
+  let h='';
+  if(s.index){const d=s.index.data,pages=d.pages||[];const ind=d.indexed??pages.filter(p=>p.state==='indexed').length,not=d.notIndexed??d.not_indexed??pages.filter(p=>p.state!=='indexed').length;
+   const bad=pages.filter(p=>p.state&&p.state!=='indexed');const reasons=d.reasons||count(bad,p=>p.reason||'причина не указана').map(([reason,n])=>({reason,n}));
+   h+=`<div class="tiles">${tile(fmt(ind),'страниц в Google','их можно найти в поиске')}${tile(fmt(not),'не в Google','Google знает о них, но не показывает')}</div>`;
+   h+=card('Почему страницы не в Google','Причины от Google Search Console.',bars(reasons,x=>esc(x.reason),x=>x.n||x.count||0)+(bad.length?`<h3>Страницы</h3><table>${bad.map(p=>`<tr><td>${esc(String(p.url).replace(/^https:\/\/(www\.)?chezzies\.app/,''))}</td><td class="mut">${esc(p.reason||'')}</td></tr>`).join('')}</table>`:'')+stamp(s.index));}
+  if(s.queries){const d=s.queries.data,rows=rowsOf(d);const tt=d.totals||rows.reduce((a,r)=>({clicks:a.clicks+(+r.clicks||0),impressions:a.impressions+(+r.impressions||0)}),{clicks:0,impressions:0});
+   h+=`<div class="tiles">${tile(fmt(tt.impressions),'показов в Google','сколько раз сайт был в выдаче')}${tile(fmt(tt.clicks),'кликов из Google','сколько раз на него нажали')}${tile(tt.ctr!=null?ctr(tt):pct(tt.clicks,tt.impressions),'CTR','доля кликов от показов')}${tile(tt.position!=null?pos(tt):'—','средняя позиция','1 — первое место в выдаче')}</div>`;
+   h+=card('Запросы','По каким запросам сайт показывали в Google. Позиция — среднее место в выдаче.',tbl(rows,'query','Запрос')+stamp(s.queries));}
+  if(s.pages)h+=card('Страницы в выдаче','Какие страницы сайта показывались в Google.',tbl(rowsOf(s.pages.data),'page','Страница')+stamp(s.pages));
+  return h;},
+ async help(){const q=await api('admin/support');
+  return card('Вопросы из «Помощи»','Ответ уходит в Telegram-группу ответом на вопрос и появляется у игрока.',q.requests.map(r=>`<div class="q ${r.replies.length?'':'open'}"><span class="mut small">#${r.ticket} · ${when(r.created_at)} · ${r.signed?'с аккаунтом':'гость'}</span><div class="msg">${esc(r.message)}</div>${r.replies.map(p=>`<div class="reply">↩ ${esc(p.message)}</div>`).join('')}<textarea data-id="${r.id}" placeholder="Ответ…"></textarea><button data-reply="${r.id}">Ответить</button></div>`).join('')||'<p class="mut">Вопросов пока нет.</p>');}
+};
+async function viewPlayer(id){const d=await api('admin/player',{q:'?id='+encodeURIComponent(id)}),s=d.summary;
+ const item=i=>i.kind==='screen'?`открыл раздел «${esc(scr(i.name))}»`:i.kind==='click'?`нажал «${esc(i.label)}»${i.params?.screen?' <span class="mut small">('+esc(scr(i.params.screen))+')</span>':''}`:esc(evName(i.name,i.params))+(EV[i.name.replace(/^game:/,'')]||!i.params?'':' <span class="mut small">'+esc(paramText(i.params))+'</span>');
+ return `<button class="link" id="back">← Все игроки</button>
+ ${card(country(s.country)+' · игрок №'+esc(id.slice(0,6)),'Случайный номер устройства. Имени, почты и адреса мы не храним.',`<div class="tiles">${tile(s.visits,'заходов','')}${tile(dur(s.seconds),'всего на сайте','')}${tile(s.started,'партий начато',`доиграл ${s.finished}, побед ${s.won}, бросил ${s.abandoned}`)}${tile(s.clicks,'нажатий','')}</div><p class="mut small">Впервые: ${when(s.first_seen)} · последний раз: ${when(s.last_seen)} · ${DEV[s.device]||esc(s.device)} · ${LANG[s.lang]||esc(s.lang)} · первый раз пришёл ${SOURCES[s.source]||esc(s.source)} на ${esc(s.landing)}</p>${s.truncated?'<p class="mut small">Показаны последние 5000 событий.</p>':''}`)}
+ ${card('Что делал','Заходы — от последнего к первому, внутри захода — по порядку.',d.visits.map(v=>`<div class="visit"><b>${when(v.started)}</b> <span class="mut small">· ${dur(v.seconds)} · ${country(v.country)} · ${DEV[v.device]||esc(v.device)} · ${SOURCES[v.source]||esc(v.source)} · вход: ${esc(v.landing)}${v.ret?' · вернулся':''}</span><ol>${v.items.map(i=>`<li><span class="t">${new Date(i.t).toLocaleTimeString('ru',{hour:'2-digit',minute:'2-digit'})}</span>${item(i)}</li>`).join('')||'<li class="mut">только смотрел страницу</li>'}</ol></div>`).join(''))}`;}
+function bind(){
+ $('#back')&&($('#back').onclick=()=>{player=null;shell();});
+ document.querySelectorAll('[data-player]').forEach(b=>b.onclick=()=>{player=b.dataset.player;shell();scrollTo(0,0);});
+ const f=$('#sf');if(f)f.onsubmit=e=>{e.preventDefault();query=$('#sq').value.trim();cache={};show();};
+ document.querySelectorAll('[data-reply]').forEach(b=>b.onclick=async()=>{const t=document.querySelector(`textarea[data-id="${b.dataset.reply}"]`);if(!t.value.trim())return;b.disabled=true;b.textContent='Отправляю…';try{await api('admin/reply',{body:{id:b.dataset.reply,text:t.value}});show();}catch(x){b.disabled=false;b.textContent='Ответить';alert(x.message);}});
+ const ins=$('#install');if(ins&&!matchMedia('(display-mode: standalone)').matches&&!navigator.standalone){ins.hidden=false;ins.innerHTML='<b>Как поставить на телефон.</b> iPhone: в Safari «Поделиться» → «На экран „Домой“». Android: в Chrome меню ⋮ → «Установить приложение». <button class="link" id="hide-ins">Скрыть</button>';$('#hide-ins').onclick=()=>{ins.hidden=true;try{localStorage.setItem('admin-install-hint','0')}catch{}};try{if(localStorage.getItem('admin-install-hint')==='0')ins.hidden=true}catch{}}
+}
+tab=TABS.some(([k])=>k===location.hash.slice(1))?location.hash.slice(1):'summary';
+api('admin/stats',{q:'?days=1'}).then(()=>shell()).catch(x=>x.status===401?login():(app.innerHTML=`<p class="login err">${esc(x.message)}</p>`));
+if('serviceWorker' in navigator)navigator.serviceWorker.register('/admin/sw.js',{scope:'/admin/'}).catch(()=>{});
 </script></body></html>
