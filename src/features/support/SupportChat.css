@@ -10,13 +10,29 @@
   position: relative;
   border: 0;
   border-radius: 999px;
-  padding: 13px 18px;
-  background: #0145a5;
-  color: #ffffff;
-  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px 12px 12px;
+  background: #ffd45c;
+  color: #1b1b1b;
+  font-size: 16px;
   font-weight: 800;
-  box-shadow: 0 12px 30px rgba(1, 69, 165, 0.35);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), 0 0 0 3px rgba(255, 212, 92, 0.25);
   cursor: pointer;
+}
+
+.support-toggle::before {
+  content: '?';
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #1b1b1b;
+  color: #ffd45c;
+  font-size: 17px;
+  font-weight: 900;
 }
 
 .support-unread-badge {

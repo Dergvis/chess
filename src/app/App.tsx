@@ -1,5 +1,6 @@
 import {PAYMENTS_ENABLED} from '../product';
 import MobileGameShell, {openMobileDestination} from '../world/mobile/MobileGameShell';
+import { trackScreen } from '../analytics';
 import {worldKey} from "../world/accountStorage";
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -75,6 +76,7 @@ export default function App() {
 
   // РћРїСЂРµРґРµР»СЏРµРј appState РёР· URL
   const [appState, setAppState] = useState<AppState>(() => PATH_TO_STATE[location.pathname] || 'splash');
+  useEffect(() => { if (appState !== 'admin') trackScreen(appState); }, [appState]);
 
   // РЎРѕСЃС‚РѕСЏРЅРёРµ РїРѕРґРїРёСЃРєРё
   const [hasSubscription, setHasSubscription] = useState(false);

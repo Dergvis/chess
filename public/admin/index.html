@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>CHEZZIES · админка</title><link rel="icon" href="/favicon.svg">
+<style>
+:root{--bg:#0b1d25;--card:#12303b;--line:#24505e;--txt:#e8f1f3;--mut:#93b1b9;--acc:#ffd45c;--ok:#5fd39b;--bad:#ff8a7a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:5}
+h1{font-size:19px;margin:0}h2{font-size:16px;margin:0 0 10px}main{padding:16px;max-width:1200px;margin:auto}
+button{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--txt);border-radius:10px;padding:7px 12px;cursor:pointer}
+button.on,button.main{background:var(--acc);color:#1b1b1b;border-color:var(--acc);font-weight:700}
+.periods{display:flex;gap:6px;flex-wrap:wrap}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:14px}
+.tile{background:var(--card);border-radius:14px;padding:12px 14px}.tile b{display:block;font-size:26px}.tile span{color:var(--mut);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px;margin-bottom:14px}
+.card{background:var(--card);border-radius:14px;padding:14px;overflow:auto}
+.row{display:grid;grid-template-columns:minmax(90px,1.3fr) 2fr 48px;gap:8px;align-items:center;margin:5px 0;font-size:14px}
+.bar{height:10px;border-radius:6px;background:#0b1d25}.bar i{display:block;height:100%;border-radius:6px;background:var(--acc)}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.days{display:flex;align-items:flex-end;gap:3px;height:120px}.days div{flex:1;background:var(--acc);border-radius:4px 4px 0 0;min-height:2px;position:relative}
+.days div:hover::after{content:attr(title);position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:#000;padding:2px 6px;border-radius:6px;font-size:12px;white-space:nowrap}
+table{border-collapse:collapse;width:100%;font-size:13px}td,th{padding:6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--mut);font-weight:600}
+.mut{color:var(--mut)}.q{border:1px solid var(--line);border-radius:12px;padding:10px;margin:8px 0}.q.open{border-color:var(--bad)}
+.q .msg{white-space:pre-wrap;margin:6px 0}.q .rep{white-space:pre-wrap;background:#0b1d25;border-radius:8px;padding:6px 8px;margin:4px 0 4px 16px}
+textarea,input{width:100%;font:inherit;background:#0b1d25;color:var(--txt);border:1px solid var(--line);border-radius:10px;padding:8px}
+.login{max-width:360px;margin:12vh auto;display:grid;gap:12px;text-align:center}.err{color:var(--bad)}
+.badge{display:inline-block;font-size:12px;padding:1px 7px;border-radius:8px;background:#0b1d25;margin-left:6px}
+</style></head><body>
+<div id="app"><p class="login mut">Загрузка…</p></div>
+<script>
+const $=s=>document.querySelector(s),app=$('#app');let days=7,data=null;
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const country=c=>{try{return c?new Intl.DisplayNames(['ru'],{type:'region'}).of(c):'не определена'}catch{return c}};
+const SCREENS={splash:'Заставка',login:'Вход / регистрация',reset_password:'Смена пароля',hero_select:'Выбор героя',home:'Главная игры',profile:'Профиль',match_setup:'Настройка партии',game_ready:'Партия',game_over:'Итог партии',player_turn:'Партия',map:'Карта мира',territory:'Территория',puzzle:'Задачи',arena:'Арена',game:'Партия в мире',result:'Итог партии в мире',review:'Разбор партии',activities:'Занятия',polygon:'Полигон',learning:'Обучение',upgrade:'Улучшения героя',choose:'Выбор занятия',reward:'Награда'};
+const SOURCES={direct:'Напрямую',google:'Google',bing:'Bing',referral:'С других сайтов',internal:'Внутри сайта'};
+const EVENTS={homepage_view:'Открыли главную',landing_view:'Открыли статью / лендинг',play_click:'Нажали «Играть»',game_start:'Открыли игру',puzzle_start:'Начали задачу',puzzle_complete:'Решили задачу',return_visit:'Вернулись снова',signup_start:'Начали регистрацию',signup_complete:'Зарегистрировались'};
+const ev=n=>n.startsWith('game:')?'Игра: '+n.slice(5).replaceAll('_',' '):(EVENTS[n]||n);
+const dur=s=>s<60?Math.round(s)+' с':s<3600?Math.floor(s/60)+' мин '+Math.round(s%60)+' с':Math.floor(s/3600)+' ч '+Math.round(s%3600/60)+' мин';
+async function api(p,o={}){const r=await fetch('/api/'+p+'/'+(o.q||''),{method:o.body?'POST':'GET',headers:{'Content-Type':'application/json'},body:o.body?JSON.stringify(o.body):undefined,credentials:'same-origin'});let j={};try{j=await r.json()}catch{}if(!r.ok)throw Object.assign(new Error(j.error||('Ошибка '+r.status)),{status:r.status});return j;}
+function login(msg=''){app.innerHTML=`<div class="login"><h1>CHEZZIES · админка</h1><p class="mut">Код входа придёт в Telegram-группу, куда приходят вопросы с сайта.</p><button class="main" id="send">Прислать код в Telegram</button><input id="code" inputmode="numeric" maxlength="6" placeholder="6 цифр из Telegram"><button id="go">Войти</button><p class="err" id="e">${esc(msg)}</p></div>`;
+ $('#send').onclick=async()=>{$('#e').textContent='';try{await api('admin/code',{body:{}});$('#e').className='mut';$('#e').textContent='Код отправлен в Telegram, действует 10 минут.';$('#code').focus();}catch(x){$('#e').className='err';$('#e').textContent=x.message}};
+ const go=async()=>{try{await api('admin/login',{body:{code:$('#code').value}});load();}catch(x){$('#e').className='err';$('#e').textContent=x.message}};$('#go').onclick=go;$('#code').onkeydown=e=>{if(e.key==='Enter')go()};}
+function rows(map,total,label=x=>x){const list=Object.entries(map).sort((a,b)=>b[1]-a[1]);if(!list.length)return '<p class="mut">Пока нет данных</p>';const max=list[0][1]||1;
+ return list.map(([k,v])=>`<div class="row"><span>${esc(label(k))}</span><div class="bar"><i style="width:${v/max*100}%"></i></div><span class="num">${v}${total?` <span class="mut">${Math.round(v/total*100)}%</span>`:''}</span></div>`).join('');}
+const count=(list,f)=>list.reduce((m,x)=>{const k=f(x);if(k!=null)m[k]=(m[k]||0)+1;return m},{});
+async function load(){try{const [s,q]=await Promise.all([api('admin/stats',{q:'?days='+days}),api('admin/support')]);data={s,q};render();}catch(x){if(x.status===401)login();else app.innerHTML=`<p class="login err">${esc(x.message)}</p>`}}
+function render(){const {s,q}=data,v=s.visits.map(x=>({...x,d:(new Date(x.ended)-new Date(x.started))/1000})),n=v.length;
+ const ret=v.filter(x=>x.ret).length,played=v.filter(x=>x.d>0),avg=played.length?played.reduce((a,x)=>a+x.d,0)/played.length:0;
+ const sorted=played.map(x=>x.d).sort((a,b)=>a-b),med=sorted.length?sorted[Math.floor(sorted.length/2)]:0;
+ const byDay={};for(let i=days-1;i>=0;i--){const d=new Date(Date.now()-i*864e5);byDay[d.toISOString().slice(0,10)]=0}v.forEach(x=>{const k=new Date(x.started).toISOString().slice(0,10);if(k in byDay)byDay[k]++});
+ const dmax=Math.max(1,...Object.values(byDay)),screens={};v.forEach(x=>new Set((x.screens||[]).map(k=>SCREENS[k]||k)).forEach(k=>screens[k]=(screens[k]||0)+1));
+ const open=q.requests.filter(r=>!r.replies.length);
+ app.innerHTML=`<header><h1>CHEZZIES · админка</h1><div class="periods">${[[1,'Сегодня'],[7,'7 дней'],[30,'30 дней'],[90,'90 дней']].map(([d,t])=>`<button data-d="${d}" class="${d===days?'on':''}">${t}</button>`).join('')}<button id="out">Выйти</button></div></header><main>
+ <div class="tiles"><div class="tile"><b>${n}</b><span>посещений</span></div><div class="tile"><b>${n-ret} / ${ret}</b><span>новые / вернувшиеся</span></div><div class="tile"><b>${dur(avg)}</b><span>в среднем на сайте (медиана ${dur(med)})</span></div><div class="tile"><b>${s.users.fresh}</b><span>регистраций (всего ${s.users.total})</span></div><div class="tile"><b style="color:${s.support.unanswered?'var(--bad)':'var(--ok)'}">${s.support.unanswered}</b><span>вопросов без ответа (всего ${s.support.total})</span></div></div>
+ ${days>1?`<div class="card" style="margin-bottom:14px"><h2>Посещения по дням</h2><div class="days">${Object.entries(byDay).map(([d,c])=>`<div title="${d.slice(8)}.${d.slice(5,7)}: ${c}" style="height:${c/dmax*100}%"></div>`).join('')}</div></div>`:''}
+ <div class="grid"><div class="card"><h2>Страны</h2>${rows(count(v,x=>x.country||''),n,country)}</div>
+ <div class="card"><h2>Версия сайта</h2>${rows(count(v,x=>x.lang==='es'?'Испанская (ES)':'Английская (EN)'),n)}<h2 style="margin-top:14px">Устройство</h2>${rows(count(v,x=>x.device==='mobile'?'Телефон':'Компьютер / планшет'),n)}</div>
+ <div class="card"><h2>Откуда пришли</h2>${rows(count(v,x=>x.source),n,k=>SOURCES[k]||k)}<h2 style="margin-top:14px">Первая страница</h2>${rows(count(v,x=>x.landing),n)}</div></div>
+ <div class="grid"><div class="card"><h2>Какие разделы открывали</h2><p class="mut">Сколько посещений дошло до раздела</p>${rows(screens,n)}</div>
+ <div class="card"><h2>Что делали</h2><table><tr><th>Действие</th><th class="num">Посещений</th><th class="num">Раз</th></tr>${s.events.map(e=>`<tr><td>${esc(ev(e.name))}</td><td class="num">${e.visits}</td><td class="num">${e.times}</td></tr>`).join('')||'<tr><td class="mut">Пока нет данных</td></tr>'}</table></div></div>
+ <div class="card" style="margin-bottom:14px"><h2>Вопросы из «Помощи» ${open.length?`<span class="badge" style="color:var(--bad)">${open.length} без ответа</span>`:''}</h2><p class="mut">Ответ появится у человека в окне «Помощь» на сайте и продублируется в Telegram-группу.</p>
+ ${q.requests.map(r=>`<div class="q ${r.replies.length?'':'open'}"><span class="mut">#${r.ticket} · ${new Date(r.created_at).toLocaleString('ru')} · ${r.signed?'с аккаунтом':'гость'}</span><div class="msg">${esc(r.message)}</div>${r.replies.map(p=>`<div class="rep">↳ ${esc(p.message)} <span class="mut">${new Date(p.createdAt).toLocaleString('ru')}</span></div>`).join('')}<details${r.replies.length?'':' open'}><summary class="mut">Ответить</summary><textarea rows="3" data-id="${r.id}"></textarea><button class="main" data-reply="${r.id}" style="margin-top:6px">Отправить ответ</button></details></div>`).join('')||'<p class="mut">Вопросов пока нет</p>'}</div>
+ <div class="card"><h2>Последние посещения</h2><table><tr><th>Когда</th><th>Страна</th><th>Версия</th><th>Устройство</th><th>Откуда</th><th>Пробыл</th><th>Разделы по порядку</th></tr>${v.slice(0,150).map(x=>`<tr><td>${new Date(x.started).toLocaleString('ru',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})}</td><td>${esc(country(x.country))}</td><td>${x.lang.toUpperCase()}</td><td>${x.device==='mobile'?'телефон':'компьютер'}</td><td>${esc(SOURCES[x.source]||x.source)}${x.ret?' <span class="mut">(вернулся)</span>':''}</td><td>${dur(x.d)}</td><td class="mut">${esc(x.landing)}${(x.screens||[]).length?' → '+(x.screens||[]).map(k=>esc(SCREENS[k]||k)).join(' → '):''}</td></tr>`).join('')}</table></div>
+ <p class="mut">Посещения анонимные: без IP, почт и имён. Роботы поисковиков не считаются. Статистика начинает копиться с момента выкладки админки.</p></main>`;
+ document.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>{days=+b.dataset.d;load()});
+ $('#out').onclick=async()=>{await api('admin/logout',{body:{}}).catch(()=>{});login();};
+ document.querySelectorAll('[data-reply]').forEach(b=>b.onclick=async()=>{const t=document.querySelector(`textarea[data-id="${b.dataset.reply}"]`);if(!t.value.trim())return;b.disabled=true;b.textContent='Отправляю…';try{await api('admin/reply',{body:{id:b.dataset.reply,text:t.value}});load();}catch(x){alert(x.message);b.disabled=false;b.textContent='Отправить ответ';}});}
+load();
+</script></body></html>

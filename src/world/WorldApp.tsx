@@ -23,6 +23,7 @@ import HeroJournal, { type JournalTab } from "./HeroJournal";
 import { restoreWorld } from "./storage";
 import { character } from "./growth";
 import { useEffect, useRef, useState } from "react";
+import { trackScreen } from "../analytics";
 import WorldMap from "./WorldMap";
 import KingdomScene from "./KingdomScene";
 import HeroSelectScreen from "../features/hero/HeroSelectScreen";
@@ -127,6 +128,7 @@ export default function WorldApp({
     place = territories.find((t) => t.id === territory)!;
   const learning = ensureLearning(save);
   const [chapterNotice,setChapterNotice]=useState(false);
+  useEffect(()=>{trackScreen(screen);},[screen]);
   useEffect(()=>{if(!loaded||screen!=="map")return;const regions=worldRegions(save).filter(r=>r.open&&!learning.unlockedRegions?.includes(r.id));const completed=Object.values(learning.paths).every(p=>p.completed.length>=4);if(regions.length||(completed&&!learning.chapterOneSeen)){const n=structuredClone(saveRef.current),l=ensureLearning(n);l.unlockedRegions=[...new Set([...(l.unlockedRegions||[]),...regions.map(r=>r.id)])];for(const r of regions)emit("new_region_unlocked",{region:r.id});if(completed&&!l.chapterOneSeen){l.chapterOneSeen=true;setChapterNotice(true);}commit(n);}},[loaded,screen,save]);
   useEffect(() => {
     if (

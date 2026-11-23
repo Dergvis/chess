@@ -1,4 +1,4 @@
-import {createHash, randomBytes, randomUUID, scrypt as scryptCallback, timingSafeEqual} from 'node:crypto';
+import {createHash, randomBytes, randomInt, randomUUID, scrypt as scryptCallback, timingSafeEqual} from 'node:crypto';
 import {promisify} from 'node:util';
 import {neon} from '@neondatabase/serverless';
 
@@ -25,6 +25,10 @@ async function db(){
     await sql`CREATE UNIQUE INDEX IF NOT EXISTS international_support_telegram_idx ON international_support_requests(telegram_message_id)`;
     await sql`CREATE INDEX IF NOT EXISTS international_support_guest_idx ON international_support_requests(guest_hash)`;
     await sql`CREATE TABLE IF NOT EXISTS international_support_replies (id BIGSERIAL PRIMARY KEY,request_id UUID NOT NULL REFERENCES international_support_requests(id) ON DELETE CASCADE,telegram_message_id BIGINT NOT NULL UNIQUE,message TEXT NOT NULL,created_at TIMESTAMPTZ NOT NULL DEFAULT now())`;
+    await sql`CREATE TABLE IF NOT EXISTS international_site_events (id BIGSERIAL PRIMARY KEY,visit_id TEXT NOT NULL,kind TEXT NOT NULL,name TEXT NOT NULL,lang TEXT NOT NULL,path TEXT NOT NULL,source TEXT NOT NULL,device TEXT NOT NULL,country TEXT NOT NULL DEFAULT '',returning BOOLEAN NOT NULL DEFAULT false,created_at TIMESTAMPTZ NOT NULL DEFAULT now())`;
+    await sql`CREATE INDEX IF NOT EXISTS international_site_events_time_idx ON international_site_events(created_at)`;
+    await sql`CREATE TABLE IF NOT EXISTS international_admin_codes (code_hash TEXT PRIMARY KEY,expires_at TIMESTAMPTZ NOT NULL,used_at TIMESTAMPTZ)`;
+    await sql`CREATE TABLE IF NOT EXISTS international_admin_sessions (token_hash TEXT PRIMARY KEY,expires_at TIMESTAMPTZ NOT NULL)`;
   })().catch(e=>{initialized=undefined;throw e;});
   await initialized;return sql;
 }
@@ -48,12 +52,66 @@ async function limited(sql,key,max=8){const r=await sql`INSERT INTO internationa
 function validSave(s){return s&&s.version===1&&s.player&&['inventor','mage','knight',null].includes(s.player.selectedCharacter)&&Array.isArray(s.worldProgress?.completedChallenges)&&Array.isArray(s.games)&&s.mastery&&typeof s.mastery==='object'&&!Array.isArray(s.mastery)&&Number.isSafeInteger(s.updatedAt)&&s.updatedAt>=0&&s.updatedAt<Date.now()+86400000;}
 async function sendResetEmail(email,token){const base=process.env.VERCEL_ENV==='preview'&&process.env.VERCEL_URL?`https://${process.env.VERCEL_URL}`:'https://chezzies.app';const link=`${base}/play/reset-password/?token=${encodeURIComponent(token)}`;const r=await fetch('https://api.resend.com/emails',{method:'POST',headers:{Authorization:`Bearer ${process.env.RESEND_API_KEY}`,'Content-Type':'application/json'},body:JSON.stringify({from:process.env.RESET_EMAIL_FROM,to:email,subject:'Reset your CHEZZIES password',text:`Open this link to reset your CHEZZIES password:\n${link}\n\nThis link expires in one hour. If you did not request it, ignore this email.`,html:`<p>Open the button below to reset your CHEZZIES password.</p><p><a href="${link}">Reset password</a></p><p>This link expires in one hour. If you did not request it, ignore this email.</p>`}),signal:AbortSignal.timeout(10000)});if(!r.ok)throw Error('reset-email-failed');}
 
+const clientIp=req=>String(req.headers['x-forwarded-for']||req.socket?.remoteAddress||'unknown').split(',')[0].trim();
+function adminTokenOf(req){return String(req.headers.cookie||'').match(/(?:^|;\s*)chezzies_admin=([a-f0-9]{64})(?:;|$)/)?.[1]||'';}
+async function isAdmin(sql,req){const t=adminTokenOf(req);if(!t)return false;const r=await sql`SELECT 1 FROM international_admin_sessions WHERE token_hash=${sha(t)} AND expires_at>now() LIMIT 1`;return r.length>0;}
+async function tg(method,body){try{const r=await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/${method}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(10000)});return await r.json();}catch{return null;}}
+
 export default async function account(req,res,path){
   if(path==='/api/world/health')return out(res,200,{mode:'production',production:true,version:1});
-  if(path==='/api/site-events')return res.status(204).end();
   let sql;try{sql=await db();}catch(e){console.error('[account database]',e.message);return out(res,503,{error:'Account storage is temporarily unavailable. Guest play still works.'});}
   try{
     const b=typeof req.body==='string'?JSON.parse(req.body):req.body||{};
+    // ---- Owner admin: anonymous visit statistics and Help questions ----
+    if(path==='/api/site-events'){
+      if(/bot|crawl|spider|slurp|headless|lighthouse|preview|monitor/i.test(String(req.headers['user-agent']||'')))return res.status(204).end();
+      const e=b||{};const kinds=['event','screen','ping'],sources=['direct','internal','google','bing','referral'];
+      if(!/^[a-f0-9]{16}$/.test(String(e.v))||!kinds.includes(e.kind)||!/^[a-z_:]{2,48}$/.test(String(e.name))||!['en','es'].includes(e.lang)||!/^\/[a-z\-/]{0,60}$/.test(String(e.path))||!sources.includes(e.source)||!['mobile','desktop'].includes(e.device))return res.status(204).end();
+      const country=/^[A-Z]{2}$/.test(String(req.headers['x-vercel-ip-country']||''))?String(req.headers['x-vercel-ip-country']):'';
+      await sql`INSERT INTO international_site_events(visit_id,kind,name,lang,path,source,device,country,returning) VALUES(${e.v},${e.kind},${e.name},${e.lang},${e.path},${e.source},${e.device},${country},${e.ret===true})`;
+      return res.status(204).end();
+    }
+    if(path==='/api/admin/code'){
+      if(!process.env.TELEGRAM_BOT_TOKEN||!process.env.TELEGRAM_CHAT_ID)return out(res,503,{error:'Telegram не настроен'});
+      if(await limited(sql,`admincode:${clientIp(req)}`,3))return out(res,429,{error:'Слишком часто. Подождите 15 минут.'});
+      const code=String(randomInt(100000,1000000));
+      await sql`INSERT INTO international_admin_codes(code_hash,expires_at) VALUES(${sha('admin:'+code)},now()+interval '10 minutes') ON CONFLICT(code_hash) DO UPDATE SET expires_at=EXCLUDED.expires_at,used_at=NULL`;
+      const t=await tg('sendMessage',{chat_id:process.env.TELEGRAM_CHAT_ID,text:`🔐 Код входа в админку CHEZZIES: ${code}\nДействует 10 минут. Если вы его не запрашивали — просто не используйте.`});
+      return t?.ok?out(res,200,{ok:true}):out(res,502,{error:'Не удалось отправить код в Telegram'});
+    }
+    if(path==='/api/admin/login'){
+      if(await limited(sql,`adminlogin:${clientIp(req)}`,5))return out(res,429,{error:'Слишком много попыток. Подождите 15 минут.'});
+      const code=String(b.code||'').trim();if(!/^\d{6}$/.test(code))return out(res,400,{error:'Нужен 6-значный код'});
+      const r=await sql`UPDATE international_admin_codes SET used_at=now() WHERE code_hash=${sha('admin:'+code)} AND used_at IS NULL AND expires_at>now() RETURNING code_hash`;
+      if(!r.length)return out(res,401,{error:'Код неверный или устарел'});
+      const token=randomBytes(32).toString('hex');
+      await sql`INSERT INTO international_admin_sessions(token_hash,expires_at) VALUES(${sha(token)},now()+interval '7 days')`;
+      res.setHeader('Set-Cookie',`chezzies_admin=${token}; Path=/api/admin; HttpOnly; SameSite=Strict; Max-Age=604800${process.env.VERCEL==='1'?'; Secure':''}`);
+      return out(res,200,{ok:true});
+    }
+    if(path.startsWith('/api/admin/')&&!await isAdmin(sql,req))return out(res,401,{error:'Нужен вход'});
+    if(path==='/api/admin/logout'){const t=adminTokenOf(req);if(t)await sql`DELETE FROM international_admin_sessions WHERE token_hash=${sha(t)}`;res.setHeader('Set-Cookie','chezzies_admin=; Path=/api/admin; HttpOnly; SameSite=Strict; Max-Age=0');return out(res,200,{ok:true});}
+    if(path==='/api/admin/stats'){
+      const days=Math.min(365,Math.max(1,Number(new URL(req.url,'https://chezzies.app').searchParams.get('days'))||7));
+      await sql`DELETE FROM international_site_events WHERE created_at<now()-interval '400 days'`;
+      const visits=await sql`SELECT visit_id,min(created_at) AS started,max(created_at) AS ended,max(country) AS country,max(lang) AS lang,max(device) AS device,(array_agg(source ORDER BY created_at))[1] AS source,(array_agg(path ORDER BY created_at))[1] AS landing,bool_or(returning) AS ret,array_agg(name ORDER BY created_at) FILTER (WHERE kind='screen') AS screens,count(*) FILTER (WHERE kind='event') AS events FROM international_site_events WHERE created_at>now()-make_interval(days=>${days}) GROUP BY visit_id ORDER BY min(created_at) DESC LIMIT 20000`;
+      const events=await sql`SELECT name,count(*)::int AS times,count(DISTINCT visit_id)::int AS visits FROM international_site_events WHERE kind='event' AND created_at>now()-make_interval(days=>${days}) GROUP BY name ORDER BY 3 DESC LIMIT 60`;
+      const users=await sql`SELECT count(*)::int AS total,count(*) FILTER (WHERE created_at>now()-make_interval(days=>${days}))::int AS fresh FROM international_users`;
+      const support=await sql`SELECT count(*)::int AS total,count(*) FILTER (WHERE NOT EXISTS (SELECT 1 FROM international_support_replies p WHERE p.request_id=r.id))::int AS unanswered FROM international_support_requests r`;
+      return out(res,200,{days,visits,events,users:users[0],support:support[0]});
+    }
+    if(path==='/api/admin/support'){
+      const rows=await sql`SELECT r.id,r.message,r.created_at,(r.user_id IS NOT NULL) AS signed,COALESCE((SELECT json_agg(json_build_object('message',p.message,'createdAt',p.created_at) ORDER BY p.created_at) FROM international_support_replies p WHERE p.request_id=r.id),'[]'::json) AS replies FROM international_support_requests r ORDER BY r.created_at DESC LIMIT 200`;
+      return out(res,200,{requests:rows.map(r=>({...r,ticket:String(r.id).slice(0,8).toUpperCase()}))});
+    }
+    if(path==='/api/admin/reply'){
+      const text=String(b.text||'').trim();if(!/^[0-9a-f-]{36}$/.test(String(b.id||'')))return out(res,400,{error:'Нет вопроса'});if(!text||text.length>4000)return out(res,400,{error:'Пустой или слишком длинный ответ'});
+      const r=await sql`SELECT id,telegram_message_id FROM international_support_requests WHERE id=${String(b.id||'')}::uuid LIMIT 1`;if(!r[0])return out(res,404,{error:'Вопрос не найден'});
+      const t=await tg('sendMessage',{chat_id:process.env.TELEGRAM_CHAT_ID,text:`Ответ из админки на #${String(r[0].id).slice(0,8).toUpperCase()}:\n\n${text}`,...(r[0].telegram_message_id?{reply_parameters:{message_id:Number(r[0].telegram_message_id),allow_sending_without_reply:true}}:{})});
+      if(!t?.ok)return out(res,502,{error:'Telegram не принял ответ, попробуйте ещё раз'});
+      await sql`INSERT INTO international_support_replies(request_id,telegram_message_id,message) VALUES(${r[0].id},${t.result.message_id},${text})`;
+      return out(res,200,{ok:true});
+    }
     if(path==='/api/support/telegram-webhook'){
       const received=String(req.headers['x-telegram-bot-api-secret-token']||'');
       const expected=webhookSecret();

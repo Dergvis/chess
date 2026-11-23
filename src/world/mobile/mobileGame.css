@@ -14,8 +14,8 @@
  .mobile-bottom-nav button[aria-current=page]{background:#1b696470;color:#ffe59e;border-color:#6bbbb199;box-shadow:inset 0 0 15px #57cba02b}
  .mobile-bottom-nav button[aria-current=page] svg{transform:scale(1.08)}
  .app:has(.mobile-shell-enabled)>.support-chat{left:auto!important;right:8px!important;top:calc(3px + env(safe-area-inset-top,0px))!important;bottom:auto!important;width:44px!important;height:44px!important;padding:0!important;background:transparent!important;border:0!important;z-index:12000}
- .app:has(.mobile-shell-enabled) .support-toggle{width:44px;height:44px;padding:0;font-size:0;border-radius:10px;background:#205564;box-shadow:none}
- .app:has(.mobile-shell-enabled) .support-toggle::before{content:'☏';font-size:24px}
+ .app:has(.mobile-shell-enabled) .support-toggle{width:44px;height:44px;padding:0;font-size:0;border-radius:50%;background:#ffd45c;box-shadow:0 0 0 3px #ffd45c40;justify-content:center;gap:0}
+ .app:has(.mobile-shell-enabled) .support-toggle::before{content:'?';width:auto;height:auto;background:none;color:#1b1b1b;font-size:24px;font-weight:900}
  .app:has(.mobile-shell-enabled) .support-panel{position:fixed!important;left:8px;right:8px!important;top:var(--mobile-top);bottom:var(--mobile-bottom)!important;width:auto!important;height:auto!important;margin:6px 0!important}
  .mobile-shell-enabled .gosha-world .scene-header{display:none!important}
  .mobile-shell-enabled .gosha-world .map-v2{height:var(--mobile-content)!important;min-height:0!important;padding:0!important;display:block!important;overflow:hidden}
