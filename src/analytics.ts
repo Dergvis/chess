@@ -71,8 +71,9 @@ export function installClickTracking(){
  if(clicksInstalled||typeof document==='undefined')return;clicksInstalled=true;
  document.addEventListener('click',e=>{
   const el=(e.target as Element|null)?.closest?.('button,a,[role=button]');if(!el||el.closest('[data-track-off]'))return;
-  const label=clickLabel(el);if(!label)return;
-  const now=Date.now();if((label===lastLabel&&now-lastAt<1000)||clicks>=300)return;lastLabel=label;lastAt=now;clicks++;
+  // Board squares ("e4") are recorded by the board trail (moves, refused moves); here they only used up the limit.
+  const label=clickLabel(el);if(!label||/^[a-h][1-8]$/.test(label))return;
+  const now=Date.now();if((label===lastLabel&&now-lastAt<1000)||clicks>=1000)return;lastLabel=label;lastAt=now;clicks++;
   const params=sanitizeParams({screen:currentScreen});
   send('click','click',undefined,{params,label});
   trackGoogle('button_click',{...googleBase(),label,screen:currentScreen});
