@@ -23,6 +23,7 @@ table{border-collapse:collapse;width:100%;font-size:13px}td,th{padding:6px 5px;b
 .pl b{font-size:15px}.pl .mut{font-size:13px}.chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}.chip{background:var(--bg);border-radius:8px;padding:2px 7px;font-size:12px}
 .visit{border-left:3px solid var(--acc);padding:4px 0 4px 10px;margin:10px 0}.visit li.hot{font-weight:600}.t i{font-style:normal;opacity:.7}button.trail{margin:2px 0 6px}.visit ol{margin:6px 0 0;padding-left:18px}.visit li{margin:2px 0;font-size:14px}.t{color:var(--mut);font-size:12px;margin-right:4px}
 .search{display:flex;gap:6px;margin-bottom:10px}.search input{flex:1;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px}
+.bd{display:grid;grid-template-columns:14px repeat(8,26px);grid-auto-rows:26px;margin:6px 0;font-size:20px;line-height:26px;text-align:center}.bs.lt{background:#f0d9b5;color:#111}.bs.dk{background:#b58863;color:#111}.bs.mk{box-shadow:inset 0 0 0 3px #e53935}.bl{font-size:11px;color:var(--mut,#888)}.board ul{margin:2px 0 4px;padding-left:18px}
 .q{border-top:1px solid var(--line);padding:10px 0}.q.open{border-left:3px solid var(--acc);padding-left:8px}.msg{white-space:pre-wrap;margin:4px 0}.reply{background:var(--bg);border-radius:8px;padding:6px 8px;margin:4px 0;white-space:pre-wrap}
 textarea{width:100%;min-height:70px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px}
 .login{max-width:360px;margin:12vh auto;display:grid;gap:12px;text-align:center;padding:12px}.login input{font-size:22px;letter-spacing:6px;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px}
@@ -55,10 +56,26 @@ const PIECE={p:'пешкой',n:'конём',b:'слоном',r:'ладьёй',q
 const MODE={arena:'партия',puzzle:'задача',training:'тренировка',classic:'партия'};
 const mode=p=>MODE[p?.mode]?' <span class="mut small">('+MODE[p.mode]+')</span>':'';
 const sq=v=>/^[a-h][1-8]$/.test(String(v||''))?v:'?';
+const REFUSE={in_check:'король в шахе, сначала защитить',pinned:'фигура связана: король остался бы под шахом',into_check:'король встал бы под шах',castle_moved:'рокировка нельзя: король или ладья уже ходили',castle_blocked:'рокировка нельзя: между королём и ладьёй стоят фигуры',castle_check:'рокировка нельзя: король под шахом или проходит битое поле',opponent_piece:'эту фигуру соперника так не взять',not_legal:'так фигура не ходит'};
+const refuseRu=(r,piece)=>r==='blocked'?`${PIECE1[piece]||'фигура'} не может перепрыгнуть фигуры`:REFUSE[r]||'так фигура не ходит';
+const GLYPH={K:'♔',Q:'♕',R:'♖',B:'♗',N:'♘',P:'♙',k:'♚',q:'♛',r:'♜',b:'♝',n:'♞',p:'♟'},BMODE={arena:'Арена',puzzle:'Задача',training:'Испытание',classic:'Партия'},PL={k:'Кр',q:'Ф',r:'Л',b:'С',n:'К',p:''};
+// Board the player had open when asking: 8×8 diagram from FEN (from the side to move) + refused moves.
+function boardHtml(b){
+ if(!b||!/^[1-8pnbrqkPNBRQK\/]+ [wb]/.test(b.fen||''))return '';
+ const rows=b.fen.split(' ')[0].split('/').map(r=>r.replace(/[1-8]/g,n=>'.'.repeat(+n)).split(''));
+ const black=b.fen.split(' ')[1]==='b',marks=new Set(b.refused.flatMap(r=>[r.from,r.to]));
+ const ranks=black?[0,1,2,3,4,5,6,7].reverse():[0,1,2,3,4,5,6,7],files=black?[7,6,5,4,3,2,1,0]:[0,1,2,3,4,5,6,7];
+ let h='<div class="bd">';
+ for(const r of ranks){h+=`<span class="bl">${8-r}</span>`;for(const f of files){const s='abcdefgh'[f]+(8-r),c=rows[r]?.[f]||'.';h+=`<span class="bs ${(r+f)%2?'dk':'lt'}${marks.has(s)?' mk':''}" title="${s}">${GLYPH[c]||''}</span>`;}}
+ h+='<span class="bl"></span>'+files.map(f=>`<span class="bl">${'abcdefgh'[f]}</span>`).join('')+'</div>';
+ const head=`Доска: ${BMODE[b.mode]||esc(b.mode)}${b.level?', уровень '+b.level:''} · ход ${black?'чёрных':'белых'}`;
+ const list=b.refused.length?'<ul class="small">'+b.refused.map(r=>`<li>${PL[r.piece]??''}${sq(r.from)}→${sq(r.to)}: ${refuseRu(r.reason,r.piece)}</li>`).join('')+'</ul>':'<p class="mut small">Отказанных ходов не было.</p>';
+ return `<details class="board" open><summary class="small">${head}</summary>${h}<div class="mut small">Последние отказанные ходы (отмечены на доске):</div>${list}<div class="mut small">FEN: ${esc(b.fen)}</div></details>`;
+}
 const TAP={empty:'пустая клетка',opponent_piece:'чужая фигура',wait:'сейчас не его ход'};
 const EV={
  move_made:p=>`ход ${PIECE[p?.piece]||'фигурой'} ${sq(p?.from)}→${sq(p?.to)}${p?.capture?' со взятием':''}${PROMO[p?.promotion]?', пешка стала: '+PROMO[p.promotion]:''}${p?.move?' · '+p.move+'-й ход':''}`,
- move_rejected:p=>`неверный ход ${PIECE[p?.piece]||'фигурой'} ${sq(p?.from)}→${sq(p?.to)}: ${p?.reason==='opponent_piece'?'эту фигуру соперника так не взять':'так фигура не ходит'}`,
+ move_rejected:p=>`ход отклонён: ${PIECE[p?.piece]||'фигурой'} ${sq(p?.from)}→${sq(p?.to)}: ${refuseRu(p?.reason,p?.piece)}`,
  illegal_tap:p=>`неверное нажатие на ${sq(p?.square)}: ${TAP[p?.reason]||'ничего не произошло'}`,
  drag_attempt:p=>`⚠️ пытался перетащить фигуру${PIECE1[p?.piece]?' ('+PIECE1[p.piece]+(p?.own===false?', чужая':'')+')':''} с ${sq(p?.from)}${p?.to?' на '+sq(p.to):''}${p?.n>1?' · уже '+p.n+'-й раз':''}`,
  drag_hint_shown:()=>'💡 показали подсказку «нажми на фигуру, потом на клетку»',
@@ -182,7 +199,7 @@ const VIEWS={
   const accountLine=r=>{const a=r.account;if(!a)return '';const p=a.progress||{},n=(v,t)=>v!=null?v+' '+t:'';
    const parts=[n(p.games??p.gamesPlayed,'партий'),n(p.wins,'побед'),n(p.puzzles,'задач'),n(p.challenges,'испытаний'),n(p.trainings,'тренировок'),p.hero?'герой: '+esc(HERO[p.hero]||p.hero):'',p.location?'место: '+esc(p.location):''].filter(Boolean);
    return `<div class="mut small">Аккаунт с ${esc(dt(a.registered_at))||'?'} · ${a.progress?(parts.join(', ')||'прогресса пока нет')+(p.savedAt?' · сохранено '+esc(when(p.savedAt)):''):'сохранённого прогресса нет'}</div>`;};
-  return card('Вопросы из «Помощи»','Ответ уходит в Telegram-группу ответом на вопрос и появляется у игрока.',q.requests.map(r=>`<div class="q ${r.replies.length?'':'open'}"><span class="mut small">#${r.ticket} · ${when(r.created_at)} · ${r.signed?'с аккаунтом':'гость'}</span>${accountLine(r)}<div class="msg">${esc(r.message)}</div>${r.player_id?`<button class="trail" data-player="${esc(r.player_id)}">Что делал игрок</button>`:'<p class="mut small">Номер игрока не записан (вопрос до 24.11 или браузер без хранилища).</p>'}${r.replies.map(p=>`<div class="reply">↩ ${esc(p.message)}</div>`).join('')}<textarea data-id="${r.id}" placeholder="Ответ…"></textarea><button data-reply="${r.id}">Ответить</button></div>`).join('')||'<p class="mut">Вопросов пока нет.</p>');}
+  return card('Вопросы из «Помощи»','Ответ уходит в Telegram-группу ответом на вопрос и появляется у игрока.',q.requests.map(r=>`<div class="q ${r.replies.length?'':'open'}"><span class="mut small">#${r.ticket} · ${when(r.created_at)} · ${r.signed?'с аккаунтом':'гость'}</span>${accountLine(r)}<div class="msg">${esc(r.message)}</div>${boardHtml(r.board)}${r.player_id?`<button class="trail" data-player="${esc(r.player_id)}">Что делал игрок</button>`:'<p class="mut small">Номер игрока не записан (вопрос до 24.11 или браузер без хранилища).</p>'}${r.replies.map(p=>`<div class="reply">↩ ${esc(p.message)}</div>`).join('')}<textarea data-id="${r.id}" placeholder="Ответ…"></textarea><button data-reply="${r.id}">Ответить</button></div>`).join('')||'<p class="mut">Вопросов пока нет.</p>');}
 };
 const BOARD=new Set(['game:move_made','game:move_rejected','game:illegal_tap','game:drag_attempt','game:drag_hint_shown']);
 const hms=t=>new Date(t).toLocaleTimeString('ru',{hour:'2-digit',minute:'2-digit',second:'2-digit'});

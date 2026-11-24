@@ -181,6 +181,34 @@ export async function adminData(sql,req,res,path){
 // ---- Help questions in the admin page ----
 const num=v=>{const n=Number(v);return v!=null&&v!==''&&Number.isFinite(n)&&n>=0?Math.round(n):null;};
 const code=v=>typeof v==='string'&&/^[a-z0-9_-]{1,30}$/i.test(v)?v:null;
+// Board attached to a Help question (position, mode, bot level, last refused moves): validated, at most 2 KB.
+const FEN=/^([pnbrqkPNBRQK1-8]{1,8}\/){7}[pnbrqkPNBRQK1-8]{1,8} [wb] (-|K?Q?k?q?) (-|[a-h][36]) \d{1,4} \d{1,4}$/;
+const BOARD_MODES=new Set(['arena','puzzle','training','classic']);
+const REFUSE_REASONS=new Set(['in_check','pinned','into_check','castle_moved','castle_blocked','castle_check','blocked','not_legal','opponent_piece']);
+export function supportBoard(v){
+  if(!v||typeof v!=='object'||Array.isArray(v))return null;
+  const fen=String(v.fen||'').trim();
+  if(fen.length>100||!FEN.test(fen)||!BOARD_MODES.has(v.mode))return null;
+  const level=Number.isInteger(v.level)&&v.level>=1&&v.level<=20?v.level:undefined;
+  const refused=(Array.isArray(v.refused)?v.refused:[]).slice(-5).filter(r=>r&&/^[a-h][1-8]$/.test(r.from)&&/^[a-h][1-8]$/.test(r.to)&&/^[pnbrqk]$/.test(r.piece)&&REFUSE_REASONS.has(r.reason)).map(r=>({from:r.from,to:r.to,piece:r.piece,reason:r.reason}));
+  const board={fen,mode:v.mode,...(level?{level}:{}),refused};
+  return JSON.stringify(board).length<=2048?board:null;
+}
+const BOARD_MODE_RU={arena:'Арена',puzzle:'Задача',training:'Испытание',classic:'Партия'};
+const PIECE_RU={k:'Кр',q:'Ф',r:'Л',b:'С',n:'К',p:''},PIECE_WHO={k:'король',q:'ферзь',r:'ладья',b:'слон',n:'конь',p:'пешка'};
+export function refuseRu(reason,piece){
+  return ({in_check:'король под шахом, сначала защитить',pinned:'фигура связана: король остался бы под шахом',into_check:'король встал бы под шах',
+    castle_moved:'рокировка нельзя: король или ладья уже ходили',castle_blocked:'рокировка нельзя: между королём и ладьёй стоят фигуры',
+    castle_check:'рокировка нельзя: король под шахом или проходит битое поле',blocked:`${PIECE_WHO[piece]||'фигура'} не может перепрыгнуть фигуры`,
+    opponent_piece:'эту фигуру соперника так не взять'})[reason]||'так фигура не ходит';
+}
+/** One line for the Telegram notification. */
+export function boardLine(b){
+  if(!b)return '';
+  const head=`Доска: ${BOARD_MODE_RU[b.mode]||b.mode}${b.level?', уровень '+b.level:''}`;
+  const last=b.refused.map(r=>`${PIECE_RU[r.piece]}${r.from}→${r.to} (${refuseRu(r.reason,r.piece)})`).join('; ');
+  return head+(last?'; последние отказы: '+last:'; отказов не было')+`\nFEN: ${b.fen}`;
+}
 /** One /api/admin/support row: anonymous player id (to open the trail), registration date and a short, cleaned progress summary. */
 export function supportRow(r){
   const w=r.world&&typeof r.world==='object'?r.world:null;
@@ -188,5 +216,6 @@ export function supportRow(r){
   const progress=w?{games:num(w.games),gamesPlayed:num(w.gamesPlayed),wins:num(w.wins),puzzles:num(w.puzzles),challenges:num(w.challenges),trainings:num(w.trainings),hero:code(w.hero),location:code(w.location),savedAt:saved&&saved>1e12?new Date(saved).toISOString():null}:null;
   return {id:r.id,ticket:String(r.id).slice(0,8).toUpperCase(),message:r.message,created_at:r.created_at,signed:!!r.signed,replies:r.replies||[],
     player_id:/^[a-f0-9]{16}$/.test(String(r.player_id||''))?r.player_id:null,
+    board:supportBoard(r.board),
     account:r.signed?{registered_at:r.registered_at||null,progress,progress_at:r.progress_at||null}:null};
 }

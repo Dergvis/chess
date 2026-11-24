@@ -17,6 +17,8 @@ import AttackGuides from '../../world/AttackGuides';
 import './GameScreen.css';
 import { createBoardTrail, type BoardTrail } from '../../analyticsCore';
 import { trackBoardEvent } from '../../analytics';
+import { explainMove, castleByRook, reasonText } from './moveReason';
+import { setBoardPosition, addRefusal } from '../../shared/lib/boardSnapshot';
 
 // Маппинг соперников к иконкам
 const OPPONENT_ICONS: Record<string, string> = {
@@ -87,6 +89,7 @@ export default function GameScreen({
   // One trail per mounted board (callers remount the board per game/puzzle/task with `key`).
   const [trail] = useState<BoardTrail | null>(() => trailMode ? createBoardTrail(trailMode, trackBoardEvent) : null);
   const [dragHint, setDragHint] = useState(false);
+  const [refusal, setRefusal] = useState<{ text: string; n: number } | null>(null);
   const dragRef = useRef<{ id: number; x: number; y: number; from: string; piece: Piece; moved: boolean } | null>(null);
   const [checkAnimation, setCheckAnimation] = useState<CheckAnimationState | null>(null);
   const [checkmateAnimation, setCheckmateAnimation] = useState<CheckmateAnimationState | null>(null);
@@ -313,6 +316,7 @@ export default function GameScreen({
   const moveNumber = () => Number(gameState?.fen.split(' ')[5]) || 0;
   const endDrag = (d: NonNullable<typeof dragRef.current>, to: string | undefined, how: 'move' | 'cancel') => {
     if (!trail) return;
+    if (to && to !== d.from && d.piece.color === playerColor && isPlayerTurn && !isEngineTurn && !training?.onSquare && !possibleMoves.has(to) && gameState?.fen && explainMove(gameState.fen, d.from, to)) refuse(d.from, to, 'not_legal');
     if (trail.drag({ piece: d.piece.type, own: d.piece.color === playerColor, from: d.from, to, how })) setDragHint(true);
   };
   const squareAt = (x: number, y: number) => document.elementFromPoint(x, y)?.closest('[data-square]')?.getAttribute('data-square') || undefined;
@@ -338,6 +342,25 @@ export default function GameScreen({
       if (d && d.id === e.pointerId) endDrag(d, undefined, d.moved ? 'move' : 'cancel');
     },
   } : {};
+  // The board in play goes with a Help question instead of a screenshot.
+  const snapshotMode = trailMode;
+  const snapshotLevel = trailMode === 'arena' || trailMode === 'classic' ? Number(/(\d+)/.exec(difficulty?.id || '')?.[1]) || undefined : undefined;
+  useEffect(() => {
+    if (snapshotMode && gameState?.fen) setBoardPosition(snapshotMode, gameState.fen, snapshotLevel);
+  }, [snapshotMode, snapshotLevel, gameState?.fen]);
+  useEffect(() => {
+    if (!refusal) return;
+    const timer = window.setTimeout(() => setRefusal(null), 4000);
+    return () => window.clearTimeout(timer);
+  }, [refusal]);
+  /** Explains an illegal move on the board (only truly illegal ones: chess.js decides). */
+  const refuse = (from: string, to: string, fallback: string) => {
+    const verdict = gameState?.fen ? explainMove(gameState.fen, from, to) : null;
+    trail?.reject('move_rejected', { piece: pieceOn(from)?.type, from, to, reason: verdict?.reason || fallback });
+    if (!verdict) return;
+    if (snapshotMode) addRefusal({ from, to, piece: verdict.piece, reason: verdict.reason });
+    setRefusal(r => ({ text: reasonText(verdict), n: (r?.n || 0) + 1 }));
+  };
   useEffect(() => {
     if (!dragHint) return;
     const timer = window.setTimeout(() => setDragHint(false), 12000);
@@ -478,6 +501,12 @@ export default function GameScreen({
 
     // Если кликнули на свою фигуру — выбираем её (перевыбор если уже выбрана другая)
     if (piece && piece.color === playerColor) {
+      // King selected, then its own rook tapped: castle if allowed, otherwise say why not.
+      if (selectedSquare && pieceOn(selectedSquare)?.type === 'k' && piece.type === 'r' && gameState?.fen) {
+        const castleTo = castleByRook(gameState.fen, selectedSquare, square);
+        if (castleTo && possibleMoves.has(castleTo)) { handleSquareClick(castleTo, null, rank, file); return; }
+        if (!castleTo && explainMove(gameState.fen, selectedSquare, square)?.reason.startsWith('castle')) refuse(selectedSquare, square, 'not_legal');
+      }
       console.log('🎯 OWN PIECE CLICKED - SELECTING');
       onSelectSquare(square);
       return;
@@ -533,7 +562,7 @@ export default function GameScreen({
     }
 
     // Клик на пустую или вражескую (не ход) — ничего не делаем, только записываем в след игрока
-    if (selectedSquare) trail?.reject('move_rejected', { piece: pieceOn(selectedSquare)?.type, from: selectedSquare, to: square, reason: piece ? 'opponent_piece' : 'not_legal' });
+    if (selectedSquare) refuse(selectedSquare, square, piece ? 'opponent_piece' : 'not_legal');
     else trail?.reject('illegal_tap', { square, reason: piece ? 'opponent_piece' : 'empty' });
   };
 
@@ -619,6 +648,9 @@ export default function GameScreen({
                 ))}
               </div>
               {training && <AttackGuides from={training.source} targets={training.targets} />}
+              {refusal && !dragHint && (
+                <div key={refusal.n} className="board-refusal" role="status" aria-live="polite">{refusal.text}</div>
+              )}
               {dragHint && (
                 <button type="button" className="board-drag-hint" role="status" data-track-off onClick={() => setDragHint(false)}>
                   Tap a piece, then tap the square to move it

@@ -1474,5 +1474,19 @@
  "Games played so far: {}.": "Partidas jugadas hasta ahora: {}.",
  "A new clue appeared in your game. Look in {}?": "Apareció una nueva pista en tu partida. ¿La buscamos en {}?",
  "Register": "Registrarse",
- "Tap a piece, then tap the square to move it": "Toca una pieza y luego la casilla a donde quieres moverla"
+ "Tap a piece, then tap the square to move it": "Toca una pieza y luego la casilla a donde quieres moverla",
+ "Your king is in check — protect it first.": "Tu rey está en jaque: primero protégelo.",
+ "That move would leave your king in check.": "Ese movimiento dejaría a tu rey en jaque.",
+ "You can't castle: the king or this rook has already moved.": "No puedes enrocar: el rey o esta torre ya se movieron.",
+ "To castle, the squares between the king and the rook must be empty.": "Para enrocar, las casillas entre el rey y la torre deben estar vacías.",
+ "You can't castle out of or through check.": "No puedes enrocar si tu rey está en jaque o tiene que pasar por una casilla atacada.",
+ "The rook can't jump over other pieces.": "La torre no puede saltar por encima de otras piezas.",
+ "The bishop can't jump over other pieces.": "El alfil no puede saltar por encima de otras piezas.",
+ "The queen can't jump over other pieces.": "La reina no puede saltar por encima de otras piezas.",
+ "The king can't move there.": "El rey no puede ir ahí.",
+ "The queen can't move there.": "La reina no puede ir ahí.",
+ "The rook can't move there.": "La torre no puede ir ahí.",
+ "The bishop can't move there.": "El alfil no puede ir ahí.",
+ "The knight can't move there.": "El caballo no puede ir ahí.",
+ "The pawn can't move there.": "El peón no puede ir ahí."
 }

@@ -1328,6 +1328,62 @@
   "file": "src/features/game/GameScreen.tsx"
  },
  {
+  "en": "That move would leave your king in check.",
+  "file": "src/features/game/moveReason.ts"
+ },
+ {
+  "en": "The bishop can't jump over other pieces.",
+  "file": "src/features/game/moveReason.ts"
+ },
+ {
+  "en": "The bishop can't move there.",
+  "file": "src/features/game/moveReason.ts"
+ },
+ {
+  "en": "The king can't move there.",
+  "file": "src/features/game/moveReason.ts"
+ },
+ {
+  "en": "The knight can't move there.",
+  "file": "src/features/game/moveReason.ts"
+ },
+ {
+  "en": "The pawn can't move there.",
+  "file": "src/features/game/moveReason.ts"
+ },
+ {
+  "en": "The queen can't jump over other pieces.",
+  "file": "src/features/game/moveReason.ts"
+ },
+ {
+  "en": "The queen can't move there.",
+  "file": "src/features/game/moveReason.ts"
+ },
+ {
+  "en": "The rook can't jump over other pieces.",
+  "file": "src/features/game/moveReason.ts"
+ },
+ {
+  "en": "The rook can't move there.",
+  "file": "src/features/game/moveReason.ts"
+ },
+ {
+  "en": "To castle, the squares between the king and the rook must be empty.",
+  "file": "src/features/game/moveReason.ts"
+ },
+ {
+  "en": "You can't castle out of or through check.",
+  "file": "src/features/game/moveReason.ts"
+ },
+ {
+  "en": "You can't castle: the king or this rook has already moved.",
+  "file": "src/features/game/moveReason.ts"
+ },
+ {
+  "en": "Your king is in check — protect it first.",
+  "file": "src/features/game/moveReason.ts"
+ },
+ {
   "en": "Pawn",
   "file": "src/features/game/pieceLabels.ts"
  },

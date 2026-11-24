@@ -1,7 +1,7 @@
 import {createHash, randomBytes, randomInt, randomUUID, scrypt as scryptCallback, timingSafeEqual} from 'node:crypto';
 import {promisify} from 'node:util';
 import {neon} from '@neondatabase/serverless';
-import {statsDb,ingest,seoImport,adminData,supportRow} from './_stats.mjs';
+import {statsDb,ingest,seoImport,adminData,supportRow,supportBoard,boardLine} from './_stats.mjs';
 
 const scrypt=promisify(scryptCallback), name='chezzies_international_session';
 const sha=value=>createHash('sha256').update(value).digest('hex');
@@ -26,6 +26,7 @@ async function db(){
     await sql`CREATE UNIQUE INDEX IF NOT EXISTS international_support_telegram_idx ON international_support_requests(telegram_message_id)`;
     await sql`CREATE INDEX IF NOT EXISTS international_support_guest_idx ON international_support_requests(guest_hash)`;
     await sql`ALTER TABLE international_support_requests ADD COLUMN IF NOT EXISTS player_id TEXT`;
+    await sql`ALTER TABLE international_support_requests ADD COLUMN IF NOT EXISTS board JSONB`;
     await sql`CREATE TABLE IF NOT EXISTS international_support_replies (id BIGSERIAL PRIMARY KEY,request_id UUID NOT NULL REFERENCES international_support_requests(id) ON DELETE CASCADE,telegram_message_id BIGINT NOT NULL UNIQUE,message TEXT NOT NULL,created_at TIMESTAMPTZ NOT NULL DEFAULT now())`;
   })().catch(e=>{initialized=undefined;throw e;});
   await initialized;return sql;
@@ -87,7 +88,7 @@ export default async function account(req,res,path){
     if(req.method==='GET'&&await adminData(sql,req,res,path))return;
     if(path==='/api/admin/support'){
       // Account facts for signed-in askers: registration date and a short game summary only (no e-mail, child name or password data).
-      const rows=await sql`SELECT r.id,r.message,r.created_at,r.player_id,(r.user_id IS NOT NULL) AS signed,u.created_at AS registered_at,
+      const rows=await sql`SELECT r.id,r.message,r.created_at,r.player_id,r.board,(r.user_id IS NOT NULL) AS signed,u.created_at AS registered_at,
         CASE WHEN w.user_id IS NULL THEN NULL ELSE json_build_object('games',CASE WHEN jsonb_typeof(w.save_json->'games')='array' THEN jsonb_array_length(w.save_json->'games') END,
           'gamesPlayed',w.save_json#>>'{achievements,gamesPlayed}','wins',w.save_json#>>'{achievements,wins}','puzzles',w.save_json#>>'{achievements,puzzlesSolved}',
           'challenges',CASE WHEN jsonb_typeof(w.save_json#>'{worldProgress,completedChallenges}')='array' THEN jsonb_array_length(w.save_json#>'{worldProgress,completedChallenges}') END,
@@ -136,17 +137,17 @@ export default async function account(req,res,path){
       const u=await currentUser(sql,req);
       const address=String(req.headers['x-forwarded-for']||req.socket?.remoteAddress||'unknown').split(',')[0].trim();
       if(await limited(sql,`support:${u?.id||sha(address)}`,5))return out(res,429,{error:'Too many questions. Please try again later.'});
-      const id=randomUUID(),ticket=id.slice(0,8).toUpperCase();
+      const id=randomUUID(),ticket=id.slice(0,8).toUpperCase(),board=supportBoard(b.board),line=boardLine(board);
       const telegram=await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`,{
         method:'POST',headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({chat_id:process.env.TELEGRAM_CHAT_ID,text:`CHEZZIES question #${ticket}\n\n${message}`,disable_web_page_preview:true}),
+        body:JSON.stringify({chat_id:process.env.TELEGRAM_CHAT_ID,text:`CHEZZIES question #${ticket}\n\n${message}${line?'\n\n'+line:''}`,disable_web_page_preview:true}),
         signal:AbortSignal.timeout(10000)
       });
       const sent=await telegram.json();
       if(!telegram.ok||!sent.ok||!Number.isSafeInteger(sent.result?.message_id))return out(res,502,{error:'Could not deliver your question. Please try again later.'});
       const guest=guestOf(req)||randomBytes(32).toString('hex');
       const player=/^[a-f0-9]{16}$/.test(String(b.p||''))?String(b.p):null;
-      await sql`INSERT INTO international_support_requests(id,user_id,guest_hash,telegram_message_id,message,player_id) VALUES(${id},${u?.id||null},${sha(guest)},${sent.result.message_id},${message},${player})`;
+      await sql`INSERT INTO international_support_requests(id,user_id,guest_hash,telegram_message_id,message,player_id,board) VALUES(${id},${u?.id||null},${sha(guest)},${sent.result.message_id},${message},${player},${board?JSON.stringify(board):null}::jsonb)`;
       if(!guestOf(req))setGuestCookie(req,res,guest);
       return out(res,201,{ticket});
     }
