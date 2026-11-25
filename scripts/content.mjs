@@ -1,3 +1,5 @@
+import {guidePages} from './guides-en.mjs';
+export {pieceGuide,teachSteps,sessionPlan} from './guides-en.mjs';
 export const origin='https://chezzies.app';
 export const description='CHEZZIES is an online chess adventure game for kids. Explore a fantasy world and practice chess through interactive challenges, free in your browser.';
 export const pages=[
@@ -46,6 +48,8 @@ export const pages=[
 ['How can I help my child?','Try a challenge together and ask what each piece attacks. Let the child make a move, inspect the feedback and try again. Stop when the child wants a break; there is no required daily schedule.']
 ],links:['learn-chess-for-kids','online-chess-for-kids']}
 ];
+
+pages.push(...guidePages);
 
 // IDs refer to reviewed, playable positions in the production challenge catalogue.
 export const puzzleExamples=[

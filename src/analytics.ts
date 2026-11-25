@@ -2,7 +2,7 @@ import {inject} from '@vercel/analytics';
 import {trackGoogle} from './googleAnalytics';
 import {sanitizeParams,clickLabel,blockedEvent,type Params,type TrailEvent} from './analyticsCore';
 export type SiteEvent = 'homepage_view'|'landing_view'|'play_click'|'game_start'|'puzzle_start'|'puzzle_complete'|'return_visit'|'signup_start'|'signup_complete';
-const paths=['/','/play/','/chess-games-for-kids/','/online-chess-for-kids/','/learn-chess-for-kids/','/how-to-play-chess-for-kids/','/chess-puzzles-for-kids/','/parents/'];
+const paths=['/','/play/','/chess-games-for-kids/','/online-chess-for-kids/','/learn-chess-for-kids/','/how-to-play-chess-for-kids/','/chess-puzzles-for-kids/','/parents/','/how-do-chess-pieces-move/','/how-to-teach-a-child-chess/'];
 const safePath=(value:string)=>value.startsWith('/play')?'/play/':value.startsWith('/es/play')?'/es/play/':paths.includes(value)||/^\/es\/([a-z-]+\/)?$/.test(value)?value:'/';
 const events:SiteEvent[]=['homepage_view','landing_view','play_click','game_start','puzzle_start','puzzle_complete','return_visit','signup_start','signup_complete'];
 function source(){try{const h=new URL(document.referrer).hostname;return h===location.hostname?'internal':/(^|\.)google\./.test(h)?'google':/(^|\.)bing\.com$/.test(h)?'bing':'referral';}catch{return 'direct';}}

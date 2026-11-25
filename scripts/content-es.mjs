@@ -1,3 +1,5 @@
+import {preschoolPages} from './guides-es.mjs';
+export {preschoolTable} from './guides-es.mjs';
 // Spanish (neutral Latin American, "tú") site content. Each page names its English twin for hreflang.
 export const description='CHEZZIES es un juego de aventuras de ajedrez para niños. Explora un mundo de fantasía y practica ajedrez con retos interactivos, gratis en tu navegador.';
 export const pages=[
@@ -79,3 +81,5 @@ export const keyFacts=[
   ['Habilidades de ajedrez','Movimientos de las piezas, jaque mate, horquilla, clavada, ataque doble y defensa.'],
   ['Idioma','Español (también disponible en inglés).']
 ];
+
+pages.push(...preschoolPages);

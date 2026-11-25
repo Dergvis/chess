@@ -24,7 +24,7 @@ function install(app,express){
  app.post('/api/site-events',express.json({limit:'2kb'}),(req,res)=>{
   const events=new Set(['homepage_view','landing_view','play_click','game_start','puzzle_start','puzzle_complete','return_visit','signup_start','signup_complete']);
   const sources=new Set(['direct','internal','google','bing','referral']);
-  const paths=new Set(['/','/play/','/chess-games-for-kids/','/online-chess-for-kids/','/learn-chess-for-kids/','/how-to-play-chess-for-kids/','/chess-puzzles-for-kids/','/parents/']);
+  const paths=new Set(['/','/play/','/chess-games-for-kids/','/online-chess-for-kids/','/learn-chess-for-kids/','/how-to-play-chess-for-kids/','/chess-puzzles-for-kids/','/parents/','/how-do-chess-pieces-move/','/how-to-teach-a-child-chess/']);
   if(!events.has(req.body?.event)||!sources.has(req.body?.source)||!paths.has(req.body?.landing_page))return res.status(400).json({error:'Invalid event.'});
   const event={event:req.body.event,source:req.body.source,landing_page:req.body.landing_page,at:new Date().toISOString()};
   fs.appendFile(path.join(dataDir,'site-events.jsonl'),JSON.stringify(event)+'\n',err=>err?res.status(503).end():res.status(204).end());
