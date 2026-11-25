@@ -23,7 +23,7 @@ import HeroJournal, { type JournalTab } from "./HeroJournal";
 import { restoreWorld } from "./storage";
 import { character } from "./growth";
 import { useEffect, useRef, useState } from "react";
-import { trackScreen } from "../analytics";
+import { trackScreen, trackGameEvent } from "../analytics";
 import WorldMap from "./WorldMap";
 import KingdomScene from "./KingdomScene";
 import HeroSelectScreen from "../features/hero/HeroSelectScreen";
@@ -59,6 +59,7 @@ import type {
 } from "./types";
 import "./world.css";
 import { SITE_ROOT } from "../locale";
+import { FeedbackPrompt, feedbackDue } from "../features/feedback/FeedbackPrompt";
 type Screen =
   | "activities"
   | "polygon"
@@ -128,6 +129,9 @@ export default function WorldApp({
     place = territories.find((t) => t.id === territory)!;
   const learning = ensureLearning(save);
   const [chapterNotice,setChapterNotice]=useState(false);
+  const [feedback,setFeedback]=useState(false);
+  const finishedGames=save.games.filter(g=>g.reason!=='in-progress').length;
+  useEffect(()=>{if(!loaded||screen!=="map"||feedback||chapterNotice||savePrompt||paywall||parentGate||parent||training||!feedbackDue(finishedGames))return;const t=setTimeout(()=>{setFeedback(true);trackGameEvent("feedback_shown");},1200);return()=>clearTimeout(t);},[loaded,screen,finishedGames,feedback,chapterNotice,savePrompt,paywall,parentGate,parent,training]);
   useEffect(()=>{trackScreen(screen);},[screen]);
   useEffect(()=>{if(!loaded||screen!=="map")return;const regions=worldRegions(save).filter(r=>r.open&&!learning.unlockedRegions?.includes(r.id));const completed=Object.values(learning.paths).every(p=>p.completed.length>=4);if(regions.length||(completed&&!learning.chapterOneSeen)){const n=structuredClone(saveRef.current),l=ensureLearning(n);l.unlockedRegions=[...new Set([...(l.unlockedRegions||[]),...regions.map(r=>r.id)])];for(const r of regions)emit("new_region_unlocked",{region:r.id});if(completed&&!l.chapterOneSeen){l.chapterOneSeen=true;setChapterNotice(true);}commit(n);}},[loaded,screen,save]);
   useEffect(() => {
@@ -757,6 +761,7 @@ export default function WorldApp({
           <button onClick={()=>void retryProfileSave()}>Retry</button>
         </div>
       )}
+      {feedback&&screen==="map"&&<FeedbackPrompt hero={hero} heroName={heroArt[hero]?.name||"Chezzies"} heroImage={heroArt[hero]?.image||"/assets/pieces/w-n.png"} games={finishedGames} onClose={()=>setFeedback(false)}/>}
       {chapterNotice&&<div className="world-modal"><section className="activity-shell"><h1>First chapter complete!</h1><p>Five fortresses freed. Beyond the mist, Tactics Pass has opened: new positions and longer continuations.</p><button className="world-button" onClick={()=>setChapterNotice(false)}>See the new path →</button></section></div>}
       {training ? <PersonalTraining key={`${training.topic || "all"}-${!!training.mixed}`} save={save} {...training} onSave={commit} onBack={()=>setTraining(null)} onTrain={topic=>train(topic,false,true)}/> : content}
       {PAYMENTS_ENABLED&&parentGate&&<ParentGate onBack={()=>setParentGate(false)} onAdult={()=>{setParentGate(false);emit("premium_paywall_viewed",{feature:gateFeature});setPaywall(true);}}/>}
