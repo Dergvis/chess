@@ -103,14 +103,14 @@ function login(msg=''){app.innerHTML=`<div class="login"><h1>CHEZZIES · адм�
  $('#send').onclick=async()=>{$('#e').textContent='';try{await api('admin/code',{body:{}});$('#e').className='mut';$('#e').textContent='Код отправлен в Telegram, действует 10 минут.';$('#code').focus();}catch(x){$('#e').className='err';$('#e').textContent=x.message}};
  const go=async()=>{try{await api('admin/login',{body:{code:$('#code').value}});cache={};shell();}catch(x){$('#e').className='err';$('#e').textContent=x.message}};$('#go').onclick=go;$('#code').onkeydown=e=>{if(e.key==='Enter')go()};}
 
-const TABS=[['summary','Сводка'],['players','Игроки'],['retention','Удержание'],['games','Партии'],['seo','Поиск'],['help','Помощь']];
+const TABS=[['summary','Сводка'],['players','Игроки'],['retention','Удержание'],['games','Партии'],['seo','Поиск'],['help','Помощь'],['feedback','Отзывы']];
 const PERIODS=[[1,'Сегодня'],[7,'7 дней'],[30,'30 дней'],[90,'90 дней']];
 function shell(){
  app.innerHTML=`<header><div class="top"><h1>CHEZZIES · админка</h1><button class="link" id="out">Выйти</button></div><nav>${TABS.map(([k,t])=>`<button data-tab="${k}" class="${k===tab?'on':''}">${t}</button>`).join('')}</nav><div class="periods" id="per">${PERIODS.map(([d,t])=>`<button data-days="${d}" class="${d===days?'on':''}">${t}</button>`).join('')}</div></header><main id="main"></main>`;
  $('#out').onclick=async()=>{await api('admin/logout',{body:{}}).catch(()=>{});login();};
  document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{tab=b.dataset.tab;player=null;location.hash=tab;shell();});
  document.querySelectorAll('[data-days]').forEach(b=>b.onclick=()=>{days=+b.dataset.days;cache={};shell();});
- $('#per').style.display=['seo','help'].includes(tab)||player?'none':'flex';
+ $('#per').style.display=['seo','help','feedback'].includes(tab)||player?'none':'flex';
  show();
 }
 async function show(){const m=$('#main');m.innerHTML='<p class="mut">Загрузка…</p>';
@@ -194,6 +194,16 @@ const VIEWS={
    h+=card('Запросы','По каким запросам сайт показывали в Google. Позиция — среднее место в выдаче.',tbl(rows,'query','Запрос')+stamp(s.queries));}
   if(s.pages)h+=card('Страницы в выдаче','Какие страницы сайта показывались в Google.',tbl(rowsOf(s.pages.data),'page','Страница')+stamp(s.pages));
   return h;},
+ async feedback(){const q=await api('admin/feedback');
+  const AGE={'4-6':'4–6 лет','7-9':'7–9 лет','10-12':'10–12 лет','13+':'13+ лет',adult:'взрослый'},SINCE={new:'только начал',months:'несколько месяцев',year:'около года',years:'больше года'};
+  const F=[['liked','Нравится'],['disliked','Не нравится'],['problems','Проблемы'],['friends','Чтобы друзья играли'],['ideas','Что добавить']];
+  const rows=q.feedback||[];
+  return card('Отзывы игроков','Окно с героем игрока после 2-й партии на карте (ещё раз через 3 партии). Только текст, без имён и контактов.',
+   rows.length?rows.map(r=>`<div class="q"><span class="mut small">№${r.id} · ${when(r.created_at)} · ${esc((r.lang||'').toUpperCase())}${r.country?' · '+esc(r.country):''} · ${r.device==='phone'?'телефон':'компьютер'}${r.hero?' · герой: '+esc(HERO[r.hero]||r.hero):''}${r.games!=null?' · партий: '+r.games:''}</span>
+   <div class="small">${[r.age?'Возраст: <b>'+esc(AGE[r.age]||r.age)+'</b>':'',r.chess_since?'В шахматах: <b>'+esc(SINCE[r.chess_since]||r.chess_since)+'</b>':''].filter(Boolean).join(' · ')}</div>
+   ${F.filter(([k])=>r[k]).map(([k,t])=>`<div class="msg"><b>${t}:</b> ${esc(r[k])}</div>`).join('')}
+   ${r.player_id?`<button class="trail" data-player="${esc(r.player_id)}">Что делал игрок</button>`:''}</div>`).join(''):'<p class="mut">Отзывов пока нет.</p>');
+ },
  async help(){const q=await api('admin/support');
   const dt=t=>t?new Date(t).toLocaleDateString('ru',{day:'numeric',month:'short',year:'numeric'}):'';
   const accountLine=r=>{const a=r.account;if(!a)return '';const p=a.progress||{},n=(v,t)=>v!=null?v+' '+t:'';
@@ -204,7 +214,7 @@ const VIEWS={
 const BOARD=new Set(['game:move_made','game:move_rejected','game:illegal_tap','game:drag_attempt','game:drag_hint_shown']);
 const hms=t=>new Date(t).toLocaleTimeString('ru',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
 const since=(t,start)=>{const s=Math.max(0,Math.round((new Date(t)-new Date(start))/1000));return '+'+Math.floor(s/60)+':'+String(s%60).padStart(2,'0');};
-const backBtn=()=>`<button class="link" id="back">${tab==='help'?'← К вопросам':'← Все игроки'}</button>`;
+const backBtn=()=>`<button class="link" id="back">${tab==='help'?'← К вопросам':tab==='feedback'?'← К отзывам':'← Все игроки'}</button>`;
 async function viewPlayer(id){let d;try{d=await api('admin/player',{q:'?id='+encodeURIComponent(id)});}catch(x){if(x.status===404||x.status===400)return backBtn()+card('Игрок №'+esc(id.slice(0,6)),'',`<p class="mut">Действий этого игрока пока нет. Статистика собирается только на chezzies.app, и хранится 395 дней.</p>`);throw x;}const s=d.summary;
  const item=i=>i.kind==='screen'?`открыл раздел «${esc(scr(i.name))}»`:i.kind==='click'?`нажал «${esc(i.label)}»${i.params?.screen?' <span class="mut small">('+esc(scr(i.params.screen))+')</span>':''}`:esc(evName(i.name,i.params))+(BOARD.has(i.name)?mode(i.params):'')+(EV[i.name.replace(/^game:/,'')]||!i.params?'':' <span class="mut small">'+esc(paramText(i.params))+'</span>');
  return `${backBtn()}

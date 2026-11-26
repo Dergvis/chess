@@ -31,6 +31,14 @@ async function db(){
   })().catch(e=>{initialized=undefined;throw e;});
   await initialized;return sql;
 }
+// Feedback popup (owner 25.11): text only, no voice, no name or contacts. Answers are short choices + free text.
+let feedbackReady;
+const FB_AGE=['4-6','7-9','10-12','13+','adult'],FB_SINCE=['new','months','year','years'];
+const fbText=v=>String(v||'').replace(/\s+/g,' ').trim().slice(0,1000);
+async function feedbackDb(sql){feedbackReady||=(async()=>{
+  await sql`CREATE TABLE IF NOT EXISTS international_feedback (id BIGSERIAL PRIMARY KEY,player_id TEXT,lang TEXT,age TEXT,chess_since TEXT,liked TEXT,disliked TEXT,problems TEXT,friends TEXT,ideas TEXT,hero TEXT,games INTEGER,country TEXT,device TEXT,created_at TIMESTAMPTZ NOT NULL DEFAULT now())`;
+  await sql`CREATE INDEX IF NOT EXISTS international_feedback_created_idx ON international_feedback(created_at DESC)`;
+})().catch(e=>{feedbackReady=undefined;throw e;});await feedbackReady;}
 async function hashPassword(password){const salt=randomBytes(16).toString('hex');return `scrypt:${salt}:${(await scrypt(password,salt,64)).toString('hex')}`;}
 async function verifyPassword(password,stored){const [a,s,h]=String(stored).split(':');if(a!=='scrypt'||!/^[a-f0-9]{32}$/.test(s)||!/^[a-f0-9]{128}$/.test(h))return false;return timingSafeEqual(await scrypt(password,s,64),Buffer.from(h,'hex'));}
 function tokenOf(req){return String(req.headers.cookie||'').match(/(?:^|;\s*)chezzies_international_session=([^;]*)/)?.[1]||'';}
@@ -64,6 +72,21 @@ export default async function account(req,res,path){
     // ---- Owner admin: anonymous visit statistics and Help questions ----
     if(path==='/api/site-events'||path.startsWith('/api/admin/'))await statsDb(sql);
     if(path==='/api/site-events')return ingest(sql,req,res,b);
+    if(path==='/api/feedback'){
+      await feedbackDb(sql);
+      const f={liked:fbText(b.liked),disliked:fbText(b.disliked),problems:fbText(b.problems),friends:fbText(b.friends),ideas:fbText(b.ideas)};
+      const age=FB_AGE.includes(b.age)?b.age:null,since=FB_SINCE.includes(b.since)?b.since:null;
+      if(!Object.values(f).some(Boolean)&&!age&&!since)return out(res,400,{error:'Please answer at least one question.'});
+      const address=String(req.headers['x-forwarded-for']||req.socket?.remoteAddress||'unknown').split(',')[0].trim();
+      if(await limited(sql,`feedback:${sha(address)}`,3))return out(res,429,{error:'Thank you! We already have your answers.'});
+      const country=/^[A-Z]{2}$/.test(String(req.headers['x-vercel-ip-country']||''))?String(req.headers['x-vercel-ip-country']):null;
+      const player=/^[A-Za-z0-9_-]{6,64}$/.test(String(b.p||''))?String(b.p):null,lang=b.lang==='es'?'es':'en',hero=/^[a-z_]{2,20}$/.test(String(b.hero||''))?String(b.hero):null;
+      const games=Number.isInteger(b.games)&&b.games>=0&&b.games<100000?b.games:null,device=/Mobi|Android|iPhone/i.test(String(req.headers['user-agent']||''))?'phone':'desktop';
+      await sql`INSERT INTO international_feedback(player_id,lang,age,chess_since,liked,disliked,problems,friends,ideas,hero,games,country,device) VALUES(${player},${lang},${age},${since},${f.liked||null},${f.disliked||null},${f.problems||null},${f.friends||null},${f.ideas||null},${hero},${games},${country},${device})`;
+      // Telegram gets only a short notice; the answers themselves stay in the admin page.
+      if(process.env.TELEGRAM_BOT_TOKEN&&process.env.TELEGRAM_CHAT_ID)await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:process.env.TELEGRAM_CHAT_ID,text:`CHEZZIES: новый отзыв (${lang.toUpperCase()}${country?', '+country:''}) — chezzies.app/admin/#feedback`,disable_web_page_preview:true}),signal:AbortSignal.timeout(8000)}).catch(()=>{});
+      return out(res,200,{ok:true});
+    }
     if(path==='/api/admin/seo-import')return seoImport(sql,req,res,b);
     if(path==='/api/admin/code'){
       if(!process.env.TELEGRAM_BOT_TOKEN||!process.env.TELEGRAM_CHAT_ID)return out(res,503,{error:'Telegram не настроен'});
@@ -86,6 +109,7 @@ export default async function account(req,res,path){
     if(path.startsWith('/api/admin/')&&!await isAdmin(sql,req))return out(res,401,{error:'Нужен вход'});
     if(path==='/api/admin/logout'){const t=adminTokenOf(req);if(t)await sql`DELETE FROM international_admin_sessions WHERE token_hash=${sha(t)}`;res.setHeader('Set-Cookie','chezzies_admin=; Path=/api/admin; HttpOnly; SameSite=Strict; Max-Age=0');return out(res,200,{ok:true});}
     if(req.method==='GET'&&await adminData(sql,req,res,path))return;
+    if(path==='/api/admin/feedback'){await feedbackDb(sql);const rows=await sql`SELECT id,player_id,lang,age,chess_since,liked,disliked,problems,friends,ideas,hero,games,country,device,created_at FROM international_feedback ORDER BY created_at DESC LIMIT 300`;return out(res,200,{feedback:rows});}
     if(path==='/api/admin/support'){
       // Account facts for signed-in askers: registration date and a short game summary only (no e-mail, child name or password data).
       const rows=await sql`SELECT r.id,r.message,r.created_at,r.player_id,r.board,(r.user_id IS NOT NULL) AS signed,u.created_at AS registered_at,
