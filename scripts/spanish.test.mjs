@@ -15,10 +15,12 @@ test('Spanish pages are indexable, in Spanish and paired with English via hrefla
   assert(html.includes('<html lang="es">'),path);
   assert(html.includes(`rel="canonical" href="https://chezzies.app/${path}"`),path);
   assert(html.includes('hreflang="es" href="https://chezzies.app/'+path+'"'),path);
-  assert(html.includes('hreflang="en"')&&html.includes('hreflang="x-default"'),path);
+  const solo=pages.some(p=>p.en===null&&path===`es/${p.slug}/`);
+  if(solo)assert(!html.includes('hreflang="en"')&&!html.includes('hreflang="x-default"'),path);
+  else assert(html.includes('hreflang="en"')&&html.includes('hreflang="x-default"'),path);
   assert.equal((html.match(/<h1(?:\s|>)/g)||[]).length,1,path);
  }
- for(const p of pages){const en=read(`${p.en}/index.html`);assert(en.includes(`hreflang="es" href="https://chezzies.app/es/${p.slug}/"`),p.en);}
+ for(const p of pages.filter(p=>p.en)){const en=read(`${p.en}/index.html`);assert(en.includes(`hreflang="es" href="https://chezzies.app/es/${p.slug}/"`),p.en);}
  assert(read('index.html').includes('class="lang-switch" href="/es/"'));
  const sitemap=read('sitemap.xml');for(const path of esPaths)assert(sitemap.includes(`<loc>https://chezzies.app/${path}</loc>`),path);
 });
