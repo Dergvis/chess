@@ -2,29 +2,51 @@
   "animations": [
     {
       "id": "catapult",
-      "name": "Катапульта",
+      "name": "Catapult",
       "type": "capture",
       "flavor": "cartoon",
       "duration": {
         "full": 1.8,
-        "short": 1.0,
+        "short": 1,
         "minimal": 0.3
       },
       "skippable": true,
       "sequence": [
-        { "action": "spawn_object", "object": "catapult", "delay": 0 },
-        { "action": "attach_target", "to": "catapult", "delay": 0.1 },
-        { "action": "delay", "time": 0.3 },
-        { "action": "launch", "target": "enemy_piece", "direction": "up-right" },
-        { "action": "play_effect", "effect": "puff" },
-        { "action": "despawn", "target": "enemy_piece", "delay": 0.2 }
+        {
+          "action": "spawn_object",
+          "object": "catapult",
+          "delay": 0
+        },
+        {
+          "action": "attach_target",
+          "to": "catapult",
+          "delay": 0.1
+        },
+        {
+          "action": "delay",
+          "time": 0.3
+        },
+        {
+          "action": "launch",
+          "target": "enemy_piece",
+          "direction": "up-right"
+        },
+        {
+          "action": "play_effect",
+          "effect": "puff"
+        },
+        {
+          "action": "despawn",
+          "target": "enemy_piece",
+          "delay": 0.2
+        }
       ],
       "sound": "catapult_pop",
-      "description": "Фигура запускается из катапульты"
+      "description": "The piece launches from a catapult"
     },
     {
       "id": "cannon",
-      "name": "Игрушечная пушка",
+      "name": "Toy cannon",
       "type": "capture",
       "flavor": "playful",
       "duration": {
@@ -34,19 +56,40 @@
       },
       "skippable": true,
       "sequence": [
-        { "action": "spawn_object", "object": "toy_cannon", "delay": 0 },
-        { "action": "insert", "target": "enemy_piece", "delay": 0.2 },
-        { "action": "delay", "time": 0.2 },
-        { "action": "fire", "direction": "right" },
-        { "action": "play_effect", "effect": "smoke_puff" },
-        { "action": "despawn", "target": "enemy_piece", "delay": 0.1 }
+        {
+          "action": "spawn_object",
+          "object": "toy_cannon",
+          "delay": 0
+        },
+        {
+          "action": "insert",
+          "target": "enemy_piece",
+          "delay": 0.2
+        },
+        {
+          "action": "delay",
+          "time": 0.2
+        },
+        {
+          "action": "fire",
+          "direction": "right"
+        },
+        {
+          "action": "play_effect",
+          "effect": "smoke_puff"
+        },
+        {
+          "action": "despawn",
+          "target": "enemy_piece",
+          "delay": 0.1
+        }
       ],
       "sound": "cannon_puff",
-      "description": "Пуф! И фигура улетает"
+      "description": "Poof! The piece flies away"
     },
     {
       "id": "banana_slip",
-      "name": "Банановая кожура",
+      "name": "Banana peel",
       "type": "capture",
       "flavor": "cartoon",
       "duration": {
@@ -56,18 +99,37 @@
       },
       "skippable": true,
       "sequence": [
-        { "action": "spawn_object", "object": "banana", "delay": 0 },
-        { "action": "target_step", "target": "enemy_piece", "delay": 0.1 },
-        { "action": "slip", "target": "enemy_piece", "direction": "back" },
-        { "action": "slide_out", "direction": "right" },
-        { "action": "despawn", "target": "enemy_piece", "delay": 0.2 }
+        {
+          "action": "spawn_object",
+          "object": "banana",
+          "delay": 0
+        },
+        {
+          "action": "target_step",
+          "target": "enemy_piece",
+          "delay": 0.1
+        },
+        {
+          "action": "slip",
+          "target": "enemy_piece",
+          "direction": "back"
+        },
+        {
+          "action": "slide_out",
+          "direction": "right"
+        },
+        {
+          "action": "despawn",
+          "target": "enemy_piece",
+          "delay": 0.2
+        }
       ],
       "sound": "slip_funny",
-      "description": "Фигура поскользнулась на банане"
+      "description": "The piece slips on a banana"
     },
     {
       "id": "spring_launch",
-      "name": "Пружина",
+      "name": "Spring",
       "type": "capture",
       "flavor": "cartoon",
       "duration": {
@@ -77,40 +139,81 @@
       },
       "skippable": true,
       "sequence": [
-        { "action": "spawn_object", "object": "spring", "delay": 0 },
-        { "action": "attach_target", "to": "spring", "delay": 0.1 },
-        { "action": "compress", "time": 0.2 },
-        { "action": "launch_up", "height": 300 },
-        { "action": "despawn", "target": "enemy_piece", "delay": 0.1 }
+        {
+          "action": "spawn_object",
+          "object": "spring",
+          "delay": 0
+        },
+        {
+          "action": "attach_target",
+          "to": "spring",
+          "delay": 0.1
+        },
+        {
+          "action": "compress",
+          "time": 0.2
+        },
+        {
+          "action": "launch_up",
+          "height": 300
+        },
+        {
+          "action": "despawn",
+          "target": "enemy_piece",
+          "delay": 0.1
+        }
       ],
       "sound": "boing",
-      "description": "Фигура подпрыгивает на пружине"
+      "description": "The piece bounces on a spring"
     },
     {
       "id": "ambulance",
-      "name": "Скорая помощь",
+      "name": "Ambulance",
       "type": "capture",
       "flavor": "cartoon",
       "duration": {
-        "full": 2.0,
-        "short": 1.0,
+        "full": 2,
+        "short": 1,
         "minimal": 0.3
       },
       "skippable": true,
       "sequence": [
-        { "action": "target_react", "emotion": "ouch", "delay": 0 },
-        { "action": "spawn_object", "object": "toy_ambulance", "delay": 0.2 },
-        { "action": "drive_in", "from": "left", "delay": 0.3 },
-        { "action": "load_target", "time": 0.4 },
-        { "action": "drive_out", "to": "right", "delay": 0.2 },
-        { "action": "despawn", "target": "enemy_piece", "delay": 0.1 }
+        {
+          "action": "target_react",
+          "emotion": "ouch",
+          "delay": 0
+        },
+        {
+          "action": "spawn_object",
+          "object": "toy_ambulance",
+          "delay": 0.2
+        },
+        {
+          "action": "drive_in",
+          "from": "left",
+          "delay": 0.3
+        },
+        {
+          "action": "load_target",
+          "time": 0.4
+        },
+        {
+          "action": "drive_out",
+          "to": "right",
+          "delay": 0.2
+        },
+        {
+          "action": "despawn",
+          "target": "enemy_piece",
+          "delay": 0.1
+        }
       ],
       "sound": "ambulance_toy",
-      "description": "Приезжает скорая и увозит фигуру"
+      "description": "An ambulance takes the piece away"
     },
     {
       "id": "rocket",
-      "name": "Ракета",
+      "name": "Rocket",
       "type": "capture",
       "flavor": "tech",
       "duration": {
@@ -120,40 +223,79 @@
       },
       "skippable": true,
       "sequence": [
-        { "action": "spawn_object", "object": "rocket", "delay": 0 },
-        { "action": "attach_target", "to": "rocket", "delay": 0.1 },
-        { "action": "ignite", "time": 0.3 },
-        { "action": "launch_up", "height": 400, "rotation": -5 },
-        { "action": "play_effect", "effect": "smoke_trail" },
-        { "action": "despawn", "target": "enemy_piece", "delay": 0.2 }
+        {
+          "action": "spawn_object",
+          "object": "rocket",
+          "delay": 0
+        },
+        {
+          "action": "attach_target",
+          "to": "rocket",
+          "delay": 0.1
+        },
+        {
+          "action": "ignite",
+          "time": 0.3
+        },
+        {
+          "action": "launch_up",
+          "height": 400,
+          "rotation": -5
+        },
+        {
+          "action": "play_effect",
+          "effect": "smoke_trail"
+        },
+        {
+          "action": "despawn",
+          "target": "enemy_piece",
+          "delay": 0.2
+        }
       ],
       "sound": "rocket_launch",
-      "description": "Фигура улетает на ракете"
+      "description": "The piece flies off on a rocket"
     },
     {
       "id": "trapdoor",
-      "name": "Люк",
+      "name": "Trapdoor",
       "type": "capture",
       "flavor": "playful",
       "duration": {
-        "full": 1.0,
+        "full": 1,
         "short": 0.5,
         "minimal": 0.2
       },
       "skippable": true,
       "sequence": [
-        { "action": "spawn_object", "object": "trap_door", "delay": 0 },
-        { "action": "open_door", "time": 0.2 },
-        { "action": "target_fall", "target": "enemy_piece", "direction": "down" },
-        { "action": "close_door", "delay": 0.2 },
-        { "action": "despawn", "target": "enemy_piece" }
+        {
+          "action": "spawn_object",
+          "object": "trap_door",
+          "delay": 0
+        },
+        {
+          "action": "open_door",
+          "time": 0.2
+        },
+        {
+          "action": "target_fall",
+          "target": "enemy_piece",
+          "direction": "down"
+        },
+        {
+          "action": "close_door",
+          "delay": 0.2
+        },
+        {
+          "action": "despawn",
+          "target": "enemy_piece"
+        }
       ],
       "sound": "trap_open",
-      "description": "Фигура проваливается в люк"
+      "description": "The piece falls through a trapdoor"
     },
     {
       "id": "fan_blow",
-      "name": "Вентилятор",
+      "name": "Fan",
       "type": "capture",
       "flavor": "playful",
       "duration": {
@@ -163,18 +305,37 @@
       },
       "skippable": true,
       "sequence": [
-        { "action": "spawn_object", "object": "fan", "delay": 0 },
-        { "action": "turn_on", "speed": "fast", "delay": 0.2 },
-        { "action": "blow", "target": "enemy_piece", "direction": "right" },
-        { "action": "play_effect", "effect": "wind_lines" },
-        { "action": "despawn", "target": "enemy_piece", "delay": 0.2 }
+        {
+          "action": "spawn_object",
+          "object": "fan",
+          "delay": 0
+        },
+        {
+          "action": "turn_on",
+          "speed": "fast",
+          "delay": 0.2
+        },
+        {
+          "action": "blow",
+          "target": "enemy_piece",
+          "direction": "right"
+        },
+        {
+          "action": "play_effect",
+          "effect": "wind_lines"
+        },
+        {
+          "action": "despawn",
+          "target": "enemy_piece",
+          "delay": 0.2
+        }
       ],
       "sound": "fan_spin",
-      "description": "Мощный вентилятор сдувает фигуру"
+      "description": "A powerful fan blows the piece away"
     },
     {
       "id": "balloons_lift",
-      "name": "Воздушные шарики",
+      "name": "Balloons",
       "type": "capture",
       "flavor": "magical",
       "duration": {
@@ -184,39 +345,76 @@
       },
       "skippable": true,
       "sequence": [
-        { "action": "spawn_object", "object": "balloons", "count": 3, "delay": 0 },
-        { "action": "attach_to_target", "to": "enemy_piece", "delay": 0.2 },
-        { "action": "lift_up", "height": 300, "time": 0.8 },
-        { "action": "pop_balloons", "delay": 0.2 },
-        { "action": "despawn", "target": "enemy_piece" }
+        {
+          "action": "spawn_object",
+          "object": "balloons",
+          "count": 3,
+          "delay": 0
+        },
+        {
+          "action": "attach_to_target",
+          "to": "enemy_piece",
+          "delay": 0.2
+        },
+        {
+          "action": "lift_up",
+          "height": 300,
+          "time": 0.8
+        },
+        {
+          "action": "pop_balloons",
+          "delay": 0.2
+        },
+        {
+          "action": "despawn",
+          "target": "enemy_piece"
+        }
       ],
       "sound": "balloons_float",
-      "description": "Шарики уносят фигуру в небо"
+      "description": "Balloons carry the piece into the sky"
     },
     {
       "id": "teleport",
-      "name": "Телепорт",
+      "name": "Teleport",
       "type": "capture",
       "flavor": "tech",
       "duration": {
-        "full": 1.0,
+        "full": 1,
         "short": 0.5,
         "minimal": 0.2
       },
       "skippable": true,
       "sequence": [
-        { "action": "spawn_object", "object": "teleport_ring", "delay": 0 },
-        { "action": "encircle_target", "target": "enemy_piece", "delay": 0.2 },
-        { "action": "flash", "intensity": "bright", "delay": 0.2 },
-        { "action": "dematerialize", "target": "enemy_piece" },
-        { "action": "despawn", "target": "enemy_piece" }
+        {
+          "action": "spawn_object",
+          "object": "teleport_ring",
+          "delay": 0
+        },
+        {
+          "action": "encircle_target",
+          "target": "enemy_piece",
+          "delay": 0.2
+        },
+        {
+          "action": "flash",
+          "intensity": "bright",
+          "delay": 0.2
+        },
+        {
+          "action": "dematerialize",
+          "target": "enemy_piece"
+        },
+        {
+          "action": "despawn",
+          "target": "enemy_piece"
+        }
       ],
       "sound": "teleport_beam",
-      "description": "Фигура телепортируется с доски"
+      "description": "The piece teleports off the board"
     },
     {
       "id": "spider_web",
-      "name": "Паутинка",
+      "name": "Spider web",
       "type": "capture",
       "flavor": "playful",
       "duration": {
@@ -226,18 +424,38 @@
       },
       "skippable": true,
       "sequence": [
-        { "action": "spawn_object", "object": "spider", "delay": 0 },
-        { "action": "descend", "from": "top", "delay": 0.3 },
-        { "action": "shoot_web", "target": "enemy_piece", "delay": 0.2 },
-        { "action": "pull_up", "target": "enemy_piece", "height": 200 },
-        { "action": "despawn", "target": "enemy_piece", "delay": 0.2 }
+        {
+          "action": "spawn_object",
+          "object": "spider",
+          "delay": 0
+        },
+        {
+          "action": "descend",
+          "from": "top",
+          "delay": 0.3
+        },
+        {
+          "action": "shoot_web",
+          "target": "enemy_piece",
+          "delay": 0.2
+        },
+        {
+          "action": "pull_up",
+          "target": "enemy_piece",
+          "height": 200
+        },
+        {
+          "action": "despawn",
+          "target": "enemy_piece",
+          "delay": 0.2
+        }
       ],
       "sound": "web_shoot",
-      "description": "Паучок спускается и забирает фигуру"
+      "description": "A spider comes down and takes the piece"
     },
     {
       "id": "broom_sweep",
-      "name": "Метла",
+      "name": "Broom",
       "type": "capture",
       "flavor": "cartoon",
       "duration": {
@@ -247,15 +465,37 @@
       },
       "skippable": true,
       "sequence": [
-        { "action": "spawn_object", "object": "broom", "delay": 0 },
-        { "action": "sweep_in", "from": "left", "delay": 0.2 },
-        { "action": "push_target", "target": "enemy_piece", "direction": "right" },
-        { "action": "play_effect", "effect": "dust_cloud" },
-        { "action": "sweep_out", "to": "right", "delay": 0.2 },
-        { "action": "despawn", "target": "enemy_piece" }
+        {
+          "action": "spawn_object",
+          "object": "broom",
+          "delay": 0
+        },
+        {
+          "action": "sweep_in",
+          "from": "left",
+          "delay": 0.2
+        },
+        {
+          "action": "push_target",
+          "target": "enemy_piece",
+          "direction": "right"
+        },
+        {
+          "action": "play_effect",
+          "effect": "dust_cloud"
+        },
+        {
+          "action": "sweep_out",
+          "to": "right",
+          "delay": 0.2
+        },
+        {
+          "action": "despawn",
+          "target": "enemy_piece"
+        }
       ],
       "sound": "sweep_whoosh",
-      "description": "Метла подметает фигуру с доски"
+      "description": "A broom sweeps the piece off the board"
     }
   ]
 }

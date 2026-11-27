@@ -1,0 +1,75 @@
+.gosha-world .task-layout{align-items:start;grid-template-rows:auto 1fr!important;row-gap:0!important}
+.task-layout>.training-task-header{grid-column:2;grid-row:1;padding-bottom:0}
+.task-layout>.game-board-section{grid-column:1;grid-row:1 / span 2;align-self:start}
+.task-layout>.game-sidebar{grid-column:2;grid-row:2;align-self:start}
+.training-task-header p{margin:0;line-height:1.4;font-size:16px}
+.training-task-header .task-step{font-size:14px;font-weight:750;color:#1d695c}
+.training-task-header .turn-banner{margin:0;font-size:13px;max-width:100%;white-space:normal}
+.tactic-demo{border:1px solid #d6caa8;border-radius:12px;background:#f7f4e9;overflow:hidden;color:#173c41}
+.tactic-demo button{background:transparent;color:#174450;border:0;box-shadow:none;cursor:pointer}
+.tactic-demo .demo-toggle{width:100%;display:flex;justify-content:space-between;padding:10px;font-weight:700;min-height:40px;text-align:left}
+.demo-diagram{display:flex;gap:9px;padding:0 10px 8px;align-items:center}
+.demo-diagram svg{width:138px;height:138px;flex:0 0 138px;border:2px solid #506b5c;border-radius:4px}
+.demo-diagram p{font-size:13px;line-height:1.4}
+.tactic-demo>small{display:block;padding:0 10px;color:#536961;font-size:11px}
+.tactic-demo .demo-replay{display:block;padding:8px 10px;font-size:12px;text-decoration:underline}
+.task-layout .challenge-panel{padding-top:8px;gap:10px}
+.task-layout .lesson-actions{display:flex;flex-direction:column;gap:8px}
+.task-layout .piece-guide{margin-top:4px}
+.task-layout .lesson-hint{margin:0;background:#f7edcd;border-radius:10px;padding:12px;color:#314d43}
+.mate-recognition{display:grid;gap:8px}
+.gate-brief{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:15px}
+@media(max-width:1000px){
+ .gosha-world .task-layout{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:auto auto auto!important;gap:12px!important}
+ .task-layout>.training-task-header{grid-column:1;grid-row:1}
+ .task-layout>.game-board-section{grid-column:1;grid-row:2}
+ .task-layout>.game-sidebar{grid-column:1;grid-row:3}
+ .training-task-header{gap:8px!important}
+ .training-task-header h1{font-size:23px}
+ .demo-diagram svg{width:100px;height:100px;flex-basis:100px}
+ .training-task-header .demo-diagram p{font-size:13px}
+ .tactic-demo .demo-toggle{padding:8px 10px}
+ .tactic-demo .demo-replay{min-height:36px}
+}
+
+.demo-king-search{animation:king-seeks-exit .7s ease-in-out 2}
+@keyframes king-seeks-exit{50%{translate:-3px 3px}}
+@media(prefers-reduced-motion:reduce){.demo-king-search{animation:none}.demo-diagram text{transition:none!important}}
+
+/* Keep the capture film inside the height of the playable board. */
+@media(min-width:1001px){
+ .task-layout .training-task-header{gap:7px;padding-top:4px}
+ .task-layout .training-task-header h1{font-size:22px;line-height:1.2}
+ .task-layout .training-task-header p{font-size:14px;line-height:1.35}
+ .task-layout .lesson-number{font-size:11px}
+ .task-layout .challenge-panel{gap:6px;padding:8px 8px 0}
+ .task-layout .lesson-actions{gap:4px}
+ .task-layout .lesson-actions button{font-size:13px;min-height:32px;padding:6px 10px;line-height:1.25}
+ .task-layout .lesson-actions .world-button{min-height:38px;font-size:14px;padding:8px 12px}
+ .task-layout .demo-toggle{min-height:34px;padding:7px 9px;font-size:13px}
+ .gosha-world .task-layout:has(.battle-video-wrapper){height:calc(var(--task-grid-height) + 58px);padding-bottom:40px!important;grid-template-rows:auto minmax(0,1fr)!important}
+ .task-layout:has(.battle-video-wrapper)>.game-sidebar{align-self:stretch;min-height:0;height:100%;gap:10px;overflow:hidden}
+ .task-layout:has(.battle-video-wrapper) .tactic-demo{display:none}
+ .task-layout:has(.battle-video-wrapper) .challenge-panel{flex:0 1 auto;min-height:0;max-height:calc(100% - 130px);overflow-y:auto}
+ .task-layout .battle-video-wrapper{flex:1 1 0;min-height:0;max-height:none;width:100%;padding:6px;align-items:stretch;margin-top:auto}
+ .task-layout .battle-video-wrapper video{width:100%;height:100%;min-height:0;max-width:100%;max-height:100%;object-fit:contain;box-shadow:none;border-radius:8px}
+}
+
+.task-tools{display:flex;flex-direction:column;gap:8px;min-width:0}
+@media(max-width:760px){
+ .task-layout .training-task-header h1{font-size:20px!important;line-height:1.2;margin:0}
+ .task-layout .training-task-header p{font-size:14px;line-height:1.35}
+ .task-layout .lesson-number{font-size:10px;letter-spacing:.05em}
+ .task-tools{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px;align-items:start}
+ .task-tools .turn-banner{font-size:11px!important;margin:0!important;padding:9px 5px!important}
+ .task-tools .demo-toggle{font-size:11px;min-height:36px;padding:6px!important;gap:4px}
+ .task-tools .tactic-demo:has(.demo-diagram){grid-column:1 / -1}
+ .task-layout .lesson-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+ .task-layout .lesson-actions>button{min-height:40px;padding:8px;font-size:12px}
+ .task-layout .lesson-actions>.piece-guide{margin:0;border:1px solid #8ca1a4;border-radius:10px;padding:0;min-width:0;grid-column:2;grid-row:1}
+ .task-layout .piece-guide>summary{padding:10px 6px;font-size:12px;min-height:40px;box-sizing:border-box;cursor:pointer}
+ .task-layout .lesson-actions>.piece-guide[open]{grid-column:1 / -1;grid-row:2}
+ .task-layout .lesson-actions>.world-button{grid-column:1}
+ .task-layout .challenge-panel{padding:0;gap:8px}
+ .task-layout .lesson-actions>.lesson-back{font-size:12px;min-height:40px}
+}

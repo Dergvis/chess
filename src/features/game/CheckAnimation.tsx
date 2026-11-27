@@ -58,7 +58,7 @@ export default function CheckAnimation({
 
         {/* Текст "ШАХ!" */}
         {intensity === 'full' && (
-          <div className="check-text">⚠️ ШАХ!</div>
+          <div className="check-text">⚠️ CHECK!</div>
         )}
       </div>
     </div>

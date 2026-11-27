@@ -8,31 +8,29 @@
   pointer-events: none; /* Фигурка пропускает клики */
 }
 
-.piece-svg {
-  width: 90%;
-  height: 90%;
+.piece-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
   transition: all 0.2s ease;
-  pointer-events: none; /* Важно: позволяет кликам проходить сквозь SVG */
+  pointer-events: none; /* Важно: позволяет кликам проходить сквозь изображение */
   transform-origin: center bottom;
-}
-
-.piece-svg * {
-  pointer-events: none; /* Важно: все элементы SVG тоже пропускают клики */
+  transform: scale(1.8);
 }
 
 /* Белые фигуры */
-.piece-white .piece-svg {
+.piece-white .piece-image {
   filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
 }
 
 /* Чёрные фигуры */
-.piece-black .piece-svg {
+.piece-black .piece-image {
   filter: drop-shadow(0 2px 3px rgba(255, 255, 255, 0.2));
 }
 
 /* Выбранная фигура */
-.chess-piece.selected .piece-svg {
+.chess-piece.selected .piece-image {
   transform: scale(1.15);
   filter: drop-shadow(0 0 8px rgba(74, 144, 217, 0.8));
   animation: pieceSelect 0.2s ease-out;
@@ -45,7 +43,7 @@
 }
 
 /* Фигура под шахом */
-.chess-piece.check .piece-svg {
+.chess-piece.check .piece-image {
   animation: pieceCheck 0.5s ease-in-out infinite;
   filter: drop-shadow(0 0 10px rgba(239, 83, 80, 0.8));
 }
@@ -57,12 +55,12 @@
 }
 
 /* Последний ход */
-.chess-piece.last-move .piece-svg {
+.chess-piece.last-move .piece-image {
   filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
 }
 
 /* Hover эффект */
-.chess-piece:hover .piece-svg {
+.chess-piece:hover .piece-image {
   transform: scale(1.08);
 }
 
@@ -83,47 +81,168 @@
   }
 }
 
-/* Анимация взятия - для атакующей фигуры */
-.piece-capture-attack {
-  animation: captureAttack 0.6s ease-out;
+/* ===== ВЗЯТИЕ: атака (прыжок + шлейф) ===== */
+
+/* Ghost-фигура на клетке-источнике (показывает откуда пришли) */
+.chess-piece.capturing-ghost .piece-image {
+  opacity: 0.5;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+  animation: ghostFade 0.3s ease-out forwards;
 }
 
-@keyframes captureAttack {
+@keyframes ghostFade {
+  0% { opacity: 0.7; transform: scale(1.8); }
+  100% { opacity: 0.3; transform: scale(1.6); }
+}
+
+/* Атакующая фигура — подпрыгивает и летит к цели */
+.chess-piece.capturing-attacker .piece-image {
+  animation: captureJump 0.3s ease-out forwards;
+  filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.9));
+}
+
+@keyframes captureJump {
   0% {
-    transform: translate(0, 0) scale(1);
+    transform: scale(1.8);
+    filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.4));
   }
   30% {
-    transform: translate(0, -10px) scale(1.1);
+    transform: scale(2.1) translateY(-8px);
+    filter: drop-shadow(0 6px 16px rgba(255, 215, 0, 0.8));
   }
-  50% {
-    transform: translate(20px, 0) scale(1.15);
+  70% {
+    transform: scale(2.0);
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.7));
   }
   100% {
-    transform: translate(0, 0) scale(1);
+    transform: scale(1.8);
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
   }
 }
 
-/* Анимация взятия - для защищающейся фигуры (исчезает) */
-.piece-capture-defend {
-  animation: captureDefend 0.6s ease-out forwards;
+/* Шлейф за атакующей фигурой */
+.capture-ghost-trail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
 }
 
-@keyframes captureDefend {
+.ghost-trail-dot {
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.6) 0%, transparent 70%);
+  animation: ghostTrailFade 0.3s ease-out forwards;
+}
+
+@keyframes ghostTrailFade {
   0% {
-    opacity: 1;
-    transform: translate(0, 0) scale(1) rotate(0deg);
-  }
-  30% {
-    opacity: 0.8;
-    transform: translate(-10px, -30px) scale(1.2) rotate(-10deg);
-  }
-  60% {
-    opacity: 0.6;
-    transform: translate(50px, -80px) scale(0.8) rotate(-45deg);
+    opacity: 0.7;
+    transform: scale(1);
   }
   100% {
     opacity: 0;
-    transform: translate(150px, -150px) scale(0.3) rotate(-180deg);
+    transform: scale(0.3);
+  }
+}
+
+/* ===== ВЗЯТИЕ: защита (цель трясётся и исчезает) ===== */
+
+/* Вражеская фигура — трясётся перед исчезновением */
+.chess-piece.capturing-target .piece-image {
+  animation: captureShakeVanish 0.3s ease-out forwards;
+}
+
+@keyframes captureShakeVanish {
+  0% {
+    opacity: 1;
+    transform: scale(1.8) translateX(0);
+    filter: drop-shadow(0 0 4px rgba(239, 83, 80, 0.4));
+  }
+  20% {
+    transform: scale(1.9) translateX(-3px);
+    filter: drop-shadow(0 0 10px rgba(239, 83, 80, 0.7));
+  }
+  40% {
+    transform: scale(1.9) translateX(3px);
+    filter: drop-shadow(0 0 12px rgba(239, 83, 80, 0.8));
+  }
+  60% {
+    transform: scale(1.9) translateX(-2px);
+    opacity: 0.8;
+  }
+  80% {
+    transform: scale(1.5) translateX(1px);
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) translateY(-20px);
+    filter: drop-shadow(0 0 20px rgba(239, 83, 80, 0.3));
+  }
+}
+
+/* ===== ВЗЯТИЕ: вспышка контакта ===== */
+.capture-impact-flash {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 200, 0.9) 0%, rgba(255, 200, 50, 0.4) 40%, transparent 70%);
+  animation: impactFlash 0.25s ease-out forwards;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes impactFlash {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+}
+
+/* ===== Звёзды при исчезновении ===== */
+.capture-stars {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 8;
+}
+
+.capture-star {
+  position: absolute;
+  font-size: 14px;
+  animation: starBurst 0.4s ease-out forwards;
+}
+
+@keyframes starBurst {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--star-x), var(--star-y)) scale(1.2);
   }
 }
 
@@ -159,54 +278,58 @@
 }
 
 /* Комбинированная idle-анимация для всех фигур */
-.chess-piece:not(.selected):not(.check):not(.last-move) .piece-svg {
-  animation: 
+.chess-piece:not(.selected):not(.check):not(.last-move) .piece-image {
+  animation:
     pieceIdleSway 3s ease-in-out infinite,
     pieceIdleBounce 2s ease-in-out infinite,
     pieceIdleBreathe 4s ease-in-out infinite;
 }
 
 /* Пешка - более активная */
-.chess-piece.piece-p:not(.selected):not(.check) .piece-svg {
-  animation: 
+.chess-piece.piece-p:not(.selected):not(.check) .piece-image {
+  animation:
     pieceIdleSway 2.5s ease-in-out infinite,
     pieceIdleBounce 1.8s ease-in-out infinite,
     pieceIdleBreathe 3.5s ease-in-out infinite;
 }
 
 /* Король - более важный, медленный */
-.chess-piece.piece-k:not(.selected):not(.check) .piece-svg {
-  animation: 
+.chess-piece.piece-k:not(.selected):not(.check) .piece-image {
+  animation:
     pieceIdleSway 4s ease-in-out infinite,
     pieceIdleBreathe 5s ease-in-out infinite;
 }
 
 /* Ферзь - изящный */
-.chess-piece.piece-q:not(.selected):not(.check) .piece-svg {
-  animation: 
+.chess-piece.piece-q:not(.selected):not(.check) .piece-image {
+  animation:
     pieceIdleSway 3.5s ease-in-out infinite,
     pieceIdleBounce 2.5s ease-in-out infinite,
     pieceIdleBreathe 4.5s ease-in-out infinite;
 }
 
 /* Конь - энергичный */
-.chess-piece.piece-n:not(.selected):not(.check) .piece-svg {
-  animation: 
+.chess-piece.piece-n:not(.selected):not(.check) .piece-image {
+  animation:
     pieceIdleSway 2s ease-in-out infinite,
     pieceIdleBounce 1.5s ease-in-out infinite;
 }
 
 /* Адаптивность */
 @media (max-width: 768px) {
-  .piece-svg {
+  .piece-image {
     width: 90%;
     height: 90%;
   }
-  
+
   /* Уменьшаем интенсивность анимаций на мобильных */
-  .chess-piece:not(.selected):not(.check):not(.last-move) .piece-svg {
-    animation: 
+  .chess-piece:not(.selected):not(.check):not(.last-move) .piece-image {
+    animation:
       pieceIdleSway 4s ease-in-out infinite,
       pieceIdleBreathe 5s ease-in-out infinite;
   }
 }
+
+.chess-piece{position:relative}.piece-identity{position:absolute;bottom:1px;right:1px;z-index:8;display:grid;place-items:center;min-width:16px;height:18px;padding:0 2px;border:1px solid #826b46;border-radius:4px;background:#fff4d5;color:#152a36;font:18px/1 'Segoe UI Symbol',serif;box-shadow:0 1px 2px #0005;pointer-events:none}.piece-black .piece-identity{background:#23353d;color:#fff2cf;border-color:#e6ce96}.square-container{position:relative}.piece-name-tip{display:none;position:absolute;left:50%;bottom:100%;transform:translateX(-50%);z-index:1000;background:#173c43;color:#fff4d4;border:1px solid #e9cc85;border-radius:6px;padding:5px 7px;white-space:nowrap;font-size:12px;pointer-events:none}.square-container:hover .piece-name-tip,.square-container.piece-tapped .piece-name-tip{display:block}.square-container:has(.piece-name-tip):hover,.square-container.piece-tapped{z-index:25}
+
+.square-container .piece-name-tip{top:0;bottom:auto;left:0;transform:none;max-width:150px;font-size:11px}.square-container:last-child .piece-name-tip{left:auto;right:0}

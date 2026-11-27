@@ -1,0 +1,105 @@
+import {guidePages} from './guides-en.mjs';
+export {pieceGuide,teachSteps,sessionPlan} from './guides-en.mjs';
+export const origin='https://chezzies.app';
+export const description='CHEZZIES is an online chess adventure game for kids. Explore a fantasy world and practice chess through interactive challenges, free in your browser.';
+export const pages=[
+{slug:'chess-games-for-kids',title:'Free Online Chess Game for Kids & Beginners | CHEZZIES',h1:'Free Online Chess Game for Kids',intro:'Free chess game for kids and beginners: play in your browser, no download, no account needed to start. Short chess challenges, computer opponents and a fantasy world to explore.',sections:[
+['What is a good chess game for a beginner?','A good beginner game has clear goals, only legal moves and feedback that explains the position. In CHEZZIES, children start with short challenges that ask for one idea, and the game checks every move.',{top:true}],
+['How do you play chess?','Each side has 16 pieces and White moves first. The goal is checkmate: the king is attacked and cannot escape. Rooks move in straight lines, bishops diagonally and the queen both ways. The knight jumps in an L shape, the king steps one square, and pawns move forward and capture diagonally.',{top:true,note:'See every piece on a board: <a href="/how-do-chess-pieces-move/">how chess pieces move</a>.'}],
+['What makes this a chess adventure?','Your hero travels across a fantasy map. Inside each fortress, chess challenges lead through stages to a final guardian. Completing challenges develops your hero and opens the next part of the journey.'],
+['What can children play?','Children can solve tactic challenges, play full games against computer opponents in the Arena, or try their hero’s abilities in the training ground. The adventure brings them back to real chess positions.'],
+['Can a 4-year-old play chess?','Yes. At four, start by meeting the pieces as characters, one piece per session, for about 10 minutes. Full games usually come later, once the child knows how every piece moves.',{note:'A step-by-step plan: <a href="/how-to-teach-a-child-chess/">how to teach a child chess</a>.'}],
+['Is CHEZZIES free?','Yes. The international version is free to play. There are no subscriptions or paid content limits. Some locations open through gameplay progress.']
+],links:['online-chess-for-kids','chess-puzzles-for-kids']},
+{slug:'online-chess-for-kids',title:'Online Chess for Kids | CHEZZIES',h1:'Online Chess for Kids',intro:'CHEZZIES is a free browser-based chess adventure for kids. Choose a hero, solve short challenges and face computer opponents in the Arena.',sections:[
+['How do children start playing?','Select Start Adventure, choose a hero and tell the game how familiar you are with chess. Explore the map or open the piece guide. You do not need an account or a payment to begin.'],
+['Who do children play against?','The Arena uses computer-controlled opponents with different difficulty levels. This version does not provide live multiplayer matchmaking or a player chat.'],
+['Where is progress saved?','Guest progress stays in the current browser. Register a free CHEZZIES account to save the adventure online and restore it on another device. If you play as a guest, clearing browser data can remove your progress.'],
+['Does it work on a phone?','CHEZZIES runs in a browser on phones, tablets and desktop computers. The game adapts its navigation and board to the screen. A larger screen can help when first learning to recognise pieces.']
+],links:['chess-games-for-kids','parents']},
+{slug:'learn-chess-for-kids',title:'Chess Tutorial for Kids: Learn Step by Step (Free) | CHEZZIES',h1:'Chess Tutorial for Kids: Learn Chess Step by Step',intro:'A free chess tutorial for kids in your browser. The goal of chess is checkmate: attack the king so it cannot escape. Learn one piece at a time, then checkmate, then a first full game.',sections:[
+['How can a parent follow along?','Sit with your child for 10–15 minutes a day and take one step per session. Ask them to say each move out loud before playing it. The progress view shows recorded challenges, games and skill practice in this browser. Progress records describe activity in the game; they do not certify learning outcomes.',{top:true}],
+['What are the chess basics for kids?','Chess is played by two players on a board of 64 squares. Each player has 16 pieces: eight pawns, two rooks, two knights, two bishops, a queen and a king. White moves first, then the players take turns. You win by checkmate: the king is attacked and has no safe move. If a player has no legal move and is not in check, the game is a draw.',{top:true}],
+['In what order should kids learn the pieces?','Start with the pawn: there are eight of them and they open the game. The knight comes next, because its jump is the most unusual move and needs the most practice. Then the long-range pieces: bishop, rook and queen. Finish with the king, because its safety leads straight to check and checkmate.'],
+['How does CHEZZIES teach chess?','The piece guide demonstrates movement. Fortress challenges focus on individual tactical ideas, with hints and feedback. Full Arena games let children use those ideas in longer positions.'],
+['What should beginners practise first?','Learn legal piece movement and how to keep the king safe. Then explore checkmate, undefended pieces and simple double threats. Revisit an idea in several positions rather than memorising a single move.'],
+['How long does it take a child to learn chess?','Most children can learn how every piece moves in a few weeks of short sessions. Checkmate and a first full game come after that. There is no need to rush: one new idea per session, repeated in several positions, sticks better than a long lesson.'],
+['Can kids learn chess online for free?','Yes. CHEZZIES is free in a browser on phones, tablets and desktop computers, with no download. A child can start as a guest; guest progress stays in that browser. A free account saves the adventure online and restores it on another device.'],
+['What if my child gets frustrated?','Stop while it is still fun and come back tomorrow. Make the next task smaller: one piece, one goal, one move. Praise the question, not only the win, and let the child replay a position to find a better move. A short success is worth more than a long lesson.'],
+['Do kids need to learn chess notation?','Not at the start. Children can play and solve challenges without writing moves down. Later, square names such as e4 help them read puzzles and talk about a game: columns are letters from a to h and rows are numbers from 1 to 8.'],
+['What comes after the basics?','After the first full games, children start to look for tactics: a fork attacks two pieces at once, a pin stops a piece from moving, and a double attack creates two threats. These ideas have their own fortresses in the game and their own puzzles.',{note:'Practise them in the <a href="/chess-puzzles-for-kids/">{count} chess puzzles for kids</a>.'}],
+['What works in chess lessons for a 6-year-old?','Short sessions, one goal at a time and plenty of praise for good questions, not only for wins. Let the child replay a position after a mistake and find a better move. Mini challenges with a single idea keep a six-year-old interested longer than a full game.',{note:'More ideas for parents: <a href="/how-to-teach-a-child-chess/">how to teach a child chess</a>.'}]
+],links:['how-to-play-chess-for-kids','chess-puzzles-for-kids']},
+{slug:'how-to-play-chess-for-kids',title:'How to Play Chess for Kids: Rules & First Moves | CHEZZIES',h1:'How to Play Chess for Kids',intro:'Learn how to play chess for kids: the rules, how a game ends, a simple plan for the first moves and common mistakes. Then practise free in CHEZZIES.',sections:[
+['How do you set up a chessboard?','Place the board with a light square at each player’s bottom-right corner. Put rooks in the corners, then knights and bishops. The queen starts on her own colour: the white queen on a light square, the black queen on a dark one; the king takes the remaining square. Pawns fill the row in front. White moves first.'],
+['How do the pieces move?','Rooks move straight along ranks and files. Bishops move diagonally. Queens combine rook and bishop movement. Knights move two squares in one direction and one across, and can jump over pieces. Kings move one square in any direction, but never into attack.'],
+['What about pawns?','Pawns move one square forward and capture one square diagonally forward. From their starting square, they may advance two squares if both squares are empty. A pawn that reaches the far end becomes a queen, rook, bishop or knight.'],
+['What is check, and what is checkmate?','Check means the king is under attack. You must escape by moving the king, capturing the attacker or blocking the attack when possible. If none of those is legal, it is checkmate. The king is never captured.'],
+['Can a game end without checkmate?','Yes. If a player has no legal move and is not in check, the game is a draw by stalemate. Games can also be drawn by repetition or other rules.'],
+['Are there special moves?','Castling moves a king two squares towards its rook and brings that rook to the square the king crossed. Neither may have moved; the path must be clear, and the king cannot castle out of, through or into check. En passant lets a pawn capture an opposing pawn immediately after it advances two squares to stand beside it, as if it had moved only one.'],
+['What does a game of chess look like?','A game has three parts. In the opening, both players bring their pieces out from the back row and fight for the four centre squares. In the middlegame, the pieces meet: players attack, defend and trade. In the endgame, only a few pieces are left, the kings step forward and pawns race to become queens. A beginner game often lasts 20 to 40 moves for each side. It ends with checkmate, when a player gives up (resigns), or in a draw: stalemate, the same position three times, or too few pieces left to give checkmate.'],
+['What is a simple plan for the first ten moves?','Use the opening to get every piece ready, not to attack straight away. Move a centre pawn two squares, bring out the knights and bishops, castle, and then connect the rooks. Move each piece once before you move any piece twice, and keep the queen at home until the knights and bishops are out.',{table:['A plan for the first ten moves',['Moves','What to do','Why'],[['1–2','Move a centre pawn two squares, then bring out a knight','Pawns and knights in the centre control the most squares'],['3–5','Bring out the other knight and both bishops','Every piece off the back row is ready to help'],['6','Castle','The king hides behind its pawns and a rook joins the game'],['7–10','Step the queen up one square and put the rooks on open lines','The rooks see each other and can reach the open files']]]}],
+['What are the most common beginner mistakes?','Leaving a piece unprotected, so the other player takes it for free. Bringing the queen out too early, where it gets chased and wastes moves. Moving only pawns while the knights and bishops stay at home. Forgetting to castle, so the king is stuck in the middle when lines open. Taking every piece that is offered without checking for a trap. And the biggest one: not looking at the last move of the other player. One habit fixes most of these: before every move, look for all checks, captures and threats, for both sides.'],
+['What should I try next?','Explore the piece guide in CHEZZIES, then try a short challenge. The board checks legal moves while you practise. Take your time and look at what the other side is threatening. If you are a parent teaching a young child, follow the step-by-step guide on how to teach a child chess.',{note:'Next: <a href="/how-do-chess-pieces-move/">how chess pieces move</a> with a board for every piece, <a href="/how-to-teach-a-child-chess/">how to teach a child chess</a> for parents, or <a href="/chess-puzzles-for-kids/">{count} chess puzzles for kids</a>.'}]
+],links:['learn-chess-for-kids','how-to-teach-a-child-chess','chess-puzzles-for-kids']},
+{slug:'chess-puzzles-for-kids',title:'Chess Puzzles for Kids — {count} Free Puzzles with Answers | CHEZZIES',h1:'Chess Puzzles for Kids',intro:'Solve {count} free chess puzzles for kids from the CHEZZIES game: checkmate in one, forks, pins, double attacks and defense. Each puzzle asks for one move and has a hint and the answer.',sections:[
+['What is checkmate?','Checkmate is a check with no legal escape. Try looking for a move that attacks the king while covering its escape squares.'],
+['What is a chess fork?','A fork is one piece attacking two or more enemy pieces at once. A knight can fork a king and a rook, forcing a response to check while leaving the rook under attack.'],
+['What is a pin?','A pin restricts a piece because moving it would expose a piece behind it. If the piece behind is its king, moving out of that line is illegal. A pin against a queen can be costly to break, but is not automatically illegal.'],
+['What is a double attack?','A double attack creates two threats with one move. A fork is one type; another is moving a piece to create a threat while uncovering an attack from a different piece.'],
+['How do you practise defense?','First identify the threat. You might move the attacked piece, capture the attacker, block a line or add protection. If your king is in check, your move must remove the check.'],
+['Are chess puzzles useful for beginners?','A focused position lets a beginner examine one idea without managing a whole game. Use hints when needed, then explain why the move works. CHEZZIES combines these positions with opportunities to play full games.']
+],links:['learn-chess-for-kids','how-to-play-chess-for-kids']},
+{slug:'parents',title:'CHEZZIES for Parents — Free Chess Through Play',h1:'They come to play. They discover chess.',intro:'CHEZZIES is a free browser-based chess adventure for young beginners. Children choose a hero, solve chess challenges, explore a fantasy map and play against computer opponents.',sections:[
+['Who is CHEZZIES for?','CHEZZIES is designed for young chess beginners. A child who is still learning to read may enjoy playing with an adult alongside them.'],
+['What will my child do?','Children practise checkmate, forks, pins, double attacks and defense. They progress through fortress stages, develop their chosen hero and can play longer games in the Arena. The training ground offers a short arcade activity with the same heroes.'],
+['Is everything free?','Yes. The international version has no payment requirement, subscriptions or paid limits. Locked locations reflect adventure progress or content not yet available, not a purchase requirement.'],
+['Can I see progress?','The in-game progress summary shows recorded activity and skill practice. Guest progress stays in this browser. A free CHEZZIES account can save and restore the adventure across devices.'],
+['Are there other players or chat?','The Arena opponents are computer-controlled. This international release has no player chat or multiplayer matchmaking. It does not offer parental time controls or a separate parent account.'],
+['What data does this version use?','The browser stores game progress and a limited local activity log. The activity interface accepts event names and broad traffic categories, without names, emails or full referring URLs. Vercel Web Analytics measures visits, page views and traffic sources without analytics cookies. We remove query strings and fragments from page URLs before sending page-view events. With your permission, Google Analytics also uses analytics cookies to measure visits and game activity. Choose No thanks to play without Google Analytics, or use Privacy settings to change your choice. We do not send names, email addresses or saved games to Google. Learn how Google uses information at https://policies.google.com/technologies/partner-sites. For our own gameplay statistics, the browser also keeps an anonymous random device ID. No name, email address or IP address is stored with it. We keep these statistics for up to 13 months, do not use them for advertising and do not share them.'],
+['How can I help my child?','Try a challenge together and ask what each piece attacks. Let the child make a move, inspect the feedback and try again. Stop when the child wants a break; there is no required daily schedule.']
+],links:['learn-chess-for-kids','online-chess-for-kids']}
+];
+
+pages.push(...guidePages);
+
+// IDs refer to reviewed, playable positions in the production challenge catalogue.
+export const puzzleExamples=[
+  {id:'mate-1',topic:'Checkmate',summary:'Checkmate means the king is attacked and has no safe square left.',tryIt:'Can your white rook trap the black king in one move?',hint:'Move the white rook to the same column as the black king.',answer:'Move the white rook from g1 to h1. The rook attacks the black king, and your king covers its escape squares. That is checkmate (Rh1#).'},
+  {id:'fork-1',topic:'Fork',summary:'A fork is one piece attacking two pieces at the same time.',tryIt:'Can your white knight attack both the black king and rook?',hint:'The knight starts on e4. Look for an L-shaped jump toward the middle of the board.',answer:'Move the white knight from e4 to d6. It attacks the king on e8 and the rook on c8. The king must move first (Nd6+).'},
+  {id:'pin-1',topic:'Pin',summary:'A pin keeps a piece in place because a more important piece is behind it.',tryIt:'Where can your white bishop go to hold the black knight in place?',hint:'Put the bishop, knight and black king on one diagonal.',answer:'Move the white bishop from f1 to b5. The black knight on d7 is between your bishop and the black king. Moving that knight away would expose its king (Bb5).'},
+  {id:'double-1',topic:'Double Attack',summary:'A double attack makes two threats with one move.',tryIt:'Can your white queen attack the black king and rook together?',hint:'Look for a queen move that points diagonally at the king and sideways at the rook.',answer:'Move the white queen from d1 to d5. The queen checks the king on g8 and also attacks the rook on a8 (Qd5+).'},
+  {id:'defense-2',topic:'Defense',summary:'Defense means making your king or pieces safe from a threat.',tryIt:'The black rook is attacking your king. How can your white bishop stop it?',hint:'You can capture the attacking rook.',answer:'Move the white bishop from c2 to e4 and capture the black rook. Your king is no longer in check (Bxe4).'}
+];
+export const learningSteps=[
+  ['Step 1: the pawn','Moves forward one square, or two from its first square; captures diagonally.','/how-do-chess-pieces-move/#pawn'],
+  ['Step 2: the knight','Jumps in an L shape and can hop over other pieces.','/how-do-chess-pieces-move/#knight'],
+  ['Step 3: the bishop','Slides diagonally and always stays on its own colour.','/how-do-chess-pieces-move/#bishop'],
+  ['Step 4: the rook','Slides along rows and columns.','/how-do-chess-pieces-move/#rook'],
+  ['Step 5: the queen','Moves like a rook and a bishop together.','/how-do-chess-pieces-move/#queen'],
+  ['Step 6: the king','Steps one square in any direction and never moves into attack.','/how-do-chess-pieces-move/#king'],
+  ['Step 7: checkmate','In the Checkmate Fortress, check the king’s escape squares before moving.','/chess-puzzles-for-kids/#checkmate'],
+  ['Play a full game','Try an Arena game against a computer opponent, then use the progress view to review what you played.','/play/']
+];
+export const pieceRules=[
+  ['Pawn','p','Moves one square forward; from its starting square it may move two if the path is clear. Captures one square diagonally forward.'],
+  ['Knight','n','Moves in an L shape: two squares in one direction, then one sideways. It can jump over pieces.'],
+  ['Bishop','b','Moves diagonally any number of clear squares.'],
+  ['Rook','r','Moves along rows or columns any number of clear squares.'],
+  ['Queen','q','Combines the bishop’s diagonals and the rook’s straight lines.'],
+  ['King','k','Moves one square in any direction, but may never move into check.']
+];
+
+
+
+// Plain product facts for parents, search snippets and AI answers. Keep each claim true for the current release.
+export const keyFacts=[
+  ['Price','Free. No subscriptions, purchases or paid content limits.'],
+  ['Ads','No ads.'],
+  ['Download','None needed. CHEZZIES runs in a web browser.'],
+  ['Devices','Phones, tablets and desktop computers.'],
+  ['Opponents','Computer opponents in the Arena. No live multiplayer and no player chat.'],
+  ['Account','Optional. Guest progress stays in the browser; a free account saves the adventure online across devices.'],
+  ['Chess skills','Piece movement, checkmate, forks, pins, double attacks and defense.'],
+  ['Language','English.']
+];
